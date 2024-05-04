@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-function LoginScreen() {
+const LoginScreen = () => {
   const [isActive, setIsActive] = useState(false); // false means not active, true means active
-
-  const toggleActive = () => {
-    setIsActive(!isActive); // Toggle the active state
-  };
 
   return (
     <div className={`wrapper ${isActive ? "active" : ""}`}>
@@ -45,7 +41,11 @@ function LoginScreen() {
           <div className="login-register">
             <p>
               Don't have an account?{" "}
-              <a href="#" onClick={toggleActive} className="register-link">
+              <a
+                href="#"
+                onClick={() => setIsActive(!isActive)}
+                className="register-link"
+              >
                 Register
               </a>
             </p>
@@ -85,7 +85,11 @@ function LoginScreen() {
           <div className="login-register">
             <p>
               Don't have an account?{" "}
-              <a href="#" onClick={toggleActive} className="login-link">
+              <a
+                href="#"
+                onClick={() => setIsActive(!isActive)}
+                className="login-link"
+              >
                 Login
               </a>
             </p>
@@ -94,6 +98,6 @@ function LoginScreen() {
       </div>
     </div>
   );
-}
+};
 
 export default LoginScreen;

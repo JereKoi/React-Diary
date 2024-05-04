@@ -1,6 +1,6 @@
 import "./styles.css";
 
-function ForgotForm() {
+const ForgotForm = () => {
   return (
     <div className="wrapperForgot">
       <div className="form-box login">
@@ -49,6 +49,7 @@ function ForgotForm() {
       </div>
     </div>
   );
-}
+};
 
 export default ForgotForm;
+

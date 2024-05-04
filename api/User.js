@@ -4,6 +4,18 @@ const router = express.Router();
 // mongoDB user model
 const User = require("../models/User");
 
+// mongoDB user verification model
+const UserVerification = require("../models/UserVerification");
+
+// email handler
+const nodemailer = require("nodemailer");
+
+// unique string
+const { v4: uuidv4 } = require("uuid");
+
+// env variables
+require("dotenv").config();
+
 // Password handler
 const bcrypt = require("bcrypt");
 
