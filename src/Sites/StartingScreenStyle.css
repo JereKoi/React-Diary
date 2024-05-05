@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url("./../fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: local("Poppins"), url("./../fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: local("Poppins"), url("./../fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+.Blink {
+  animation: blink-animation 2s infinite;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Diary {
+  text-align: center;
+}
+
+.Diary-header {
+  width: 600px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: black;
+  border-radius: 10px;
+  padding: 30px 40px;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Diary h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.diary-content {
+  /* Container to hide overflow */
+  overflow: hidden;
+}

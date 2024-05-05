@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./ForgotFormStyle.css";
 
 const ForgotForm = () => {
   return (

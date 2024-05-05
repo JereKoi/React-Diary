@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url("./../fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: local("Poppins"), url("./../fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: local("Poppins"), url("./../fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+.wrapperForgot {
+  position: relative;
+  width: 400px;
+  height: 550px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  display: flex;
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+
+.wrapperForgot .form-box {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  height: 50px;
+  margin: 30px 0;
+}

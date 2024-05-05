@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles.css";
+import "./LoginScreenStyle.css";
 
 const LoginScreen = () => {
   const [isActive, setIsActive] = useState(false); // false means not active, true means active

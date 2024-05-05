@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./styles.css";
+import "./StartingScreenStyle.css";
 
 const StartingScreen = () => {
   const navigate = useNavigate(); // Hook to navigate

@@ -16,6 +16,25 @@ const { v4: uuidv4 } = require("uuid");
 // env variables
 require("dotenv").config();
 
+// nodemailer TODO: Email registration messages
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.AUTH_EMAIL,
+    pass: process.env.AUTH_PASS,
+  },
+});
+
+// test nodemailer transporter
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Ready for messages");
+    console.log(success);
+  }
+});
+
 // Password handler
 const bcrypt = require("bcrypt");
 
