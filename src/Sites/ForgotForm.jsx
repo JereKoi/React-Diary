@@ -34,13 +34,13 @@ const ForgotForm = () => {
             ></input>
           </div>
 
-          <button type="submit" className="btn">
+          <button type="submit" className="set-btn">
             Set new password
           </button>
           <div className="login-register">
             <p>
               Already have an account?{" "}
-              <button className="register-link" type="button">
+              <button className="login-link" type="button">
                 Login
               </button>
             </p>
