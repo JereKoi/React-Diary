@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to Diary based on React! This repository hosts the Diary web page.
+Welcome to Diary based on MERN! This repository hosts the Diary web page.
 
 ### About Diary
 
