@@ -37,3 +37,17 @@
   height: 50px;
   margin: 30px 0;
 }
+
+button.register-link {
+  background: none;
+  color: black;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+button.register-link:hover {
+  text-decoration: none;
+}

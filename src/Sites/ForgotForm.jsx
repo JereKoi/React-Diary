@@ -40,9 +40,9 @@ const ForgotForm = () => {
           <div className="login-register">
             <p>
               Already have an account?{" "}
-              <a href="#" className="register-link">
+              <button className="register-link" type="button">
                 Login
-              </a>
+              </button>
             </p>
           </div>
         </form>
@@ -52,4 +52,3 @@ const ForgotForm = () => {
 };
 
 export default ForgotForm;
-

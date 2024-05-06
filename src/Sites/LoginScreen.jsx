@@ -28,26 +28,26 @@ const LoginScreen = () => {
             </label>
             <div className="forgot">
               <p>
-                <a href="#" className="forgot-link">
+                <button className="forgot-link" type="button">
                   Forgot password?
-                </a>
+                </button>
               </p>
             </div>
           </div>
 
-          <button type="submit" className="btn">
+          <button type="submit" className="login-btn">
             Login
           </button>
           <div className="login-register">
             <p>
               Don't have an account?{" "}
-              <a
-                href="#"
+              <button
+                type="button"
                 onClick={() => setIsActive(!isActive)}
                 className="register-link"
               >
                 Register
-              </a>
+              </button>
             </p>
           </div>
         </form>
@@ -79,19 +79,19 @@ const LoginScreen = () => {
               <input type="checkbox"></input>I agree to the terms & conditions
             </label>
           </div>
-          <button type="submit" className="btn">
+          <button type="submit" className="register-btn">
             Register
           </button>
           <div className="login-register">
             <p>
               Don't have an account?{" "}
-              <a
-                href="#"
+              <button
+                type="button"
                 onClick={() => setIsActive(!isActive)}
                 className="login-link"
               >
                 Login
-              </a>
+              </button>
             </p>
           </div>
         </form>
