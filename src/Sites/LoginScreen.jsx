@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./LoginScreenStyle.css";
 
 const LoginScreen = () => {
   const [isActive, setIsActive] = useState(false); // false means not active, true means active
+  const navigate = useNavigate(); // Get the navigate function
 
   return (
     <div className={`wrapper ${isActive ? "active" : ""}`}>
@@ -28,7 +30,11 @@ const LoginScreen = () => {
             </label>
             <div className="forgot">
               <p>
-                <button className="forgot-link" type="button">
+                <button
+                  className="forgot-link"
+                  type="button"
+                  onClick={() => navigate("/ForgotForm")}
+                >
                   Forgot password?
                 </button>
               </p>

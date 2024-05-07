@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./ForgotFormStyle.css";
 
 const ForgotForm = () => {
+  const navigate = useNavigate(); // Get the navigate function
+
   return (
     <div className="wrapperForgot">
       <div className="form-box login">
@@ -40,7 +43,11 @@ const ForgotForm = () => {
           <div className="login-register">
             <p>
               Already have an account?{" "}
-              <button className="login-link" type="button">
+              <button
+                className="login-link"
+                type="button"
+                onClick={() => navigate("/LoginScreen")}
+              >
                 Login
               </button>
             </p>
