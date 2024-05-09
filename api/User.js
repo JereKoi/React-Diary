@@ -39,7 +39,7 @@ transporter.verify((error, success) => {
 const bcrypt = require("bcrypt");
 
 // Sign up
-router.post("/signup", (req, res) => {
+router.post("/LoginScreen", (req, res) => {
   let { name, email, password, dateOfBirth } = req.body;
   name = name.trim();
   email = email.trim();
@@ -133,7 +133,7 @@ router.post("/signup", (req, res) => {
 });
 
 // Sign in
-router.post("/signin", (req, res) => {
+router.post("/LoginScreen", (req, res) => {
   let { email, password } = req.body;
   email = email.trim();
   password = password.trim();

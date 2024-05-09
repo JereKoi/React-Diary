@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginScreenStyle.css";
@@ -6,22 +7,82 @@ const LoginScreen = () => {
   const [isActive, setIsActive] = useState(false); // false means not active, true means active
   const navigate = useNavigate(); // Get the navigate function
 
+  const [loginFormData, setLoginFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [registerFormData, setRegisterFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleLoginChange = (e) => {
+    setLoginFormData({ ...loginFormData, [e.target.name]: e.target.value });
+  };
+
+  const handleRegisterChange = (e) => {
+    setRegisterFormData({
+      ...registerFormData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const loginUser = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("../LoginScreen", loginFormData);
+      console.log(response.data);
+      // Handle success response
+    } catch (error) {
+      console.error(error.response.data);
+      // Handle error response
+    }
+  };
+
+  const registerUser = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("../LoginScreen", registerFormData);
+      console.log(response.data);
+      // Handle success response
+    } catch (error) {
+      console.error(error.response.data);
+      // Handle error response
+    }
+  };
+
   return (
     <div className={`wrapper ${isActive ? "active" : ""}`}>
       <div className="form-box login">
         <h2>Login</h2>
-        <form action="#">
+        <form action="#" onSubmit={loginUser}>
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-envelope"></i>
             </span>
-            <input type="email" placeholder="Email" required></input>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={loginFormData.email}
+              onChange={handleLoginChange}
+              required
+            ></input>
           </div>
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-lock-alt"></i>
             </span>
-            <input type="password" placeholder="Password" required></input>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={loginFormData.password}
+              onChange={handleLoginChange}
+              required
+            ></input>
           </div>
           <div className="remember-forgot">
             <label>
@@ -61,24 +122,45 @@ const LoginScreen = () => {
 
       <div className="form-box register">
         <h2>Registration</h2>
-        <form action="#">
+        <form action="#" onSubmit={registerUser}>
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-user"></i>
             </span>
-            <input type="email" placeholder="Username" required></input>
+            <input
+              type="username"
+              name="username"
+              placeholder="Username"
+              value={registerFormData.username}
+              onChange={handleRegisterChange}
+              required
+            ></input>
           </div>
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-envelope"></i>
             </span>
-            <input type="email" placeholder="Email" required></input>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={registerFormData.email}
+              onChange={handleRegisterChange}
+              required
+            ></input>
           </div>
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-lock-alt"></i>
             </span>
-            <input type="password" placeholder="Password" required></input>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={registerFormData.password}
+              onChange={handleRegisterChange}
+              required
+            ></input>
           </div>
           <div className="remember-forgot">
             <label>
