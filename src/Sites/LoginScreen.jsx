@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import config from "../config.json";
 import "./LoginScreenStyle.css";
 
 const LoginScreen = () => {
@@ -32,7 +33,10 @@ const LoginScreen = () => {
   const loginUser = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("../LoginScreen", loginFormData);
+      const response = await axios.post(
+        `${config.backendUrl}/user/signin`,
+        loginFormData
+      );
       console.log(response.data);
       // Handle success response
     } catch (error) {
@@ -44,7 +48,10 @@ const LoginScreen = () => {
   const registerUser = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("../LoginScreen", registerFormData);
+      const response = await axios.post(
+        `${config.backendUrl}/user/signup`,
+        registerFormData
+      );
       console.log(response.data);
       // Handle success response
     } catch (error) {
