@@ -21,34 +21,43 @@ const bcrypt = require("bcrypt");
 
 // Sign up
 router.post("/signup", (req, res) => {
-  let { name, email, password, dateOfBirth } = req.body;
+  let { name, email, password } = req.body;
+
+  // Check if name, email, and password are defined and not empty
+  if (!name || !email || !password) {
+    const emptyFields = [];
+    if (!name) emptyFields.push("name");
+    if (!email) emptyFields.push("email");
+    if (!password) emptyFields.push("password");
+
+    return res.json({
+      status: "FAILED",
+      message: `Empty or undefined input fields: ${emptyFields.join(", ")}`,
+    });
+  }
+
+  // Trim whitespace if the variables are defined
   name = name.trim();
   email = email.trim();
   password = password.trim();
-  dateOfBirth = dateOfBirth.trim();
 
-  if (name === "" || email === "" || password === "" || dateOfBirth === "") {
-    res.json({
-      status: "FAILED",
-      message: "Empty input fields!",
-    });
-  } else if (!/^[a-zA-Z ]*$/.test(name)) {
-    res.json({
+  // Validate email format
+  if (!/^[a-zA-Z ]*$/.test(name)) {
+    return res.json({
       status: "FAILED",
       message: "Invalid name entered",
     });
-  } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-    res.json({
+  }
+
+  if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+    return res.json({
       status: "FAILED",
       message: "Invalid email entered",
     });
-  } else if (!new Date(dateOfBirth).getTime()) {
-    res.json({
-      status: "FAILED",
-      message: "Invalid date of birth entered",
-    });
-  } else if (password.length < 8) {
-    res.json({
+  }
+
+  if (password.length < 8) {
+    return res.json({
       status: "FAILED",
       message: "Password is too short!",
     });
@@ -74,7 +83,6 @@ router.post("/signup", (req, res) => {
                 name,
                 email,
                 password: hashedPassword,
-                dateOfBirth,
               });
 
               newUser

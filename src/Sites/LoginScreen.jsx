@@ -135,7 +135,7 @@ const LoginScreen = () => {
               <i className="bx bxs-user"></i>
             </span>
             <input
-              type="username"
+              type="text"
               name="username"
               placeholder="Username"
               value={registerFormData.username}
