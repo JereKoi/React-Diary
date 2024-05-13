@@ -136,9 +136,9 @@ const LoginScreen = () => {
             </span>
             <input
               type="text"
-              name="username"
+              name="name"
               placeholder="Username"
-              value={registerFormData.username}
+              value={registerFormData.name}
               onChange={handleRegisterChange}
               required
             ></input>
