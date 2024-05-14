@@ -61,7 +61,7 @@ const ForgotForm = () => {
               <i className="bx bxs-lock-alt"></i>
             </span>
             <input
-              type="New password"
+              type="password"
               name="newPassword"
               placeholder="New password"
               value={formData.newPassword}
@@ -75,7 +75,7 @@ const ForgotForm = () => {
               <i className="bx bxs-lock-alt"></i>
             </span>
             <input
-              type="Confirm password"
+              type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
               value={formData.confirmPassword}
