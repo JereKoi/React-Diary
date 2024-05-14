@@ -179,4 +179,56 @@ router.post("/signin", (req, res) => {
   }
 });
 
+// Reset password
+router.post("/reset-password", async (req, res) => {
+  const { email, newPassword, confirmPassword } = req.body;
+
+  // Validate email, newPassword, and confirmPassword
+  if (!email || !newPassword || !confirmPassword) {
+    return res.json({
+      status: "FAILED",
+      message: "All fields are required",
+    });
+  }
+
+  if (newPassword !== confirmPassword) {
+    return res.json({
+      status: "FAILED",
+      message: "Passwords do not match",
+    });
+  }
+
+  try {
+    // Hash the new password
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
+
+    // Update the user's password in the database
+    const user = await User.findOneAndUpdate(
+      { email },
+      { $set: { password: hashedPassword } },
+      { new: true }
+    );
+
+    if (!user) {
+      return res.json({
+        status: "FAILED",
+        message: "User not found",
+      });
+    }
+
+    // Password reset successfully
+    return res.json({
+      status: "SUCCESS",
+      message: "Password reset successful",
+    });
+  } catch (error) {
+    console.error(error);
+    return res.json({
+      status: "FAILED",
+      message: "Error resetting password",
+    });
+  }
+});
+
 module.exports = router;
