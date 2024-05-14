@@ -56,6 +56,7 @@ const ForgotForm = () => {
               required
             ></input>
           </div>
+
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-lock-alt"></i>
