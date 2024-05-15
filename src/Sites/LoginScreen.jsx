@@ -38,7 +38,14 @@ const LoginScreen = () => {
         loginFormData
       );
       console.log(response.data);
-      // Handle success response
+
+      if (response.data.status === "SUCCESS") {
+        // Redirect to the specified URL
+        navigate(response.data.redirectUrl);
+      } else {
+        // Handle failure response
+        console.error(response.data.message);
+      }
     } catch (error) {
       console.error(error.response.data);
       // Handle error response

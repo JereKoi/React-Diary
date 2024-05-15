@@ -148,6 +148,7 @@ router.post("/signin", (req, res) => {
                 res.json({
                   status: "SUCCESS",
                   message: "Sign in successful",
+                  redirectUrl: "/DiaryPage",
                   data: data,
                 });
               } else {
