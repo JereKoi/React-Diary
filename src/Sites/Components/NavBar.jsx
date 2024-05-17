@@ -6,9 +6,6 @@ const NavBar = () => {
 
   return (
     <header className="navHeader">
-      <button className="navLogo" type="button" onClick={() => navigate("/")}>
-        Diary
-      </button>
       <nav className="navBar">
         <button className="Home" type="button" onClick={() => navigate("/")}>
           Home

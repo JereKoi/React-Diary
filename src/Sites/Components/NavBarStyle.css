@@ -23,7 +23,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 .navBar {
   position: fixed;
   top: 0;
@@ -33,7 +32,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
   z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navLogo {
+  background: none;
+  color: black;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
 }
 
 button.Home {
