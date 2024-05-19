@@ -1,9 +1,8 @@
-// RichTextEditor.js
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // import styles
 
-const RichTextEditor = () => {
+const TextEditor = () => {
   const [value, setValue] = useState("");
 
   const modules = {
@@ -51,6 +50,16 @@ const RichTextEditor = () => {
     "video",
   ];
 
+  const saveContent = () => {
+    const content = value; // value contains the editor content
+    console.log(content); // Here you can save content to your backend or local storage
+  };
+
+  useEffect(() => {
+    const existingContent = "<p>Existing content...</p>";
+    setValue(existingContent);
+  }, []);
+
   return (
     <div>
       <ReactQuill
@@ -60,21 +69,9 @@ const RichTextEditor = () => {
         modules={modules}
         formats={formats}
       />
+      <button onClick={saveContent}>Save</button>
     </div>
   );
 };
 
-const saveContent = () => {
-  const content = value; // value contains the editor content
-  // Save the content to your backend or local storage
-};
-
-// Add a button to trigger the save function
-<button onClick={saveContent}>Save</button>;
-
-useEffect(() => {
-  const existingContent = "<p>Existing content...</p>";
-  setValue(existingContent);
-}, []);
-
-export default RichTextEditor;
+export default TextEditor;
