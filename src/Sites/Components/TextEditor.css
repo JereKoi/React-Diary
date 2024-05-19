@@ -1,0 +1,62 @@
+/* Override Quill toolbar button colors */
+.ql-toolbar .ql-formats button,
+.ql-toolbar .ql-formats button:hover,
+.ql-toolbar .ql-formats button:focus,
+.ql-toolbar .ql-formats button.ql-active {
+  color: black !important;
+  border-color: black !important;
+}
+
+/* Override Quill dropdown colors */
+.ql-toolbar .ql-picker,
+.ql-toolbar .ql-picker-options {
+  color: black !important;
+  border-color: black !important;
+}
+
+/* Specific styling for individual buttons */
+.ql-toolbar .ql-bold,
+.ql-toolbar .ql-italic,
+.ql-toolbar .ql-underline,
+.ql-toolbar .ql-strike,
+.ql-toolbar .ql-blockquote,
+.ql-toolbar .ql-code-block,
+.ql-toolbar .ql-header,
+.ql-toolbar .ql-list,
+.ql-toolbar .ql-indent,
+.ql-toolbar .ql-link,
+.ql-toolbar .ql-image,
+.ql-toolbar .ql-video,
+.ql-toolbar .ql-color,
+.ql-toolbar .ql-background,
+.ql-toolbar .ql-clean {
+  color: black !important;
+  border-color: black !important;
+}
+
+/* Override Quill dropdown selected item */
+.ql-toolbar .ql-picker-label:hover,
+.ql-toolbar .ql-picker-label.ql-active {
+  color: black !important;
+  border-color: black !important;
+}
+
+/* Override Quill dropdown item hover and active states */
+.ql-toolbar .ql-picker-options .ql-picker-item:hover,
+.ql-toolbar .ql-picker-options .ql-picker-item.ql-selected {
+  background-color: black !important;
+  color: white !important;
+}
+
+/* Style the Save button */
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}

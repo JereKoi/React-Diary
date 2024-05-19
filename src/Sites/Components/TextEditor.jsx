@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; // import styles
+import "react-quill/dist/quill.snow.css"; // Import Quill's styles
+import "./TextEditor.css"; // Import your custom styles
 
 const TextEditor = () => {
   const [value, setValue] = useState("");

@@ -6,14 +6,14 @@ import "./DiaryPageStyle.css";
 const DiaryPage = () => {
   const navigate = useNavigate(); // Get the navigate function
   return (
-    <>
+    <div>
       <div className="navBar">
         <Navbar />
       </div>
       <div className="TextEditorApp">
         <TextEditor />
       </div>
-    </>
+    </div>
   );
 };
 
