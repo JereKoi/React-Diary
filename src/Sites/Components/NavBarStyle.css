@@ -34,8 +34,6 @@
   align-items: center;
   background-color: transparent;
   backdrop-filter: blur(20px);
-  z-index: 100;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 button.Home {
@@ -48,19 +46,6 @@ button.Home {
   text-decoration: none;
 }
 
-.navBar.Home::before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  transition: 0.3s;
-}
-
-.navBar.Home:hover::before {
-  width: 100%;
-}
-
 button.Save {
   background: none;
   color: black;
@@ -69,19 +54,6 @@ button.Save {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
-}
-
-.navBar.Save::before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  transition: 0.3s;
-}
-
-.navBar.Save:hover::before {
-  width: 100%;
 }
 
 button.Load {
@@ -94,19 +66,6 @@ button.Load {
   text-decoration: none;
 }
 
-.navBar.Load::before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  transition: 0.3s;
-}
-
-.navBar.Load:hover::before {
-  width: 100%;
-}
-
 button.About {
   background: none;
   color: black;
@@ -117,19 +76,6 @@ button.About {
   text-decoration: none;
 }
 
-.navBar.About::before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  transition: 0.3s;
-}
-
-.navBar.About:hover::before {
-  width: 100%;
-}
-
 button.Contact {
   background: none;
   color: black;
@@ -138,17 +84,4 @@ button.Contact {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
-}
-
-.navBar.Contact::before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  transition: 0.3s;
-}
-
-.navBar.Contact:hover::before {
-  width: 100%;
 }

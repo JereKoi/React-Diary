@@ -47,16 +47,3 @@
   background-color: black !important;
   color: white !important;
 }
-
-/* Style the Save button */
-button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #333;
-}
