@@ -4,7 +4,9 @@ import "react-quill/dist/quill.snow.css"; // Import Quill's styles
 import "./TextEditor.css"; // Import your custom styles
 
 const TextEditor = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); // Editor content
+  const [placeholder, setPlaceholder] = useState("Type here about your day..."); // Placeholder text
+  const [isFocused, setIsFocused] = useState(false); // Focus state
 
   const modules = {
     toolbar: [
@@ -57,9 +59,23 @@ const TextEditor = () => {
   };
 
   useEffect(() => {
-    const existingContent = "<p>Existing content...</p>";
+    const existingContent = "<p>Type here about your day...</p>"; // Initial placeholder content
     setValue(existingContent);
   }, []);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    if (value === "<p>Type here about your day...</p>") {
+      setValue("");
+    }
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+    if (value === "") {
+      setValue("<p>Type here about your day...</p>");
+    }
+  };
 
   return (
     <div>
@@ -69,6 +85,8 @@ const TextEditor = () => {
         onChange={setValue}
         modules={modules}
         formats={formats}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       />
       <button className="SaveText" onClick={saveContent}>
         Save
