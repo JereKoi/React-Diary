@@ -17,23 +17,36 @@
   src: local("Poppins"), url("../../fonts/Poppins-Bold.ttf") format("truetype");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+/* Navbar styling */
+.nav-header {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
 }
-.navBar {
+
+.nav-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 10%;
+  padding: 10px 30%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: transparent;
   backdrop-filter: blur(20px);
+  border-radius: 0px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* Flexbox container for buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally within the container */
+  align-items: center; /* Center buttons vertically */
+  gap: 40px; /* Add space between buttons */
 }
 
 button.Home {
@@ -46,6 +59,10 @@ button.Home {
   text-decoration: none;
 }
 
+button.Home:hover {
+  text-decoration: underline;
+}
+
 button.Save {
   background: none;
   color: black;
@@ -54,6 +71,10 @@ button.Save {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
+}
+
+button.Save:hover {
+  text-decoration: underline;
 }
 
 button.Load {
@@ -66,6 +87,10 @@ button.Load {
   text-decoration: none;
 }
 
+button.Load:hover {
+  text-decoration: underline;
+}
+
 button.About {
   background: none;
   color: black;
@@ -76,6 +101,10 @@ button.About {
   text-decoration: none;
 }
 
+button.About:hover {
+  text-decoration: underline;
+}
+
 button.Contact {
   background: none;
   color: black;
@@ -84,4 +113,8 @@ button.Contact {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
+}
+
+button.Contact:hover {
+  text-decoration: underline;
 }

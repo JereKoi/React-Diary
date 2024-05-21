@@ -70,7 +70,9 @@ const TextEditor = () => {
         modules={modules}
         formats={formats}
       />
-      <button onClick={saveContent}>Save</button>
+      <button className="SaveText" onClick={saveContent}>
+        Save
+      </button>
     </div>
   );
 };
