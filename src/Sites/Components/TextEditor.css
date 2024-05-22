@@ -49,11 +49,12 @@
 }
 
 button.SaveText {
-  background: black;
-  color: white;
-  border: none;
-  padding: 0;
-  font: inherit;
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
   cursor: pointer;
-  text-decoration: none;
+}
+
+button.SaveText:hover {
+  transform: scale(1.2);
+  color: #4169e1; /* Royal Blue color */
 }

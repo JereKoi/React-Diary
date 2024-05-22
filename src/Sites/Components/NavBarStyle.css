@@ -37,7 +37,7 @@
   background-color: transparent;
   backdrop-filter: blur(20px);
   border-radius: 0px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
@@ -57,10 +57,11 @@ button.Home {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 button.Home:hover {
-  text-decoration: underline;
+  transform: scale(1.2);
 }
 
 button.Save {
@@ -71,10 +72,11 @@ button.Save {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 button.Save:hover {
-  text-decoration: underline;
+  transform: scale(1.2);
 }
 
 button.Load {
@@ -85,10 +87,11 @@ button.Load {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 button.Load:hover {
-  text-decoration: underline;
+  transform: scale(1.2);
 }
 
 button.About {
@@ -99,10 +102,11 @@ button.About {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 button.About:hover {
-  text-decoration: underline;
+  transform: scale(1.2);
 }
 
 button.Contact {
@@ -113,8 +117,9 @@ button.Contact {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 button.Contact:hover {
-  text-decoration: underline;
+  transform: scale(1.2);
 }

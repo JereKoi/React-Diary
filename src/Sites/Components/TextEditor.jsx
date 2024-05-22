@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+import React, { useCallback, useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import Quill's styles
 import "./TextEditor.css"; // Import your custom styles
 
 const TextEditor = () => {
   const [value, setValue] = useState(""); // Editor content
-  const [placeholder, setPlaceholder] = useState("Type here about your day..."); // Placeholder text
   const [isFocused, setIsFocused] = useState(false); // Focus state
+  let saveTimeout;
 
   const modules = {
     toolbar: [
@@ -53,15 +54,42 @@ const TextEditor = () => {
     "video",
   ];
 
-  const saveContent = () => {
-    const content = value; // value contains the editor content
-    console.log(content); // Here you can save content to your backend or local storage
-  };
+  {
+    /*TODO: Check User.js does it require something in order to having saving work. */
+  }
+
+  const saveContent = useCallback(async () => {
+    try {
+      await axios.post("http://localhost:5000/save", { content: value });
+      console.log("Content saved");
+    } catch (error) {
+      console.error("Error saving content:", error);
+    }
+  }, [value]);
 
   useEffect(() => {
-    const existingContent = "<p>Type here about your day...</p>"; // Initial placeholder content
-    setValue(existingContent);
+    // Fetch initial content from the server
+    const fetchContent = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/text");
+        if (response.data) {
+          setValue(response.data.content);
+        }
+      } catch (error) {
+        console.error("Error fetching content:", error);
+      }
+    };
+
+    fetchContent();
   }, []);
+
+  useEffect(() => {
+    if (saveTimeout) clearTimeout(saveTimeout);
+    saveTimeout = setTimeout(() => {
+      saveContent();
+    }, 2000); // 2 seconds delay
+    return () => clearTimeout(saveTimeout);
+  }, [value, saveContent]);
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -88,9 +116,6 @@ const TextEditor = () => {
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
-      <button className="SaveText" onClick={saveContent}>
-        Save
-      </button>
     </div>
   );
 };
