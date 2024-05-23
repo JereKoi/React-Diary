@@ -16,6 +16,9 @@ function App() {
         <Route path="/Loginscreen" element={<LoginScreen />} />
         <Route path="/ForgotForm" element={<ForgotForm />} />
         <Route path="/DiaryPage" element={<DiaryPage />} />
+        <Route path="/HomePage" element={<DiaryPage />} />
+        <Route path="/AboutPage" element={<DiaryPage />} />
+        <Route path="/ContactPage" element={<DiaryPage />} />
       </Routes>
     </AnimatePresence>
   );

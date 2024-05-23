@@ -62,6 +62,7 @@ button.Home {
 
 button.Home:hover {
   transform: scale(1.2);
+  background-color: burlywood;
 }
 
 button.Save {
@@ -77,6 +78,7 @@ button.Save {
 
 button.Save:hover {
   transform: scale(1.2);
+  background-color: burlywood;
 }
 
 button.Load {
@@ -92,6 +94,7 @@ button.Load {
 
 button.Load:hover {
   transform: scale(1.2);
+  background-color: burlywood;
 }
 
 button.About {
@@ -107,6 +110,7 @@ button.About {
 
 button.About:hover {
   transform: scale(1.2);
+  background-color: burlywood;
 }
 
 button.Contact {
@@ -122,4 +126,5 @@ button.Contact {
 
 button.Contact:hover {
   transform: scale(1.2);
+  background-color: burlywood;
 }

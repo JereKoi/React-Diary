@@ -8,7 +8,11 @@ const NavBar = () => {
     <header className="nav-header">
       <nav className="nav-bar">
         <div className="nav-buttons">
-          <button className="Home" type="button" onClick={() => navigate("/")}>
+          <button
+            className="Home"
+            type="button"
+            onClick={() => navigate("/HomePage")}
+          >
             Home
           </button>
           <button className="Save" type="button" onClick={() => navigate("/")}>
@@ -17,13 +21,17 @@ const NavBar = () => {
           <button className="Load" type="button" onClick={() => navigate("/")}>
             Load previous days
           </button>
-          <button className="About" type="button" onClick={() => navigate("/")}>
+          <button
+            className="About"
+            type="button"
+            onClick={() => navigate("/AboutPage")}
+          >
             About
           </button>
           <button
             className="Contact"
             type="button"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/ContactPage")}
           >
             Contact
           </button>
