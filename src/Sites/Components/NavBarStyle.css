@@ -1,20 +1,19 @@
 @font-face {
   font-family: "Poppins";
   src: local("Poppins"),
-    url("../../fonts/Poppins-Regular.ttf") format("truetype");
+    url("/src/fonts/Poppins-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Poppins";
   font-weight: 500;
-  src: local("Poppins"),
-    url("../../fonts/Poppins-Medium.ttf") format("truetype");
+  src: local("Poppins"), url("/src/fonts/Poppins-Medium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Poppins";
   font-weight: 600;
-  src: local("Poppins"), url("../../fonts/Poppins-Bold.ttf") format("truetype");
+  src: local("Poppins"), url("/src/fonts/Poppins-Bold.ttf") format("truetype");
 }
 
 /* Navbar styling */
@@ -57,12 +56,18 @@ button.Home {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
 button.Home:hover {
   transform: scale(1.2);
-  background-color: burlywood;
+  background-color: rgb(241, 216, 184);
+  border-radius: 2cm;
+  padding: 10px 10px;
+}
+
+button.Home:hover::before {
+  opacity: 1;
 }
 
 button.Save {
@@ -73,12 +78,18 @@ button.Save {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
 button.Save:hover {
   transform: scale(1.2);
-  background-color: burlywood;
+  background-color: rgb(241, 216, 184);
+  border-radius: 2cm;
+  padding: 10px 10px;
+}
+
+button.Save:hover::before {
+  opacity: 1;
 }
 
 button.Load {
@@ -89,12 +100,18 @@ button.Load {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
 button.Load:hover {
   transform: scale(1.2);
-  background-color: burlywood;
+  background-color: rgb(241, 216, 184);
+  border-radius: 2cm;
+  padding: 10px 10px;
+}
+
+button.Load:hover::before {
+  opacity: 1;
 }
 
 button.About {
@@ -105,12 +122,18 @@ button.About {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
 button.About:hover {
   transform: scale(1.2);
-  background-color: burlywood;
+  background-color: rgb(241, 216, 184);
+  border-radius: 2cm;
+  padding: 10px 10px;
+}
+
+button.About:hover::before {
+  opacity: 1;
 }
 
 button.Contact {
@@ -121,10 +144,16 @@ button.Contact {
   font: inherit;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
 button.Contact:hover {
   transform: scale(1.2);
-  background-color: burlywood;
+  background-color: rgb(241, 216, 184);
+  border-radius: 2cm;
+  padding: 10px 10px;
+}
+
+button.Contact:hover::before {
+  opacity: 1;
 }

@@ -1,13 +1,13 @@
 import axios from "axios";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import Quill's styles
 import "./TextEditor.css"; // Import your custom styles
 
 const TextEditor = () => {
   const [value, setValue] = useState(""); // Editor content
-  const [isFocused, setIsFocused] = useState(false); // Focus state
-  let saveTimeout;
+  const [setIsFocused] = useState(false); // Focus state
+  const saveTimeout = useRef(null);
 
   const modules = {
     toolbar: [
@@ -84,11 +84,12 @@ const TextEditor = () => {
   }, []);
 
   useEffect(() => {
-    if (saveTimeout) clearTimeout(saveTimeout);
-    saveTimeout = setTimeout(() => {
+    if (saveTimeout.current) clearTimeout(saveTimeout.current);
+    saveTimeout.current = setTimeout(() => {
       saveContent();
     }, 2000); // 2 seconds delay
-    return () => clearTimeout(saveTimeout);
+
+    return () => clearTimeout(saveTimeout.current);
   }, [value, saveContent]);
 
   const handleFocus = () => {
@@ -116,6 +117,8 @@ const TextEditor = () => {
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
+      {/* TODO: CHANGE TEXT BASED ON UNSAVED / SAVED WHEN AUTOSAVING */}
+      <a>Saved...</a>
     </div>
   );
 };
