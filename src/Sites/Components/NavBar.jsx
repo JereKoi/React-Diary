@@ -15,10 +15,14 @@ const NavBar = () => {
           >
             Home
           </button>
-          <button className="Save" type="button" onClick={() => navigate("/")}>
-            Save the text
+          <button
+            className="Write"
+            type="Write"
+            onClick={() => navigate("/DiaryPage")}
+          >
+            Write
           </button>
-          <button className="Load" type="button" onClick={() => navigate("/")}>
+          <button className="Load" type="button">
             Load previous days
           </button>
           <button

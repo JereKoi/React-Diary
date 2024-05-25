@@ -108,15 +108,17 @@ const TextEditor = () => {
 
   return (
     <div>
-      <ReactQuill
-        theme="snow"
-        value={value}
-        onChange={setValue}
-        modules={modules}
-        formats={formats}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-      />
+      <div className="diary-text-editor">
+        <ReactQuill
+          theme="snow"
+          value={value}
+          onChange={setValue}
+          modules={modules}
+          formats={formats}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+      </div>
       {/* TODO: CHANGE TEXT BASED ON UNSAVED / SAVED WHEN AUTOSAVING */}
       <a>Saved...</a>
     </div>

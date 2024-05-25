@@ -1,8 +1,11 @@
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import AboutPage from "./Sites/AboutPage";
+import ContactPage from "./Sites/ContactPage";
 import DiaryPage from "./Sites/DiaryPage";
 import ForgotForm from "./Sites/ForgotForm";
+import HomePage from "./Sites/HomePage";
 import LoginScreen from "./Sites/LoginScreen";
 import StartingScreen from "./Sites/StartingScreen";
 
@@ -16,9 +19,9 @@ function App() {
         <Route path="/Loginscreen" element={<LoginScreen />} />
         <Route path="/ForgotForm" element={<ForgotForm />} />
         <Route path="/DiaryPage" element={<DiaryPage />} />
-        <Route path="/HomePage" element={<DiaryPage />} />
-        <Route path="/AboutPage" element={<DiaryPage />} />
-        <Route path="/ContactPage" element={<DiaryPage />} />
+        <Route path="/HomePage" element={<HomePage />} />
+        <Route path="/AboutPage" element={<AboutPage />} />
+        <Route path="/ContactPage" element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
   );

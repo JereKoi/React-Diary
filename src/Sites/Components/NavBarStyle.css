@@ -70,7 +70,7 @@ button.Home:hover::before {
   opacity: 1;
 }
 
-button.Save {
+button.Write {
   background: none;
   color: black;
   border: none;
@@ -81,14 +81,14 @@ button.Save {
   transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
-button.Save:hover {
+button.Write:hover {
   transform: scale(1.2);
   background-color: rgb(241, 216, 184);
   border-radius: 2cm;
   padding: 10px 10px;
 }
 
-button.Save:hover::before {
+button.Write:hover::before {
   opacity: 1;
 }
 
