@@ -6,7 +6,7 @@ import "./TextEditor.css"; // Import your custom styles
 
 const TextEditor = () => {
   const [value, setValue] = useState(""); // Editor content
-  const [setIsFocused] = useState(false); // Focus state
+  const [isFocused, setIsFocused] = useState(false); // Focus state
   const saveTimeout = useRef(null);
 
   const modules = {
