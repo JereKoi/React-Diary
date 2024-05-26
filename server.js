@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+require("dotenv").config();
 require("./config/db");
 
 const app = express();
@@ -29,7 +30,7 @@ const Text = mongoose.model("Text", TextSchema);
 // Define routes
 app.get("/text", async (req, res) => {
   try {
-    const text = await Text.findOne(); // Fetch the first document
+    const text = await Text.findOne().sort({ _id: -1 });
     res.json(text);
   } catch (error) {
     res.status(500).json({ error: "Error fetching content" });

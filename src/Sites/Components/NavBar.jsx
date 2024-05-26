@@ -1,8 +1,44 @@
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Banner from "./Banner";
 import "./NavBarStyle.css";
 
 const NavBar = () => {
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate();
+  const [showBanner, setShowBanner] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const userId = localStorage.getItem("userId"); // Assume user ID is stored in local storage
+        if (userId) {
+          const response = await axios.get(
+            `http://localhost:5000/user/${userId}`
+          );
+          setUser(response.data);
+        }
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  const handleButtonClick = () => {
+    setShowBanner(true);
+  };
+
+  const handleCloseBanner = () => {
+    setShowBanner(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("userId"); // Clear user ID from local storage
+    navigate("/login"); // Redirect to login page
+  };
 
   return (
     <header className="nav-header">
@@ -22,7 +58,7 @@ const NavBar = () => {
           >
             Write
           </button>
-          <button className="Load" type="button">
+          <button className="Load" type="button" onClick={handleButtonClick}>
             Load previous days
           </button>
           <button
@@ -40,7 +76,14 @@ const NavBar = () => {
             Contact
           </button>
         </div>
+        <div className="user-info">
+          {user && <span>Logged in as: {user.username}</span>}
+          <button className="logout" type="button" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
       </nav>
+      <Banner show={showBanner} onClose={handleCloseBanner} />
     </header>
   );
 };

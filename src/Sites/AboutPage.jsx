@@ -9,6 +9,7 @@ const ContactPage = () => {
       <div className="navBar">
         <Navbar />
       </div>
+      <h1>About page.</h1>
     </div>
   );
 };

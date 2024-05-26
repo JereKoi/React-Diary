@@ -157,3 +157,21 @@ button.Contact:hover {
 button.Contact:hover::before {
   opacity: 1;
 }
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: darkred;
+}
