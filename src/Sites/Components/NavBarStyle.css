@@ -164,14 +164,16 @@ button.Contact:hover::before {
   gap: 10px;
 }
 
-.logout {
-  background-color: red;
-  color: white;
+button.logout {
+  background: none;
+  color: black;
   border: none;
-  padding: 5px 10px;
+  padding: 0;
+  font: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.logout:hover {
-  background-color: darkred;
+button.logout:hover {
+  text-decoration: underline;
 }
