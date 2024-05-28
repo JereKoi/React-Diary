@@ -8,6 +8,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const [showBanner, setShowBanner] = useState(false);
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -21,6 +22,7 @@ const NavBar = () => {
         }
       } catch (error) {
         console.error("Error fetching user:", error);
+        setError(error.message);
       }
     };
 
@@ -45,31 +47,35 @@ const NavBar = () => {
       <nav className="nav-bar">
         <div className="nav-buttons">
           <button
-            className="Home"
+            className="home-btn"
             type="button"
             onClick={() => navigate("/HomePage")}
           >
             Home
           </button>
           <button
-            className="Write"
+            className="write-btn"
             type="Write"
             onClick={() => navigate("/DiaryPage")}
           >
             Write
           </button>
-          <button className="Load" type="button" onClick={handleButtonClick}>
+          <button
+            className="load-btn"
+            type="button"
+            onClick={handleButtonClick}
+          >
             Load previous days
           </button>
           <button
-            className="About"
+            className="about-btn"
             type="button"
             onClick={() => navigate("/AboutPage")}
           >
             About
           </button>
           <button
-            className="Contact"
+            className="contact-btn"
             type="button"
             onClick={() => navigate("/ContactPage")}
           >

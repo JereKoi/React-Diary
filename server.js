@@ -9,11 +9,14 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const UserRouter = require("./api/User");
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 // Use user routes
 app.use("/user", UserRouter);
@@ -51,6 +54,24 @@ app.post("/save", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Error saving content" });
   }
+});
+
+// Endpoint for user login
+app.post("/login", (req, res) => {
+  // Authenticate user (validate credentials, etc.)
+  // If authentication is successful, generate JWT
+  const token = jwt.sign({ userId: user.id }, "your_secret_key", {
+    expiresIn: "1h",
+  }); // Adjust expiresIn as needed
+
+  // Set JWT as an HTTP-only cookie
+  res
+    .cookie("token", token, {
+      httpOnly: true,
+      secure: true /* if using HTTPS */,
+      sameSite: "strict",
+    })
+    .sendStatus(200);
 });
 
 app.listen(port, () => {

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const jwt = require("jsonwebtoken");
 
 // mongoDB user model
 const User = require("../models/User");
@@ -121,62 +122,48 @@ router.post("/signup", (req, res) => {
   }
 });
 
-// Sign in
-router.post("/signin", (req, res) => {
-  let { email, password } = req.body;
-  email = email.trim();
-  password = password.trim();
+// Sign in route
+router.post("/signin", async (req, res) => {
+  // Extract email and password from request body
+  const { email, password } = req.body;
 
-  if (email == "" || password == "") {
-    res.json({
-      status: "FAILED",
-      message: "Empty credentials supplied",
-    });
-  } else {
-    // Check if user exist
-    User.find({ email })
-      .then((data) => {
-        if (data.length) {
-          // User exists
+  try {
+    // Find user by email in the database
+    const user = await User.findOne({ email });
 
-          const hashedPassword = data[0].password;
-          bcrypt
-            .compare(password, hashedPassword)
-            .then((result) => {
-              if (result) {
-                // Password match
-                res.json({
-                  status: "SUCCESS",
-                  message: "Sign in successful",
-                  redirectUrl: "/DiaryPage",
-                  data: data,
-                });
-              } else {
-                res.json({
-                  status: "FAILED",
-                  message: "Invalid password entered",
-                });
-              }
-            })
-            .catch((err) => {
-              res.json({
-                status: "FAILED",
-                message: "An error occurred while comparing passwords",
-              });
-            });
-        } else {
-          res.json({
-            status: "FAILED",
-            message: "Invalid credentials entered!",
-          });
-        }
-      })
-      .catch((err) => {
-        res.json({
-          status: "FAILED",
-          message: "An error occurred while checking for existing user",
-        });
+    // Check if user exists and verify password
+    if (user && (await bcrypt.compare(password, user.password))) {
+      // Generate JWT token
+      const token = jwt.sign({ userId: user._id }, "your_secret_key", {
+        expiresIn: "1h",
       });
+
+      // Set token as HTTP-only cookie
+      res.cookie("token", token, {
+        httpOnly: true,
+        secure: true /* if using HTTPS */,
+        sameSite: "strict",
+      });
+
+      // Return success response
+      return res.json({
+        status: "SUCCESS",
+        message: "Sign in successful",
+        redirectUrl: "/DiaryPage",
+      });
+    } else {
+      // Return failed login response
+      return res.json({
+        status: "FAILED",
+        message: "Invalid credentials entered!",
+      });
+    }
+  } catch (error) {
+    console.error("Error signing in:", error);
+    return res.json({
+      status: "FAILED",
+      message: "An error occurred while signing in",
+    });
   }
 });
 
