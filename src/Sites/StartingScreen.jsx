@@ -11,7 +11,7 @@ const StartingScreen = () => {
       navigate("/Loginscreen");
     };
 
-    // Add event listeners for key press and mouse click
+    // Add a single event listener for both key press and mouse click
     window.addEventListener("keydown", handleInteraction);
     window.addEventListener("click", handleInteraction);
 
@@ -23,14 +23,20 @@ const StartingScreen = () => {
   }, [navigate]); // Dependency array
 
   return (
-    <div role="button">
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={() => navigate("/Loginscreen")}
+      onKeyDown={() => navigate("/Loginscreen")}
+      className="StartingScreen"
+    >
       <div className="Diary">
         <header className="Diary-header">
           <div className="diary-content">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.5, delay: 0 }}
+              transition={{ duration: 0.5 }}
             >
               This is my first diary.
             </motion.h1>

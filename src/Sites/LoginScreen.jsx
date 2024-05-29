@@ -1,12 +1,16 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import config from "../config.json";
 import "./LoginScreenStyle.css";
 
 const LoginScreen = () => {
   const [isActive, setIsActive] = useState(false); // false means not active, true means active
-  const navigate = useNavigate(); // Get the navigate function
+  const [loadingLogin, setLoadingLogin] = useState(false);
+  const [loadingRegister, setLoadingRegister] = useState(false);
+  const [loginError, setLoginError] = useState(null);
+  const [registerError, setRegisterError] = useState(null);
+  const navigate = useNavigate();
 
   const [loginFormData, setLoginFormData] = useState({
     email: "",
@@ -19,6 +23,14 @@ const LoginScreen = () => {
     password: "",
   });
 
+  useEffect(() => {
+    let isMounted = true;
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   const handleLoginChange = (e) => {
     setLoginFormData({ ...loginFormData, [e.target.name]: e.target.value });
   };
@@ -30,40 +42,67 @@ const LoginScreen = () => {
     });
   };
 
+  const validateLoginForm = (formData) => {
+    return formData.email && formData.password;
+  };
+
+  const validateRegisterForm = (formData) => {
+    return formData.username && formData.email && formData.password;
+  };
+
   const loginUser = async (e) => {
     e.preventDefault();
+    setLoginError(null);
+
+    if (!validateLoginForm(loginFormData)) {
+      setLoginError("Please fill in all required fields.");
+      return;
+    }
+
+    setLoadingLogin(true);
     try {
       const response = await axios.post(
         `${config.backendUrl}/user/signin`,
         loginFormData
       );
-      console.log(response.data);
 
       if (response.data.status === "SUCCESS") {
-        // Redirect to the specified URL
         navigate(response.data.redirectUrl);
       } else {
-        // Handle failure response
-        console.error(response.data.message);
+        setLoginError(response.data.message);
       }
     } catch (error) {
-      console.error(error.response.data);
-      // Handle error response
+      setLoginError(error.response?.data?.message || "An error occurred.");
+    } finally {
+      setLoadingLogin(false);
     }
   };
 
   const registerUser = async (e) => {
     e.preventDefault();
+    setRegisterError(null);
+
+    if (!validateRegisterForm(registerFormData)) {
+      setRegisterError("Please fill in all required fields.");
+      return;
+    }
+
+    setLoadingRegister(true);
     try {
       const response = await axios.post(
         `${config.backendUrl}/user/signup`,
         registerFormData
       );
-      console.log(response.data);
-      // Handle success response
+
+      if (response.data.status === "SUCCESS") {
+        navigate("/LoginScreen");
+      } else {
+        setRegisterError(response.data.message);
+      }
     } catch (error) {
-      console.error(error.response.data);
-      // Handle error response
+      setRegisterError(error.response?.data?.message || "An error occurred.");
+    } finally {
+      setLoadingRegister(false);
     }
   };
 
@@ -71,7 +110,8 @@ const LoginScreen = () => {
     <div className={`wrapper ${isActive ? "active" : ""}`}>
       <div className="form-box login">
         <h2>Login</h2>
-        <form action="#" onSubmit={loginUser}>
+        {loginError && <div className="error-message">{loginError}</div>}
+        <form onSubmit={loginUser}>
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-envelope"></i>
@@ -83,7 +123,8 @@ const LoginScreen = () => {
               value={loginFormData.email}
               onChange={handleLoginChange}
               required
-            ></input>
+              aria-label="Email"
+            />
           </div>
           <div className="input-box">
             <span className="icon">
@@ -96,28 +137,26 @@ const LoginScreen = () => {
               value={loginFormData.password}
               onChange={handleLoginChange}
               required
-            ></input>
+              aria-label="Password"
+            />
           </div>
           <div className="remember-forgot">
             <label>
-              <input type="checkbox"></input>
+              <input type="checkbox" />
               Remember me
             </label>
             <div className="forgot">
-              <p>
-                <button
-                  className="forgot-link"
-                  type="button"
-                  onClick={() => navigate("/ForgotForm")}
-                >
-                  Forgot password?
-                </button>
-              </p>
+              <button
+                className="forgot-link"
+                type="button"
+                onClick={() => navigate("/ForgotForm")}
+              >
+                Forgot password?
+              </button>
             </div>
           </div>
-
-          <button type="submit" className="login-btn">
-            Login
+          <button type="submit" className="login-btn" disabled={loadingLogin}>
+            {loadingLogin ? "Logging in..." : "Login"}
           </button>
           <div className="login-register">
             <p>
@@ -136,19 +175,21 @@ const LoginScreen = () => {
 
       <div className="form-box register">
         <h2>Registration</h2>
-        <form action="#" onSubmit={registerUser}>
+        {registerError && <div className="error-message">{registerError}</div>}
+        <form onSubmit={registerUser}>
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-user"></i>
             </span>
             <input
               type="text"
-              name="name"
+              name="username"
               placeholder="Username"
-              value={registerFormData.name}
+              value={registerFormData.username}
               onChange={handleRegisterChange}
               required
-            ></input>
+              aria-label="Username"
+            />
           </div>
           <div className="input-box">
             <span className="icon">
@@ -161,7 +202,8 @@ const LoginScreen = () => {
               value={registerFormData.email}
               onChange={handleRegisterChange}
               required
-            ></input>
+              aria-label="Email"
+            />
           </div>
           <div className="input-box">
             <span className="icon">
@@ -174,19 +216,24 @@ const LoginScreen = () => {
               value={registerFormData.password}
               onChange={handleRegisterChange}
               required
-            ></input>
+              aria-label="Password"
+            />
           </div>
           <div className="remember-forgot">
             <label>
-              <input type="checkbox"></input>I agree to the terms & conditions
+              <input type="checkbox" />I agree to the terms & conditions
             </label>
           </div>
-          <button type="submit" className="register-btn">
-            Register
+          <button
+            type="submit"
+            className="register-btn"
+            disabled={loadingRegister}
+          >
+            {loadingRegister ? "Registering..." : "Register"}
           </button>
           <div className="login-register">
             <p>
-              Don't have an account?{" "}
+              Already have an account?{" "}
               <button
                 type="button"
                 onClick={() => setIsActive(!isActive)}

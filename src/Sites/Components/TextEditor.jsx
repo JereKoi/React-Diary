@@ -1,13 +1,14 @@
 import axios from "axios";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { debounce } from "lodash";
+import React, { useCallback, useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import Quill's styles
 import "./TextEditor.css"; // Import your custom styles
 
 const TextEditor = () => {
   const [value, setValue] = useState(""); // Editor content
-  const [isFocused, setIsFocused] = useState(false); // Focus state
-  const saveTimeout = useRef(null);
+  const [isSaving, setIsSaving] = useState(false); // Saving state
+  const [saveStatus, setSaveStatus] = useState("Saved"); // Save status message
 
   const modules = {
     toolbar: [
@@ -54,24 +55,31 @@ const TextEditor = () => {
     "video",
   ];
 
-  {
-    /*TODO: Check User.js does it require something in order to having saving work. */
-  }
-
-  const saveContent = useCallback(async () => {
-    try {
-      await axios.post("http://localhost:5000/save", { content: value });
-      console.log("Content saved");
-    } catch (error) {
-      console.error("Error saving content:", error);
-    }
-  }, [value]);
+  const saveContent = useCallback(
+    debounce(async (content) => {
+      setIsSaving(true);
+      setSaveStatus("Saving...");
+      try {
+        await axios.post(`${process.env.REACT_APP_API_URL}/save`, {
+          content,
+        });
+        setSaveStatus("Saved");
+      } catch (error) {
+        setSaveStatus("Error saving content");
+        console.error("Error saving content:", error);
+      } finally {
+        setIsSaving(false);
+      }
+    }, 2000), // 2 seconds delay
+    []
+  );
 
   useEffect(() => {
-    // Fetch initial content from the server
     const fetchContent = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/text");
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/text`
+        );
         if (response.data) {
           setValue(response.data.content);
         }
@@ -84,26 +92,16 @@ const TextEditor = () => {
   }, []);
 
   useEffect(() => {
-    if (saveTimeout.current) clearTimeout(saveTimeout.current);
-    saveTimeout.current = setTimeout(() => {
-      saveContent();
-    }, 2000); // 2 seconds delay
-
-    return () => clearTimeout(saveTimeout.current);
+    saveContent(value);
+    return () => saveContent.cancel();
   }, [value, saveContent]);
 
   const handleFocus = () => {
     setIsFocused(true);
-    if (value === "<p>Type here about your day...</p>") {
-      setValue("");
-    }
   };
 
   const handleBlur = () => {
     setIsFocused(false);
-    if (value === "") {
-      setValue("<p>Type here about your day...</p>");
-    }
   };
 
   return (
@@ -117,10 +115,10 @@ const TextEditor = () => {
           formats={formats}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          placeholder="Type here about your day..."
         />
       </div>
-      {/* TODO: CHANGE TEXT BASED ON UNSAVED / SAVED WHEN AUTOSAVING */}
-      <a>Saved...</a>
+      <div className="save-status">{isSaving ? "Saving..." : saveStatus}</div>
     </div>
   );
 };

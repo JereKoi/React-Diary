@@ -1,40 +1,71 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import config from "../config.json";
 import "./ForgotFormStyle.css";
 
 const ForgotForm = () => {
-  const navigate = useNavigate(); // Get the navigate function
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     newPassword: "",
     confirmPassword: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const validatePassword = (password) => {
+    if (password.length < 8) {
+      return "Password should be at least 8 characters long";
+    }
+    // Add more complex password validation if needed
+    return null;
   };
 
   const setNewPassword = async (e) => {
     e.preventDefault();
+    setError(null);
+
     if (formData.newPassword !== formData.confirmPassword) {
-      // Passwords don't match
-      console.log("Passwords don't match");
+      setError("Passwords do not match");
       return;
     }
+
+    const passwordError = validatePassword(formData.newPassword);
+    if (passwordError) {
+      setError(passwordError);
+      return;
+    }
+
+    setLoading(true);
+
     try {
       const response = await axios.post(
         `${config.backendUrl}/user/reset-password`,
         formData
       );
       console.log(response.data);
-      // Handle success response
-      navigate("/LoginScreen"); // Redirect to login after resetting password
+      navigate("/LoginScreen");
     } catch (error) {
-      console.error(error.response.data);
-      // Handle error response
+      setError(error.response?.data?.message || "An error occurred");
+      console.error(error.response?.data);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -42,7 +73,8 @@ const ForgotForm = () => {
     <div className="wrapperForgot">
       <div className="form-box login">
         <h2>Forgot Password</h2>
-        <form action="#" onSubmit={setNewPassword}>
+        {error && <div className="error-message">{error}</div>}
+        <form onSubmit={setNewPassword}>
           <div className="input-box">
             <span className="icon">
               <i className="bx bxs-envelope"></i>
@@ -54,7 +86,8 @@ const ForgotForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-            ></input>
+              aria-label="Email"
+            />
           </div>
 
           <div className="input-box">
@@ -64,11 +97,12 @@ const ForgotForm = () => {
             <input
               type="password"
               name="newPassword"
-              placeholder="New password"
+              placeholder="New Password"
               value={formData.newPassword}
               onChange={handleChange}
               required
-            ></input>
+              aria-label="New Password"
+            />
           </div>
 
           <div className="input-box">
@@ -82,11 +116,12 @@ const ForgotForm = () => {
               value={formData.confirmPassword}
               onChange={handleChange}
               required
-            ></input>
+              aria-label="Confirm Password"
+            />
           </div>
 
-          <button type="submit" className="set-btn">
-            Set new password
+          <button type="submit" className="set-btn" disabled={loading}>
+            {loading ? "Setting..." : "Set New Password"}
           </button>
           <div className="login-register">
             <p>
