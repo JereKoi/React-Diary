@@ -81,12 +81,12 @@ const NavBar = () => {
           >
             Contact
           </button>
-        </div>
-        <div className="user-info">
-          {user && <span>Logged in as: {user.username}</span>}
-          <button className="logout" type="button" onClick={handleLogout}>
-            Logout
-          </button>
+          <div className="user-info">
+            {user && <span>Logged in as: {user.username}</span>}
+            <button className="logout-btn" type="button" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
         </div>
       </nav>
       <Banner show={showBanner} onClose={handleCloseBanner} />

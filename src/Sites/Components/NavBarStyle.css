@@ -1,21 +1,3 @@
-@font-face {
-  font-family: "Poppins";
-  src: local("Poppins"),
-    url("/src/fonts/Poppins-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 500;
-  src: local("Poppins"), url("/src/fonts/Poppins-Medium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 600;
-  src: local("Poppins"), url("/src/fonts/Poppins-Bold.ttf") format("truetype");
-}
-
 /* Navbar styling */
 .nav-header {
   position: relative;
@@ -29,13 +11,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 30%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px 30px; /* Adjust padding as needed */
   background-color: transparent;
   backdrop-filter: blur(20px);
-  border-radius: 0px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
@@ -46,9 +27,16 @@
   justify-content: center; /* Center buttons horizontally within the container */
   align-items: center; /* Center buttons vertically */
   gap: 40px; /* Add space between buttons */
+  flex: 1;
 }
 
-button.Home {
+/* Common button styles */
+button.home-btn,
+button.write-btn,
+button.load-btn,
+button.about-btn,
+button.contact-btn,
+button.logout-btn {
   background: none;
   color: black;
   border: none;
@@ -59,121 +47,22 @@ button.Home {
   transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
-button.Home:hover {
+/* Hover styles for buttons */
+button.home-btn:hover,
+button.write-btn:hover,
+button.load-btn:hover,
+button.about-btn:hover,
+button.contact-btn:hover,
+button.logout-btn:hover {
   transform: scale(1.2);
   background-color: rgb(241, 216, 184);
   border-radius: 2cm;
   padding: 10px 10px;
 }
 
-button.Home:hover::before {
-  opacity: 1;
-}
-
-button.Write {
-  background: none;
-  color: black;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.2s, background-color 0.2s, padding 0.3s;
-}
-
-button.Write:hover {
-  transform: scale(1.2);
-  background-color: rgb(241, 216, 184);
-  border-radius: 2cm;
-  padding: 10px 10px;
-}
-
-button.Write:hover::before {
-  opacity: 1;
-}
-
-button.Load {
-  background: none;
-  color: black;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.2s, background-color 0.2s, padding 0.3s;
-}
-
-button.Load:hover {
-  transform: scale(1.2);
-  background-color: rgb(241, 216, 184);
-  border-radius: 2cm;
-  padding: 10px 10px;
-}
-
-button.Load:hover::before {
-  opacity: 1;
-}
-
-button.About {
-  background: none;
-  color: black;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.2s, background-color 0.2s, padding 0.3s;
-}
-
-button.About:hover {
-  transform: scale(1.2);
-  background-color: rgb(241, 216, 184);
-  border-radius: 2cm;
-  padding: 10px 10px;
-}
-
-button.About:hover::before {
-  opacity: 1;
-}
-
-button.Contact {
-  background: none;
-  color: black;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.2s, background-color 0.2s, padding 0.3s;
-}
-
-button.Contact:hover {
-  transform: scale(1.2);
-  background-color: rgb(241, 216, 184);
-  border-radius: 2cm;
-  padding: 10px 10px;
-}
-
-button.Contact:hover::before {
-  opacity: 1;
-}
-
+/* User info container */
 .user-info {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-button.logout {
-  background: none;
-  color: black;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-button.logout:hover {
-  text-decoration: underline;
 }
