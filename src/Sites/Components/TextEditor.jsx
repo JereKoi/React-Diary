@@ -9,6 +9,7 @@ const TextEditor = () => {
   const [value, setValue] = useState(""); // State for the editor content
   const [isSaving, setIsSaving] = useState(false); // State to indicate if the content is being saved
   const [saveStatus, setSaveStatus] = useState("Saved"); // State for the save status message
+  const [isFocused, setIsFocused] = useState(false); // State for editor focus
 
   // Configuration for the Quill editor toolbar
   const modules = {
