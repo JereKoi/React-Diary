@@ -32,7 +32,9 @@ const ContactPage = () => {
         <Navbar />
       </div>
       <div className="contactFormContainer">
-        <h3>Contact Us</h3>
+        <div className="contactFormHeader">
+          <h3>Contact Us</h3>
+        </div>
         <form onSubmit={handleSubmit} className="contactForm">
           <div className="formGroup">
             <label htmlFor="name">Name:</label>
@@ -77,7 +79,9 @@ const ContactPage = () => {
               required
             />
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" className="submit-btn">
+            Submit
+          </button>
         </form>
       </div>
     </div>
