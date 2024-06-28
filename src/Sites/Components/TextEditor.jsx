@@ -1,16 +1,20 @@
-import axios from "axios"; // Import axios for making HTTP requests
-import { debounce } from "lodash"; // Import debounce from lodash to limit the rate at which a function is executed
-import React, { useCallback, useEffect, useState } from "react"; // Import necessary hooks from React
-import ReactQuill from "react-quill"; // Import ReactQuill component
-import "react-quill/dist/quill.snow.css"; // Import Quill's styles
-import { io } from "socket.io-client";
-import "./TextEditor.css"; // Import your custom styles
+import axios from "axios";
+import { debounce } from "lodash";
+import React, { useCallback, useEffect, useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import io from "socket.io-client";
+import "./TextEditor.css";
 
 const TextEditor = () => {
   const [value, setValue] = useState(""); // State for the editor content
   const [isSaving, setIsSaving] = useState(false); // State to indicate if the content is being saved
   const [saveStatus, setSaveStatus] = useState("Saved"); // State for the save status message
   const [isFocused, setIsFocused] = useState(false); // State for editor focus
+
+  const socket = io(
+    process.env.REACT_APP_SOCKET_URL || "http://localhost:3000"
+  ); // Connect to Socket.IO server
 
   // Configuration for the Quill editor toolbar
   const modules = {
@@ -115,15 +119,22 @@ const TextEditor = () => {
     setIsFocused(false);
   };
 
+  const handleValueChange = (content, delta, source) => {
+    setValue(content);
+    if (source === "user") {
+      socket.emit("new entry", content); // Emit new entry to Socket.IO server
+    }
+  };
+
   useEffect(() => {
-    //TODO: TÄMÄ LOCALHOST OSOITE SAATTAA OLLA VÄÄRÄ
-    //KORJAA MYÖS EHKÄ SILLEEN ETTÄ LUKEE PORTIN .ENVISTÄ
-    const socket = io("http://localhost:3000");
+    socket.on("new entry", (entry) => {
+      setValue(entry); // Update the editor content when a new entry is received
+    });
 
     return () => {
-      socket.disconnect();
+      socket.disconnect(); // Disconnect socket on component unmount
     };
-  });
+  }, [socket]);
 
   return (
     <div>
@@ -131,7 +142,7 @@ const TextEditor = () => {
         <ReactQuill
           theme="snow" // Set the theme to "snow"
           value={value} // Set the editor content to the current value
-          onChange={setValue} // Update the value when the content changes
+          onChange={handleValueChange} // Update the value when the content changes
           modules={modules} // Set the editor modules
           formats={formats} // Set the editor formats
           onFocus={handleFocus} // Handle focus event

@@ -4,23 +4,13 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
 require("./config/db");
-import { server } from "socket.io";
+const http = require("http");
+const socketIo = require("socket.io");
 
 const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
 const port = process.env.PORT || 5000;
-
-const io = new server(process.env.PORT, {
-  cors: {
-    //TODO: TÄMÄ LOCALHOST OSOITE SAATTAA OLLA VÄÄRIN
-    // KORJAA MYÖS EHKÄ LUKEMAAN PORTTI .ENV TIEDOSTOSTA
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
-  },
-});
-
-io.on("connection", (socket) => {
-  console.log("connected");
-});
 
 const UserRouter = require("./api/User");
 const jwt = require("jsonwebtoken");
@@ -32,6 +22,37 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
+// Serve static files from the "public" directory
+app.use(express.static("public"));
+
+io.on("connection", (socket) => {
+  console.log("A user connected");
+
+  // Send existing entries to the new client
+  socket.emit("load entries", diaryEntries);
+
+  // Listen for new diary entries
+  socket.on("new entry", async (entry) => {
+    try {
+      // Save the new entry to MongoDB
+      const text = new Text({ content: entry });
+      await text.save();
+
+      // Update local diaryEntries array (optional)
+      diaryEntries.push(entry);
+
+      // Broadcast the new entry to all connected clients
+      io.emit("new entry", entry);
+    } catch (error) {
+      console.error("Error saving new entry:", error);
+    }
+  });
+
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
+  });
+});
+
 // Use user routes
 app.use("/user", UserRouter);
 
@@ -40,6 +61,7 @@ const Schema = mongoose.Schema;
 
 const TextSchema = new Schema({
   content: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now },
 });
 
 const Text = mongoose.model("Text", TextSchema);
