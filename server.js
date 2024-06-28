@@ -4,9 +4,23 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
 require("./config/db");
+import { server } from "socket.io";
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+const io = new server(process.env.PORT, {
+  cors: {
+    //TODO: TÄMÄ LOCALHOST OSOITE SAATTAA OLLA VÄÄRIN
+    // KORJAA MYÖS EHKÄ LUKEMAAN PORTTI .ENV TIEDOSTOSTA
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  },
+});
+
+io.on("connection", (socket) => {
+  console.log("connected");
+});
 
 const UserRouter = require("./api/User");
 const jwt = require("jsonwebtoken");

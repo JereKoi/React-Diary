@@ -3,6 +3,7 @@ import { debounce } from "lodash"; // Import debounce from lodash to limit the r
 import React, { useCallback, useEffect, useState } from "react"; // Import necessary hooks from React
 import ReactQuill from "react-quill"; // Import ReactQuill component
 import "react-quill/dist/quill.snow.css"; // Import Quill's styles
+import { io } from "socket.io-client";
 import "./TextEditor.css"; // Import your custom styles
 
 const TextEditor = () => {
@@ -113,6 +114,16 @@ const TextEditor = () => {
   const handleBlur = () => {
     setIsFocused(false);
   };
+
+  useEffect(() => {
+    //TODO: TÄMÄ LOCALHOST OSOITE SAATTAA OLLA VÄÄRÄ
+    //KORJAA MYÖS EHKÄ SILLEEN ETTÄ LUKEE PORTIN .ENVISTÄ
+    const socket = io("http://localhost:3000");
+
+    return () => {
+      socket.disconnect();
+    };
+  });
 
   return (
     <div>
