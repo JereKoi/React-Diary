@@ -16,16 +16,60 @@
   src: local("Poppins"), url("/src/fonts/Poppins-Bold.ttf") format("truetype");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+  margin: 0; /* Remove default margin */
 }
 
-.TextEditorApp {
-  background-color: transparent;
+.content {
+  flex: 1; /* Make the content section expand to fill remaining vertical space */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+}
+
+.folder {
+  width: 300px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
   backdrop-filter: blur(20px);
-  z-index: 100;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+}
+
+.previous-entries-text {
+  display: flex;
+  justify-content: center;
+  margin-top: auto; /* Move to the bottom */
+}
+
+.entry {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.folders-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: center;
+  padding: 20px;
+}
+
+.folders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Ensure container takes full viewport height */
+  padding: 20px;
 }
