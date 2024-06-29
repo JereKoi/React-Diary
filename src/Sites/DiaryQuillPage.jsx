@@ -1,8 +1,8 @@
 import Navbar from "./Components/NavBar"; // Fixed import
 import TextEditor from "./Components/TextEditor";
-import "./DiaryPageStyle.css";
+import "./DiaryQuillPageStyle.css";
 
-const DiaryPage = () => {
+const DiaryQuillPage = () => {
   return (
     <div>
       <div className="navBar">
@@ -15,4 +15,4 @@ const DiaryPage = () => {
   );
 };
 
-export default DiaryPage;
+export default DiaryQuillPage;

@@ -33,7 +33,7 @@
 /* Common button styles */
 button.home-btn,
 button.write-btn,
-button.load-btn,
+button.entries-btn,
 button.about-btn,
 button.contact-btn,
 button.logout-btn {
@@ -50,7 +50,7 @@ button.logout-btn {
 /* Hover styles for buttons */
 button.home-btn:hover,
 button.write-btn:hover,
-button.load-btn:hover,
+button.entries-btn:hover,
 button.about-btn:hover,
 button.contact-btn:hover,
 button.logout-btn:hover {

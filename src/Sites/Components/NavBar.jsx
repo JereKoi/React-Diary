@@ -1,12 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Banner from "./Banner";
 import "./NavBarStyle.css";
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const [showBanner, setShowBanner] = useState(false);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
@@ -29,17 +27,9 @@ const NavBar = () => {
     fetchUser();
   }, []);
 
-  const handleButtonClick = () => {
-    setShowBanner(true);
-  };
-
-  const handleCloseBanner = () => {
-    setShowBanner(false);
-  };
-
   const handleLogout = () => {
     localStorage.removeItem("userId"); // Clear user ID from local storage
-    navigate("/login"); // Redirect to login page
+    navigate("/LoginScreen"); // Redirect to login page
   };
 
   return (
@@ -56,16 +46,16 @@ const NavBar = () => {
           <button
             className="write-btn"
             type="Write"
-            onClick={() => navigate("/DiaryPage")}
+            onClick={() => navigate("/DiaryWritePage")}
           >
             Write
           </button>
           <button
-            className="load-btn"
+            className="entries-btn"
             type="button"
-            onClick={handleButtonClick}
+            onClick={() => navigate("/DiaryEntriesPage")}
           >
-            Load previous days
+            Diary entries
           </button>
           <button
             className="about-btn"
@@ -89,7 +79,6 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
-      <Banner show={showBanner} onClose={handleCloseBanner} />
     </header>
   );
 };

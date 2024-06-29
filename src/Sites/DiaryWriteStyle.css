@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url("/src/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: local("Poppins"), url("/src/fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: local("Poppins"), url("/src/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.TextEditorApp {
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

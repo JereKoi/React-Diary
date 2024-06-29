@@ -53,6 +53,23 @@ io.on("connection", (socket) => {
   });
 });
 
+const MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/quill";
+
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function () {
+  console.log("Connected to MongoDB successfully");
+});
+
+module.exports = db;
+
 // Use user routes
 app.use("/user", UserRouter);
 
@@ -76,7 +93,7 @@ app.get("/text", async (req, res) => {
   }
 });
 
-app.post("/save", async (req, res) => {
+app.post("/api/save", async (req, res) => {
   try {
     const { content } = req.body;
     let text = await Text.findOne();

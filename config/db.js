@@ -1,4 +1,4 @@
-require("dotenv").config();
+/*require("dotenv").config();
 const mongoose = require("mongoose");
 
 const MONGODB_URI =
@@ -17,3 +17,4 @@ db.once("open", function () {
 });
 
 module.exports = db;
+*/
