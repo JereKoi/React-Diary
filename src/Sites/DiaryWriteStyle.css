@@ -19,16 +19,16 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
-  margin: 0; /* Remove default margin */
+  min-height: 100vh;
+  margin: 0;
 }
 
 .content {
-  flex: 1; /* Make the content section expand to fill remaining vertical space */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
+  align-items: center;
+  justify-content: center;
 }
 
 .folder {
@@ -47,7 +47,7 @@ body {
 .previous-entries-text {
   display: flex;
   justify-content: center;
-  margin-top: auto; /* Move to the bottom */
+  margin-top: auto;
 }
 
 .entry {
@@ -70,6 +70,51 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh; /* Ensure container takes full viewport height */
+  min-height: 100vh;
   padding: 20px;
+}
+
+.new-entry-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-entry-form input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  margin: 10px 0;
+  margin-top: 30px;
+}
+
+.new-entry-form button {
+  width: 100%;
+  height: 45px;
+  background: black;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+}
+
+.toggle-entries-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #007bff;
+  margin-left: 10px;
 }
