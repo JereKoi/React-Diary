@@ -7,7 +7,10 @@ const ContactPage = () => {
   return (
     <div>
       <div>
-        <h1>Motivational quotes, reactive ways for user to interact...</h1>
+        <h1>
+          Motivational quotes, reactive ways for user to interact, gamefied
+          achievements...
+        </h1>
       </div>
       <div className="navBar">
         <Navbar />

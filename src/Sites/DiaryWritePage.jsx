@@ -103,11 +103,11 @@ const DiaryWritePage = () => {
           value={newTitle}
           onChange={handleTitleChange}
         />
-        <button onClick={handleCreateEntry}>Create Entry</button>
+        <button onClick={handleCreateEntry}>Create a new diary</button>
       </div>
-
+      <h2 className="user-diaries-heading">Your Diaries</h2>{" "}
+      {/* Added this line */}
       <div className="user-diaries">
-        <h2>Your Diaries</h2>
         <div className="user-diary-list">
           {userDiaries.map((diary) => (
             <div key={diary.id} className="user-diary">
@@ -116,14 +116,12 @@ const DiaryWritePage = () => {
           ))}
         </div>
       </div>
-
       <div className="previous-entries-text">
         <h1>Your previous entries</h1>
         <button className="toggle-entries-button" onClick={toggleEntries}>
           <FontAwesomeIcon icon={showEntries ? faEyeSlash : faEye} />
         </button>
       </div>
-
       {showEntries && (
         <div className="folders-horizontal">
           {folders.map((folder) => (

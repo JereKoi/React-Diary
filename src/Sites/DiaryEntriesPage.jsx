@@ -24,7 +24,7 @@ const DiaryEntriesPage = () => {
       <div className="navBar">
         <Navbar />
       </div>
-      <h1>Diary entries page.</h1>
+      <h1>Diary entries page. Search by specific word or title</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
