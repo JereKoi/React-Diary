@@ -33,7 +33,7 @@ const ForgotForm = () => {
     if (password.length < 8) {
       return "Password should be at least 8 characters long";
     }
-    // Add more complex password validation if needed
+    // Add more complex password validation
     return null;
   };
 

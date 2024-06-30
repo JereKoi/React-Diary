@@ -44,6 +44,24 @@ body {
   margin: 10px;
 }
 
+.most-recent-table {
+  width: 950px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+  margin-top: 50px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 .previous-entries-text {
   display: flex;
   justify-content: center;
@@ -120,7 +138,7 @@ body {
 }
 
 .user-diaries-heading {
-  margin-top: 220px; /* Adjust this value as needed */
+  margin-top: 20px;
   font-size: 30px;
 }
 
@@ -129,7 +147,7 @@ body {
   flex-direction: row;
   justify-content: center;
   margin: 20px 0;
-  margin-top: 20px; /* Adjust this value as needed */
+  margin-top: 20px;
 }
 
 .user-diary-list {
@@ -152,4 +170,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.most-recent-table-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

@@ -13,9 +13,9 @@
 
 .contactFormHeader {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-  height: 80px;            /* Adjust as needed */
+  justify-content: center;
+  align-items: center;
+  height: 80px;
 }
 
 .contactForm {

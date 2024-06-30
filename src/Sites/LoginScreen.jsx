@@ -5,7 +5,7 @@ import config from "../config.json";
 import "./LoginScreenStyle.css";
 
 const LoginScreen = () => {
-  const [isActive, setIsActive] = useState(false); // false means not active, true means active
+  const [isActive, setIsActive] = useState(false);
   const [loadingLogin, setLoadingLogin] = useState(false);
   const [loadingRegister, setLoadingRegister] = useState(false);
   const [loginError, setLoginError] = useState(null);

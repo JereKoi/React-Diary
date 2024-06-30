@@ -1,4 +1,3 @@
-/* Navbar styling */
 .nav-header {
   position: relative;
   width: 100%;
@@ -14,19 +13,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px; /* Adjust padding as needed */
+  padding: 10px 30px;
   background-color: transparent;
   backdrop-filter: blur(20px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  box-sizing: border-box;
 }
 
 /* Flexbox container for buttons */
 .nav-buttons {
   display: flex;
-  justify-content: center; /* Center buttons horizontally within the container */
-  align-items: center; /* Center buttons vertically */
-  gap: 40px; /* Add space between buttons */
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   flex: 1;
 }
 

@@ -4,18 +4,16 @@ import Navbar from "./Components/NavBar";
 import "./DiaryEntriesStyle.css";
 
 const DiaryEntriesPage = () => {
-  const navigate = useNavigate(); // Get the navigate function
-  const [searchTerm, setSearchTerm] = useState(""); // State to hold the search term
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (e) => {
-    setSearchTerm(e.target.value); // Update search term state
+    setSearchTerm(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Navigate to a search results page or perform other actions with searchTerm
     console.log("Searching for:", searchTerm);
-    // Example navigation to another page
     navigate(`/search/${searchTerm}`);
   };
 

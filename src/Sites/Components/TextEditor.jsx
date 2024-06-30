@@ -66,21 +66,21 @@ const TextEditor = () => {
   // Function to save content to the server, debounced to limit its execution frequency
   const saveContent = useCallback(
     debounce(async (content) => {
-      setIsSaving(true); // Set saving state to true
-      setSaveStatus("Saving..."); // Update save status message
+      setIsSaving(true);
+      setSaveStatus("Saving...");
       try {
         // Send a POST request to save the content
         await axios.post(`${process.env.REACT_APP_API_URL}/save`, {
           content,
         });
-        setSaveStatus("Saved"); // Update save status message on success
+        setSaveStatus("Saved");
       } catch (error) {
-        setSaveStatus("Error saving content"); // Update save status message on error
-        console.error("Error saving content:", error); // Log error to the console
+        setSaveStatus("Error saving content");
+        console.error("Error saving content:", error);
       } finally {
-        setIsSaving(false); // Set saving state to false
+        setIsSaving(false);
       }
-    }, 2000), // 2 seconds delay
+    }, 2000),
     []
   );
 
@@ -93,14 +93,14 @@ const TextEditor = () => {
           `${process.env.REACT_APP_API_URL}/text`
         );
         if (response.data) {
-          setValue(response.data.content); // Set the fetched content to state
+          setValue(response.data.content);
         }
       } catch (error) {
-        console.error("Error fetching content:", error); // Log error to the console
+        console.error("Error fetching content:", error);
       }
     };
 
-    fetchContent(); // Call the fetchContent function
+    fetchContent();
   }, []); // Empty dependency array means this effect runs only once
 
   // useEffect to save content whenever it changes
@@ -140,18 +140,17 @@ const TextEditor = () => {
     <div>
       <div className="diary-text-editor">
         <ReactQuill
-          theme="snow" // Set the theme to "snow"
+          theme="snow"
           value={value} // Set the editor content to the current value
           onChange={handleValueChange} // Update the value when the content changes
-          modules={modules} // Set the editor modules
-          formats={formats} // Set the editor formats
-          onFocus={handleFocus} // Handle focus event
-          onBlur={handleBlur} // Handle blur event
-          placeholder="Type here about your day..." // Set the placeholder text
+          modules={modules}
+          formats={formats}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          placeholder="Type here about your day..."
         />
       </div>
       <div className="save-status">{isSaving ? "Saving..." : saveStatus}</div>{" "}
-      {/* Display the save status */}
     </div>
   );
 };

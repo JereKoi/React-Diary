@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Components/NavBar"; // Fixed import
+import Navbar from "./Components/NavBar";
 import "./ContactStyle.css";
 
 const ContactPage = () => {
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",

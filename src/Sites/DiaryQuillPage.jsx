@@ -1,4 +1,4 @@
-import Navbar from "./Components/NavBar"; // Fixed import
+import Navbar from "./Components/NavBar";
 import TextEditor from "./Components/TextEditor";
 import "./DiaryQuillPageStyle.css";
 

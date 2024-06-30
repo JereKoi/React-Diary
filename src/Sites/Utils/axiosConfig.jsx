@@ -1,4 +1,3 @@
-// Import necessary modules
 import axios from "axios";
 
 // Set up Axios interceptors for token inclusion
@@ -18,14 +17,12 @@ axios.interceptors.request.use(
   }
 );
 
-// Modify your login function to handle token reception and storage
 const handleLogin = async (email, password) => {
   try {
     const response = await axios.post("/api/signin", { email, password });
     const { data } = response;
 
     if (data.status === "SUCCESS") {
-      // Redirect to DiaryPage upon successful login
       window.location.href = data.redirectUrl;
     } else {
       // Handle failed login (display error message, etc.)

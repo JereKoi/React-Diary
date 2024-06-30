@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./StartingScreenStyle.css";
 
 const StartingScreen = () => {
-  const navigate = useNavigate(); // Hook to navigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleInteraction = () => {

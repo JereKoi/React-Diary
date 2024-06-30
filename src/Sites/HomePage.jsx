@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Components/NavBar"; // Fixed import
+import Navbar from "./Components/NavBar";
 import "./HomePageStyle.css";
 
 const ContactPage = () => {
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate();
   return (
     <div>
       <div>

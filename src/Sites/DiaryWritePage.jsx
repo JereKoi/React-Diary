@@ -1,13 +1,13 @@
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"; // FontAwesome imports
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // FontAwesome imports
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import Folder from "../Sites/Components/Folder"; // Adjust import path as necessary
-import Navbar from "./Components/NavBar"; // Adjust import path as necessary
-import "./DiaryWriteStyle.css"; // Adjust import path as necessary
+import Folder from "../Sites/Components/Folder";
+import Navbar from "./Components/NavBar";
+import "./DiaryWriteStyle.css";
 
 const DiaryWritePage = () => {
-  const [newTitle, setNewTitle] = useState(""); // State for new diary entry title
-  const [showEntries, setShowEntries] = useState(true); // State for toggling entries visibility
+  const [newTitle, setNewTitle] = useState("");
+  const [showEntries, setShowEntries] = useState(true);
 
   const userDiaries = [
     { id: 1, name: "Work Diary" },
@@ -78,18 +78,17 @@ const DiaryWritePage = () => {
   };
 
   const handleTitleChange = (e) => {
-    setNewTitle(e.target.value); // Update newTitle state with input value
+    setNewTitle(e.target.value);
   };
 
   const handleCreateEntry = () => {
     console.log("Creating new entry with title:", newTitle);
     // Perform action to create new diary entry with newTitle
-    // Example: add new entry to folders state or send to backend, etc.
-    setNewTitle(""); // Clear the input after submission if needed
+    setNewTitle("");
   };
 
   const toggleEntries = () => {
-    setShowEntries(!showEntries); // Toggle showEntries state
+    setShowEntries(!showEntries);
   };
 
   return (
@@ -105,8 +104,13 @@ const DiaryWritePage = () => {
         />
         <button onClick={handleCreateEntry}>Create a new diary</button>
       </div>
-      <h2 className="user-diaries-heading">Your Diaries</h2>{" "}
-      {/* Added this line */}
+      <h2 className="user-diaries-heading">Most recent diary</h2>
+      <div className="most-recent-table">
+        <div className="most-recent-table-heading">
+          <p>What you have been writing to most recently.</p>
+        </div>
+      </div>
+      <h2 className="user-diaries-heading">Your Diaries</h2>
       <div className="user-diaries">
         <div className="user-diary-list">
           {userDiaries.map((diary) => (
@@ -123,16 +127,18 @@ const DiaryWritePage = () => {
         </button>
       </div>
       {showEntries && (
-        <div className="folders-horizontal">
-          {folders.map((folder) => (
-            <Folder
-              key={folder.id}
-              name={folder.name}
-              entries={folder.entries}
-              onCardClick={handleCardClick}
-            />
-          ))}
-        </div>
+        <>
+          <div className="folders-horizontal">
+            {folders.map((folder) => (
+              <Folder
+                key={folder.id}
+                name={folder.name}
+                entries={folder.entries}
+                onCardClick={handleCardClick}
+              />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
