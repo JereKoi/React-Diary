@@ -16,9 +16,177 @@
   src: local("Poppins"), url("/src/fonts/Poppins-Bold.ttf") format("truetype");
 }
 
-* {
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.folder {
+  width: 300px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+}
+
+.most-recent-table {
+  width: 950px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+  margin-top: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.previous-entries-text {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.entry {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.folders-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: center;
+  padding: 20px;
+}
+
+.folders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.new-entry-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-entry-form input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  margin: 10px 0;
+  margin-top: 30px;
+}
+
+.new-entry-form button {
+  width: 100%;
+  height: 45px;
+  background: black;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+}
+
+.toggle-entries-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #007bff;
+  margin-left: 10px;
+}
+
+.user-diaries-heading {
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+.user-diaries {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0;
+  margin-top: 20px;
+}
+
+.user-diary-list {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.user-diary {
+  width: 300px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.most-recent-table-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.work {
+  background-image: url("/WorkDiaryBackground.jpg");
+}
+
+.travel {
+  background-image: url("/TravelDiaryBackground.jpg");
+}
+
+.food {
+  background-image: url("/FoodDiaryBackground.jpg");
 }

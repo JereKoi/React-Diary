@@ -46,7 +46,7 @@ const NavBar = () => {
           <button
             className="write-btn"
             type="Write"
-            onClick={() => navigate("/DiaryWritePage")}
+            onClick={() => navigate("/DiaryQuillPage")}
           >
             Write
           </button>
