@@ -13,9 +13,9 @@ const DiaryWritePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const userDiaries = [
-    { id: 1, name: "Work Diary", className: "work" },
-    { id: 2, name: "Travel Diary", className: "travel" },
-    { id: 3, name: "Food Diary", className: "food" },
+    { id: 1, name: "Work Diary", type: "work" },
+    { id: 2, name: "Travel Diary", type: "travel" },
+    { id: 3, name: "Food Diary", type: "food" },
   ];
 
   const folders = [
@@ -136,7 +136,7 @@ const DiaryWritePage = () => {
       <div className="user-diaries">
         <div className="user-diary-list">
           {userDiaries.map((diary) => (
-            <div key={diary.id} className="user-diary">
+            <div key={diary.id} className={`user-diary ${diary.type}`}>
               <p>{diary.name}</p>
             </div>
           ))}

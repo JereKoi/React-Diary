@@ -172,6 +172,25 @@ body {
   justify-content: center;
 }
 
+.user-diary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.user-diary p {
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
 .most-recent-table-heading {
   display: flex;
   justify-content: center;
@@ -181,12 +200,18 @@ body {
 
 .work {
   background-image: url("/WorkDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .travel {
   background-image: url("/TravelDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .food {
   background-image: url("/FoodDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
 }
