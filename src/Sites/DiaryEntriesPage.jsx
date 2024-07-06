@@ -1,6 +1,6 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
 import Navbar from "./Components/NavBar";
@@ -11,12 +11,22 @@ const DiaryWritePage = () => {
   const [showEntries, setShowEntries] = useState(true);
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
+  const [mostRecentDiary, setMostRecentDiary] = useState(null);
 
-  const userDiaries = [
-    { id: 1, name: "Work Diary", type: "work" },
-    { id: 2, name: "Travel Diary", type: "travel" },
-    { id: 3, name: "Food Diary", type: "food" },
-  ];
+  const userDiaries = useMemo(
+    () => [
+      { id: 1, name: "Work Diary", type: "work" },
+      { id: 2, name: "Travel Diary", type: "travel" },
+      { id: 3, name: "Food Diary", type: "food" },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    if (userDiaries && userDiaries.length > 0) {
+      setMostRecentDiary(userDiaries[0]);
+    }
+  }, [userDiaries]);
 
   const folders = [
     {
@@ -117,12 +127,16 @@ const DiaryWritePage = () => {
         />
         <button onClick={handleCreateEntry}>Create a new diary</button>
       </div>
-      <h2 className="user-diaries-heading">Most recent diary</h2>
-      <div className="most-recent-table">
-        <div className="most-recent-table-heading">
-          <p>What you have been writing to most recently.</p>
+      <h2 className="user-diaries-heading">
+        What you have been writing to most recently.
+      </h2>
+      {mostRecentDiary && (
+        <div className="most-recent-table">
+          <div className="most-recent-table-heading">
+            <p>{mostRecentDiary.name}</p>
+          </div>
         </div>
-      </div>
+      )}
       <form onSubmit={handleSubmit}>
         <input
           type="text"

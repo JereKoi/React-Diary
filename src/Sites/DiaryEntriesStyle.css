@@ -59,7 +59,28 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
+  background-image: url("/WorkDiaryBackground.jpg");
+  background-position: center;
   display: flex;
+}
+
+.most-recent-table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.most-recent-table-heading {
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
 }
 
 .previous-entries-text {
@@ -189,13 +210,6 @@ body {
   padding: 10px;
   border-radius: 10px;
   z-index: 1;
-}
-
-.most-recent-table-heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }
 
 .work {
