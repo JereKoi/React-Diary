@@ -16,6 +16,8 @@
   src: local("Poppins"), url("/src/fonts/Poppins-Bold.ttf") format("truetype");
 }
 
+@import "~react-datepicker/dist/react-datepicker.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -30,10 +32,5 @@
   backdrop-filter: blur(20px);
   z-index: 100;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.most-recent-written-header {
-}
-
-.most-recent-table-written-heading {
+  margin-bottom: 300px;
 }

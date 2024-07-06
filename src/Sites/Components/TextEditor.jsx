@@ -6,7 +6,7 @@ import "react-quill/dist/quill.snow.css";
 import io from "socket.io-client";
 import "./TextEditor.css";
 
-const TextEditor = () => {
+const TextEditor = ({ selectedDate }) => {
   const [value, setValue] = useState(""); // State for the editor content
   const [isSaving, setIsSaving] = useState(false); // State to indicate if the content is being saved
   const [saveStatus, setSaveStatus] = useState("Saved"); // State for the save status message
@@ -138,6 +138,7 @@ const TextEditor = () => {
 
   return (
     <div>
+      <h3>Diary entry for {selectedDate.toDateString()}</h3>
       <div className="diary-text-editor">
         <ReactQuill
           theme="snow"

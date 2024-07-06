@@ -62,6 +62,11 @@ body {
   background-image: url("/WorkDiaryBackground.jpg");
   background-position: center;
   display: flex;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
+}
+
+.most-recent-table:hover {
+  transform: scale(1.1);
 }
 
 .most-recent-table::before {
@@ -191,6 +196,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
+}
+
+.user-diary:hover {
+  transform: scale(1.1);
 }
 
 .user-diary::before {
@@ -228,4 +238,104 @@ body {
   background-image: url("/FoodDiaryBackground.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.most-recent-written-header {
+  text-align: center;
+}
+
+.most-recent-table-written-heading {
+  justify-content: center;
+  align-items: center;
+}
+
+.most-recent-table {
+  margin-bottom: 100px;
+}
+
+.date-picker-container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.date-picker-container label {
+  margin-bottom: 5px;
+}
+
+.react-datepicker-wrapper {
+  width: 50%;
+}
+
+.react-datepicker__input-container {
+  width: 50%;
+}
+
+.react-datepicker__input-container input {
+  width: 50%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 50%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.new-diary-title-input,
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.new-entry-form button,
+.search-button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.new-entry-form button:hover,
+.search-button:hover {
+  background-color: black;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-form input {
+  flex: 1;
+  margin-right: 10px;
 }

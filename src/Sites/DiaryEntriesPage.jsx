@@ -137,14 +137,17 @@ const DiaryWritePage = () => {
           </div>
         </div>
       )}
-      <form onSubmit={handleSubmit}>
+      <form className="search-form" onSubmit={handleSubmit}>
         <input
+          className="search-input"
           type="text"
           value={searchTerm}
           onChange={handleChange}
           placeholder="Search entries..."
         />
-        <button type="submit">Search</button>
+        <button className="search-button" type="submit">
+          Search
+        </button>
       </form>
       <h2 className="user-diaries-heading">Your Diaries</h2>
       <div className="user-diaries">
