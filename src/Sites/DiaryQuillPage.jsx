@@ -42,7 +42,13 @@ const DiaryQuillPage = () => {
       <h2 className="most-recent-written-header">
         What you have been writing to most recently.
       </h2>
-
+      <div className="most-recent-table">
+        {mostRecentDiary && (
+          <div className="most-recent-table-heading">
+            <p>{mostRecentDiary.name}</p>
+          </div>
+        )}
+      </div>
       <div className="date-picker-container">
         <label htmlFor="diary-date-picker">
           Select date for your diary entry:
@@ -55,18 +61,6 @@ const DiaryQuillPage = () => {
           maxDate={new Date()} // Prevent future dates from being selectable
         />
       </div>
-      <form className="search-form" onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          placeholder="Search entries..."
-          className="search-input"
-        />
-        <button type="submit" className="search-button">
-          Search
-        </button>
-      </form>
       <div className="TextEditorApp">
         <TextEditor selectedDate={selectedDate} />
       </div>

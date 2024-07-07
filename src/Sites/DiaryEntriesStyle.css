@@ -323,11 +323,6 @@ body {
   font-size: 16px;
 }
 
-.new-entry-form button:hover,
-.search-button:hover {
-  background-color: black;
-}
-
 .search-form {
   display: flex;
   justify-content: center;
