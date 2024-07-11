@@ -6,7 +6,7 @@ import Folder from "./Components/Folder";
 import Navbar from "./Components/NavBar";
 import "./DiaryEntriesStyle.css";
 
-const DiaryWritePage = () => {
+const DiaryEntriesPage = () => {
   const [newTitle, setNewTitle] = useState("");
   const [showEntries, setShowEntries] = useState(true);
   const navigate = useNavigate();
@@ -183,4 +183,4 @@ const DiaryWritePage = () => {
   );
 };
 
-export default DiaryWritePage;
+export default DiaryEntriesPage;
