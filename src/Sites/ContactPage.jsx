@@ -36,9 +36,10 @@ const ContactPage = () => {
           <h3>Contact Us</h3>
         </div>
         <form onSubmit={handleSubmit} className="contactForm">
-          <div className="formGroup">
-            <label htmlFor="name">Name:</label>
+          <div >
+            <label className="name" htmlFor="name">Name:</label>
             <input
+              className="nameInput"
               type="text"
               id="name"
               name="name"
@@ -47,9 +48,10 @@ const ContactPage = () => {
               required
             />
           </div>
-          <div className="formGroup">
-            <label htmlFor="email">Email:</label>
+          <div>
+            <label className="email" htmlFor="email">Email:</label>
             <input
+              className="emailInput"
               type="email"
               id="email"
               name="email"
@@ -58,9 +60,10 @@ const ContactPage = () => {
               required
             />
           </div>
-          <div className="formGroup">
-            <label htmlFor="subject">Subject:</label>
+          <div>
+            <label className="subject" htmlFor="subject">Subject:</label>
             <input
+              className="subjectInput"
               type="text"
               id="subject"
               name="subject"
@@ -69,9 +72,10 @@ const ContactPage = () => {
               required
             />
           </div>
-          <div className="formGroup">
-            <label htmlFor="message">Message:</label>
+          <div>
+            <label className="message" htmlFor="message">Message:</label>
             <textarea
+              className="messageInput"
               id="message"
               name="message"
               value={formData.message}

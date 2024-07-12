@@ -281,6 +281,7 @@ body {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  align-items: center;
 }
 
 .search-input {
@@ -290,26 +291,18 @@ body {
   border: 1px solid #ccc;
   font-size: 16px;
   margin-right: 10px;
+  width: auto;
+  height: auto;
 }
 
 .search-button {
-  padding: 8px 16px;
-  border-radius: 4px;
   background-color: black;
   color: white;
   border: none;
   cursor: pointer;
   font-size: 16px;
-}
-
-.new-diary-title-input,
-.search-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  width: auto;
+  height: auto;
 }
 
 .new-entry-form button,
