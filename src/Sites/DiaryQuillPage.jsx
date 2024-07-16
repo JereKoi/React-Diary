@@ -34,6 +34,10 @@ const DiaryQuillPage = () => {
     // Add search logic here
   };
 
+  const handleDiaryClick = (diary) => {
+    setMostRecentDiary(diary);
+  };
+
   return (
     <div>
       <div className="navBar">
@@ -48,6 +52,17 @@ const DiaryQuillPage = () => {
             <p>{mostRecentDiary.name}</p>
           </div>
         )}
+      </div>
+      <div className="diary-buttons-container">
+        {userDiaries.map((diary) => (
+          <button
+            key={diary.id}
+            onClick={() => handleDiaryClick(diary)}
+            className="diary-button"
+          >
+            {diary.name}
+          </button>
+        ))}
       </div>
       <div className="date-picker-container">
         <label htmlFor="diary-date-picker">

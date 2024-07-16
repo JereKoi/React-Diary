@@ -10,6 +10,7 @@ import ForgotForm from "./Sites/ForgotForm";
 import HomePage from "./Sites/HomePage";
 import LoginScreen from "./Sites/LoginScreen";
 import StartingScreen from "./Sites/StartingScreen";
+import TemplateDayPage from "./Sites/TemplateDayPage";
 
 function App() {
   const location = useLocation();
@@ -26,6 +27,7 @@ function App() {
         <Route path="/ContactPage" element={<ContactPage />} />
         <Route path="/DiaryEntriesPage" element={<DiaryEntriesPage />} />
         <Route path="/DiaryWritePage" element={<DiaryWritePage />} />
+        <Route path="/TemplateDayPage" element={<TemplateDayPage/>} />
       </Routes>
     </AnimatePresence>
   );
