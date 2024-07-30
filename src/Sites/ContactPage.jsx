@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Components/NavBar";
 import "./ContactStyle.css";
@@ -11,6 +11,22 @@ const ContactPage = () => {
     subject: "",
     message: "",
   });
+
+  const messageInputRef = useRef(null);
+
+  useEffect(() => {
+    const messageInput = messageInputRef.current;
+    const handleInput = () => {
+      messageInput.style.height = 'auto';
+      messageInput.style.height = `${messageInput.scrollHeight}px`;
+    };
+
+    messageInput.addEventListener('input', handleInput);
+
+    return () => {
+      messageInput.removeEventListener('input', handleInput);
+    };
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +52,7 @@ const ContactPage = () => {
           <h3>Contact Us</h3>
         </div>
         <form onSubmit={handleSubmit} className="contactForm">
-          <div >
+          <div>
             <label className="name" htmlFor="name">Name:</label>
             <input
               className="nameInput"
@@ -80,6 +96,7 @@ const ContactPage = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
+              ref={messageInputRef}
               required
             />
           </div>

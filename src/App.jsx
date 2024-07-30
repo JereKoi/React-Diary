@@ -9,6 +9,7 @@ import DiaryWritePage from "./Sites/DiaryWritePage";
 import ForgotForm from "./Sites/ForgotForm";
 import HomePage from "./Sites/HomePage";
 import LoginScreen from "./Sites/LoginScreen";
+import MoreDiariesPage from "./Sites/MoreDiariesPage";
 import StartingScreen from "./Sites/StartingScreen";
 import TemplateDayPage from "./Sites/TemplateDayPage";
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/DiaryEntriesPage" element={<DiaryEntriesPage />} />
         <Route path="/DiaryWritePage" element={<DiaryWritePage />} />
         <Route path="/TemplateDayPage" element={<TemplateDayPage/>} />
+        <Route path="/MoreDiariesPage" element={<MoreDiariesPage />} />
       </Routes>
     </AnimatePresence>
   );

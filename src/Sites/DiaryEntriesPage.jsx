@@ -150,6 +150,9 @@ const DiaryEntriesPage = () => {
         </button>
       </form>
       <h2 className="user-diaries-heading">Your Diaries</h2>
+      <button className="see-all-button" onClick={() => navigate('/MoreDiariesPage')}>
+        See All
+      </button>
       <div className="user-diaries">
         <div className="user-diary-list">
           {userDiaries.map((diary) => (

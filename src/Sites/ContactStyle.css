@@ -1,7 +1,9 @@
 .contactFormContainer {
   position: relative;
   width: 400px;
+  min-width: 400px;
   height: auto;
+  min-height: 400px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -9,6 +11,9 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   overflow: hidden;
   transition: height 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
 }
 
 .contactFormHeader {
@@ -51,6 +56,34 @@
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   margin: 30px 0;
+  padding: 10px;
+}
+
+.messageInput {
+  resize: none;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+
+.messageInput::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messageInput::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+
+.messageInput::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  padding: 2px;
+  margin-right: 50px;
 }
 
 .formGroup input,
@@ -60,8 +93,10 @@
   box-sizing: border-box;
 }
 
+
+/* TODO: FIX STYLING OF THE SUBMIT BUTTON */
 .submit-btn {
-  width: 100%;
+  width: 150%;
   height: 45px;
   background: black;
   border: none;

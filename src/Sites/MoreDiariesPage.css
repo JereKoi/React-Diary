@@ -1,0 +1,15 @@
+.more-diaries-container {
+    padding: 20px;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .folders-grid {
+    display: flex;
+  }
