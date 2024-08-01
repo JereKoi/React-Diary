@@ -59,7 +59,7 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
-  background-image: url("/WorkDiaryBackground.jpg");
+  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
   background-position: center;
   display: flex;
   transition: 0.2s, background-color 0.2s, padding 0.3s;
@@ -223,19 +223,19 @@ body {
 }
 
 .work {
-  background-image: url("/WorkDiaryBackground.jpg");
+  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .travel {
-  background-image: url("/TravelDiaryBackground.jpg");
+  background-image: url("../../Pictures/TravelDiaryBackground.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .food {
-  background-image: url("/FoodDiaryBackground.jpg");
+  background-image: url("../../Pictures/FoodDiaryBackground.jpg");
   background-size: cover;
   background-position: center;
 }
