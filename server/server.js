@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
-require("../config/db");
+require("./config/db");
 const http = require("http");
 const socketIo = require("socket.io");
 

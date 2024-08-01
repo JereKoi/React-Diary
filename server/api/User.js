@@ -3,10 +3,10 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 
 // mongoDB user model
-const User = require("../../models/User");
+const User = require("../models/User");
 
 // mongoDB user verification model
-const UserVerification = require("../../models/UserVerification");
+const UserVerification = require("../models/UserVerification");
 
 // email handler
 const nodemailer = require("nodemailer");
