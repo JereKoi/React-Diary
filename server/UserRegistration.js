@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const { v4: uuidv4 } = require("uuid");
 const User = require("../models/User");
@@ -19,27 +18,15 @@ const transporter = nodemailer.createTransport({
 
 // User registration route
 router.post("/signup", async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, consent } = req.body;
 
-  if (!name || !email || !password) {
-    return res.status(400).json({ message: "All fields are required" });
-  }
-
-  if (!/^[a-zA-Z ]*$/.test(name)) {
-    return res.status(400).json({ message: "Invalid name" });
-  }
-
-  if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-    return res.status(400).json({ message: "Invalid email" });
-  }
-
-  if (password.length < 8) {
-    return res.status(400).json({ message: "Password must be at least 8 characters" });
+  if (!name || !email || !password || !consent) {
+    return res.status(400).json({ message: "All fields are required and consent must be given" });
   }
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ name, email, password: hashedPassword });
+    const newUser = new User({ name, email, password: hashedPassword, isVerified: false });
     await newUser.save();
 
     const verificationToken = uuidv4();
