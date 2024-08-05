@@ -30,6 +30,8 @@ function App() {
         <Route path="/DiaryWritePage" element={<DiaryWritePage />} />
         <Route path="/TemplateDayPage" element={<TemplateDayPage/>} />
         <Route path="/MoreDiariesPage" element={<MoreDiariesPage />} />
+        <Route path="/forgot-password" element={<ForgotForm />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
       </Routes>
     </AnimatePresence>
   );
