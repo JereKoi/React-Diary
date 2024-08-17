@@ -40,7 +40,7 @@ const LoginScreen = () => {
       );
 
       if (response.status === 200) {
-        navigate("/dashboard"); // Navigate to a protected route
+        navigate("/DashboardPage"); // Navigate to a protected route
       } else {
         setLoginError(response.data.message);
       }
