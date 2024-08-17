@@ -3,6 +3,7 @@ import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import AboutPage from "./Sites/AboutPage";
 import ContactPage from "./Sites/ContactPage";
+import DashboardPage from "./Sites/DashboardPage";
 import DiaryEntriesPage from "./Sites/DiaryEntriesPage";
 import DiaryQuillPage from "./Sites/DiaryQuillPage";
 import DiaryWritePage from "./Sites/DiaryWritePage";
@@ -10,6 +11,7 @@ import ForgotForm from "./Sites/ForgotForm";
 import HomePage from "./Sites/HomePage";
 import LoginScreen from "./Sites/LoginScreen";
 import MoreDiariesPage from "./Sites/MoreDiariesPage";
+import ResetPasswordPage from "./Sites/ResetPasswordPage";
 import StartingScreen from "./Sites/StartingScreen";
 import TemplateDayPage from "./Sites/TemplateDayPage";
 
@@ -31,7 +33,11 @@ function App() {
         <Route path="/TemplateDayPage" element={<TemplateDayPage/>} />
         <Route path="/MoreDiariesPage" element={<MoreDiariesPage />} />
         <Route path="/forgot-password" element={<ForgotForm />} />
-        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
+        <Route path="/verify/:token" element={<LoginScreen />} />
+        <Route path="/verify" element={<LoginScreen />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </AnimatePresence>
   );
