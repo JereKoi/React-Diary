@@ -12,6 +12,7 @@ import LoginScreen from "./Sites/LoginScreen";
 import MoreDiariesPage from "./Sites/MoreDiariesPage";
 import ResetPasswordForm from "./Sites/ResetPasswordForm";
 import ResetPasswordPage from "./Sites/ResetPasswordPage";
+import ResetPasswordSendEmail from "./Sites/ResetPasswordSendEmail";
 import StartingScreen from "./Sites/StartingScreen";
 import TemplateDayPage from "./Sites/TemplateDayPage";
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/verify/:token" element={<LoginScreen />} />
         <Route path="/verify" element={<LoginScreen />} />
+        <Route path="/ResetPasswordSendEmail" element={<ResetPasswordSendEmail />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </AnimatePresence>

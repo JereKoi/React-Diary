@@ -90,20 +90,6 @@ const ResetPasswordForm = () => {
         <h2>Forgot Password</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={setNewPassword}>
-          <div className="input-box">
-            <span className="icon">
-              <i className="bx bxs-envelope"></i>
-            </span>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              aria-label="Email"
-            />
-          </div>
 
           <div className="input-box">
             <span className="icon">
