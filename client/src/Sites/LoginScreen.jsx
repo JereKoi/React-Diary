@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import config from "../config.json";
 import "./LoginScreenStyle.css";
 
 const LoginScreen = () => {
@@ -91,7 +90,7 @@ const LoginScreen = () => {
     setLoadingRegister(true);
     try {
       const response = await axios.post(
-        `${config.backendUrl}/user/signup`,
+        `${process.env.REACT_APP_BACKEND_URL}/user/signup`,
         registerFormData
       );
 
@@ -150,7 +149,7 @@ const LoginScreen = () => {
               <button
                 className="forgot-link"
                 type="button"
-                onClick={() => navigate("/ResetPasswordForm")}
+                onClick={() => navigate("/ResetPasswordSendEmail")}
               >
                 Forgot password?
               </button>

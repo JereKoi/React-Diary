@@ -1,0 +1,69 @@
+.nav-header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+  }
+  
+  .nav-bar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+  }
+  
+  /* Flexbox container for buttons */
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex: 1;
+  }
+  
+  /* Common button styles */
+  button.home-btn,
+  button.write-btn,
+  button.entries-btn,
+  button.about-btn,
+  button.contact-btn,
+  button.logout-btn {
+    background: none;
+    color: black;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s, background-color 0.2s, padding 0.3s;
+  }
+  
+  /* Hover styles for buttons */
+  button.home-btn:hover,
+  button.write-btn:hover,
+  button.entries-btn:hover,
+  button.about-btn:hover,
+  button.contact-btn:hover,
+  button.logout-btn:hover {
+    transform: scale(1.2);
+    background-color: rgb(241, 216, 184);
+    border-radius: 2cm;
+    padding: 10px 10px;
+  }
+  
+  /* User info container */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  

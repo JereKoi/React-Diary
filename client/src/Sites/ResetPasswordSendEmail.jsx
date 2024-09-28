@@ -1,6 +1,7 @@
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./ResetPasswordFormStyle.css";
+import "./ResetPasswordSendEmailStyle.css";
 
 const ResetPasswordForm = () => {
   const { token } = useParams();
@@ -18,22 +19,41 @@ const ResetPasswordForm = () => {
     }));
   };
 
+  const setNewEmail = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/user/reset-password/${token}`,
+        { email: formData.email }
+      );
+      console.log(response.data);
+      navigate("/LoginScreen");
+    } catch (error) {
+      setError(error.response?.data?.message || "An error occurred");
+      console.error(error.response?.data);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="wrapperForgot">
-      <div className="form-box login">
+    <div className="wrapperReset">
+      <div className="form-box reset">
         <h2>Reset password</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={setNewEmail}>
-
           <div className="input-box">
             <span className="icon">
-              <i className="bx bxs-lock-alt"></i>
+              <i className="bx bxs-envelope"></i>
             </span>
             <input
               type="email"
               name="email"
               placeholder="Email"
-              value={formData.newEmail}
+              value={formData.email}
               onChange={handleChange}
               required
               aria-label="Email"
@@ -41,7 +61,7 @@ const ResetPasswordForm = () => {
           </div>
 
           <button type="submit" className="set-btn" disabled={loading}>
-            {loading ? "Sending..." : ""}
+            {loading ? "Sending..." : "Send Reset link"}
           </button>
           <div className="login">
             <p>

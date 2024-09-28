@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Components/NavBar";
+import Navbar from "./Components/NavBarLoggedOff";
 import "./HomePageStyle.css";
 
 const ContactPage = () => {
@@ -8,8 +8,7 @@ const ContactPage = () => {
     <div>
       <div>
         <h1>
-          Motivational quotes, reactive ways for user to interact, gamefied
-          achievements...
+          Write your own story.
         </h1>
       </div>
       <div className="navBar">

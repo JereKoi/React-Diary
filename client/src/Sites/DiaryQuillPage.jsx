@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import DatePicker from "react-datepicker";
-import Navbar from "./Components/NavBar";
+import Navbar from "./Components/NavBarLoggedIn";
 import TextEditor from "./Components/TextEditor";
 import "./DiaryQuillPageStyle.css";
 

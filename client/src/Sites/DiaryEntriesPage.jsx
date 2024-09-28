@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
-import Navbar from "./Components/NavBar";
+import Navbar from "./Components/NavBarLoggedIn";
 import "./DiaryEntriesStyle.css";
 
 const DiaryEntriesPage = () => {

@@ -86,7 +86,7 @@ const ResetPasswordForm = () => {
 
   return (
     <div className="wrapperForgot">
-      <div className="form-box login">
+      <div className="form-box reset">
         <h2>Forgot Password</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={setNewPassword}>

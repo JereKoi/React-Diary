@@ -13,7 +13,6 @@ import MoreDiariesPage from "./Sites/MoreDiariesPage";
 import ResetPasswordForm from "./Sites/ResetPasswordForm";
 import ResetPasswordPage from "./Sites/ResetPasswordPage";
 import ResetPasswordSendEmail from "./Sites/ResetPasswordSendEmail";
-import StartingScreen from "./Sites/StartingScreen";
 import TemplateDayPage from "./Sites/TemplateDayPage";
 
 function App() {
@@ -22,7 +21,7 @@ function App() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<StartingScreen />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/Loginscreen" element={<LoginScreen />} />
         <Route path="/ResetPasswordForm" element={<ResetPasswordForm />} />
         <Route path="/DiaryQuillPage" element={<DiaryQuillPage />} />

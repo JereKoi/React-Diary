@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./AboutPageStyle.css";
-import Navbar from "./Components/NavBar";
+import Navbar from "./Components/NavBarLoggedIn";
 
 const ContactPage = () => {
   const navigate = useNavigate();

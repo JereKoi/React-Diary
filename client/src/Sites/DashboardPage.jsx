@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Components/NavBar";
+import Navbar from "./Components/NavBarLoggedIn";
 import "./DashboardStyle.css";
 
 const ContactPage = () => {
