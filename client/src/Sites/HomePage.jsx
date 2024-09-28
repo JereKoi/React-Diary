@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedOff";
 import "./HomePageStyle.css";
 
@@ -13,6 +14,9 @@ const ContactPage = () => {
       </div>
       <div className="navBar">
         <Navbar />
+      </div>
+      <div className="Footer">
+        <Footer />
       </div>
     </div>
   );

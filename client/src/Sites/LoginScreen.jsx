@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Components/Footer";
 import "./LoginScreenStyle.css";
 
 const LoginScreen = () => {
@@ -244,6 +245,9 @@ const LoginScreen = () => {
             </p>
           </div>
         </form>
+      </div>
+      <div className="Footer">
+        <Footer />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
 import "./DiaryWriteStyle.css";
 
@@ -8,6 +9,9 @@ const DiaryEntriesPage = () => {
         <Navbar />
       </div>
       <h1>Diary write page. Search by specific word or title</h1>
+      <div className="Footer">
+        <Footer />
+      </div>
     </div>
   );
 };

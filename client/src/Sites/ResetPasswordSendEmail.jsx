@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Footer from "./Components/Footer";
 import "./ResetPasswordSendEmailStyle.css";
 
 const ResetPasswordForm = () => {
@@ -76,6 +77,9 @@ const ResetPasswordForm = () => {
             </p>
           </div>
         </form>
+      </div>
+      <div className="Footer">
+        <Footer />
       </div>
     </div>
   );

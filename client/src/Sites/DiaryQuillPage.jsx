@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import DatePicker from "react-datepicker";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
 import TextEditor from "./Components/TextEditor";
 import "./DiaryQuillPageStyle.css";
@@ -78,6 +79,9 @@ const DiaryQuillPage = () => {
       </div>
       <div className="TextEditorApp">
         <TextEditor selectedDate={selectedDate} />
+      </div>
+      <div className="Footer">
+        <Footer />
       </div>
     </div>
   );

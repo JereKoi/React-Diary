@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Components/Footer";
 import "./StartingScreenStyle.css";
 
 const StartingScreen = () => {
@@ -45,6 +46,9 @@ const StartingScreen = () => {
             <h6>Press any key or click to continue...</h6>
           </div>
         </header>
+      </div>
+      <div className="Footer">
+        <Footer />
       </div>
     </div>
   );

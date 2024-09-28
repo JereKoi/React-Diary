@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
+import Footer from "./Components/Footer";
 import "./MoreDiariesPage.css";
 
 const MoreDiariesPage = () => {
@@ -95,6 +96,9 @@ const MoreDiariesPage = () => {
             entries={folder.entries}
           />
         ))}
+      </div>
+      <div className="Footer">
+        <Footer />
       </div>
     </div>
   );

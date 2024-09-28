@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
 import "./ContactStyle.css";
 
@@ -104,6 +105,9 @@ const ContactPage = () => {
             Submit
           </button>
         </form>
+      </div>
+      <div className="Footer">
+        <Footer />
       </div>
     </div>
   );

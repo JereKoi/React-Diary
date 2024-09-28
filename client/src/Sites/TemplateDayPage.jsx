@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
 import "./TemplateDayStyle.css";
 
@@ -26,6 +27,9 @@ const TemplateDayPage = () => {
             Here comes the content of clicked diary from the date written.
           </h1>
         </div>
+      </div>
+      <div className="Footer">
+        <Footer />
       </div>
     </div>
   );

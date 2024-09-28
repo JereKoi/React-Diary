@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./AboutPageStyle.css";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
 
 const ContactPage = () => {
@@ -10,6 +11,9 @@ const ContactPage = () => {
         <Navbar />
       </div>
       <h1>About page.</h1>
+      <div className="Footer">
+        <Footer />
+      </div>
     </div>
   );
 };

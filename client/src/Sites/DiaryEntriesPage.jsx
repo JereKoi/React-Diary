@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
 import "./DiaryEntriesStyle.css";
 
@@ -182,6 +183,9 @@ const DiaryEntriesPage = () => {
           </div>
         </>
       )}
+      <div className="Footer">
+        <Footer />
+      </div>
     </div>
   );
 };
