@@ -150,7 +150,7 @@ const LoginScreen = () => {
               <button
                 className="forgot-link"
                 type="button"
-                onClick={() => navigate("/ForgotForm")}
+                onClick={() => navigate("/ResetPasswordForm")}
               >
                 Forgot password?
               </button>

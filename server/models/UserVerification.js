@@ -1,17 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const User = require('../models/User'); // Assuming you have a User model
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
 // Forgot password route
 router.post('/forgot-password', async (req, res) => {
-  const { email } = req.body;
+  const { email, newPassword } = req.body;
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ message: 'User not found' });
+      return res.status(404).json({ message: 'User not found' });
     }
 
     const token = crypto.randomBytes(20).toString('hex');

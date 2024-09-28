@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import config from "../config.json";
-import "./ForgotFormStyle.css";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import "./ResetPasswordFormStyle.css";
 
-const ForgotForm = () => {
+const ResetPasswordForm = () => {
+  const { token } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -14,19 +14,34 @@ const ForgotForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    let isMounted = true;
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
   const handleChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    setError(null);
+
+    if (formData.newPassword !== formData.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/reset-password/${token}`, {
+        newPassword: formData.newPassword,
+      });
+      navigate('/LoginScreen');
+    } catch (error) {
+      setError(error.response?.data?.message || "An error occurred");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const validatePassword = (password) => {
@@ -56,7 +71,7 @@ const ForgotForm = () => {
 
     try {
       const response = await axios.post(
-        `${config.backendUrl}/user/reset-password`,
+        `${process.env.REACT_APP_BACKEND_URL}/user/reset-password`,
         formData
       );
       console.log(response.data);
@@ -141,4 +156,4 @@ const ForgotForm = () => {
   );
 };
 
-export default ForgotForm;
+export default ResetPasswordForm;

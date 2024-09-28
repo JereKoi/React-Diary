@@ -7,10 +7,10 @@ import DashboardPage from "./Sites/DashboardPage";
 import DiaryEntriesPage from "./Sites/DiaryEntriesPage";
 import DiaryQuillPage from "./Sites/DiaryQuillPage";
 import DiaryWritePage from "./Sites/DiaryWritePage";
-import ForgotForm from "./Sites/ForgotForm";
 import HomePage from "./Sites/HomePage";
 import LoginScreen from "./Sites/LoginScreen";
 import MoreDiariesPage from "./Sites/MoreDiariesPage";
+import ResetPasswordForm from "./Sites/ResetPasswordForm";
 import ResetPasswordPage from "./Sites/ResetPasswordPage";
 import StartingScreen from "./Sites/StartingScreen";
 import TemplateDayPage from "./Sites/TemplateDayPage";
@@ -23,7 +23,7 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<StartingScreen />} />
         <Route path="/Loginscreen" element={<LoginScreen />} />
-        <Route path="/ForgotForm" element={<ForgotForm />} />
+        <Route path="/ResetPasswordForm" element={<ResetPasswordForm />} />
         <Route path="/DiaryQuillPage" element={<DiaryQuillPage />} />
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/AboutPage" element={<AboutPage />} />
@@ -32,7 +32,7 @@ function App() {
         <Route path="/DiaryWritePage" element={<DiaryWritePage />} />
         <Route path="/TemplateDayPage" element={<TemplateDayPage/>} />
         <Route path="/MoreDiariesPage" element={<MoreDiariesPage />} />
-        <Route path="/forgot-password" element={<ForgotForm />} />
+        <Route path="/forgot-password" element={<ResetPasswordForm />} />
         <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/verify/:token" element={<LoginScreen />} />
