@@ -3,9 +3,9 @@
     width: 100%;
     height: auto;
     background-color: transparent;
-  }
-  
-  .nav-bar {
+}
+
+.nav-bar {
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -14,56 +14,64 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-  }
-  
-  /* Flexbox container for buttons */
-  .nav-buttons {
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.nav-bar:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Flexbox container for buttons */
+.nav-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     flex: 1;
-  }
-  
-  /* Common button styles */
-  button.home-btn,
-  button.write-btn,
-  button.entries-btn,
-  button.about-btn,
-  button.contact-btn,
-  button.logout-btn {
+}
+
+/* Common button styles */
+button.home-btn,
+button.write-btn,
+button.entries-btn,
+button.about-btn,
+button.contact-btn,
+button.logout-btn {
     background: none;
-    color: black;
+    color: #333;
     border: none;
-    padding: 0;
+    padding: 10px 20px;
     font: inherit;
     cursor: pointer;
     text-decoration: none;
-    transition: 0.2s, background-color 0.2s, padding 0.3s;
-  }
-  
-  /* Hover styles for buttons */
-  button.home-btn:hover,
-  button.write-btn:hover,
-  button.entries-btn:hover,
-  button.about-btn:hover,
-  button.contact-btn:hover,
-  button.logout-btn:hover {
-    transform: scale(1.2);
-    background-color: rgb(241, 216, 184);
-    border-radius: 2cm;
-    padding: 10px 10px;
-  }
-  
-  /* User info container */
-  .user-info {
+    transition: transform 0.2s, background-color 0.2s, padding 0.3s;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hover styles for buttons */
+button.home-btn:hover,
+button.write-btn:hover,
+button.entries-btn:hover,
+button.about-btn:hover,
+button.contact-btn:hover,
+button.logout-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(241, 216, 184, 0.8);
+    padding: 12px 22px;
+}
+
+/* User info container */
+.user-info {
     display: flex;
     align-items: center;
-    gap: 10px;
-  }
-  
+    gap: 15px;
+}
