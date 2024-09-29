@@ -7,15 +7,19 @@ body, html {
     background: linear-gradient(135deg, #1c3a94, #1b0045);
     color: #fff;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Container for the homepage */
 .home-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width: 100%;
 }
 
 /* Navbar positioning */
@@ -24,6 +28,8 @@ body, html {
     position: fixed;
     top: 0;
     z-index: 10;
+    display: flex;
+    justify-content: center;
 }
 
 /* Footer positioning */
@@ -31,6 +37,8 @@ body, html {
     width: 100%;
     position: relative;
     bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 
 /* Diamond-shaped content box */
@@ -40,6 +48,8 @@ body, html {
     align-items: center;
     height: 70vh;
     position: relative;
+    margin-top: 100px; /* Add margin to create space above */
+    margin-bottom: 100px; /* Add margin to create space below */
 }
 
 .diamond-content {
@@ -51,11 +61,30 @@ body, html {
     width: 500px;
     border-radius: 10px;
     transform: rotate(45deg);
+    transform-origin: center;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.diamond-content h1, .diamond-content p, .cta-button {
+.diamond-content h1 {
     transform: rotate(-45deg);
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.diamond-content p {
+    transform: rotate(-45deg);
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.cta-button{
+    transform: rotate(-45deg);
+    margin-top: 50px;
+    margin-left: 50px;
 }
 
 /* Styles for button */
@@ -69,6 +98,9 @@ body, html {
     margin-top: 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    align-self: center; /* Center the button horizontally */
+    margin-top: 40px;
+    margin-left: 170px;
 }
 
 .cta-button:hover {
