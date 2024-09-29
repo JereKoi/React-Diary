@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./Components/AbstractBackground/AbstractBackgroundStyle.css";
+import AbstractBackground from "./Components/AbstractBackground/AbstractBackground";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedOff";
 import "./HomePageStyle.css";
@@ -12,6 +12,8 @@ const HomePage = () => {
   };
 
   return (
+    <>
+    <AbstractBackground />
     <div className="abstract-background">
       <div className="home-container">
         <div className="navBar">
@@ -36,6 +38,7 @@ const HomePage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
