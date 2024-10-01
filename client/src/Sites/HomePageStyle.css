@@ -61,7 +61,6 @@ body, html {
     height: 500px;
     width: 500px;
     border-radius: 10px;
-    transform: rotate(45deg);
     transform-origin: center;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -70,22 +69,8 @@ body, html {
     flex-direction: column;
 }
 
-.diamond-content h1 {
-    transform: rotate(-45deg);
+.diamond-content h1, .diamond-content p, .cta-button {
     margin-top: 100px;
-    margin-left: -100px;
-}
-
-.diamond-content p {
-    transform: rotate(-45deg);
-    margin-top: 0px;
-    margin-left: 80px;
-}
-
-.cta-button{
-    transform: rotate(-45deg);
-    margin-top: 50px;
-    margin-left: 50px;
 }
 
 /* Styles for button */
@@ -100,8 +85,6 @@ body, html {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     align-self: center; /* Center the button horizontally */
-    margin-top: 40px;
-    margin-left: 170px;
 }
 
 .cta-button:hover {

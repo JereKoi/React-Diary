@@ -3,7 +3,9 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
 import "./DashboardStyle.css";
 
-const ContactPage = () => {
+//This dashboard should include cool three elements user can select to go to different pages. They have to be styled in a way that they are easy to see and click on. Animation is important and stylish.
+
+const DashboardPage = () => {
   const navigate = useNavigate();
   return (
     <div>
@@ -22,4 +24,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default DashboardPage;
