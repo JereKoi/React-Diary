@@ -18,14 +18,9 @@
 
 @import "~react-datepicker/dist/react-datepicker.css";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
 .TextEditorApp {
+  width: 100vw; /* Use full viewport width */
+  margin: 0 auto; /* Center content if needed */
   background-color: transparent;
   justify-content: center;
   align-items: center;
@@ -36,5 +31,23 @@
 }
 
 .most-recent-written-header {
-  margin-top: 50px;
+  margin-top: 150px;
+}
+
+.Footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navbar positioning */
+.navBar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
 }

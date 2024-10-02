@@ -21,11 +21,16 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  margin: 0 auto;
 }
 
 .content {
   flex: 1;
   display: flex;
+  width: 100vw;
+  margin: 0 auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -326,4 +331,12 @@ body {
 .search-form input {
   flex: 1;
   margin-right: 10px;
+}
+
+.Footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
 }
