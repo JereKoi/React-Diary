@@ -40,7 +40,7 @@ const DiaryQuillPage = () => {
   };
 
   return (
-    <div>
+    <div className="quillPage">
       <div className="navBar">
         <Navbar />
       </div>

@@ -23,16 +23,6 @@ body, html {
     width: 100%;
 }
 
-/* Navbar positioning */
-.navBar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-}
-
 /* Footer positioning */
 .Footer {
     width: 100%;
@@ -43,7 +33,7 @@ body, html {
 }
 
 /* Diamond-shaped content box */
-.diamond-container {
+.box-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +43,7 @@ body, html {
     margin-bottom: 100px; /* Add margin to create space below */
 }
 
-.diamond-content {
+.box-content {
     background-color: #ffffff;
     color: #333;
     text-align: center;
@@ -69,7 +59,7 @@ body, html {
     flex-direction: column;
 }
 
-.diamond-content h1, .diamond-content p, .cta-button {
+.box-content h1, .box-content p, .cta-button {
     margin-top: 100px;
 }
 

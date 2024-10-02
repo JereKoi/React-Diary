@@ -18,9 +18,20 @@
 
 @import "~react-datepicker/dist/react-datepicker.css";
 
+.quillPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  margin: 0 auto;
+}
+
 .TextEditorApp {
-  width: 100vw; /* Use full viewport width */
-  margin: 0 auto; /* Center content if needed */
+  width: 100vw;
+  margin: 0 auto;
+  max-width: 950px;
   background-color: transparent;
   justify-content: center;
   align-items: center;
@@ -28,6 +39,13 @@
   z-index: 100;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 300px;
+}
+
+.most-recent-table, .diary-buttons-container, .date-picker-container {
+  width: 100vw;
+  margin: 0 auto;
+  max-width: 950px;
+  margin-top: 30px;
 }
 
 .most-recent-written-header {

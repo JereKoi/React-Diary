@@ -20,8 +20,8 @@ const HomePage = () => {
           <Navbar />
         </div>
 
-        <div className="diamond-container">
-          <div className="diamond-content">
+        <div className="box-container">
+          <div className="box-content">
             <h1>Modern way for your diary</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
