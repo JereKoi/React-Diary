@@ -1,7 +1,11 @@
 .contactFormContainer {
   position: relative;
-  width: 400px;
+  width: 100vw;
+  margin: 0 auto;
+  max-width: 300px;
   min-width: 400px;
+  margin-top: 200px;
+  margin-bottom: 200px;
   height: auto;
   min-height: 400px;
   background: transparent;
@@ -14,6 +18,15 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Center align items horizontally */
+}
+
+.contactForm {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .contactFormHeader {
@@ -98,6 +111,8 @@
 .submit-btn {
   width: 150%;
   height: 45px;
+  justify-content: center;
+  align-items: ce;
   background: black;
   border: none;
   outline: none;
@@ -106,4 +121,12 @@
   font-size: 1em;
   color: #fff;
   font-weight: 500;
+}
+
+.Footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
 }
