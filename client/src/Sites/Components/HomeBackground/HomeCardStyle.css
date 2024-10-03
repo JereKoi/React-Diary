@@ -1,0 +1,46 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .card {
+    width: 100px; /* Initially thin */
+    height: 150px;
+    background-color: #007bff;
+    color: white;
+    margin: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .card:hover {
+    width: 300px; /* Expand to the right */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a nice shadow on hover */
+  }
+  
+  .card-content {
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .card:hover .card-content {
+    opacity: 1; /* Reveal content when expanded */
+  }
+  
+  .card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+  

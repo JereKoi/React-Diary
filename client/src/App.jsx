@@ -38,7 +38,7 @@ function App() {
         <Route path="/verify/:token" element={<LoginScreen />} />
         <Route path="/verify" element={<LoginScreen />} />
         <Route path="/ResetPasswordSendEmail" element={<ResetPasswordSendEmail />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/DashboardPage" element={<DashboardPage />} />
       </Routes>
     </AnimatePresence>
   );

@@ -1,22 +1,49 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
+import "./Components/HomeBackground/HomeCardStyle.css"; // Import card styles
 import Navbar from "./Components/NavBarLoggedIn";
 import "./DashboardStyle.css";
 
-//This dashboard should include cool three elements user can select to go to different pages. They have to be styled in a way that they are easy to see and click on. Animation is important and stylish.
-
+// Dashboard with three clickable cards that navigate to different pages
 const DashboardPage = () => {
   const navigate = useNavigate();
+
+  const handleCardClick = (path) => {
+    navigate(path); // Navigate to different pages on card click
+  };
+
   return (
-    <div>
+    <div className="dashboard-container">
       <div>
-        <h1>
-          Dashboard
-        </h1>
+        <h1>Dashboard</h1>
       </div>
       <div className="navBar">
         <Navbar />
       </div>
+
+      {/* Flex container to hold the cards */}
+      <div className="card-container">
+        <div className="card" onClick={() => handleCardClick("/page1")}>
+          <div className="card-content">
+            <h2>Page 1</h2>
+            <p>Go to Page 1</p>
+          </div>
+        </div>
+        <div className="card" onClick={() => handleCardClick("/page2")}>
+          <div className="card-content">
+            <h2>Page 2</h2>
+            <p>Go to Page 2</p>
+          </div>
+        </div>
+        <div className="card" onClick={() => handleCardClick("/page3")}>
+          <div className="card-content">
+            <h2>Page 3</h2>
+            <p>Go to Page 3</p>
+          </div>
+        </div>
+      </div>
+
       <div className="Footer">
         <Footer />
       </div>
