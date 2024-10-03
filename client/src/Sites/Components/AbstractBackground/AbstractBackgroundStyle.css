@@ -1,18 +1,76 @@
 .abstract-background {
-    width: 100vw;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%), linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-    background-blend-mode: multiply;
-    overflow: hidden;
-  }
-  
-  @keyframes animateBackground {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f3c88 0%, #394f9f 50%, #7315b9 75%, #ff4e66 100%);
+  background-size: 200% 200%;
+  overflow: hidden;
+  position: relative;
+  animation: animateBackground 15s ease infinite;
+}
+
+/* Large abstract bubbles */
+.abstract-background::before, .abstract-background::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: floatBubbles 25s ease-in-out infinite;
+  filter: blur(50px);
+}
+
+.abstract-background::before {
+  width: 500px;
+  height: 500px;
+  top: 15%;
+  left: 10%;
+}
+
+.abstract-background::after {
+  width: 400px;
+  height: 400px;
+  bottom: 20%;
+  right: 15%;
+}
+
+/* Smaller floating bubbles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  filter: blur(30px);
+  animation: floatBubbles 30s ease-in-out infinite;
+}
+
+.bubble:nth-child(1) {
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  left: 30%;
+}
+
+.bubble:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  left: 60%;
+}
+
+.bubble:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  right: 20%;
+}
+
+@keyframes animateBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animation for floating bubbles */
+@keyframes floatBubbles {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-50px) translateX(50px); }
+  100% { transform: translateY(0) translateX(0); }
+}

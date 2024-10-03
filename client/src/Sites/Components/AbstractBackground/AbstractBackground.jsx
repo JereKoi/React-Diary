@@ -23,21 +23,12 @@ const AbstractBackground = () => {
     setGradient(newGradient);
   }, []);
 
-  // CSS-in-JS styles with animation
-  const backgroundStyle = {
-    width: "100vw",
-    height: "100vh",
-    background: gradient,
-    backgroundSize: "200% 200%", // Ensures the background is large enough for smooth animation
-    animation: "animateBackground 15s ease infinite", // Apply the animation
-    position: "absolute", // Ensure it spans the entire page
-    top: 0,
-    left: 0,
-    zIndex: 0, // Make sure it's behind all content
-  };
-
   return (
-    <div style={backgroundStyle}>
+    <div className="abstract-background">
+      {/* Floating bubbles */}
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
     </div>
   );
 };
