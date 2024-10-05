@@ -25,7 +25,6 @@ const AbstractBackground = () => {
 
   return (
     <div className="abstract-background">
-      {/* Floating bubbles */}
       <div className="bubble"></div>
       <div className="bubble"></div>
       <div className="bubble"></div>

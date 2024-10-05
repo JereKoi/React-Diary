@@ -16,6 +16,12 @@
     align-items: center;
     padding: 15px 30px;
     box-sizing: border-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-bar.hidden {
+    transform: translateY(-100%); /* Move navbar out of view */
+    opacity: 0; /* Fade out */
 }
 
 /* Flexbox container for buttons */
@@ -56,7 +62,6 @@
 }
 
 .nav-buttons-mobile button {
-    padding: 15px;
     text-align: center;
 }
 
