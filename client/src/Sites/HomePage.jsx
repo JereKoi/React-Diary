@@ -20,6 +20,8 @@ const HomePage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("fade-in");
+          } else {
+            entry.target.classList.remove("fade-in");
           }
         });
       },
@@ -57,20 +59,40 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="scroll-section section-left">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
-              scelerisque enim ligula venenatis dolor.
-            </p>
-          </div>
+          <div className="sections-container">
+            <div className="scroll-section section-left">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus imperdiet, nulla et dictum interdum, nisi lorem
+                egestas odio, vitae scelerisque enim ligula venenatis dolor.
+                Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur sit amet mauris morbi in dui quis est pulvinar
+                ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.
+              </p>
+              <p>
+                Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi
+                mi. Quisque nisl felis, venenatis tristique, dignissim in,
+                ultrices sit amet, augue. Proin sodales libero eget ante. Nulla
+                quam. Aenean laoreet.
+              </p>
+            </div>
 
-          <div className="scroll-section section-right">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
-              scelerisque enim ligula venenatis dolor.
-            </p>
+            <div className="scroll-section section-right">
+              <p>
+                In hac habitasse platea dictumst. Praesent vestibulum tempor
+                augue, vel egestas nulla commodo quis. Aenean vehicula vehicula
+                aliquam. Proin faucibus arcu quis ante. In consectetuer turpis
+                ut velit. Aenean posuere, tortor sed cursus feugiat, nunc augue
+                blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+              </p>
+              <p>
+                Phasellus leo dolor, tempus non, auctor et, hendrerit quis,
+                nisi. Etiam vitae tortor. Donec posuere vulputate arcu.
+                Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia Curae.
+              </p>
+            </div>
           </div>
 
           <div className="footer">
