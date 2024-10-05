@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
 import Footer from "./Components/Footer";
-import Navbar from "./Components/NavBarLoggedIn";
+import Navbar from "./Components/NavBarLoggedOff";
 import "./DiaryEntriesStyle.css";
 
 const DiaryEntriesPage = () => {

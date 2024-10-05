@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
+import Navbar from "./Components/NavBarLoggedOff";
 import "./LoginScreenStyle.css";
 
 const LoginScreen = () => {
@@ -109,6 +110,9 @@ const LoginScreen = () => {
 
   return (
     <div className={`wrapper ${isActive ? "active" : ""}`}>
+      <div className="navBar">
+        <Navbar />
+      </div>
       <div className="form-box login">
         <h2>Login</h2>
         {loginError && <div className="error-message">{loginError}</div>}

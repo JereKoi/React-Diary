@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
-import Navbar from "./Components/NavBarLoggedIn";
+import Navbar from "./Components/NavBarLoggedOff";
 import "./ContactStyle.css";
 
 const ContactPage = () => {
