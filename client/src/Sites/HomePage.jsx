@@ -33,7 +33,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="Footer">
+        <div className="footer">
           <Footer />
         </div>
       </div>
