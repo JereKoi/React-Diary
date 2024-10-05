@@ -1,80 +1,110 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .navbar {
-    background-color: #333;
-    height: 60px;
+
+.nav-header {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+}
+
+.nav-bar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-  }
-  
-  .logo {
-    color: #fff;
-    font-size: 24px;
-  }
-  
-  .nav-links {
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+
+/* Flexbox container for buttons */
+.nav-buttons {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+/* Mobile menu styles */
+.nav-buttons-mobile {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #333;
     list-style: none;
-  }
-  
-  .nav-links li {
-    margin: 0 15px;
-  }
-  
-  .nav-links li a {
-    color: white;
+    padding: 20px;
+    gap: 15px;
+}
+
+.nav-buttons-mobile button {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Common button styles */
+button.home-btn,
+button.write-btn,
+button.entries-btn,
+button.about-btn,
+button.contact-btn {
+    background: none;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font: inherit;
+    cursor: pointer;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links li a:hover {
-    color: #00aaff;
-  }
-  
-  /* Mobile Menu Icon */
-  .mobile-menu-icon {
-    display: none;
+    transition: background-color 0.2s, padding 0.3s;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hover styles */
+button:hover {
+    background-color: rgba(241, 216, 184, 0.8);
+}
+
+/* Mobile menu icon */
+.mobile-menu-icon {
+    display: none; /* Initially hidden */
     font-size: 28px;
     color: white;
     background: none;
     border: none;
-  }
-  
-  /* Media Queries for responsiveness */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
+    cursor: pointer;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .nav-buttons {
+        display: none; /* Hide nav buttons on small screens */
     }
-  
-    .nav-links-mobile {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      right: 0;
-      background-color: #333;
-      list-style: none;
-      padding: 20px;
-    }
-  
-    .nav-links-mobile li {
-      margin: 10px 0;
-    }
-  
+
     .mobile-menu-icon {
-      display: block;
+        display: block; /* Show mobile icon on small screens */
     }
-  }
-  
+
+    .nav-buttons-mobile {
+        display: flex; /* Display mobile menu when icon is clicked */
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu-icon {
+        display: none; /* Hide mobile icon on larger screens */
+    }
+
+    .nav-buttons {
+        display: flex; /* Show nav buttons again */
+    }
+
+    .nav-buttons-mobile {
+        display: none; /* Hide mobile menu when screen is larger */
+    }
+}
