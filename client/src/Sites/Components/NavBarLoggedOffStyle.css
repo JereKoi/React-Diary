@@ -27,6 +27,18 @@
     flex: 1;
 }
 
+/* Animation keyframes */
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Mobile menu styles */
 .nav-buttons-mobile {
     display: none; /* Initially hidden */
@@ -39,6 +51,8 @@
     list-style: none;
     padding: 20px;
     gap: 15px;
+    opacity: 0; /* Start with no opacity */
+    animation: slideDownFade 0.5s ease forwards; /* Apply animation */
 }
 
 .nav-buttons-mobile button {
@@ -65,11 +79,6 @@ button.contact-btn {
     font-family: 'Arial', sans-serif;
 }
 
-/* Hover styles */
-button:hover {
-    background-color: rgba(241, 216, 184, 0.8);
-}
-
 /* Mobile menu icon */
 .mobile-menu-icon {
     display: none; /* Initially hidden */
@@ -78,6 +87,7 @@ button:hover {
     background: none;
     border: none;
     cursor: pointer;
+    margin-left: auto;
 }
 
 /* Media queries for responsiveness */

@@ -28,7 +28,7 @@ const Footer = () => {
                 <div className="footer-section">
                     <p>&copy; {new Date().getFullYear()} My Diary App. All rights reserved.</p>
                     <p>Follow us on:
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> Twitter</a>,
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> X</a>,
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> Facebook</a>,
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> Instagram</a>
                     </p>

@@ -1,6 +1,6 @@
 .abstract-background {
   width: 100vw;
-  background: linear-gradient(135deg, #1f3c88 0%, #394f9f 50%, #7315b9 75%, #ff4e66 100%);
+  background: linear-gradient(135deg, #c5ce92 10%, #2b5f5c 50%, #7315b9 75%, #ff4e66 100%);
   background-size: 200% 200%;
   overflow: hidden;
   position: relative;
