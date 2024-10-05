@@ -101,3 +101,29 @@ body, html {
         height: auto; /* Allow height to adjust */
     }
 }
+
+/* Scroll section styles */
+.scroll-section {
+    width: 80%;
+    margin: 50px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-left {
+    text-align: left;
+}
+
+.section-right {
+    text-align: right;
+    transform: translateX(100%);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}
