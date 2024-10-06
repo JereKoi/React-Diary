@@ -1,12 +1,16 @@
 /* FooterStyle.css */
 
+* {
+    box-sizing: border-box;
+}
+
 .footer {
     background-color: #282c34;
     z-index: 1000;
     color: #fff;
     text-align: center;
     padding: 40px 0;
-    width: auto;
+    width: 100%;
     position: relative;
 }
 
@@ -21,6 +25,8 @@
 
 .footer-section {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #333;
@@ -30,8 +36,9 @@
     color: white;
     font-size: 18px;
     text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
+    font-family: 'Roboto', Arial, sans-serif;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    will-change: background-color, transform;
 }
 
 .footer-section h4 {
@@ -44,43 +51,62 @@
     margin: 0;
 }
 
-.footer-section:hover {
-    background-color: #355761;
+.footer-section:hover,
+.footer-section:focus {
+    background-color: #3c6574;
     color: #ffffff;
     transform: translateY(-5px);
 }
 
 .footer-section:focus {
-    outline: none;
-    box-shadow: 0 0 5px 2px rgba(97, 218, 251, 0.7);
+    outline: 3px solid #61dafb;
 }
 
-/* Footer Last Section - Different Styling */
+/* Last Footer Section - Custom Styling */
 .footer-last {
     flex-basis: 100%;
-    background-color: transparent; /* No button styles */
+    background-color: transparent; 
     padding: 0;
     margin-top: 20px;
     font-size: 14px;
-    box-shadow: none;
-    text-align: center; /* Center text without the button effect */
+    text-align: center; 
     cursor: default;
-}
-
-.footer-section:last-child {
-    flex-basis: 100%;
-    margin-top: 20px;
-}
-
-.footer-section:last-child p {
-    margin: 5px 0;
 }
 
 .footer a {
     color: #61dafb;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer a:hover {
     text-decoration: underline;
+    color: #5ac0ff;
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .footer-content {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-section {
+        width: 100%;
+        padding: 15px;
+        font-size: 14px;
+    }
 }
