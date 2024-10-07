@@ -1,55 +1,87 @@
-@font-face {
-  font-family: "Poppins";
-  src: local("Poppins"),
-    url("/src/fonts/Poppins-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 500;
-  src: local("Poppins"), url("/src/fonts/Poppins-Medium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 600;
-  src: local("Poppins"), url("/src/fonts/Poppins-Bold.ttf") format("truetype");
-}
-
 @import "~react-datepicker/dist/react-datepicker.css";
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
 
 .quillPage {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
-  width: 100vw;
-  margin: 0 auto;
+  margin: 0 auto; /* Centers the content */
+  padding: 0; /* Ensures no padding pushes content outside */
+  overflow-x: hidden; /* Prevents any element from overflowing */
+  background: linear-gradient(135deg, #1c3a94, #1b0045);
+  color: #fff;
 }
 
-.TextEditorApp {
-  width: 100vw;
-  margin: 0 auto;
-  max-width: 950px;
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(20px);
-  z-index: 100;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 300px;
+.text-editor-container,
+.most-recent-table,
+.diary-buttons-container,
+.date-picker-container {
+  width: 100%;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.most-recent-table, .diary-buttons-container, .date-picker-container {
-  width: 100vw;
-  margin: 0 auto;
-  max-width: 950px;
-  margin-top: 30px;
+.text-editor-container {
+  margin-bottom: 50px;
 }
 
 .most-recent-written-header {
-  margin-top: 150px;
+  text-align: center;
+  margin: 100px auto 20px;
+  font-size: 1.75rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.most-recent-table-heading p {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.diary-buttons-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.diary-button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.diary-button:hover {
+  background-color: #59c7e6;
+  transform: translateY(-2px);
+}
+
+.date-picker-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.125rem;
+}
+
+.date-picker {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
 }
 
 .Footer {
@@ -58,14 +90,41 @@
   bottom: 0;
   display: flex;
   justify-content: center;
+  margin-top: auto;
+  padding: 20px 0;
 }
 
 /* Navbar positioning */
 .navBar {
   width: 100%;
-  position: fixed;
   top: 0;
   z-index: 10;
   display: flex;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .text-editor-container,
+  .most-recent-table,
+  .diary-buttons-container,
+  .date-picker-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .most-recent-written-header {
+    font-size: 1.5rem;
+  }
+
+  .diary-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .date-picker {
+    max-width: 100%;
+  }
 }

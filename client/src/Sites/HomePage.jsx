@@ -1,15 +1,16 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AbstractBackground from "./Components/AbstractBackground/AbstractBackground";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/NavBarLoggedOff";
 import "./HomePageStyle.css";
+
+const AbstractBackground = lazy(() => import("./Components/AbstractBackground/AbstractBackground"));
+const Navbar = lazy(() => import("./Components/NavBarLoggedOff"));
+const Footer = lazy(() => import("./Components/Footer"));
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/NextPage"); // Update the route to the desired page.
+    navigate("/NextPage");
   };
 
   useEffect(() => {
@@ -20,13 +21,13 @@ const HomePage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("fade-in");
-          } else {
-            entry.target.classList.remove("fade-in");
+            observer.unobserve(entry.target);
           }
         });
       },
       {
         threshold: 0.1,
+        rootMargin: "0px 0px -10% 0px",
       }
     );
 
@@ -34,73 +35,78 @@ const HomePage = () => {
       observer.observe(section);
     });
 
-    return () => observer.disconnect(); // Cleanup on component unmount
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <AbstractBackground />
       <div className="abstract-background">
         <div className="home-container">
-          <div className="navBar">
-            <Navbar />
-          </div>
+          <Navbar />
 
           <div className="box-container">
             <div className="box-content">
-              <h1>Modern way for your diary</h1>
+              <h1>Modern Journaling Experience</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Your private space for reflection, self-discovery, and creative expression. Start your journey with a simple and secure diary.
               </p>
-              <button className="cta-button" onClick={handleClick}>
+              <button
+                className="cta-button"
+                aria-label="Try the journaling app now"
+                onClick={handleClick}
+              >
                 Try it now
+              </button>
+              <button
+                className="secondary-button"
+                aria-label="Learn more about the journaling app"
+                onClick={() => navigate("/learn-more")}
+              >
+                Learn More
               </button>
             </div>
           </div>
 
           <div className="sections-container">
             <div className="scroll-section section-left">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus imperdiet, nulla et dictum interdum, nisi lorem
-                egestas odio, vitae scelerisque enim ligula venenatis dolor.
-                Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur sit amet mauris morbi in dui quis est pulvinar
-                ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.
-              </p>
-              <p>
-                Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi
-                mi. Quisque nisl felis, venenatis tristique, dignissim in,
-                ultrices sit amet, augue. Proin sodales libero eget ante. Nulla
-                quam. Aenean laoreet.
-              </p>
+              <h2>Features You'll Love</h2>
+              <p>🔒 *Private and Secure*: Your thoughts stay safe with us.</p>
+              <p>📝 *Daily Prompts*: Get inspiration when you need it most.</p>
+              <p>🌈 *Custom Themes*: Design your diary to match your mood.</p>
             </div>
 
             <div className="scroll-section section-right">
+              <h2>See What You Can Create</h2>
+              <div className="journal-preview">
+                <h3>Sample Entry</h3>
+                <p>
+                  Today was a mix of emotions. I felt energized in the morning but slowed down by the afternoon. The sunset reminded me that every day ends beautifully, no matter what.
+                </p>
+                <div className="mood-icons">😊 🌅</div>
+              </div>
+            </div>
+
+            <div className="scroll-section section-left">
+              <h2>Why Start Journaling?</h2>
               <p>
-                In hac habitasse platea dictumst. Praesent vestibulum tempor
-                augue, vel egestas nulla commodo quis. Aenean vehicula vehicula
-                aliquam. Proin faucibus arcu quis ante. In consectetuer turpis
-                ut velit. Aenean posuere, tortor sed cursus feugiat, nunc augue
-                blandit nunc, eu sollicitudin urna dolor sagittis lacus.
-              </p>
-              <p>
-                Phasellus leo dolor, tempus non, auctor et, hendrerit quis,
-                nisi. Etiam vitae tortor. Donec posuere vulputate arcu.
-                Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in
-                faucibus orci luctus et ultrices posuere cubilia Curae.
+                Journaling helps you process thoughts, track personal growth, and discover new perspectives on life. Give it a try and see how daily reflection can transform your mindset.
               </p>
             </div>
           </div>
 
-          <div className="footer">
-            <Footer />
-          </div>
+          <button
+            className="fab"
+            aria-label="Create new journal entry"
+            onClick={() => navigate('/new-entry')}
+          >
+            +
+          </button>
+
+          <Footer />
         </div>
       </div>
-    </>
+    </Suspense>
   );
 };
 

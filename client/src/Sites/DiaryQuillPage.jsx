@@ -45,7 +45,7 @@ const DiaryQuillPage = () => {
         <Navbar />
       </div>
       <h2 className="most-recent-written-header">
-        What you have been writing to most recently.
+        Your Most Recent Diary
       </h2>
       <div className="most-recent-table">
         {mostRecentDiary && (
@@ -67,17 +67,18 @@ const DiaryQuillPage = () => {
       </div>
       <div className="date-picker-container">
         <label htmlFor="diary-date-picker">
-          Select date for your diary entry:
+          Select Date for Your Entry:
         </label>
         <DatePicker
           id="diary-date-picker"
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date)}
           dateFormat="MMMM d, yyyy"
-          maxDate={new Date()} // Prevent future dates from being selectable
+          maxDate={new Date()}
+          className="date-picker"
         />
       </div>
-      <div className="TextEditorApp">
+      <div className="text-editor-container">
         <TextEditor selectedDate={selectedDate} />
       </div>
       <div className="Footer">
