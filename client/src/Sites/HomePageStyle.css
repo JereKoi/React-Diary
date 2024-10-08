@@ -1,156 +1,169 @@
+/* Global Styles */
 body, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    background: var(--primary-bg);
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  :root {
-    --spacing-small: 10px;
-    --spacing-medium: 20px;
-    --spacing-large: 30px;
-    --primary-bg: linear-gradient(135deg, #1c3a94, #1b0045);
-    --button-bg: #61dafb;
-    --button-hover-bg: #59c7e6;
-  }
-  
-  .home-container {
-    display: flex;
-    z-index: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-  }
-  
-  .footer {
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .box-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    position: relative;
-    margin-top: 150px;
-    margin-bottom: 150px;
-  }
-  
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  font-family: 'Arial', sans-serif; /* Set font family */
+  font-size: 16px; /* Set base font size */
+  background: var(--primary-bg); /* Set background using CSS variable */
+  color: #fff; /* Set text color to white */
+  min-height: 100vh; /* Ensure body covers at least full viewport height */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* CSS Variables */
+:root {
+  --spacing-small: 10px; /* Small spacing variable */
+  --spacing-medium: 20px; /* Medium spacing variable */
+  --spacing-large: 30px; /* Large spacing variable */
+  --primary-bg: linear-gradient(135deg, #1c3a94, #1b0045); /* Primary background gradient */
+  --button-bg: #61dafb; /* Button background color */
+  --button-hover-bg: #59c7e6; /* Button hover background color */
+}
+
+/* Home Container */
+.home-container {
+  display: flex; /* Use flexbox for layout */
+  z-index: 1; /* Ensure it is above other elements */
+  flex-direction: column; /* Stack child elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  min-height: 100vh; /* Ensure it covers full viewport height */
+  width: 100%; /* Full width */
+}
+
+/* Footer */
+.footer {
+  width: 100%; /* Full width */
+  position: relative; /* Relative positioning */
+  bottom: 0; /* Position at the bottom */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center footer content */
+}
+
+/* Box Container */
+.box-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center child elements */
+  align-items: center; /* Align items in the center */
+  height: auto; /* Automatic height */
+  position: relative; /* Relative positioning */
+  margin-top: 150px; /* Margin above */
+  margin-bottom: 150px; /* Margin below */
+}
+
+/* Box Content */
+.box-content {
+  background-color: #ffffff; /* White background */
+  color: #333; /* Dark gray text color */
+  text-align: center; /* Center text */
+  padding: 30px; /* Padding around content */
+  height: auto; /* Automatic height */
+  width: 500px; /* Fixed width */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center child elements */
+  align-items: center; /* Align items in the center */
+  flex-direction: column; /* Stack child elements vertically */
+}
+
+/* Call to Action and Secondary Buttons */
+.cta-button, .secondary-button {
+  background-color: var(--button-bg); /* Set button background color */
+  border: none; /* Remove default border */
+  color: white; /* Set text color to white */
+  padding: var(--spacing-small) var(--spacing-medium); /* Padding for buttons */
+  font-size: 1.125rem; /* Button text size */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-top: var(--spacing-medium); /* Margin above */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+}
+
+.secondary-button {
+  background-color: #7ed3e0; /* Secondary button background color */
+}
+
+/* Button Hover Effects */
+.cta-button:hover, .secondary-button:hover {
+  background-color: var(--button-hover-bg); /* Change background on hover */
+  transform: translateY(-2px); /* Lift button slightly */
+}
+
+/* Journal Preview */
+.journal-preview {
+  background-color: rgba(255, 255, 255, 0.2); /* Light translucent background */
+  padding: 20px; /* Padding around content */
+  border-radius: 10px; /* Rounded corners */
+  text-align: left; /* Left-aligned text */
+  margin-top: var(--spacing-large); /* Margin above */
+  font-size: 1rem; /* Font size */
+  color: #fff; /* Set text color to white */
+}
+
+/* Scroll Section */
+.scroll-section {
+  margin-top: auto; /* Automatically push to the bottom */
+  width: 60%; /* Set width */
+  margin: 50px 0; /* Vertical margin */
+  padding: 20px; /* Padding around content */
+  font-size: 20px; /* Font size */
+  background-color: rgba(255, 255, 255, 0.15); /* Light translucent background */
+  border-radius: 10px; /* Rounded corners */
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-100%); /* Start off-screen */
+  transition: opacity 0.6s ease-out, transform 2s ease-out; /* Smooth transition effects */
+}
+
+/* Section Alignment */
+.section-left {
+  text-align: left; /* Left-aligned text */
+  transform: translateX(100%); /* Move off-screen to the right */
+}
+
+.section-right {
+  text-align: right; /* Right-aligned text */
+  transform: translateX(100%); /* Move off-screen to the right */
+}
+
+/* Fade In Effect */
+.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateX(0); /* Move to original position */
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+  position: fixed; /* Fixed position on screen */
+  z-index: 1001; /* Ensure it is above other elements */
+  bottom: 20px; /* Position from the bottom */
+  right: 20px; /* Position from the right */
+  background-color: var(--button-bg); /* Set background color */
+  color: #fff; /* Set text color to white */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Circular shape */
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+}
+
+.fab:hover {
+  background-color: var(--button-hover-bg); /* Change background on hover */
+  transform: translateY(-3px); /* Lift button slightly */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
   .box-content {
-    background-color: #ffffff;
-    color: #333;
-    text-align: center;
-    padding: 30px;
-    height: auto;
-    width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+      width: 90%; /* Full width on smaller screens */
   }
-  
-  .cta-button, .secondary-button {
-    background-color: var(--button-bg);
-    border: none;
-    color: white;
-    padding: var(--spacing-small) var(--spacing-medium);
-    font-size: 1.125rem;
-    cursor: pointer;
-    margin-top: var(--spacing-medium);
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .secondary-button {
-    background-color: #7ed3e0;
-  }
-  
-  .cta-button:hover, .secondary-button:hover {
-    background-color: var(--button-hover-bg);
-    transform: translateY(-2px);
-  }
-  
+
   .journal-preview {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-    margin-top: var(--spacing-large);
-    font-size: 1rem;
-    color: #fff;
+      width: 100%; /* Full width on smaller screens */
   }
-  
-  .scroll-section {
-    margin-top: auto;
-    width: 60%;
-    margin: 50px 0;
-    padding: 20px;
-    font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 0.6s ease-out, transform 2s ease-out;
-  }
-  
-  .section-left {
-    text-align: left;
-    transform: translateX(100%);
-  }
-  
-  .section-right {
-    text-align: right;
-    transform: translateX(100%);
-  }
-  
-  .fade-in {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .fab {
-    position: fixed;
-    z-index: 1001;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--button-bg);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .fab:hover {
-    background-color: var(--button-hover-bg);
-    transform: translateY(-3px);
-  }
-  
-  @media (max-width: 768px) {
-    .box-content {
-      width: 90%;
-    }
-  
-    .journal-preview {
-      width: 100%;
-    }
-  }
-  
+}

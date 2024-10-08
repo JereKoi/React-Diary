@@ -1,112 +1,122 @@
 /* FooterStyle.css */
 
+/* Apply box-sizing to all elements for consistent sizing */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
 }
 
+/* Styles for the footer container */
 .footer {
-    background-color: #282c34;
-    z-index: 1000;
-    color: #fff;
-    text-align: center;
-    padding: 40px 0;
-    width: 100%;
-    position: relative;
+    background-color: #282c34; /* Dark background color for the footer */
+    z-index: 1000; /* Ensures the footer stays on top of other elements */
+    color: #fff; /* White text color */
+    text-align: center; /* Center-align text within the footer */
+    padding: 40px 0; /* Vertical padding for spacing */
+    width: 100%; /* Full width of the footer */
+    position: relative; /* Positioning context for child elements */
 }
 
+/* Container for footer content sections */
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: auto;
-    gap: 40px;
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow content to wrap to the next line if necessary */
+    justify-content: space-around; /* Space out sections evenly */
+    max-width: 1200px; /* Maximum width for the footer content */
+    margin: auto; /* Center the content horizontally */
+    gap: 40px; /* Space between sections */
 }
 
+/* Styles for individual footer sections */
 .footer-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #333;
-    border: none;
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    font-family: 'Roboto', Arial, sans-serif;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    will-change: background-color, transform;
+    flex: 1; /* Allow sections to grow equally */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange content in a column */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    background-color: #333; /* Dark background for each section */
+    border: none; /* No border */
+    padding: 20px; /* Padding inside the section */
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    text-align: center; /* Center-align text */
+    font-family: 'Roboto', Arial, sans-serif; /* Font family */
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth transitions for hover effects */
+    will-change: background-color, transform; /* Optimization for expected changes */
 }
 
+/* Styles for the section headings */
 .footer-section h4 {
-    margin-bottom: 10px;
-    color: #61dafb;
+    margin-bottom: 10px; /* Space below the heading */
+    color: #61dafb; /* Light blue color for headings */
 }
 
+/* Styles for paragraph text within sections */
 .footer-section p {
-    font-size: 14px;
-    margin: 0;
+    font-size: 14px; /* Smaller font size for paragraphs */
+    margin: 0; /* Remove default margin */
 }
 
+/* Hover and focus effects for footer sections */
 .footer-section:hover,
 .footer-section:focus {
-    background-color: #3c6574;
-    color: #ffffff;
-    transform: translateY(-5px);
+    background-color: #3c6574; /* Change background color on hover/focus */
+    color: #ffffff; /* Change text color */
+    transform: translateY(-5px); /* Slight upward movement */
 }
 
+/* Focus outline for accessibility */
 .footer-section:focus {
-    outline: 3px solid #61dafb;
+    outline: 3px solid #61dafb; /* Outline to indicate focus state */
 }
 
-/* Last Footer Section - Custom Styling */
+/* Last footer section - custom styling */
 .footer-last {
-    flex-basis: 100%;
-    background-color: transparent; 
-    padding: 0;
-    margin-top: 20px;
-    font-size: 14px;
-    text-align: center; 
-    cursor: default;
+    flex-basis: 100%; /* Full width for the last section */
+    background-color: transparent; /* Transparent background */
+    padding: 0; /* No padding */
+    margin-top: 20px; /* Space above the last section */
+    font-size: 14px; /* Smaller font size */
+    text-align: center; /* Center-align text */
+    cursor: default; /* Default cursor style */
 }
 
+/* Styles for links within the footer */
 .footer a {
-    color: #61dafb;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: #61dafb; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
+/* Hover effect for links */
 .footer a:hover {
-    text-decoration: underline;
-    color: #5ac0ff;
-    font-weight: bold;
+    text-decoration: underline; /* Underline links on hover */
+    color: #5ac0ff; /* Lighter blue color on hover */
+    font-weight: bold; /* Bold text on hover */
 }
 
-/* Responsive Adjustments */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .footer-section {
-        padding: 15px;
-        font-size: 16px;
+        padding: 15px; /* Reduced padding for smaller screens */
+        font-size: 16px; /* Adjusted font size */
     }
 
     .footer-content {
-        gap: 20px;
+        gap: 20px; /* Reduced gap between sections */
     }
 }
 
 @media (max-width: 600px) {
     .footer-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        flex-direction: column; /* Stack sections vertically on very small screens */
+        align-items: center; /* Center items */
+        gap: 15px; /* Space between stacked sections */
     }
 
     .footer-section {
-        width: 100%;
-        padding: 15px;
-        font-size: 14px;
+        width: 100%; /* Full width for sections */
+        padding: 15px; /* Reduced padding */
+        font-size: 14px; /* Smaller font size */
     }
 }
