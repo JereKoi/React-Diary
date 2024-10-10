@@ -16,6 +16,10 @@ const HomePage = () => {
   useEffect(() => {
     const sections = document.querySelectorAll(".scroll-section");
 
+    sections.forEach((section) => {
+      section.classList.add("fade-in"); // Add the class on page load
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
