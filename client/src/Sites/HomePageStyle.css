@@ -125,6 +125,9 @@ body, html {
 }
 
 .section-right {
+  justify-self:flex-end;
+  align-items: end;
+  margin-left: auto;
   text-align: right; /* Right-aligned text */
   transform: translateX(100%); /* Move off-screen to the right */
 }
