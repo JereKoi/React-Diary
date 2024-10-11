@@ -15,11 +15,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll(".scroll-section");
-
-    sections.forEach((section) => {
-      section.classList.add("fade-in"); // Add the class on page load
-    });
-
+  
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -31,14 +27,14 @@ const HomePage = () => {
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -10% 0px",
+        rootMargin: "0px 0px -20% 0px",
       }
     );
-
+  
     sections.forEach((section) => {
       observer.observe(section);
     });
-
+  
     return () => observer.disconnect();
   }, []);
 
