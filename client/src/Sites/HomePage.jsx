@@ -26,19 +26,24 @@ const HomePage = () => {
     const sections = document.querySelectorAll(".scroll-section");
     console.log("Sections found after delay:", sections.length);
 
+    let lastScrollY = window.scrollY;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const isScrollingDown = window.scrollY > lastScrollY;
+  
           if (entry.isIntersecting) {
             entry.target.classList.add("fade-in");
-            observer.unobserve(entry.target);
-          } else {
+          } else if (!isScrollingDown && !isScrollingDown) {
             entry.target.classList.remove("fade-in");
           }
         });
+  
+        lastScrollY = window.scrollY;
       },
       {
-        threshold: 0.1,
+        threshold: 0.075,
         rootMargin: "0px",
       }
     );
