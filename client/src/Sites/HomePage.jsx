@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePageStyle.css";
 
@@ -8,35 +8,53 @@ const Footer = lazy(() => import("./Components/Footer"));
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const [sectionsReady, setSectionsReady] = useState(false);
 
   const handleClick = () => {
     navigate("/NextPage");
   };
 
   useEffect(() => {
+    // Trigger the observer setup after a small delay to ensure elements are rendered.
+    const timer = setTimeout(() => setSectionsReady(true), 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+  useEffect(() => {
+    if (!sectionsReady) return;
+
     const sections = document.querySelectorAll(".scroll-section");
-  
+    console.log("Sections found after delay:", sections.length);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("fade-in");
             observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove("fade-in");
           }
         });
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -20% 0px",
+        rootMargin: "0px",
       }
     );
-  
+
+    sections.forEach((section) => observer.observe(section));
+
+    // Manually check if any sections are in view on load.
     sections.forEach((section) => {
-      observer.observe(section);
+      const rect = section.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        section.classList.add("fade-in");
+      }
     });
-  
+
     return () => observer.disconnect();
-  }, []);
+  }, [sectionsReady]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
