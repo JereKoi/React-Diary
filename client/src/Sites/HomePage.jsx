@@ -2,7 +2,9 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePageStyle.css";
 
-const AbstractBackground = lazy(() => import("./Components/AbstractBackground/AbstractBackground"));
+const AbstractBackground = lazy(() =>
+  import("./Components/AbstractBackground/AbstractBackground")
+);
 const Navbar = lazy(() => import("./Components/NavBarLoggedOff"));
 const Footer = lazy(() => import("./Components/Footer"));
 
@@ -32,14 +34,14 @@ const HomePage = () => {
       (entries) => {
         entries.forEach((entry) => {
           const isScrollingDown = window.scrollY > lastScrollY;
-  
+
           if (entry.isIntersecting) {
             entry.target.classList.add("fade-in");
           } else if (!isScrollingDown && !isScrollingDown) {
             entry.target.classList.remove("fade-in");
           }
         });
-  
+
         lastScrollY = window.scrollY;
       },
       {
@@ -72,7 +74,8 @@ const HomePage = () => {
             <div className="box-content">
               <h1>Modern Journaling Experience</h1>
               <p>
-                Your private space for reflection, self-discovery, and creative expression. Start your journey with a simple and secure diary.
+                Your private space for reflection, self-discovery, and creative
+                expression. Start your journey with a simple and secure diary.
               </p>
               <button
                 className="cta-button"
@@ -104,7 +107,9 @@ const HomePage = () => {
               <div className="journal-preview">
                 <h3>Sample Entry</h3>
                 <p>
-                  Today was a mix of emotions. I felt energized in the morning but slowed down by the afternoon. The sunset reminded me that every day ends beautifully, no matter what.
+                  Today was a mix of emotions. I felt energized in the morning
+                  but slowed down by the afternoon. The sunset reminded me that
+                  every day ends beautifully, no matter what.
                 </p>
                 <div className="mood-icons">😊 🌅</div>
               </div>
@@ -113,7 +118,9 @@ const HomePage = () => {
             <div className="scroll-section section-left">
               <h2>Why Start Journaling?</h2>
               <p>
-                Journaling helps you process thoughts, track personal growth, and discover new perspectives on life. Give it a try and see how daily reflection can transform your mindset.
+                Journaling helps you process thoughts, track personal growth,
+                and discover new perspectives on life. Give it a try and see how
+                daily reflection can transform your mindset.
               </p>
             </div>
           </div>
@@ -121,10 +128,24 @@ const HomePage = () => {
           <button
             className="fab"
             aria-label="Create new journal entry"
-            onClick={() => navigate('/new-entry')}
+            onClick={() => navigate("/new-entry")}
           >
             +
           </button>
+
+          <div className="front-page-icons">
+            <div className="daily-reminder-icon">
+              <i class="bx bx-time"></i>
+            </div>
+
+            <div className="Analyze-icon">
+              <i class="bx bx-bar-chart-alt-2"></i>
+            </div>
+
+            <div className="Track-icon">
+              <i class="bx bx-notepad"></i>
+            </div>
+          </div>
 
           <Footer />
         </div>
