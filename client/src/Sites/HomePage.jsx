@@ -147,8 +147,9 @@ const HomePage = () => {
             </div>
           </div>
 
-          <Footer />
+          
         </div>
+        <Footer />
       </div>
     </Suspense>
   );

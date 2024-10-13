@@ -81,9 +81,7 @@ const DiaryQuillPage = () => {
       <div className="text-editor-container">
         <TextEditor selectedDate={selectedDate} />
       </div>
-      <div className="Footer">
         <Footer />
-      </div>
     </div>
   );
 };

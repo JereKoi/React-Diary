@@ -12,7 +12,7 @@
     color: #fff; /* White text color */
     text-align: center; /* Center-align text within the footer */
     padding: 40px 0; /* Vertical padding for spacing */
-    width: 100%; /* Full width of the footer */
+    width: 100vw; /* Full width of the footer */
     position: relative; /* Positioning context for child elements */
 }
 

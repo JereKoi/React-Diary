@@ -34,15 +34,6 @@ body, html {
   width: 100%; /* Full width */
 }
 
-/* Footer */
-.footer {
-  width: 100%; /* Full width */
-  position: relative; /* Relative positioning */
-  bottom: 0; /* Position at the bottom */
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center footer content */
-}
-
 /* Box Container */
 .box-container {
   display: flex; /* Use flexbox for layout */
