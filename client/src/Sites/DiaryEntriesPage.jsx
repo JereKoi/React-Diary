@@ -183,9 +183,7 @@ const DiaryEntriesPage = () => {
           </div>
         </>
       )}
-      <div className="Footer">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

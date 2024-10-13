@@ -3,19 +3,19 @@ import "./AboutPageStyle.css";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedOff";
 
-const ContactPage = () => {
+const AboutPage = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="about-container">
       <div className="navBar">
         <Navbar />
       </div>
+      <div className="about-header">
       <h1>About page.</h1>
-      <div className="Footer">
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
 
-export default ContactPage;
+export default AboutPage;
