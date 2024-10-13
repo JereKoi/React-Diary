@@ -170,3 +170,41 @@ body, html {
       width: 100%; /* Full width on smaller screens */
   }
 }
+
+.front-page-icons {
+  display:grid;
+  justify-content: center;
+  gap: 20px; /* Space between the icons */
+  padding: 40px 0; /* Padding for some spacing above and below */
+}
+
+.front-page-icons div {
+  background: #f0f4f8; /* Light background color for icons */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle lift effect */
+  padding: 20px; /* Padding inside each icon container */
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.front-page-icons i {
+  font-size: 40px; /* Icon size */
+  color: #7ed3e0; /* Main color for the icons */
+}
+
+.front-page-icons div:hover {
+  transform: translateY(-5px); /* Lift the icon slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Intensify shadow on hover */
+  background: #e8f0fe; /* Slightly change background color on hover */
+}
+
+@media (max-width: 768px) {
+  .front-page-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .front-page-icons div {
+    width: 60px; /* Adjust width for smaller screens */
+  }
+}
