@@ -1,31 +1,5 @@
 @import "~react-datepicker/dist/react-datepicker.css";
 
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Includes padding and border in element width/height */
-  overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit; /* Ensures all elements follow the box-sizing rules */
-}
-
-.quillPage {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100vh;
-  margin: 0 auto; /* Centers the content */
-  padding: 0; /* Ensures no padding pushes content outside */
-  overflow-x: hidden; /* Prevents any element from overflowing */
-  position: relative;
-  background: linear-gradient(135deg, #1c3a94, #1b0045);
-  color: #fff;
-}
-
 .text-editor-container,
 .most-recent-table,
 .diary-buttons-container,
@@ -92,52 +66,4 @@ body, html {
   border-radius: 5px;
   border: none;
   font-size: 1rem;
-}
-
-.Footer {
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  display: flex;
-  margin-top: auto;
-  align-items: center;
-  justify-content: center;
-  margin-top: auto;
-  padding: 20px 0;
-  margin-top: auto;
-}
-
-/* Navbar positioning */
-.navBar {
-  width: 100%;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .text-editor-container,
-  .most-recent-table,
-  .diary-buttons-container,
-  .date-picker-container {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .most-recent-written-header {
-    font-size: 1.5rem;
-  }
-
-  .diary-button {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-
-  .date-picker {
-    max-width: 100%;
-  }
 }
