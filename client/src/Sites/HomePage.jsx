@@ -37,7 +37,7 @@ const HomePage = () => {
 
           if (entry.isIntersecting) {
             entry.target.classList.add("fade-in");
-          } else if (!isScrollingDown && !isScrollingDown) {
+          } else if (!isScrollingDown) {
             entry.target.classList.remove("fade-in");
           }
         });
@@ -45,7 +45,7 @@ const HomePage = () => {
         lastScrollY = window.scrollY;
       },
       {
-        threshold: 0.075,
+        threshold: window.innerWidth < 600 ? 0.01 : 0.075,
         rootMargin: "0px",
       }
     );
@@ -55,7 +55,10 @@ const HomePage = () => {
     // Manually check if any sections are in view on load.
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
-      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+      if (
+        rect.top < window.innerHeight &&
+        rect.bottom >= 0
+      ) {
         section.classList.add("fade-in");
       }
     });
@@ -135,15 +138,15 @@ const HomePage = () => {
 
           <div className="front-page-icons">
             <div className="daily-reminder-icon">
-              <i class="bx bx-time"></i>
+              <i className="bx bx-time"></i>
             </div>
 
             <div className="Analyze-icon">
-              <i class="bx bx-bar-chart-alt-2"></i>
+              <i className="bx bx-bar-chart-alt-2"></i>
             </div>
 
             <div className="Track-icon">
-              <i class="bx bx-notepad"></i>
+              <i className="bx bx-notepad"></i>
             </div>
           </div>
 

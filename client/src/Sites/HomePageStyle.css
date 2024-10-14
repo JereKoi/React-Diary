@@ -120,7 +120,7 @@ body, html {
   align-items: end;
   margin-left: auto;
   text-align: right; /* Right-aligned text */
-  transform: translateX(100%); /* Move off-screen to the right */
+  transform: translateX(-100%); /* Move off-screen to the right */
 }
 
 /* Fade In Effect */
@@ -152,13 +152,22 @@ body, html {
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .box-content {
       width: 90%; /* Full width on smaller screens */
   }
 
   .journal-preview {
       width: 100%; /* Full width on smaller screens */
+  }
+
+  .front-page-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .front-page-icons div {
+    width: 60px; /* Adjust width for smaller screens */
   }
 }
 
@@ -187,15 +196,4 @@ body, html {
   transform: translateY(-5px); /* Lift the icon slightly on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Intensify shadow on hover */
   background: #e8f0fe; /* Slightly change background color on hover */
-}
-
-@media (max-width: 768px) {
-  .front-page-icons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .front-page-icons div {
-    width: 60px; /* Adjust width for smaller screens */
-  }
 }
