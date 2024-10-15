@@ -7,7 +7,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Running the Project](#running-the-project)
-- [Planned Features](#planned-features)
+- [Some of the Planned Features](#Some-of-the-Planned-Features)
 - [About Me](#about-me)
 - [Contact Me](#contact-me)
 
@@ -39,41 +39,41 @@ Installation
 
 1. Clone the repository:
 
-git clone https://github.com/JereKoi/React-Diary.git
+- git clone https://github.com/JereKoi/React-Diary.git
 
 2. Install dependencies for both client and server:
 
-cd client
-npm install
-cd ../server
-npm install
+- cd client
+- npm install
+- cd ../server
+- npm install
 
 ## Running the Project
 
 1. Start the client:
 
-cd client
-npm start
+- cd client
+- npm start
 
 2. Start the server:
 
-cd server
-node server.js
+- cd server
+- node server.js
 
 3. Environment Variables: Create a .env file in the server directory with the following keys:
 
-    MONGODB_URI=mongodb://localhost:27017/diary
-    REACT_BACKEND_URL=http://localhost:5000
-    REACT_SOCKET_URL=http://localhost:5000
+- MONGODB_URI=mongodb://localhost:27017/diary
+- REACT_BACKEND_URL=http://localhost:5000
+- REACT_SOCKET_URL=http://localhost:5000
 
 Make sure to replace the placeholder values with your actual configuration.
 
-## Planned Features
+## Some of the Planned Features
 
-Dockerization: Simplified setup and deployment.
-Enhanced User Authentication: For added security.
-Analytics Dashboard: Visualize journaling trends and activity.
-Dark Mode: For a better night-time journaling experience.
+- Dockerization: Simplified setup and deployment.
+- Enhanced User Authentication: For added security.
+- Analytics Dashboard: Visualize journaling trends and activity.
+- Dark Mode: For a better night-time journaling experience.
 
 ## About me
 
