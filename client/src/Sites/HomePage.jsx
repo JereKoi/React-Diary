@@ -7,6 +7,7 @@ const AbstractBackground = lazy(() =>
 );
 const Navbar = lazy(() => import("./Components/NavBarLoggedOff"));
 const Footer = lazy(() => import("./Components/Footer"));
+const MoodChart = lazy(() => import("./Components/MoodChart/MoodChart"));
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -55,10 +56,7 @@ const HomePage = () => {
     // Manually check if any sections are in view on load.
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
-      if (
-        rect.top < window.innerHeight &&
-        rect.bottom >= 0
-      ) {
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
         section.classList.add("fade-in");
       }
     });
@@ -149,8 +147,12 @@ const HomePage = () => {
               <i className="bx bx-notepad"></i>
             </div>
           </div>
-
-          
+          <div>
+            <section
+              id="mood-tracker"
+              style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}
+            ></section>
+          </div>
         </div>
         <Footer />
       </div>
