@@ -62,9 +62,9 @@ Installation
 
 3. Environment Variables: Create a .env file in the server directory with the following keys:
 
-- MONGODB_URI=mongodb://localhost:27017/diary
-- REACT_BACKEND_URL=http://localhost:5000
-- REACT_SOCKET_URL=http://localhost:5000
+- MONGODB_URI: Your MongoDB connection string.
+- REACT_BACKEND_URL: URL where your server is hosted.
+- REACT_SOCKET_URL: URL for WebSocket communication (if applicable).
 
 Make sure to replace the placeholder values with your actual configuration.
 
