@@ -141,6 +141,7 @@ const HomePage = () => {
 
             <div className="Analyze-icon">
               <i className="bx bx-bar-chart-alt-2"></i>
+              <MoodChart />
             </div>
 
             <div className="Track-icon">
@@ -150,6 +151,7 @@ const HomePage = () => {
           <div>
             <section
               id="mood-tracker"
+              
               style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}
             ></section>
           </div>

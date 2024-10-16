@@ -1,6 +1,7 @@
 import 'chart.js/auto';
 import React, { useEffect, useRef, useState } from 'react';
 import { Line } from 'react-chartjs-2';
+import './MoodChart.css'; // Import your CSS file
 
 const MoodChart = () => {
   const chartRef = useRef(null);
@@ -14,7 +15,11 @@ const MoodChart = () => {
         data: [3, 4, 5, 2, 4],
         borderColor: '#4caf50',
         borderWidth: 3,
-        tension: 0.3, // Makes the line a bit smoother
+        tension: 0.3, // Smooths the line curve
+        backgroundColor: 'rgba(76, 175, 80, 0.1)', // Light green fill
+        pointBackgroundColor: '#4caf50', // Green dots
+        pointRadius: 5,
+        pointHoverRadius: 8,
       },
     ],
   };
@@ -36,7 +41,7 @@ const MoodChart = () => {
   }, []);
 
   return (
-    <div ref={chartRef} style={{ minHeight: '300px' }}>
+    <div className="mood-chart-container" ref={chartRef}>
       {isChartVisible && (
         <Line
           data={data}
@@ -51,10 +56,11 @@ const MoodChart = () => {
             scales: {
               x: {
                 grid: { display: false },
-                ticks: { font: { size: 14 } },
+                ticks: { font: { size: 14 }, color: '#333' },
               },
               y: {
                 grid: { display: true, color: '#e0e0e0' },
+                ticks: { font: { size: 14 }, color: '#333' },
               },
             },
           }}
