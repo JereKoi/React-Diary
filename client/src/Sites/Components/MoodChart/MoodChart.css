@@ -1,6 +1,6 @@
 .mood-chart-container {
   margin: 20px auto;
-  width: 200%; /* Adjusts the width to be more responsive */
+  width: 100%; /* Adjusts the width to be more responsive */
   max-width: 800px; /* Allows the chart to be bigger on larger screens */
   padding: 20px;
   background: rgba(255, 255, 255, 0.8);

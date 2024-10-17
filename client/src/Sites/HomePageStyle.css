@@ -169,10 +169,15 @@ body, html {
 .front-page-icons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive column layout */
+  grid-template-areas:
+    "reminder-icon reminder-icon"
+    "mood-chart mood-chart"
+    "track-icon track-icon"; /* Define specific areas for better layout */
   gap: 20px; /* Space between the icons */
   justify-items: center; /* Center-aligns the content within each grid item */
   padding: 40px 0; /* Padding for some spacing above and below */
 }
+
 
 .front-page-icons div {
   background: #f0f4f8; /* Light background color for icons */
@@ -200,4 +205,29 @@ body, html {
   color: #555;
   text-align: center;
   font-weight: 500;
+}
+
+.daily-reminder-icon {
+  grid-area: reminder-icon; /* Define its position */
+}
+
+.Track-icon {
+  grid-area: track-icon; /* Define its position */
+}
+
+.mood-chart-wrapper {
+  grid-column: span 2; /* This makes the MoodChart span across 2 columns */
+  width: 200%; /* Set the width to 200% */
+  max-width: 1200px; /* Ensure it doesn’t get too large on bigger screens */
+}
+
+.mood-chart-container {
+  margin: 0 auto; /* Centers the chart within its parent */
+  width: 100%; /* Ensures it takes up full width of the parent */
+  max-width: none; /* Prevents it from being constrained */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-in-out;
 }
