@@ -137,6 +137,7 @@ const HomePage = () => {
           <div className="front-page-icons">
             <div className="daily-reminder-icon">
               <i className="bx bx-time"></i>
+              <h3 className="mood-chart-title">Daily reminders</h3>
             </div>
 
             <div className="Analyze-icon mood-chart-wrapper">
@@ -147,6 +148,7 @@ const HomePage = () => {
 
             <div className="Track-icon">
               <i className="bx bx-notepad"></i>
+              <h3 className="mood-chart-title">Analyze and track your progress and writing style</h3>
             </div>
           </div>
           <div>
