@@ -141,6 +141,7 @@ const HomePage = () => {
 
             <div className="Analyze-icon">
               <i className="bx bx-bar-chart-alt-2"></i>
+              <h3 className="mood-chart-title">Weekly Mood Tracker</h3>
               <MoodChart />
             </div>
 

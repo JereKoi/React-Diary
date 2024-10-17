@@ -8,7 +8,15 @@ const MoodChart = () => {
   const [isChartVisible, setIsChartVisible] = useState(false);
 
   const data = {
-    labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    labels: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
     datasets: [
       {
         label: "Mood Over Time",
@@ -32,7 +40,7 @@ const MoodChart = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.5 }
     );
 
     if (chartRef.current) observer.observe(chartRef.current);
@@ -46,6 +54,8 @@ const MoodChart = () => {
         <Line
           data={data}
           options={{
+            responsive: true,
+            maintainAspectRatio: false, // Ensures the chart adjusts to the container's size
             animation: {
               duration: 2000,
               easing: "easeInOutExpo",
@@ -64,19 +74,19 @@ const MoodChart = () => {
                   font: { size: 14 },
                   color: "#333",
                   callback: (value) => {
-                    // Map numerical y-values to mood emojis
                     const moodMap = {
-                      1: "😢", // Very sad
-                      2: "😔", // Sad
-                      3: "😐", // Neutral
-                      4: "🙂", // Happy
-                      5: "😂", // Very happy
+                      1: "😢",
+                      2: "😔",
+                      3: "😐",
+                      4: "🙂",
+                      5: "😂",
                     };
                     return moodMap[value] || value;
                   },
                 },
                 min: 1,
                 max: 5,
+                padding: 20,
               },
             },
           }}
