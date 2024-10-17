@@ -1,0 +1,43 @@
+/* src/components/JournalCalendar.css */
+.journal-calendar {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .journal-calendar h3 {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for 7 days of the week */
+    gap: 10px;
+  }
+  
+  .calendar-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4f8;
+    border-radius: 5px;
+    height: 40px;
+    color: #555;
+    transition: background 0.2s ease;
+  }
+  
+  .calendar-day.journal-entry {
+    background: #4caf50; /* Green background for days with entries */
+    color: #fff; /* White text for contrast */
+  }
+  
+  .calendar-day:hover {
+    background: #e8f0fe; /* Slightly darker on hover */
+  }
+  
