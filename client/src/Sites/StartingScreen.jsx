@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Components/Footer";
+import Footer from "./Components/Footer/Footer";
 import "./StartingScreen.css";
 
 const StartingScreen = () => {

@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import DatePicker from "react-datepicker";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/NavBarLoggedOff";
-import TextEditor from "./Components/TextEditor";
+import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/NavBar/NavBarLoggedOff";
+import TextEditor from "./Components/TextEditor/TextEditor";
 import "./DiaryQuill.css";
 
 const DiaryQuillPage = () => {

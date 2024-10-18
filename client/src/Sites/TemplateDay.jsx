@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/NavBarLoggedIn";
+import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/NavBar/NavBarLoggedIn";
 import "./TemplateDay.css";
 
 const TemplateDayPage = () => {

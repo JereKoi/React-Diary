@@ -5,8 +5,8 @@ import "./Home.css";
 const AbstractBackground = lazy(() =>
   import("./Components/AbstractBackground/AbstractBackground")
 );
-const Navbar = lazy(() => import("./Components/NavBarLoggedOff"));
-const Footer = lazy(() => import("./Components/Footer"));
+const Navbar = lazy(() => import("./Components/NavBar/NavBarLoggedOff"));
+const Footer = lazy(() => import("./Components/Footer/Footer"));
 const MoodChart = lazy(() => import("./Components/MoodChart/MoodChart"));
 const JournalCalendar = lazy(() => import("./Components/JournalCalendar/JournalCalendar"));
 

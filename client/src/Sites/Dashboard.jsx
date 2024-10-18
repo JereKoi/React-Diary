@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Components/Footer";
+import Footer from "./Components/Footer/Footer";
 import "./Components/HomeBackground/HomeCard.css"; // Import card styles
-import Navbar from "./Components/NavBarLoggedIn";
+import Navbar from "./Components/NavBar/NavBarLoggedIn";
 import "./Dashboard.css";
 
 // Check if user returns say welcome back on title, if user comes back after

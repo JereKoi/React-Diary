@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./About.css";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/NavBarLoggedOff";
+import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/NavBar/NavBarLoggedOff";
 
 const AboutPage = () => {
   const navigate = useNavigate();

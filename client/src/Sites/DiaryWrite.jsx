@@ -1,5 +1,5 @@
-import Footer from "./Components/Footer";
-import Navbar from "./Components/NavBarLoggedIn";
+import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/NavBar/NavBarLoggedIn";
 import "./DiaryWrite.css";
 
 const DiaryEntriesPage = () => {
