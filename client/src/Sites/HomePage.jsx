@@ -8,6 +8,7 @@ const AbstractBackground = lazy(() =>
 const Navbar = lazy(() => import("./Components/NavBarLoggedOff"));
 const Footer = lazy(() => import("./Components/Footer"));
 const MoodChart = lazy(() => import("./Components/MoodChart/MoodChart"));
+const JournalCalendar = lazy(() => import("./Components/JournalCalendar/JournalCalendar"));
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -138,6 +139,7 @@ const HomePage = () => {
             <div className="daily-reminder-icon">
               <i className="bx bx-time"></i>
               <h3 className="mood-chart-title">Daily reminders</h3>
+              <JournalCalendar />
             </div>
 
             <div className="Analyze-icon mood-chart-wrapper">
