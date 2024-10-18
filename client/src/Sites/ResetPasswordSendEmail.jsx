@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Footer from "./Components/Footer";
-import "./ResetPasswordSendEmailStyle.css";
+import "./ResetPasswordSendEmail.css";
 
 const ResetPasswordForm = () => {
   const { token } = useParams();

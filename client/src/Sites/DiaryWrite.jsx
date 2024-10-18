@@ -1,20 +1,14 @@
-import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
-import "./ResetPasswordStyle.css";
+import "./DiaryWrite.css";
 
-const ContactPage = () => {
-  const navigate = useNavigate();
+const DiaryEntriesPage = () => {
   return (
     <div>
-      <div>
-        <h1>
-          Reset password
-        </h1>
-      </div>
       <div className="navBar">
         <Navbar />
       </div>
+      <h1>Diary write page. Search by specific word or title</h1>
       <div className="Footer">
         <Footer />
       </div>
@@ -22,4 +16,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default DiaryEntriesPage;

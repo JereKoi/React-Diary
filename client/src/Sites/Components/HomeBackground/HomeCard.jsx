@@ -1,6 +1,6 @@
 // Card.jsx
 import React from 'react';
-import './HomeCardStyle.css';
+import './HomeCard.css';
 
 const Card = ({ title, content }) => {
   return (

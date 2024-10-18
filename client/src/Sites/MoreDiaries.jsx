@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
 import Footer from "./Components/Footer";
-import "./MoreDiariesPage.css";
+import "./MoreDiaries.css";
 
 const MoreDiariesPage = () => {
   const navigate = useNavigate();

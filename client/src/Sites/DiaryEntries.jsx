@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedOff";
-import "./DiaryEntriesStyle.css";
+import "./DiaryEntries.css";
 
 const DiaryEntriesPage = () => {
   const [newTitle, setNewTitle] = useState("");

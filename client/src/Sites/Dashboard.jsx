@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
-import "./Components/HomeBackground/HomeCardStyle.css"; // Import card styles
+import "./Components/HomeBackground/HomeCard.css"; // Import card styles
 import Navbar from "./Components/NavBarLoggedIn";
-import "./DashboardStyle.css";
+import "./Dashboard.css";
 
 // Check if user returns say welcome back on title, if user comes back after
 // long time then say welcome back. For often returning users, randomize the

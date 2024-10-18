@@ -1,6 +1,6 @@
 // src/components/JournalCalendar.js
 import React, { useState } from "react";
-import "./JournalCalendarStyle.css";
+import "./JournalCalendar.css";
 
 const JournalCalendar = () => {
   // Example data: Array of dates where the user has made journal entries.

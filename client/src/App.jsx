@@ -1,52 +1,55 @@
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import AboutPage from "./Sites/AboutPage";
-import AboutUsPage from "./Sites/AboutUsPage";
-import ContactPage from "./Sites/ContactPage";
-import DashboardPage from "./Sites/DashboardPage";
-import DiaryEntriesPage from "./Sites/DiaryEntriesPage";
-import DiaryQuillPage from "./Sites/DiaryQuillPage";
-import DiaryWritePage from "./Sites/DiaryWritePage";
+
+import About from "./Sites/About";
+import AboutUs from "./Sites/AboutUs";
+import Contact from "./Sites/Contact";
+import Dashboard from "./Sites/Dashboard";
+import DiaryEntries from "./Sites/DiaryEntries";
+import DiaryQuill from "./Sites/DiaryQuill";
+import DiaryWrite from "./Sites/DiaryWrite";
 import Faq from "./Sites/Faq";
-import HomePage from "./Sites/HomePage";
-import LoginScreen from "./Sites/LoginScreen";
-import MoreDiariesPage from "./Sites/MoreDiariesPage";
+import Home from "./Sites/Home";
+import Login from "./Sites/Login";
+import MoreDiaries from "./Sites/MoreDiaries";
 import PrivacyPolicy from "./Sites/PrivacyPolicy";
+import ResetPassword from "./Sites/ResetPassword";
 import ResetPasswordForm from "./Sites/ResetPasswordForm";
-import ResetPasswordPage from "./Sites/ResetPasswordPage";
 import ResetPasswordSendEmail from "./Sites/ResetPasswordSendEmail";
-import TemplateDayPage from "./Sites/TemplateDayPage";
+import TemplateDay from "./Sites/TemplateDay";
 import TermsOfService from "./Sites/TermsOfService";
 
 function App() {
   const location = useLocation();
 
+  const routes = [
+    { path: "/", element: <Home /> },
+    { path: "/login", element: <Login /> },
+    { path: "/reset-password", element: <ResetPasswordForm /> },
+    { path: "/reset-password/:token", element: <ResetPassword /> },
+    { path: "/verify/:token", element: <Login /> },
+    { path: "/diary", element: <DiaryQuill /> },
+    { path: "/diaries", element: <DiaryEntries /> },
+    { path: "/write-diary", element: <DiaryWrite /> },
+    { path: "/more-diaries", element: <MoreDiaries /> },
+    { path: "/dashboard", element: <Dashboard /> },
+    { path: "/template-day", element: <TemplateDay /> },
+    { path: "/about", element: <About /> },
+    { path: "/about-us", element: <AboutUs /> },
+    { path: "/contact", element: <Contact /> },
+    { path: "/faq", element: <Faq /> },
+    { path: "/privacy-policy", element: <PrivacyPolicy /> },
+    { path: "/terms-of-service", element: <TermsOfService /> },
+    { path: "/reset-password-send-email", element: <ResetPasswordSendEmail /> },
+  ];
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Loginscreen" element={<LoginScreen />} />
-        <Route path="/ResetPasswordForm" element={<ResetPasswordForm />} />
-        <Route path="/DiaryQuillPage" element={<DiaryQuillPage />} />
-        <Route path="/HomePage" element={<HomePage />} />
-        <Route path="/AboutPage" element={<AboutPage />} />
-        <Route path="/ContactPage" element={<ContactPage />} />
-        <Route path="/DiaryEntriesPage" element={<DiaryEntriesPage />} />
-        <Route path="/DiaryWritePage" element={<DiaryWritePage />} />
-        <Route path="/TemplateDayPage" element={<TemplateDayPage/>} />
-        <Route path="/MoreDiariesPage" element={<MoreDiariesPage />} />
-        <Route path="/forgot-password" element={<ResetPasswordForm />} />
-        <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
-        <Route path="/reset-password" element={<ResetPasswordPage />} />
-        <Route path="/verify/:token" element={<LoginScreen />} />
-        <Route path="/verify" element={<LoginScreen />} />
-        <Route path="/ResetPasswordSendEmail" element={<ResetPasswordSendEmail />} />
-        <Route path="/DashboardPage" element={<DashboardPage />} />
-        <Route path="/Faq" element={<Faq />} />
-        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-        <Route path="/TermsOfService" element={<TermsOfService />} />
-        <Route path="/AboutUsPage" element={<AboutUsPage />} />
+        {routes.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
       </Routes>
     </AnimatePresence>
   );

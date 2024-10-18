@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedIn";
-import "./TemplateDayStyle.css";
+import "./TemplateDay.css";
 
 const TemplateDayPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());

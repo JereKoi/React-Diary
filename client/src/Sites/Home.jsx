@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./HomePageStyle.css";
+import "./Home.css";
 
 const AbstractBackground = lazy(() =>
   import("./Components/AbstractBackground/AbstractBackground")

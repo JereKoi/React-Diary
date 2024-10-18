@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedOff";
-import "./LoginScreenStyle.css";
+import "./Login.css";
 
 const LoginScreen = () => {
   const [isActive, setIsActive] = useState(false);

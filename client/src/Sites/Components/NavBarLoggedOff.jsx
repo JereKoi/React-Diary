@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./NavBarLoggedOffStyle.css";
+import "./NavBarLoggedOff.css";
 
 const NavBarLoggedOff = () => {
   const navigate = useNavigate();

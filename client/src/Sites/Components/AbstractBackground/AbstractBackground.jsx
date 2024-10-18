@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './AbstractBackgroundStyle.css';
+import './AbstractBackground.css';
 
 const AbstractBackground = () => {
   const [gradient, setGradient] = useState("");

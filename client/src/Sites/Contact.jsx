@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBarLoggedOff";
-import "./ContactStyle.css";
+import "./Contact.css";
 
 const ContactPage = () => {
   const navigate = useNavigate();

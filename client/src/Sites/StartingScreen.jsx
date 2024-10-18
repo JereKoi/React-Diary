@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
-import "./StartingScreenStyle.css";
+import "./StartingScreen.css";
 
 const StartingScreen = () => {
   const navigate = useNavigate();
