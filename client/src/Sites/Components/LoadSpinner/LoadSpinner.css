@@ -1,11 +1,17 @@
-.loading-spinner {
+:root {
+    --background-gradient: linear-gradient(135deg, #282c34, #232344);
+    --primary-color: #61dafb;
+    --text-color: #f3f4f6;
+  }
+  
+  .loading-spinner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #282c34, #232344);
-    color: #f3f4f6;
+    background: var(--background-gradient);
+    color: var(--text-color);
     font-family: 'Roboto', sans-serif;
     text-align: center;
     animation: fadeIn 0.8s ease-in-out;
@@ -13,7 +19,7 @@
   
   .spinner {
     border: 4px solid rgba(243, 244, 246, 0.2);
-    border-top: 4px solid #61dafb;
+    border-top: 4px solid var(--primary-color);
     border-radius: 50%;
     width: 60px;
     height: 60px;

@@ -1,25 +1,25 @@
 import { lazy } from "react";
 
-// Lazy load components to improve performance
-const Home = lazy(() => import("./Sites/Home"));
-const Login = lazy(() => import("./Sites/Login"));
-const ResetPasswordForm = lazy(() => import("./Sites/ResetPasswordForm"));
-const ResetPassword = lazy(() => import("./Sites/ResetPassword"));
-const DiaryQuill = lazy(() => import("./Sites/DiaryQuill"));
-const DiaryEntries = lazy(() => import("./Sites/DiaryEntries"));
-const DiaryWrite = lazy(() => import("./Sites/DiaryWrite"));
-const MoreDiaries = lazy(() => import("./Sites/MoreDiaries"));
-const Dashboard = lazy(() => import("./Sites/Dashboard"));
-const TemplateDay = lazy(() => import("./Sites/TemplateDay"));
-const About = lazy(() => import("./Sites/About"));
-const AboutUs = lazy(() => import("./Sites/AboutUs"));
-const Contact = lazy(() => import("./Sites/Contact"));
-const Faq = lazy(() => import("./Sites/Faq"));
-const PrivacyPolicy = lazy(() => import("./Sites/PrivacyPolicy"));
-const TermsOfService = lazy(() => import("./Sites/TermsOfService"));
-const ResetPasswordSendEmail = lazy(() => import("./Sites/ResetPasswordSendEmail"));
+const [Home, Login, ResetPasswordForm, ResetPassword, DiaryQuill, DiaryEntries, DiaryWrite, MoreDiaries, Dashboard, TemplateDay, About, AboutUs, Contact, Faq, PrivacyPolicy, TermsOfService, ResetPasswordSendEmail] = [
+  "./Sites/Home",
+  "./Sites/Login",
+  "./Sites/ResetPasswordForm",
+  "./Sites/ResetPassword",
+  "./Sites/DiaryQuill",
+  "./Sites/DiaryEntries",
+  "./Sites/DiaryWrite",
+  "./Sites/MoreDiaries",
+  "./Sites/Dashboard",
+  "./Sites/TemplateDay",
+  "./Sites/About",
+  "./Sites/AboutUs",
+  "./Sites/Contact",
+  "./Sites/Faq",
+  "./Sites/PrivacyPolicy",
+  "./Sites/TermsOfService",
+  "./Sites/ResetPasswordSendEmail",
+].map((path) => lazy(() => import(path)));
 
-// Define route groups for better organization
 const authRoutes = [
   { path: "/login", element: <Login /> },
   { path: "/reset-password", element: <ResetPasswordForm /> },
