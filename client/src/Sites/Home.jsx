@@ -8,7 +8,9 @@ const AbstractBackground = lazy(() =>
 const Navbar = lazy(() => import("./Components/NavBar/NavBarLoggedOff"));
 const Footer = lazy(() => import("./Components/Footer/Footer"));
 const MoodChart = lazy(() => import("./Components/MoodChart/MoodChart"));
-const JournalCalendar = lazy(() => import("./Components/JournalCalendar/JournalCalendar"));
+const JournalCalendar = lazy(() =>
+  import("./Components/JournalCalendar/JournalCalendar")
+);
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -97,6 +99,10 @@ const HomePage = () => {
               <h2>Features You'll Love</h2>
               <p>🔒 *Private and Secure*: Your thoughts stay safe with us.</p>
               <p>📝 *Daily Prompts*: Get inspiration when you need it most.</p>
+              <p>
+                ⏰ *Daily Reminders*: Set reminders and stay consistent with
+                your journaling.
+              </p>
               <p>🌈 *Custom Themes*: Design your diary to match your mood.</p>
             </div>
 
@@ -135,7 +141,13 @@ const HomePage = () => {
             <div className="daily-reminder-icon">
               <i className="bx bx-time"></i>
               <h3 className="mood-chart-title">Daily reminders</h3>
-              <JournalCalendar />
+              <p className="feature-description">
+                Never forget to write in your journal! Set daily reminders to
+                keep your journaling habit on track and make reflection a
+                consistent part of your life. Customize your reminders to fit
+                your schedule and get notified when it's time to jot down your
+                thoughts.
+              </p>
             </div>
 
             <div className="Analyze-icon mood-chart-wrapper">
@@ -146,7 +158,9 @@ const HomePage = () => {
 
             <div className="Track-icon">
               <i className="bx bx-notepad"></i>
-              <h3 className="mood-chart-title">Analyze and track your progress and writing style</h3>
+              <h3 className="mood-chart-title">
+                Analyze and track your progress and writing style
+              </h3>
             </div>
           </div>
           <div>

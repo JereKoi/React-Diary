@@ -211,6 +211,13 @@ body, html {
   grid-area: reminder-icon; /* Define its position */
 }
 
+.feature-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
 .Track-icon {
   grid-area: track-icon; /* Define its position */
 }
