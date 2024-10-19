@@ -68,7 +68,7 @@ useEffect(() => {
             className="home-btn"
             type="button"
             onClick={() => {
-              navigate("/HomePage");
+              navigate("/");
               setIsMobile(false); // Close menu on navigation
             }}
           >
@@ -78,7 +78,7 @@ useEffect(() => {
             className="write-btn"
             type="button"
             onClick={() => {
-              navigate("/DiaryQuillPage");
+              navigate("/diary");
               setIsMobile(false);
             }}
           >
@@ -88,7 +88,7 @@ useEffect(() => {
             className="entries-btn"
             type="button"
             onClick={() => {
-              navigate("/DiaryEntriesPage");
+              navigate("/diaries");
               setIsMobile(false);
             }}
           >
@@ -98,7 +98,7 @@ useEffect(() => {
             className="about-btn"
             type="button"
             onClick={() => {
-              navigate("/AboutPage");
+              navigate("/about");
               setIsMobile(false);
             }}
           >
@@ -108,7 +108,7 @@ useEffect(() => {
             className="contact-btn"
             type="button"
             onClick={() => {
-              navigate("/ContactPage");
+              navigate("/contact");
               setIsMobile(false);
             }}
           >
@@ -118,7 +118,7 @@ useEffect(() => {
             className="mobile-menu-icon"
             type="button"
             onClick={() => {
-              navigate("/LoginScreen");
+              navigate("/login");
               setIsMobile(false);
             }}
           ></button>

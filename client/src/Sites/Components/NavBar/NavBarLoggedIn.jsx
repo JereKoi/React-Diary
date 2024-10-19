@@ -39,35 +39,35 @@ const NavBarLoggedIn = () => {
           <button
             className="home-btn"
             type="button"
-            onClick={() => navigate("/HomePage")}
+            onClick={() => navigate("/")}
           >
             Home
           </button>
           <button
             className="write-btn"
             type="Write"
-            onClick={() => navigate("/DiaryQuillPage")}
+            onClick={() => navigate("/diary")}
           >
             Write
           </button>
           <button
             className="entries-btn"
             type="button"
-            onClick={() => navigate("/DiaryEntriesPage")}
+            onClick={() => navigate("/diaries")}
           >
             Diary entries
           </button>
           <button
             className="about-btn"
             type="button"
-            onClick={() => navigate("/AboutPage")}
+            onClick={() => navigate("/about")}
           >
             About
           </button>
           <button
             className="contact-btn"
             type="button"
-            onClick={() => navigate("/ContactPage")}
+            onClick={() => navigate("/contact")}
           >
             Contact
           </button>

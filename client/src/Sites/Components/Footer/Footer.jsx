@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
-                <button className="footer-section" onClick={() => navigate("/AboutUsPage")}>
+                <button className="footer-section" onClick={() => navigate("/about-us")}>
                     <h4>About Us</h4>
                     <p>Learn more about our company and team.</p>
                 </button>
@@ -15,15 +15,15 @@ const Footer = () => {
                     <h4>Our Services</h4>
                     <p>Discover the services we offer to help you.</p>
                 </button>
-                <button className="footer-section" onClick={() => navigate("/PrivacyPolicy")}>
+                <button className="footer-section" onClick={() => navigate("/privacy-policy")}>
                     <h4>Privacy Policy</h4>
                     <p>Read our privacy policy to understand how we handle your data.</p>
                 </button>
-                <button className="footer-section" onClick={() => navigate("/ContactPage")}>
+                <button className="footer-section" onClick={() => navigate("/contact")}>
                     <h4>Get Help</h4>
                     <p>Need assistance? Contact our support team.</p>
                 </button>
-                <button className="footer-section" onClick={() => navigate("/Faq")}>
+                <button className="footer-section" onClick={() => navigate("/faq")}>
                     <h4>FAQ</h4>
                     <p>Find answers to frequently asked questions.</p>
                 </button>

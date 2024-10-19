@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 class ErrorBoundary extends React.Component {
@@ -18,11 +19,21 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <h2>Something went wrong. Please try again later.</h2>;
+      return (
+        <div>
+          <h2>Something went wrong. Please try again later.</h2>
+          <button onClick={() => window.location.reload()}>Retry</button>
+          <a href="/">Go to Home</a>
+        </div>
+      );
     }
 
     return this.props.children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default ErrorBoundary;

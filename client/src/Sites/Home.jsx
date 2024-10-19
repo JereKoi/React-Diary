@@ -14,10 +14,6 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [sectionsReady, setSectionsReady] = useState(false);
 
-  const handleClick = () => {
-    navigate("/NextPage");
-  };
-
   useEffect(() => {
     // Trigger the observer setup after a small delay to ensure elements are rendered.
     const timer = setTimeout(() => setSectionsReady(true), 100);
@@ -82,7 +78,7 @@ const HomePage = () => {
               <button
                 className="cta-button"
                 aria-label="Try the journaling app now"
-                onClick={handleClick}
+                onClick={() => navigate("/login")}
               >
                 Try it now
               </button>

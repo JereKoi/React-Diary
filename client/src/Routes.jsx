@@ -19,18 +19,22 @@ const PrivacyPolicy = lazy(() => import("./Sites/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./Sites/TermsOfService"));
 const ResetPasswordSendEmail = lazy(() => import("./Sites/ResetPasswordSendEmail"));
 
-const routes = [
-  { path: "/", element: <Home /> },
+// Define route groups for better organization
+const authRoutes = [
   { path: "/login", element: <Login /> },
   { path: "/reset-password", element: <ResetPasswordForm /> },
   { path: "/reset-password/:token", element: <ResetPassword /> },
   { path: "/verify/:token", element: <Login /> },
+];
+
+const diaryRoutes = [
   { path: "/diary", element: <DiaryQuill /> },
   { path: "/diaries", element: <DiaryEntries /> },
   { path: "/write-diary", element: <DiaryWrite /> },
   { path: "/more-diaries", element: <MoreDiaries /> },
-  { path: "/dashboard", element: <Dashboard /> },
-  { path: "/template-day", element: <TemplateDay /> },
+];
+
+const staticRoutes = [
   { path: "/about", element: <About /> },
   { path: "/about-us", element: <AboutUs /> },
   { path: "/contact", element: <Contact /> },
@@ -38,6 +42,15 @@ const routes = [
   { path: "/privacy-policy", element: <PrivacyPolicy /> },
   { path: "/terms-of-service", element: <TermsOfService /> },
   { path: "/reset-password-send-email", element: <ResetPasswordSendEmail /> },
+];
+
+const routes = [
+  { path: "/", element: <Home /> },
+  { path: "/dashboard", element: <Dashboard /> },
+  { path: "/template-day", element: <TemplateDay /> },
+  ...authRoutes,
+  ...diaryRoutes,
+  ...staticRoutes,
 ];
 
 export default routes;
