@@ -3,7 +3,7 @@ import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBarLoggedIn";
 import "./ResetPassword.css";
 
-const ContactPage = () => {
+const ResetPassword = () => {
   const navigate = useNavigate();
   return (
     <div>
@@ -22,4 +22,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default ResetPassword;

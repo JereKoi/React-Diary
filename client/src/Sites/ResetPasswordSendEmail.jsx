@@ -70,7 +70,7 @@ const ResetPasswordForm = () => {
               <button
                 className="login-link"
                 type="button"
-                onClick={() => navigate("/LoginScreen")}
+                onClick={() => navigate("/login")}
               >
                 Login
               </button>

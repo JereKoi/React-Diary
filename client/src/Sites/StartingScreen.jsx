@@ -9,7 +9,7 @@ const StartingScreen = () => {
 
   useEffect(() => {
     const handleInteraction = () => {
-      navigate("/Loginscreen");
+      navigate("/login");
     };
 
     // Add a single event listener for both key press and mouse click
@@ -27,8 +27,8 @@ const StartingScreen = () => {
     <div
       role="button"
       tabIndex={0}
-      onClick={() => navigate("/Loginscreen")}
-      onKeyDown={() => navigate("/Loginscreen")}
+      onClick={() => navigate("/login")}
+      onKeyDown={() => navigate("/login")}
       className="StartingScreen"
     >
       <div className="Diary">

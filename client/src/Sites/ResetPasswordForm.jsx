@@ -37,7 +37,7 @@ const ResetPasswordForm = () => {
       await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/reset-password/${token}`, {
         newPassword: formData.newPassword,
       });
-      navigate('/LoginScreen');
+      navigate('/login');
     } catch (error) {
       setError(error.response?.data?.message || "An error occurred");
     } finally {
@@ -131,7 +131,7 @@ const ResetPasswordForm = () => {
               <button
                 className="login-link"
                 type="button"
-                onClick={() => navigate("/LoginScreen")}
+                onClick={() => navigate("/login")}
               >
                 Login
               </button>
