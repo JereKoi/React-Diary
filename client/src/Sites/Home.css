@@ -247,3 +247,69 @@ body, html {
   margin: 1rem 0;
   line-height: 1.6;
 }
+
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-card {
+  flex: 0 0 100%;
+  display: none;
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-card.active {
+  display: block;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+}

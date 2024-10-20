@@ -15,6 +15,40 @@ const JournalCalendar = lazy(() =>
 const HomePage = () => {
   const navigate = useNavigate();
   const [sectionsReady, setSectionsReady] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const featureCards = [
+    {
+      title: "Private and Secure",
+      description: "🔒 Your thoughts stay safe with us.",
+    },
+    {
+      title: "Daily Prompts",
+      description: "📝 Get inspiration when you need it most.",
+    },
+    {
+      title: "Custom Themes",
+      description: "🌈 Design your diary to match your mood.",
+    },
+    {
+      title: "Weekly Mood Tracker",
+      description: "📊 Track your weekly mood patterns.",
+    },
+  ];
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % featureCards.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) =>
+      prev === 0 ? featureCards.length - 1 : prev - 1
+    );
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentSlide(index);
+  };
 
   useEffect(() => {
     // Trigger the observer setup after a small delay to ensure elements are rendered.
@@ -26,6 +60,7 @@ const HomePage = () => {
     if (!sectionsReady) return;
 
     const sections = document.querySelectorAll(".scroll-section");
+    //For debugging the animations on feature showcase on home page
     console.log("Sections found after delay:", sections.length);
 
     let lastScrollY = window.scrollY;
@@ -211,8 +246,42 @@ const HomePage = () => {
               style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}
             ></section>
           </div>
+
+          <div className="carousel-container">
+            <div className="carousel">
+              {featureCards.map((card, index) => (
+                <div
+                  key={index}
+                  className={`carousel-card ${
+                    index === currentSlide ? "active" : ""
+                  }`}
+                  style={{
+                    transform: `translateX(${(index - currentSlide) * 100}%)`,
+                  }}
+                >
+                  <h2>{card.title}</h2>
+                  <p>{card.description}</p>
+                </div>
+              ))}
+            </div>
+            <button className="carousel-button prev" onClick={handlePrev}>
+              &#8592;
+            </button>
+            <button className="carousel-button next" onClick={handleNext}>
+              &#8594;
+            </button>
+            <div className="carousel-dots">
+              {featureCards.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === currentSlide ? "active" : ""}`}
+                  onClick={() => handleDotClick(index)}
+                />
+              ))}
+            </div>
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     </Suspense>
   );
