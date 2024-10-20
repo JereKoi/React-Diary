@@ -15,10 +15,6 @@ const Footer = () => {
                     <h4>Our Services</h4>
                     <p>Discover the services we offer to help you.</p>
                 </button>
-                <button className="footer-section" onClick={() => navigate("/privacy-policy")}>
-                    <h4>Privacy Policy</h4>
-                    <p>Read our privacy policy to understand how we handle your data.</p>
-                </button>
                 <button className="footer-section" onClick={() => navigate("/contact")}>
                     <h4>Get Help</h4>
                     <p>Need assistance? Contact our support team.</p>
@@ -26,6 +22,14 @@ const Footer = () => {
                 <button className="footer-section" onClick={() => navigate("/faq")}>
                     <h4>FAQ</h4>
                     <p>Find answers to frequently asked questions.</p>
+                </button>
+                <button className="footer-section" onClick={() => navigate("/privacy-policy")}>
+                    <h4>Privacy Policy</h4>
+                    <p>Read our privacy policy to understand how we handle your data.</p>
+                </button>
+                <button className="footer-section" onClick={() => navigate("/terms-of-service")}>
+                    <h4>Terms of Service</h4>
+                    <p>Read our terms and conditions for using our services.</p>
                 </button>
                 <div className="footer-last">
                     <p>&copy; {new Date().getFullYear()} My Diary App. All rights reserved.</p>

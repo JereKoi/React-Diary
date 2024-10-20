@@ -240,3 +240,10 @@ body, html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease-in-out;
 }
+
+.mood-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 1rem 0;
+  line-height: 1.6;
+}

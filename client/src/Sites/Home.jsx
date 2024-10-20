@@ -159,8 +159,50 @@ const HomePage = () => {
             <div className="Track-icon">
               <i className="bx bx-notepad"></i>
               <h3 className="mood-chart-title">
-                Analyze and track your progress and writing style
+                Analyze and Track Your Progress and Writing Style
               </h3>
+              <p className="mood-description">
+                Gain insights into your journaling patterns, explore trends in
+                your mood and style, and see how your reflections have evolved
+                over time.
+              </p>
+
+              {/* Interactive Chart Preview */}
+              <div className="chart-preview">
+                <h4>Your Mood Trends</h4>
+                <small>(Last 7 days)</small>
+                <MoodChart /> {/* Small, interactive chart component */}
+                <button
+                  className="explore-button"
+                  onClick={() => navigate("/analytics")}
+                >
+                  Explore Your Insights
+                </button>
+              </div>
+
+              {/* Word Cloud of Most Used Words */}
+              <div className="word-cloud">
+                <h4>Word Cloud</h4>
+                <p>Most used words in your reflections:</p>
+                <div className="tags">
+                  <span className="tag">Gratitude</span>
+                  <span className="tag">Mindfulness</span>
+                  <span className="tag">Reflection</span>
+                  <span className="tag">Joy</span>
+                  <span className="tag">Growth</span>
+                  <span className="tag">Challenge</span>
+                </div>
+              </div>
+
+              {/* Milestones */}
+              <div className="milestones">
+                <h4>Your Milestones</h4>
+                <ul>
+                  <li>🏆 30 Days of Journaling</li>
+                  <li>✨ 7 Entries with Positive Mood</li>
+                  <li>📅 Most Active Day: Sundays</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div>
