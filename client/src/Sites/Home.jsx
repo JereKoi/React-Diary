@@ -145,7 +145,7 @@ const HomePage = () => {
                 Never forget to write in your journal! Set daily reminders to
                 keep your journaling habit on track and make reflection a
                 consistent part of your life. Customize your reminders to fit
-                your schedule and get notified when it's time to jot down your
+                your schedule and get notified when it's time to write down your
                 thoughts.
               </p>
             </div>

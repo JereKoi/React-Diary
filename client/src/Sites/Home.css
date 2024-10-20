@@ -167,12 +167,14 @@ body, html {
 }
 
 .front-page-icons {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive column layout */
   grid-template-areas:
-    "reminder-icon reminder-icon"
-    "mood-chart mood-chart"
-    "track-icon track-icon"; /* Define specific areas for better layout */
+    "reminder-icon"
+    "mood-chart"
+    "track-icon"; /* Define specific areas for better layout */
   gap: 20px; /* Space between the icons */
   justify-items: center; /* Center-aligns the content within each grid item */
   padding: 40px 0; /* Padding for some spacing above and below */
@@ -224,7 +226,7 @@ body, html {
 
 .mood-chart-wrapper {
   grid-column: span 2; /* This makes the MoodChart span across 2 columns */
-  width: 200%; /* Set the width to 200% */
+  width: 100%; /* Set the width to 200% */
   max-width: 1200px; /* Ensure it doesn’t get too large on bigger screens */
 }
 
