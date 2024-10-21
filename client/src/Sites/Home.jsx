@@ -11,11 +11,22 @@ const MoodChart = lazy(() => import("./Components/MoodChart/MoodChart"));
 const JournalCalendar = lazy(() =>
   import("./Components/JournalCalendar/JournalCalendar")
 );
+const WordCloud = lazy(() => import("./Components/WordCloud/WordCloud"));
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [sectionsReady, setSectionsReady] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const wordData = [
+    { text: "Gratitude", count: 20 },
+    { text: "Reflection", count: 15 },
+    { text: "Joy", count: 25 },
+    { text: "Challenge", count: 10 },
+    { text: "Mindfulness", count: 18 },
+    { text: "Growth", count: 13 },
+    // Add more words based on the user's journaling data
+  ];
 
   const featureCards = [
     {
@@ -215,20 +226,6 @@ const HomePage = () => {
                 </button>
               </div>
 
-              {/* Word Cloud of Most Used Words */}
-              <div className="word-cloud">
-                <h4>Word Cloud</h4>
-                <p>Most used words in your reflections:</p>
-                <div className="tags">
-                  <span className="tag">Gratitude</span>
-                  <span className="tag">Mindfulness</span>
-                  <span className="tag">Reflection</span>
-                  <span className="tag">Joy</span>
-                  <span className="tag">Growth</span>
-                  <span className="tag">Challenge</span>
-                </div>
-              </div>
-
               {/* Milestones */}
               <div className="milestones">
                 <h4>Your Milestones</h4>
@@ -245,6 +242,11 @@ const HomePage = () => {
               id="mood-tracker"
               style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}
             ></section>
+          </div>
+
+          <div className="word-cloud-section">
+            <h2>Most Used Words</h2>
+            <WordCloud words={wordData} />
           </div>
 
           <div className="carousel-container">
