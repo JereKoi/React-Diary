@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
@@ -18,15 +18,63 @@ const HomePage = () => {
   const [sectionsReady, setSectionsReady] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const wordData = [
+  const wordData = useMemo( () => [
     { text: "Gratitude", count: 20 },
     { text: "Reflection", count: 15 },
     { text: "Joy", count: 25 },
     { text: "Challenge", count: 10 },
     { text: "Mindfulness", count: 18 },
     { text: "Growth", count: 13 },
+    { text: "Peace", count: 9 },
+    { text: "Hope", count: 16 },
+    { text: "Inspiration", count: 14 },
+    { text: "Calm", count: 12 },
+    { text: "Resilience", count: 7 },
+    { text: "Motivation", count: 19 },
+    { text: "Acceptance", count: 11 },
+    { text: "Clarity", count: 10 },
+    { text: "Strength", count: 8 },
+    { text: "Courage", count: 6 },
+    { text: "Reflection", count: 13 },
+    { text: "Wellness", count: 12 },
+    { text: "Balance", count: 15 },
+    { text: "Healing", count: 9 },
+    { text: "Adventure", count: 8 },
+    { text: "Self-care", count: 14 },
+    { text: "Mindset", count: 12 },
+    { text: "Focus", count: 11 },
+    { text: "Discovery", count: 10 },
+    { text: "Compassion", count: 5 },
+    { text: "Energy", count: 17 },
+    { text: "Reflection", count: 13 },
+    { text: "Patience", count: 7 },
+    { text: "Insight", count: 6 },
+    { text: "Creativity", count: 15 },
+    { text: "Freedom", count: 10 },
+    { text: "Kindness", count: 8 },
+    { text: "Empathy", count: 5 },
+    { text: "Awareness", count: 9 },
+    { text: "Positivity", count: 14 },
+    { text: "Focus", count: 10 },
+    { text: "Gratitude", count: 18 },
+    { text: "Reflection", count: 12 },
+    { text: "Relaxation", count: 11 },
+    { text: "Adventure", count: 13 },
+    { text: "Curiosity", count: 8 },
+    { text: "Dreams", count: 7 },
+    { text: "Optimism", count: 16 },
+    { text: "Self-love", count: 6 },
+    { text: "Harmony", count: 9 },
+    { text: "Passion", count: 10 },
+    { text: "Hope", count: 13 },
+    { text: "Discovery", count: 11 },
+    { text: "Faith", count: 7 },
+    { text: "Bravery", count: 5 },
+    { text: "Connection", count: 12 },
     // Add more words based on the user's journaling data
-  ];
+  ],
+  []
+);
 
   const featureCards = [
     {
