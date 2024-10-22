@@ -314,7 +314,7 @@ body, html {
   background: #333;
 }
 
-.your-mood-trends-title{
+.milestones-title{
   font-size: 1rem;
   color: #555;
   margin: 1rem 0;
@@ -343,4 +343,62 @@ small {
   font-size: 12px;
   color: #6c757d; /* Muted color to keep the focus on the button */
   margin-bottom: 10px;
+}
+
+.badges-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.badge {
+  min-width: 150px;
+  height: 150px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  margin-right: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+}
+
+.badge.unlocked {
+  background-color: #4caf50; /* Green for unlocked badges */
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.badge.locked {
+  background-color: #ccc; /* Gray for locked badges */
+  color: #666;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.badge.locked:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }

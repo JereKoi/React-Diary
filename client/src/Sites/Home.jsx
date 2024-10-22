@@ -18,63 +18,64 @@ const HomePage = () => {
   const [sectionsReady, setSectionsReady] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const wordData = useMemo( () => [
-    { text: "Gratitude", count: 20 },
-    { text: "Reflection", count: 15 },
-    { text: "Joy", count: 25 },
-    { text: "Challenge", count: 10 },
-    { text: "Mindfulness", count: 18 },
-    { text: "Growth", count: 13 },
-    { text: "Peace", count: 9 },
-    { text: "Hope", count: 16 },
-    { text: "Inspiration", count: 14 },
-    { text: "Calm", count: 12 },
-    { text: "Resilience", count: 7 },
-    { text: "Motivation", count: 19 },
-    { text: "Acceptance", count: 11 },
-    { text: "Clarity", count: 10 },
-    { text: "Strength", count: 8 },
-    { text: "Courage", count: 6 },
-    { text: "Reflection", count: 13 },
-    { text: "Wellness", count: 12 },
-    { text: "Balance", count: 15 },
-    { text: "Healing", count: 9 },
-    { text: "Adventure", count: 8 },
-    { text: "Self-care", count: 14 },
-    { text: "Mindset", count: 12 },
-    { text: "Focus", count: 11 },
-    { text: "Discovery", count: 10 },
-    { text: "Compassion", count: 5 },
-    { text: "Energy", count: 17 },
-    { text: "Reflection", count: 13 },
-    { text: "Patience", count: 7 },
-    { text: "Insight", count: 6 },
-    { text: "Creativity", count: 15 },
-    { text: "Freedom", count: 10 },
-    { text: "Kindness", count: 8 },
-    { text: "Empathy", count: 5 },
-    { text: "Awareness", count: 9 },
-    { text: "Positivity", count: 14 },
-    { text: "Focus", count: 10 },
-    { text: "Gratitude", count: 18 },
-    { text: "Reflection", count: 12 },
-    { text: "Relaxation", count: 11 },
-    { text: "Adventure", count: 13 },
-    { text: "Curiosity", count: 8 },
-    { text: "Dreams", count: 7 },
-    { text: "Optimism", count: 16 },
-    { text: "Self-love", count: 6 },
-    { text: "Harmony", count: 9 },
-    { text: "Passion", count: 10 },
-    { text: "Hope", count: 13 },
-    { text: "Discovery", count: 11 },
-    { text: "Faith", count: 7 },
-    { text: "Bravery", count: 5 },
-    { text: "Connection", count: 12 },
-    // Add more words based on the user's journaling data
-  ],
-  []
-);
+  const wordData = useMemo(
+    () => [
+      { text: "Gratitude", count: 20 },
+      { text: "Reflection", count: 15 },
+      { text: "Joy", count: 25 },
+      { text: "Challenge", count: 10 },
+      { text: "Mindfulness", count: 18 },
+      { text: "Growth", count: 13 },
+      { text: "Peace", count: 9 },
+      { text: "Hope", count: 16 },
+      { text: "Inspiration", count: 14 },
+      { text: "Calm", count: 12 },
+      { text: "Resilience", count: 7 },
+      { text: "Motivation", count: 19 },
+      { text: "Acceptance", count: 11 },
+      { text: "Clarity", count: 10 },
+      { text: "Strength", count: 8 },
+      { text: "Courage", count: 6 },
+      { text: "Reflection", count: 13 },
+      { text: "Wellness", count: 12 },
+      { text: "Balance", count: 15 },
+      { text: "Healing", count: 9 },
+      { text: "Adventure", count: 8 },
+      { text: "Self-care", count: 14 },
+      { text: "Mindset", count: 12 },
+      { text: "Focus", count: 11 },
+      { text: "Discovery", count: 10 },
+      { text: "Compassion", count: 5 },
+      { text: "Energy", count: 17 },
+      { text: "Reflection", count: 13 },
+      { text: "Patience", count: 7 },
+      { text: "Insight", count: 6 },
+      { text: "Creativity", count: 15 },
+      { text: "Freedom", count: 10 },
+      { text: "Kindness", count: 8 },
+      { text: "Empathy", count: 5 },
+      { text: "Awareness", count: 9 },
+      { text: "Positivity", count: 14 },
+      { text: "Focus", count: 10 },
+      { text: "Gratitude", count: 18 },
+      { text: "Reflection", count: 12 },
+      { text: "Relaxation", count: 11 },
+      { text: "Adventure", count: 13 },
+      { text: "Curiosity", count: 8 },
+      { text: "Dreams", count: 7 },
+      { text: "Optimism", count: 16 },
+      { text: "Self-love", count: 6 },
+      { text: "Harmony", count: 9 },
+      { text: "Passion", count: 10 },
+      { text: "Hope", count: 13 },
+      { text: "Discovery", count: 11 },
+      { text: "Faith", count: 7 },
+      { text: "Bravery", count: 5 },
+      { text: "Connection", count: 12 },
+      // Add more words based on the user's journaling data
+    ],
+    []
+  );
 
   const featureCards = [
     {
@@ -258,26 +259,49 @@ const HomePage = () => {
               <h4 className="your-mood-trends-title">Your Mood Trends</h4>
               <MoodChart />
               <small>(Last 7 days)</small>
-                <button
-                  className="explore-button"
-                  onClick={() => navigate("/analytics")}
-                >
-                  Explore Your Insights
-                </button>
+              <button
+                className="explore-button"
+                onClick={() => navigate("/analytics")}
+              >
+                Explore Your Insights
+              </button>
             </div>
 
             <div className="Track-icon">
               <i className="bx bx-notepad"></i>
 
-
               {/* Milestones */}
-              <div className="milestones">
-                <h4>Your Milestones</h4>
-                <ul>
-                  <li>🏆 30 Days of Journaling</li>
-                  <li>✨ 7 Entries with Positive Mood</li>
-                  <li>📅 Most Active Day: Sundays</li>
-                </ul>
+              <h4 className="milestones-title">Your Milestones</h4>
+
+              <div className="badges-container">
+                <div
+                  className="badge unlocked"
+                  onclick="showDetails('30 Days of Journaling')"
+                >
+                  <span className="badge-icon">🏆</span>
+                  <p>30 Days of Journaling</p>
+                </div>
+                <div
+                  className="badge unlocked"
+                  onclick="showDetails('Most Active Day: Sundays')"
+                >
+                  <span className="badge-icon">📅</span>
+                  <p>Most Active Day: Sundays</p>
+                </div>
+                <div
+                  className="badge unlocked"
+                  onclick="showDetails('7 Entries with Positive Mood')"
+                >
+                  <span className="badge-icon">✨</span>
+                  <p>7 Entries with Positive Mood</p>
+                </div>
+                <div className="badge locked">
+                  <span className="badge-icon">🔒</span>
+                  <p>Locked Badge</p>
+                  <div className="tooltip">
+                    Complete 5 more entries to unlock
+                  </div>
+                </div>
               </div>
             </div>
           </div>
