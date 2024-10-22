@@ -273,34 +273,32 @@ const HomePage = () => {
               {/* Milestones */}
               <h4 className="milestones-title">Your Milestones</h4>
 
-              <div className="badges-container">
+              <div class="badges-container">
                 <div
-                  className="badge unlocked"
+                  class="badge unlocked"
                   onclick="showDetails('30 Days of Journaling')"
                 >
-                  <span className="badge-icon">🏆</span>
+                  <span class="badge-icon">🏆</span>
                   <p>30 Days of Journaling</p>
                 </div>
                 <div
-                  className="badge unlocked"
+                  class="badge unlocked"
                   onclick="showDetails('Most Active Day: Sundays')"
                 >
-                  <span className="badge-icon">📅</span>
+                  <span class="badge-icon">📅</span>
                   <p>Most Active Day: Sundays</p>
                 </div>
                 <div
-                  className="badge unlocked"
+                  class="badge unlocked"
                   onclick="showDetails('7 Entries with Positive Mood')"
                 >
-                  <span className="badge-icon">✨</span>
+                  <span class="badge-icon">✨</span>
                   <p>7 Entries with Positive Mood</p>
                 </div>
-                <div className="badge locked">
-                  <span className="badge-icon">🔒</span>
+                <div class="badge locked">
+                  <span class="badge-icon">🔒</span>
                   <p>Locked Badge</p>
-                  <div className="tooltip">
-                    Complete 5 more entries to unlock
-                  </div>
+                  <div class="tooltip">Complete 5 more entries to unlock</div>
                 </div>
               </div>
             </div>
