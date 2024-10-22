@@ -10,7 +10,7 @@ const WordCloud = ({ words }) => {
     if (!words || words.length === 0) return;
 
     const svg = d3.select(svgRef.current);
-    const width = 500;
+    const width = 1000;
     const height = 300;
 
     // Clear any previous word cloud
@@ -39,7 +39,7 @@ const WordCloud = ({ words }) => {
     layout.start();
 
     function draw(words) {
-      const textElements = svg
+      svg
         .attr("width", width)
         .attr("height", height)
         .append("g")
@@ -53,39 +53,6 @@ const WordCloud = ({ words }) => {
         .attr("text-anchor", "middle")
         .attr("transform", (d) => `translate(${d.x},${d.y}) rotate(${d.rotate})`)
         .text((d) => d.text)
-        .on("mouseover", function (event, d) {
-          d3.select(this)
-            .transition()
-            .duration(200)
-            .attr("transform", `translate(${d.x},${d.y}) scale(1.3)`) // Scale up
-            .style("font-weight", "bold"); // Optionally make it bold
-
-          svg
-            .selectAll("text")
-            .filter((word) => word.text !== d.text) // Select other words
-            .transition()
-            .duration(200)
-            .attr("transform", (word) => {
-              const angle = Math.atan2(word.y - d.y, word.x - d.x);
-              const moveDistance = 70; // Adjust distance as needed
-              const newX = word.x + Math.cos(angle) * moveDistance;
-              const newY = word.y + Math.sin(angle) * moveDistance;
-              return `translate(${newX},${newY}) rotate(${word.rotate})`;
-            });
-        })
-        .on("mouseout", function () {
-          d3.select(this)
-            .transition()
-            .duration(200)
-            .attr("transform", (d) => `translate(${d.x},${d.y}) scale(1)`)
-            .style("font-weight", "normal"); // Reset bold
-
-          svg
-            .selectAll("text")
-            .transition()
-            .duration(200)
-            .attr("transform", (d) => `translate(${d.x},${d.y}) rotate(${d.rotate})`); // Reset position
-        })
         .on("click", (event, d) => {
           console.log(`User clicked on ${d.text}`);
           // Logic for showing related journal entries can be added here
