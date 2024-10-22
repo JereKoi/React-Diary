@@ -247,32 +247,28 @@ const HomePage = () => {
             <div className="Analyze-icon mood-chart-wrapper">
               <i className="bx bx-bar-chart-alt-2"></i>
               <h3 className="mood-chart-title">Weekly Mood Tracker</h3>
-              <MoodChart />
-            </div>
-
-            <div className="Track-icon">
-              <i className="bx bx-notepad"></i>
-              <h3 className="mood-chart-title">
+              <h4 className="mood-chart-title">
                 Analyze and Track Your Progress and Writing Style
-              </h3>
+              </h4>
               <p className="mood-description">
                 Gain insights into your journaling patterns, explore trends in
                 your mood and style, and see how your reflections have evolved
                 over time.
               </p>
-
-              {/* Interactive Chart Preview */}
-              <div className="chart-preview">
-                <h4>Your Mood Trends</h4>
-                <small>(Last 7 days)</small>
-                <MoodChart /> {/* Small, interactive chart component */}
+              <h4 className="your-mood-trends-title">Your Mood Trends</h4>
+              <MoodChart />
+              <small>(Last 7 days)</small>
                 <button
                   className="explore-button"
                   onClick={() => navigate("/analytics")}
                 >
                   Explore Your Insights
                 </button>
-              </div>
+            </div>
+
+            <div className="Track-icon">
+              <i className="bx bx-notepad"></i>
+
 
               {/* Milestones */}
               <div className="milestones">
