@@ -41,6 +41,8 @@ const WordCloud = ({ words }) => {
     layout.start();
 
     function draw(words) {
+      const tooltip = d3.select("#tooltip");
+
       svg
         .attr("width", width)
         .attr("height", height)
@@ -58,8 +60,24 @@ const WordCloud = ({ words }) => {
         .on("click", (event, d) => {
           console.log(`User clicked on ${d.text}`);
           setSelectedWord(d.text);
-          showWordTimeline(d.text); // Call function to show the graph for the clicked word
+          showWordTimeline(d.text);
+        })
+        .on("mouseover", (event, d) => {
+          tooltip
+            .style("opacity", 1)
+            .html(`Word: ${d.text} <br> Count: ${d.size}`)
+            .style("left", `${event.pageX + 10}px`)
+            .style("top", `${event.pageY + 10}px`);
+        })
+        .on("mouseout", () => {
+          tooltip.style("opacity", 0);
         });
+
+      // Adding transition effect to text
+      svg.selectAll("text")
+        .transition()
+        .duration(1000)
+        .attr("opacity", 1);
     }
   }, [words]);
 
@@ -83,26 +101,24 @@ const WordCloud = ({ words }) => {
     const width = 1000 - margin.left - margin.right;
     const height = 300 - margin.top - margin.bottom;
 
+    const svg = d3.select("#timeline");
+    svg.selectAll("*").remove(); // Clear previous elements
+
     const x = d3.scaleTime().domain(d3.extent(wordTimeline, d => d.date)).range([0, width]);
     const y = d3.scaleLinear().domain([0, d3.max(wordTimeline, d => d.count)]).range([height, 0]);
 
-    const svg = d3.select("#timeline")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
-    // Add X axis
-    svg.append("g")
+    // X axis
+    g.append("g")
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(x));
 
-    // Add Y axis
-    svg.append("g")
-      .call(d3.axisLeft(y));
+    // Y axis
+    g.append("g").call(d3.axisLeft(y));
 
-    // Add the line
-    svg.append("path")
+    // Line with transition effect
+    g.append("path")
       .datum(wordTimeline)
       .attr("fill", "none")
       .attr("stroke", "steelblue")
@@ -110,7 +126,9 @@ const WordCloud = ({ words }) => {
       .attr("d", d3.line()
         .x(d => x(d.date))
         .y(d => y(d.count))
-      );
+      )
+      .transition() // Adding transition
+      .duration(1000);
   }, [wordTimeline]);
 
   return (

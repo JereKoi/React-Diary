@@ -1,19 +1,33 @@
 .word-cloud-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-  }
-  
-  .tooltip {
-    position: absolute;
-    background-color: #ffffff;
-    color: #333;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    pointer-events: none;
-    font-size: 14px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  }
-  
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #ffffff;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  pointer-events: none;
+  font-size: 14px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s ease;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+#timeline {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1000px;
+  height: 300px;
+}
