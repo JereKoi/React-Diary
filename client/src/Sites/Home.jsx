@@ -347,6 +347,8 @@ const HomePage = () => {
                 />
               ))}
             </div>
+            <h1 className="h1-home-page-end">Let's get your thoughts down.</h1>
+            <button className="home-page-end-button" onClick={() => navigate("/learn-more")}>Here</button>
           </div>
           <Footer />
         </div>
