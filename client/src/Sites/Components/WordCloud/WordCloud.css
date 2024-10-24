@@ -22,7 +22,10 @@
 }
 
 h3 {
-  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 #timeline {
@@ -30,4 +33,37 @@ h3 {
   width: 100%;
   max-width: 1000px;
   height: 300px;
+}
+
+.spinner {
+  margin: 20px;
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.word-cloud-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+svg {
+  margin-bottom: 20px;
 }
