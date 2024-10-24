@@ -61,6 +61,20 @@ body, html {
   flex-direction: column; /* Stack child elements vertically */
   margin-top: 100px;
   margin-bottom: 400px;
+
+  /* Fade-in effect */
+  opacity: 0; /* Start invisible */
+  animation: fadeIn 1.5s ease-in forwards; /* Apply fadeIn animation */
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Fully transparent */
+  }
+  to {
+    opacity: 1; /* Fully opaque */
+  }
 }
 
 /* Call to Action and Secondary Buttons */
@@ -179,13 +193,15 @@ body, html {
     "track-icon"; /* Define specific areas for better layout */
   gap: 20px; /* Space between the icons */
   justify-items: center; /* Center-aligns the content within each grid item */
-  padding: 40px 0; /* Padding for some spacing above and below */
+  padding: 100px 0; /* Padding for some spacing above and below */
 }
 
 
 .front-page-icons div {
-  background: #f0f4f8; /* Light background color for icons */
+  background-color: rgba(255, 255, 255, 0.2); /* Light background color for icons */
   border-radius: 10px;
+  max-width: 1000px;
+  gap:20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle lift effect */
   padding: 20px; /* Padding inside each icon container */
   text-align: center;
@@ -206,7 +222,7 @@ body, html {
 .mood-chart-title {
   margin-top: 10px;
   font-size: 18px;
-  color: #555;
+  color: white;
   text-align: center;
   font-weight: 500;
 }
@@ -217,7 +233,7 @@ body, html {
 
 .feature-description {
   font-size: 1rem;
-  color: #555;
+  color: white;
   margin: 1rem 0;
   line-height: 1.6;
 }
