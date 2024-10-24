@@ -208,9 +208,8 @@ const HomePage = () => {
                 <p>
                   Today was a mix of emotions. I felt energized in the morning
                   but slowed down by the afternoon. The sunset reminded me that
-                  every day ends beautifully, no matter what.
+                  every day ends beautifully, no matter what.😊 🌅
                 </p>
-                <div className="mood-icons">😊 🌅</div>
               </div>
             </div>
 

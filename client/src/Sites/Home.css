@@ -107,8 +107,12 @@ body, html {
   border-radius: 10px; /* Rounded corners */
   text-align: left; /* Left-aligned text */
   margin-top: var(--spacing-large); /* Margin above */
-  font-size: 1rem; /* Font size */
+  font-size: 20px; /* Font size */
   color: #fff; /* Set text color to white */
+}
+
+.journal-preview h3 {
+  color: #fff; /* Ensure the heading is white */
 }
 
 /* Scroll Section */
