@@ -217,11 +217,6 @@ body, html {
   color: #7ed3e0; /* Main color for the icons */
 }
 
-.front-page-icons div:hover {
-  transform: translateY(-5px); /* Lift the icon slightly on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Intensify shadow on hover */
-  background: #e8f0fe; /* Slightly change background color on hover */
-}
 
 .mood-chart-title {
   margin-top: 10px;
@@ -265,7 +260,7 @@ body, html {
 
 .mood-description {
   font-size: 1rem;
-  color: #555;
+  color: #ffffff;
   margin: 1rem 0;
   line-height: 1.6;
 }
@@ -338,7 +333,7 @@ body, html {
 
 .milestones-title{
   font-size: 1rem;
-  color: #555;
+  color: #ffffff;
   margin: 1rem 0;
   line-height: 1.6;
 }
