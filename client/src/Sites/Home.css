@@ -150,6 +150,7 @@ body, html {
   transform: translateX(0); /* Move to original position */
 }
 
+
 /* Floating Action Button (FAB) */
 .fab {
   position: fixed; /* Fixed position on screen */
@@ -164,7 +165,7 @@ body, html {
   height: 50px; /* Fixed height */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
 }
 
 .fab:hover {
@@ -358,18 +359,27 @@ small {
   opacity: 1;
 }
 
+/* Home Page End Button */
 .home-page-end-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  height: auto;
-  width: auto;
-  font-size: 150px;
-  border: none;
-  border-radius: 25px; /* Rounded corners */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  margin-top: 200px;
-  margin-bottom: 200px;
+  background-color: var(--button-bg); /* Set button background color */
+  color: #fff; /* Text color */
+  padding: 20px 40px; /* Increased padding for larger size */
+  font-size: 1.5rem; /* Larger font size for better visibility */
+  border: none; /* Remove default border */
+  border-radius: 25px; /* Rounded corners for a friendly look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+  margin-top: 20px; /* Space above the button */
+  position: relative; /* Positioning for pseudo-element */
+  overflow: hidden; /* Hide overflow for animations */
+  margin-top: 500px;
+  margin-bottom: 100px;
+}
+
+/* Hover Effects */
+.home-page-end-button:hover {
+  background-color: var(--button-hover-bg); /* Change background on hover */
+  transform: translateY(-4px) scale(1.05); /* Lift and slightly enlarge button */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
 }

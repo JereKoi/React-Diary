@@ -343,7 +343,9 @@ const HomePage = () => {
               onClick={() => navigate("/learn-more")}
             >
               Let's get your thoughts down
+              <i class='bx bx-right-arrow-alt'></i>
             </button>
+            <i class='bx bx-right-arrow-alt'></i>
           </div>
           <Footer />
         </div>
