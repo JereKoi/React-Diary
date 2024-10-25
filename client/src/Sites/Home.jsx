@@ -257,13 +257,6 @@ const HomePage = () => {
               </p>
               <h4 className="your-mood-trends-title">Your Mood Trends</h4>
               <MoodChart />
-              <small>(Last 7 days)</small>
-              <button
-                className="explore-button"
-                onClick={() => navigate("/analytics")}
-              >
-                Explore Your Insights
-              </button>
             </div>
 
             <div className="Track-icon">
@@ -301,6 +294,10 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+            <div className="word-cloud-section">
+            <h2>Most Used Words</h2>
+            <WordCloud words={wordData} />
+          </div>
           </div>
           <div>
             <section
@@ -309,10 +306,7 @@ const HomePage = () => {
             ></section>
           </div>
 
-          <div className="word-cloud-section">
-            <h2>Most Used Words</h2>
-            <WordCloud words={wordData} />
-          </div>
+          
 
           <div className="carousel-container">
             <div className="carousel">

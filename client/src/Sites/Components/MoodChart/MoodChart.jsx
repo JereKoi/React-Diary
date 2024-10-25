@@ -21,11 +21,10 @@ const MoodChart = () => {
       {
         label: "Mood Over Time",
         data: [3, 4, 5, 2, 4, 1, 5],
-        borderColor: "#4caf50",
+        borderColor: "#61dafb",
         borderWidth: 3,
         tension: 0.3, // Smooths the line curve
-        backgroundColor: "rgba(76, 175, 80, 0.1)", // Light green fill
-        pointBackgroundColor: "#4caf50", // Green dots
+        pointBackgroundColor: "#61dafb", // Green dots
         pointRadius: 5,
         pointHoverRadius: 8,
       },
@@ -66,13 +65,12 @@ const MoodChart = () => {
             scales: {
               x: {
                 grid: { display: false },
-                ticks: { font: { size: 14 }, color: "#333" },
+                ticks: { font: { size: 14 }, color: "#ffffff" },
               },
               y: {
                 grid: { display: true, color: "#e0e0e0" },
                 ticks: {
                   font: { size: 14 },
-                  color: "#333",
                   callback: (value) => {
                     const moodMap = {
                       1: "😢",
