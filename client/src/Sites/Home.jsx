@@ -18,6 +18,11 @@ const HomePage = () => {
   const [sectionsReady, setSectionsReady] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+ //Achievement badges click logic
+  const showDetails = (message) => {
+    console.log(message); // Replace this with any other logic you need.
+  };
+
   const wordData = useMemo(
     () => [
       { text: "Gratitude", count: 20 },
@@ -182,7 +187,7 @@ const HomePage = () => {
               <button
                 className="secondary-button"
                 aria-label="Learn more about the journaling app"
-                onClick={() => navigate("/learn-more")}
+                onClick={() => navigate("/faq")}
               >
                 Learn More
               </button>
@@ -265,39 +270,42 @@ const HomePage = () => {
               {/* Milestones */}
               <h4 className="milestones-title">Your Milestones</h4>
 
-              <div class="badges-container">
+
+              <div className="badges-container">
                 <div
-                  class="badge unlocked"
-                  onclick="showDetails('30 Days of Journaling')"
+                  className="badge unlocked"
+                  onClick={() => showDetails("30 Days of Journaling")}
                 >
-                  <span class="badge-icon">🏆</span>
+                  <span className="badge-icon">🏆</span>
                   <p>30 Days of Journaling</p>
                 </div>
                 <div
-                  class="badge unlocked"
-                  onclick="showDetails('Most Active Day: Sundays')"
+                  className="badge unlocked"
+                  onClick={() => showDetails("Most Active Day: Sundays")}
                 >
-                  <span class="badge-icon">📅</span>
+                  <span className="badge-icon">📅</span>
                   <p>Most Active Day: Sundays</p>
                 </div>
                 <div
-                  class="badge unlocked"
-                  onclick="showDetails('7 Entries with Positive Mood')"
+                  className="badge unlocked"
+                  onClick={() => showDetails("7 Entries with Positive Mood")}
                 >
-                  <span class="badge-icon">✨</span>
+                  <span className="badge-icon">✨</span>
                   <p>7 Entries with Positive Mood</p>
                 </div>
-                <div class="badge locked">
-                  <span class="badge-icon">🔒</span>
+                <div className="badge locked">
+                  <span className="badge-icon">🔒</span>
                   <p>Locked Badge</p>
-                  <div class="tooltip">Complete 5 more entries to unlock</div>
+                  <div className="tooltip">
+                    Complete 5 more entries to unlock
+                  </div>
                 </div>
               </div>
             </div>
             <div className="word-cloud-section">
-            <h2>Most Used Words</h2>
-            <WordCloud words={wordData} />
-          </div>
+              <h2>Most Used Words</h2>
+              <WordCloud words={wordData} />
+            </div>
           </div>
           <div>
             <section
@@ -305,43 +313,13 @@ const HomePage = () => {
               style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}
             ></section>
           </div>
-
-          
-
-          <div className="carousel-container">
-            <div className="carousel">
-              {featureCards.map((card, index) => (
-                <div
-                  key={index}
-                  className={`carousel-card ${
-                    index === currentSlide ? "active" : ""
-                  }`}
-                  style={{
-                    transform: `translateX(${(index - currentSlide) * 100}%)`,
-                  }}
-                >
-                  <h2>{card.title}</h2>
-                  <p>{card.description}</p>
-                </div>
-              ))}
-            </div>
-            <button className="carousel-button prev" onClick={handlePrev}>
-              &#8592;
+          <div className="Hoem-end-section">
+            <button
+              className="home-page-end-button"
+              onClick={() => navigate("/learn-more")}
+            >
+              Let's get your thoughts down
             </button>
-            <button className="carousel-button next" onClick={handleNext}>
-              &#8594;
-            </button>
-            <div className="carousel-dots">
-              {featureCards.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${index === currentSlide ? "active" : ""}`}
-                  onClick={() => handleDotClick(index)}
-                />
-              ))}
-            </div>
-            <h1 className="h1-home-page-end">Let's get your thoughts down.</h1>
-            <button className="home-page-end-button" onClick={() => navigate("/learn-more")}>Here</button>
           </div>
           <Footer />
         </div>
