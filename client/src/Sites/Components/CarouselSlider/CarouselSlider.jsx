@@ -38,13 +38,14 @@ const Carousel = ({ featureCards }) => {
             <p>{card.description}</p>
           </div>
         ))}
-      </div>
-      <button className="carousel-button prev" onClick={handlePrev}>
+        <button className="carousel-button prev" onClick={handlePrev}>
         &#8592;
       </button>
       <button className="carousel-button next" onClick={handleNext}>
         &#8594;
       </button>
+      </div>
+      
       <div className="carousel-dots">
         {featureCards.map((_, index) => (
           <span

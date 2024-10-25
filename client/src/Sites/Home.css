@@ -7,6 +7,7 @@ body, html {
   font-size: 16px; /* Set base font size */
   background: var(--primary-bg); /* Set background using CSS variable */
   color: #fff; /* Set text color to white */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   min-height: 100vh; /* Ensure body covers at least full viewport height */
   display: flex; /* Use flexbox for layout */
   justify-content: center; /* Center content horizontally */
@@ -363,11 +364,12 @@ small {
   padding: 10px 20px;
   height: auto;
   width: auto;
-  font-size: 200px;
+  font-size: 150px;
   border: none;
   border-radius: 25px; /* Rounded corners */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   margin-top: 200px;
+  margin-bottom: 200px;
 }

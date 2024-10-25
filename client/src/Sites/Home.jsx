@@ -18,7 +18,7 @@ const HomePage = () => {
   const [sectionsReady, setSectionsReady] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
- //Achievement badges click logic
+  //Achievement badges click logic
   const showDetails = (message) => {
     console.log(message); // Replace this with any other logic you need.
   };
@@ -245,7 +245,9 @@ const HomePage = () => {
                 keep your journaling habit on track and make reflection a
                 consistent part of your life. Customize your reminders to fit
                 your schedule and get notified when it's time to write down your
-                thoughts.
+                thoughts. These reminders serve as gentle nudges to help you
+                pause and engage with your feelings, ensuring that you make time
+                for self-reflection and personal growth every day.
               </p>
             </div>
 
@@ -258,7 +260,11 @@ const HomePage = () => {
               <p className="mood-description">
                 Gain insights into your journaling patterns, explore trends in
                 your mood and style, and see how your reflections have evolved
-                over time.
+                over time. The weekly mood tracker allows you to visualize
+                fluctuations in your emotions, helping you identify factors that
+                influence your mood. By regularly monitoring these trends, you
+                can enhance your self-awareness and make informed decisions
+                about your mental well-being.
               </p>
               <h4 className="your-mood-trends-title">Your Mood Trends</h4>
               <MoodChart />
@@ -269,7 +275,16 @@ const HomePage = () => {
 
               {/* Milestones */}
               <h4 className="milestones-title">Your Milestones</h4>
-
+              <p className="milestones-description">
+                Tracking milestones on your journaling journey highlights your
+                growth, consistency, and key moments worth celebrating. Each
+                badge earned here marks a significant achievement, whether it’s
+                reaching a number of consecutive days, identifying patterns in
+                your entries, or capturing positive moods. These milestones
+                serve as gentle reminders of your progress and encourage you to
+                keep going, helping you build a meaningful journaling habit over
+                time.
+              </p>
 
               <div className="badges-container">
                 <div
@@ -304,6 +319,15 @@ const HomePage = () => {
             </div>
             <div className="word-cloud-section">
               <h2>Most Used Words</h2>
+              <p className="word-cloud-description">
+                Your most frequently used words provide a unique window into
+                your thoughts, themes, and experiences over time. This word
+                cloud reflects the language that resonates with you, showing
+                patterns in your emotions, ideas, or recurring topics. It’s a
+                simple yet powerful way to visualize the words that shape your
+                journey, allowing you to notice shifts, moods, and areas of
+                focus as you continue journaling.
+              </p>
               <WordCloud words={wordData} />
             </div>
           </div>
