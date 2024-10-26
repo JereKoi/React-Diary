@@ -146,8 +146,8 @@ body, html {
 
 /* Fade In Effect */
 .fade-in {
-  opacity: 1; /* Fully visible */
-  transform: translateX(0); /* Move to original position */
+  opacity: 0; /* Start invisible */
+  animation: fadeIn 1.5s ease-in forwards;
 }
 
 
