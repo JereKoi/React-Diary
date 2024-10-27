@@ -79,7 +79,8 @@ body, html {
 }
 
 .fade-in {
-  opacity: 1; /* Fully visible */
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
 }
 
 /* Call to Action and Secondary Buttons */
@@ -196,31 +197,29 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive column layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-areas:
     "reminder-icon"
     "mood-chart"
-    "track-icon"; /* Define specific areas for better layout */
-  gap: 700px; /* Space between the icons */
-  justify-items: center; /* Center-aligns the content within each grid item */
-  padding: 100px 0; /* Padding for some spacing above and below */
+    "track-icon";
+  gap: 700px;
+  justify-items: center;
+  padding: 100px 0;
   margin-top: 300px;
-  opacity: 0; /* Start invisible */
-  animation: fadeIn 1.5s ease-in forwards; /* Apply fadeIn animation */
 }
 
-
+/* Set opacity initially on each icon */
 .front-page-icons div {
-  background-color: rgba(255, 255, 255, 0.2); /* Light background color for icons */
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   max-width: 1000px;
-  gap:20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle lift effect */
-  padding: 20px; /* Padding inside each icon container */
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
+  opacity: 0; /* Start invisible */
+  transition: opacity 1.5s ease-in, transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .front-page-icons i {
   font-size: 40px; /* Icon size */
   color: #7ed3e0; /* Main color for the icons */

@@ -122,41 +122,52 @@ const HomePage = () => {
   }, []);
   
   useEffect(() => {
+    // Trigger the observer setup after a small delay to ensure elements are rendered.
+    const timer = setTimeout(() => setSectionsReady(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+  
+  useEffect(() => {
     if (!sectionsReady) return;
   
-    const sections = document.querySelectorAll(".scroll-section");
-    console.log("Sections found after delay:", sections.length);
+    const scrollSections = document.querySelectorAll(".scroll-section");
+    const frontPageIcons = document.querySelectorAll(".front-page-icons div");
   
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add slide-in when element enters viewport
+    console.log("Scroll sections found:", scrollSections.length);
+    console.log("Front page icons found:", frontPageIcons.length);
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains("scroll-section")) {
             entry.target.classList.add("slide-in");
-          } else {
-            // Remove slide-in when element exits viewport
-            entry.target.classList.remove("slide-in");
+            console.log("slide-in class added to:", entry.target);
+          } else if (entry.target.parentElement.classList.contains("front-page-icons")) {
+            entry.target.classList.add("fade-in");
+            console.log("fade-in class added to:", entry.target);
           }
-        });
-      },
-      {
-        threshold: window.innerWidth < 600 ? 0.01 : 0.075,
-        rootMargin: "0px",
-      }
-    );
-  
-    sections.forEach((section) => observer.observe(section));
-  
-    // Manually check if any sections are in view on load.
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        section.classList.add("slide-in");
-      }
+        } else {
+          if (entry.target.classList.contains("scroll-section")) {
+            entry.target.classList.remove("slide-in");
+            console.log("slide-in class removed from:", entry.target);
+          } else if (entry.target.parentElement.classList.contains("front-page-icons")) {
+            entry.target.classList.remove("fade-in");
+            console.log("fade-in class removed from:", entry.target);
+          }
+        }
+      });
+    }, {
+      threshold: window.innerWidth < 600 ? 0.01 : 0.075,
+      rootMargin: "0px",
     });
+  
+    scrollSections.forEach((section) => observer.observe(section));
+    frontPageIcons.forEach((icon) => observer.observe(icon));
   
     return () => observer.disconnect();
   }, [sectionsReady]);
+  
+  
   
   return (
     <Suspense fallback={<div>Loading...</div>}>
