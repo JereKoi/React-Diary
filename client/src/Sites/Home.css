@@ -78,6 +78,10 @@ body, html {
   }
 }
 
+.fade-in {
+  opacity: 1; /* Fully visible */
+}
+
 /* Call to Action and Secondary Buttons */
 .cta-button, .secondary-button {
   background-color: var(--button-bg); /* Set button background color */
@@ -144,8 +148,8 @@ body, html {
   transform: translateX(-100%); /* Move off-screen to the right */
 }
 
-/* Fade In Effect */
-.fade-in {
+/* slide In Effect */
+.slide-in {
   opacity: 1; /* Fully visible */
   transform: translateX(0); /* Move to original position */
 }

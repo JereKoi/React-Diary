@@ -118,51 +118,46 @@ const HomePage = () => {
   useEffect(() => {
     // Trigger the observer setup after a small delay to ensure elements are rendered.
     const timer = setTimeout(() => setSectionsReady(true), 100);
-
     return () => clearTimeout(timer);
   }, []);
+  
   useEffect(() => {
     if (!sectionsReady) return;
-
+  
     const sections = document.querySelectorAll(".scroll-section");
-    //For debugging the animations on feature showcase on home page
     console.log("Sections found after delay:", sections.length);
-
-    let lastScrollY = window.scrollY;
-
+  
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const isScrollingDown = window.scrollY > lastScrollY;
-
           if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-          } else if (!isScrollingDown) {
-            entry.target.classList.remove("fade-in");
+            // Add slide-in when element enters viewport
+            entry.target.classList.add("slide-in");
+          } else {
+            // Remove slide-in when element exits viewport
+            entry.target.classList.remove("slide-in");
           }
         });
-
-        lastScrollY = window.scrollY;
       },
       {
         threshold: window.innerWidth < 600 ? 0.01 : 0.075,
         rootMargin: "0px",
       }
     );
-
+  
     sections.forEach((section) => observer.observe(section));
-
+  
     // Manually check if any sections are in view on load.
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        section.classList.add("fade-in");
+        section.classList.add("slide-in");
       }
     });
-
+  
     return () => observer.disconnect();
   }, [sectionsReady]);
-
+  
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <AbstractBackground />
