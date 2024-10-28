@@ -220,6 +220,12 @@ body, html {
   opacity: 0; /* Start invisible */
   transition: opacity 1.5s ease-in, transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.front-page-icons div.fade-in {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move into place */
+}
+
 .front-page-icons i {
   font-size: 40px; /* Icon size */
   color: #7ed3e0; /* Main color for the icons */

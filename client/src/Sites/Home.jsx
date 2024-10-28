@@ -120,55 +120,59 @@ const HomePage = () => {
     const timer = setTimeout(() => setSectionsReady(true), 100);
     return () => clearTimeout(timer);
   }, []);
-  
+
   useEffect(() => {
     // Trigger the observer setup after a small delay to ensure elements are rendered.
     const timer = setTimeout(() => setSectionsReady(true), 100);
     return () => clearTimeout(timer);
   }, []);
-  
+
   useEffect(() => {
     if (!sectionsReady) return;
-  
+
     const scrollSections = document.querySelectorAll(".scroll-section");
     const frontPageIcons = document.querySelectorAll(".front-page-icons div");
-  
+
     console.log("Scroll sections found:", scrollSections.length);
     console.log("Front page icons found:", frontPageIcons.length);
-  
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (entry.target.classList.contains("scroll-section")) {
-            entry.target.classList.add("slide-in");
-            console.log("slide-in class added to:", entry.target);
-          } else if (entry.target.parentElement.classList.contains("front-page-icons")) {
-            entry.target.classList.add("fade-in");
-            console.log("fade-in class added to:", entry.target);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains("scroll-section")) {
+              entry.target.classList.add("slide-in");
+              console.log("slide-in class added to:", entry.target);
+            } else if (
+              entry.target.parentElement.classList.contains("front-page-icons")
+            ) {
+              entry.target.classList.add("fade-in");
+              console.log("fade-in class added to:", entry.target);
+            }
+          } else {
+            if (entry.target.classList.contains("scroll-section")) {
+              entry.target.classList.remove("slide-in");
+              console.log("slide-in class removed from:", entry.target);
+            } else if (entry.target.parentElement.classList.contains("front-page-icons")) {
+              entry.target.classList.remove("fade-in");
+              console.log("fade-in class removed from:", entry.target);
+            }
           }
-        } else {
-          if (entry.target.classList.contains("scroll-section")) {
-            entry.target.classList.remove("slide-in");
-            console.log("slide-in class removed from:", entry.target);
-          } else if (entry.target.parentElement.classList.contains("front-page-icons")) {
-            entry.target.classList.remove("fade-in");
-            console.log("fade-in class removed from:", entry.target);
-          }
-        }
-      });
-    }, {
-      threshold: window.innerWidth < 600 ? 0.01 : 0.075,
-      rootMargin: "0px",
-    });
-  
+        });
+      },
+      {
+        threshold: window.innerWidth < 600 ? 0.01 : 0.075,
+        rootMargin: "0px",
+      }
+    );
+    
     scrollSections.forEach((section) => observer.observe(section));
     frontPageIcons.forEach((icon) => observer.observe(icon));
-  
+    
     return () => observer.disconnect();
+    
   }, [sectionsReady]);
-  
-  
-  
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <AbstractBackground />
@@ -349,9 +353,9 @@ const HomePage = () => {
               onClick={() => navigate("/learn-more")}
             >
               Let's get your thoughts down
-              <i className='bx bx-right-arrow-alt'></i>
+              <i className="bx bx-right-arrow-alt"></i>
             </button>
-            <i className='bx bx-right-arrow-alt'></i>
+            <i className="bx bx-right-arrow-alt"></i>
           </div>
           <Footer />
         </div>
