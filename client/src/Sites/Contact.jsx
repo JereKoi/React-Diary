@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { lazy, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBarLoggedOff";
 import "./Contact.css";
+const AbstractBackground = lazy(() =>
+  import("./Components/AbstractBackground/AbstractBackground")
+);
 
 const ContactPage = () => {
   const navigate = useNavigate();
@@ -48,6 +51,7 @@ const ContactPage = () => {
       <div className="navBar">
         <Navbar />
       </div>
+      <AbstractBackground />
       <div className="contactFormContainer">
         <div className="contactFormHeader">
           <h3>Contact Us</h3>

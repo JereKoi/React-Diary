@@ -1,11 +1,15 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { lazy, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBarLoggedOff";
 import "./DiaryEntries.css";
+const AbstractBackground = lazy(() =>
+  import("./Components/AbstractBackground/AbstractBackground")
+);
+
 
 const DiaryEntriesPage = () => {
   const [newTitle, setNewTitle] = useState("");
@@ -117,6 +121,7 @@ const DiaryEntriesPage = () => {
 
   return (
     <div className="folders-container">
+      <AbstractBackground />
       <Navbar />
       <div className="new-entry-form">
         <input

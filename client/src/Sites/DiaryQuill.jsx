@@ -1,9 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { lazy, useEffect, useMemo, useState } from "react";
 import DatePicker from "react-datepicker";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBarLoggedOff";
 import TextEditor from "./Components/TextEditor/TextEditor";
 import "./DiaryQuill.css";
+const AbstractBackground = lazy(() =>
+  import("./Components/AbstractBackground/AbstractBackground")
+);
 
 const DiaryQuillPage = () => {
   const [mostRecentDiary, setMostRecentDiary] = useState(null);
@@ -41,6 +44,7 @@ const DiaryQuillPage = () => {
 
   return (
     <div className="quillPage">
+      <AbstractBackground />
       <div className="navBar">
         <Navbar />
       </div>
