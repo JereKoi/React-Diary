@@ -129,13 +129,17 @@ const HomePage = () => {
 
   useEffect(() => {
     if (!sectionsReady) return;
-
+  
     const scrollSections = document.querySelectorAll(".scroll-section");
     const frontPageIcons = document.querySelectorAll(".front-page-icons div");
-
+    const endButton = document.querySelector(".home-page-end-button");
+    const boxContents = document.querySelectorAll(".box-content");
+  
     console.log("Scroll sections found:", scrollSections.length);
     console.log("Front page icons found:", frontPageIcons.length);
-
+    console.log("End button found:", endButton ? "yes" : "no");
+    console.log("Box contents found:", boxContents.length);
+  
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -143,9 +147,7 @@ const HomePage = () => {
             if (entry.target.classList.contains("scroll-section")) {
               entry.target.classList.add("slide-in");
               console.log("slide-in class added to:", entry.target);
-            } else if (
-              entry.target.parentElement.classList.contains("front-page-icons")
-            ) {
+            } else {
               entry.target.classList.add("fade-in");
               console.log("fade-in class added to:", entry.target);
             }
@@ -153,7 +155,7 @@ const HomePage = () => {
             if (entry.target.classList.contains("scroll-section")) {
               entry.target.classList.remove("slide-in");
               console.log("slide-in class removed from:", entry.target);
-            } else if (entry.target.parentElement.classList.contains("front-page-icons")) {
+            } else {
               entry.target.classList.remove("fade-in");
               console.log("fade-in class removed from:", entry.target);
             }
@@ -165,13 +167,16 @@ const HomePage = () => {
         rootMargin: "0px",
       }
     );
-    
+  
+    // Observe elements
     scrollSections.forEach((section) => observer.observe(section));
     frontPageIcons.forEach((icon) => observer.observe(icon));
-    
+    if (endButton) observer.observe(endButton);
+    boxContents.forEach((box) => observer.observe(box));
+  
     return () => observer.disconnect();
-    
   }, [sectionsReady]);
+  
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

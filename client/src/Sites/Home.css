@@ -65,7 +65,7 @@ body, html {
 
   /* Fade-in effect */
   opacity: 0; /* Start invisible */
-  animation: fadeIn 1.5s ease-in forwards; /* Apply fadeIn animation */
+  transition: opacity 1.5s ease-in, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Fade-in animation keyframes */
@@ -80,7 +80,7 @@ body, html {
 
 .fade-in {
   opacity: 1;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 1s ease-in;
 }
 
 /* Call to Action and Secondary Buttons */
@@ -378,12 +378,15 @@ small {
   border-radius: 25px; /* Rounded corners for a friendly look */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
   cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transition effects */
   margin-top: 20px; /* Space above the button */
   position: relative; /* Positioning for pseudo-element */
   overflow: hidden; /* Hide overflow for animations */
   margin-top: 500px;
   margin-bottom: 100px;
+
+  /* Fade-in effect */
+  opacity: 0; /* Start invisible */
+  transition: opacity 1.5s ease-in, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Hover Effects */
@@ -391,4 +394,9 @@ small {
   background-color: var(--button-hover-bg); /* Change background on hover */
   transform: translateY(-4px) scale(1.05); /* Lift and slightly enlarge button */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+.home-page-end-button.fade-in {
+  opacity: 1;
+  transition: opacity 1.5s ease-in;
 }
