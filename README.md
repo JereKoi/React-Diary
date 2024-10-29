@@ -31,7 +31,7 @@ Future Plans: Dockerized deployment for easy setup and testing.
 
 Prerequisites
 
-Node.js (v14.x or higher)
+Node.js (v18.x or higher)
 npm or yarn
 MongoDB instance (local or hosted)
 
