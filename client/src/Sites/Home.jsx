@@ -326,9 +326,6 @@ const HomePage = () => {
                 <div className="badge locked">
                   <span className="badge-icon">🔒</span>
                   <p>Locked Badge</p>
-                  <div className="tooltip">
-                    Complete 5 more entries to unlock
-                  </div>
                 </div>
               </div>
             </div>
@@ -352,7 +349,7 @@ const HomePage = () => {
               style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}
             ></section>
           </div>
-          <div className="Hoem-end-section">
+          <div className="home-end-section">
             <button
               className="home-page-end-button"
               onClick={() => navigate("/learn-more")}
@@ -360,7 +357,6 @@ const HomePage = () => {
               Let's get your thoughts down
               <i className="bx bx-right-arrow-alt"></i>
             </button>
-            <i className="bx bx-right-arrow-alt"></i>
           </div>
           <Footer />
         </div>

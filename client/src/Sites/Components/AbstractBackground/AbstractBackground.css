@@ -8,16 +8,6 @@
   animation: animateBackground 15s ease infinite;
 }
 
-/* Large abstract bubbles */
-.abstract-background::before, .abstract-background::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  animation: floatBubbles 25s ease-in-out infinite;
-  filter: blur(50px);
-}
-
 .abstract-background::before {
   width: 500px;
   height: 500px;
@@ -32,45 +22,8 @@
   right: 15%;
 }
 
-/* Smaller floating bubbles */
-.bubble {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  filter: blur(30px);
-  animation: floatBubbles 30s ease-in-out infinite;
-}
-
-.bubble:nth-child(1) {
-  width: 150px;
-  height: 150px;
-  top: 30%;
-  left: 30%;
-}
-
-.bubble:nth-child(2) {
-  width: 200px;
-  height: 200px;
-  top: 60%;
-  left: 60%;
-}
-
-.bubble:nth-child(3) {
-  width: 100px;
-  height: 100px;
-  top: 10%;
-  right: 20%;
-}
-
 @keyframes animateBackground {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-/* Animation for floating bubbles */
-@keyframes floatBubbles {
-  0% { transform: translateY(0) translateX(0); }
-  50% { transform: translateY(-50px) translateX(50px); }
-  100% { transform: translateY(0) translateX(0); }
 }

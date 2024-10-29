@@ -348,21 +348,6 @@ small {
   position: relative;
 }
 
-.tooltip {
-  visibility: hidden;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
 .badge.locked:hover .tooltip {
   visibility: visible;
   opacity: 1;
@@ -382,7 +367,8 @@ small {
   position: relative; /* Positioning for pseudo-element */
   overflow: hidden; /* Hide overflow for animations */
   margin-top: 500px;
-  margin-bottom: 100px;
+  margin-bottom: 400px;
+  display: inline-block;
 
   /* Fade-in effect */
   opacity: 0; /* Start invisible */
