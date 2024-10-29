@@ -1,17 +1,17 @@
 .about-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensures the container takes the full height of the viewport */
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    margin: 0 auto;
-  }
-  
-  .about-header {
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  position: relative; /* Add this to establish a containing block for absolute children */
+  margin: 0 auto;
+}
+
+.about-header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}

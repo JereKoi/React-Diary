@@ -5,7 +5,7 @@ import "./Home.css";
 const AbstractBackground = lazy(() =>
   import("./Components/AbstractBackground/AbstractBackground")
 );
-const Navbar = lazy(() => import("./Components/NavBar/NavBarLoggedOff"));
+const Navbar = lazy(() => import("./Components/NavBar/NavBar"));
 const Footer = lazy(() => import("./Components/Footer/Footer"));
 const MoodChart = lazy(() => import("./Components/MoodChart/MoodChart"));
 const JournalCalendar = lazy(() =>
@@ -352,7 +352,7 @@ const HomePage = () => {
           <div className="home-end-section">
             <button
               className="home-page-end-button"
-              onClick={() => navigate("/learn-more")}
+              onClick={() => navigate("/login")}
             >
               Let's get your thoughts down
               <i className="bx bx-right-arrow-alt"></i>

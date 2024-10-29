@@ -1,7 +1,7 @@
-import { lazy, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
-import Navbar from "./Components/NavBar/NavBarLoggedOff";
+import Navbar from "./Components/NavBar/NavBar";
 import "./Contact.css";
 const AbstractBackground = lazy(() =>
   import("./Components/AbstractBackground/AbstractBackground")
@@ -21,14 +21,14 @@ const ContactPage = () => {
   useEffect(() => {
     const messageInput = messageInputRef.current;
     const handleInput = () => {
-      messageInput.style.height = 'auto';
+      messageInput.style.height = "auto";
       messageInput.style.height = `${messageInput.scrollHeight}px`;
     };
 
-    messageInput.addEventListener('input', handleInput);
+    messageInput.addEventListener("input", handleInput);
 
     return () => {
-      messageInput.removeEventListener('input', handleInput);
+      messageInput.removeEventListener("input", handleInput);
     };
   }, []);
 
@@ -48,71 +48,83 @@ const ContactPage = () => {
 
   return (
     <div>
-      <div className="navBar">
-        <Navbar />
-      </div>
-      <AbstractBackground />
-      <div className="contactFormContainer">
-        <div className="contactFormHeader">
-          <h3>Contact Us</h3>
+      <Suspense fallback={<div>Loading...</div>}>
+        <AbstractBackground />
+        <div className="abstract-background">
+          <div className="navBar">
+            <Navbar />
+          </div>
+          <div className="contactFormContainer">
+            <div className="contactFormHeader">
+              <h3>Contact Us</h3>
+            </div>
+            <form onSubmit={handleSubmit} className="contactForm">
+              <div>
+                <label className="name" htmlFor="name">
+                  Name:
+                </label>
+                <input
+                  className="nameInput"
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label className="email" htmlFor="email">
+                  Email:
+                </label>
+                <input
+                  className="emailInput"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label className="subject" htmlFor="subject">
+                  Subject:
+                </label>
+                <input
+                  className="subjectInput"
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label className="message" htmlFor="message">
+                  Message:
+                </label>
+                <textarea
+                  className="messageInput"
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  ref={messageInputRef}
+                  required
+                />
+              </div>
+              <button type="submit" className="submit-btn">
+                Submit
+              </button>
+            </form>
+          </div>
+          <div className="Footer">
+            <Footer />
+          </div>
         </div>
-        <form onSubmit={handleSubmit} className="contactForm">
-          <div>
-            <label className="name" htmlFor="name">Name:</label>
-            <input
-              className="nameInput"
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label className="email" htmlFor="email">Email:</label>
-            <input
-              className="emailInput"
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label className="subject" htmlFor="subject">Subject:</label>
-            <input
-              className="subjectInput"
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label className="message" htmlFor="message">Message:</label>
-            <textarea
-              className="messageInput"
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              ref={messageInputRef}
-              required
-            />
-          </div>
-          <button type="submit" className="submit-btn">
-            Submit
-          </button>
-        </form>
-      </div>
-      <div className="Footer">
-        <Footer />
-      </div>
+      </Suspense>
     </div>
   );
 };

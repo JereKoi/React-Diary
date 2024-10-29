@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
-import Navbar from "./Components/NavBar/NavBarLoggedOff";
+import Navbar from "./Components/NavBar/NavBar";
 import "./Login.css";
 
 const LoginScreen = () => {

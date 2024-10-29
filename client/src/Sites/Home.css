@@ -368,7 +368,10 @@ small {
   overflow: hidden; /* Hide overflow for animations */
   margin-top: 500px;
   margin-bottom: 400px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center content horizontally */
+  gap: 10px; /* Space between text and icon */
 
   /* Fade-in effect */
   opacity: 0; /* Start invisible */
@@ -378,11 +381,11 @@ small {
 /* Hover Effects */
 .home-page-end-button:hover {
   background-color: var(--button-hover-bg); /* Change background on hover */
-  transform: translateY(-4px) scale(1.05); /* Lift and slightly enlarge button */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+  transform: translateY(-2px); /* Lift button slightly */
 }
 
 .home-page-end-button.fade-in {
   opacity: 1;
   transition: opacity 1.5s ease-in;
 }
+
