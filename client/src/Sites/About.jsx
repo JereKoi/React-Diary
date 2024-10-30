@@ -1,12 +1,16 @@
-import { lazy, Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { useNavigate } from "react-router-dom";
 import "./About.css";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
 
 const AbstractBackground = lazy(() =>
-  import("./Components/AbstractBackground/AbstractBackground")
+  import("./Components/AbstractBackground/AbstractBackground").then(module => {
+    console.log("Imported module:", module); // Log the imported module
+    return module.default; // Ensure we're accessing the default export
+  })
 );
+
 
 const AboutPage = () => {
   const navigate = useNavigate();
