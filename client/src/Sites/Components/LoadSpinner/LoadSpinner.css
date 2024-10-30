@@ -9,12 +9,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100vh;          /* Full viewport height */
+    width: 100vw;           /* Full viewport width */
     background: var(--background-gradient);
     color: var(--text-color);
     font-family: 'Roboto', sans-serif;
     text-align: center;
     animation: fadeIn 0.8s ease-in-out;
+    margin: 0;              /* Remove margins */
+    overflow: hidden;       /* Prevent any overflow */
+    position: fixed;        /* Fix position to viewport */
+    top: 0;
+    left: 0;
+    z-index: 9999;          /* Ensure it's above other content */
   }
   
   .spinner {

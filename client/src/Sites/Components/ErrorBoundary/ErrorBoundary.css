@@ -1,0 +1,81 @@
+:root {
+    --error-background-gradient: linear-gradient(135deg, #ff6b6b, #4e54c8);
+    --button-background: #61dafb;
+    --button-text-color: #333;
+    --error-text-color: #f3f4f6;
+    --font-family: 'Roboto', sans-serif;
+  }
+  
+  .error-boundary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: var(--error-background-gradient);
+    color: var(--error-text-color);
+    font-family: var(--font-family);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .error-boundary h2 {
+    font-size: 1.5rem;
+    margin: 0 0 20px;
+    opacity: 0.9;
+    animation: fadeInText 1s ease-in-out both;
+  }
+  
+  .error-boundary button,
+  .error-boundary a {
+    background: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .error-boundary button:hover,
+  .error-boundary a:hover {
+    background: #52c2e9;
+    transform: scale(1.05);
+  }
+  
+  .error-boundary button:focus,
+  .error-boundary a:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(97, 218, 251, 0.6);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

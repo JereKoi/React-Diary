@@ -1,38 +1,33 @@
 import { AnimatePresence } from "framer-motion";
-import React, { Suspense, useEffect, useTransition } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import routes from "./Routes";
-import ErrorBoundary from "./Sites/Components/ErrorBoundary";
+import ErrorBoundary from "./Sites/Components/ErrorBoundary/ErrorBoundary";
 import LoadingSpinner from "./Sites/Components/LoadSpinner/LoadSpinner";
 
 function App() {
   const location = useLocation();
-  const [isPending, startTransition] = useTransition();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    startTransition(() => {
-      // Preload critical routes to improve perceived performance
-      const preloadRoutes = async () => {
-        await Promise.all([
-          import("./Sites/Login"),
-          import("./Sites/Home"),
-          import("./Sites/DiaryEntries"),
-        ]);
-      };
-      preloadRoutes();
-    });
+    const timeout = setTimeout(() => setIsLoading(false), 2000); // 2-second delay
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
     <AnimatePresence mode="wait">
       <ErrorBoundary fallback={<div>Oops! Something went wrong. Try refreshing the page.</div>}>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes location={location} key={location.pathname}>
-            {routes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
-            ))}
-          </Routes>
-        </Suspense>
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes location={location} key={location.pathname}>
+              {routes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+            </Routes>
+          </Suspense>
+        )}
       </ErrorBoundary>
     </AnimatePresence>
   );
