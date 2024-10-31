@@ -202,10 +202,10 @@ body, html {
     "reminder-icon"
     "mood-chart"
     "track-icon";
-  gap: 700px;
+  gap: 900px;
   justify-items: center;
   padding: 100px 0;
-  margin-top: 300px;
+  margin-top: 400px;
 }
 
 /* Set opacity initially on each icon */
