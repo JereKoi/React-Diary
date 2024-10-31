@@ -2,34 +2,72 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 10px;
+  max-width: 100%; /* Match the parent container width */
+  max-height: 100%; /* Prevent overflow */
   padding: 20px;
-  background-color: #f3f3f3;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
+  overflow: hidden; /* Hide overflow for better fitting */
 }
 
 .word {
   font-family: "Roboto", sans-serif;
-  color: #333;
+  color: #3a3a3a;
   display: inline-block;
+  transition: color 0.3s, transform 0.3s;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  padding: 5px;
+  box-sizing: border-box;
+  line-height: 1.2; /* Adjust line height for spacing */
 }
 
+.word:hover {
+  transform: scale(1.1);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Adjusted font sizes for better fitting within the container */
 .large {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Slightly reduced size */
   font-weight: bold;
+  color: #ff6b6b; /* Coral */
 }
 
 .medium {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
+  color: #4d96ff; /* Light Blue */
 }
 
 .small {
-  font-size: 1rem;
+  font-size: 0.875rem;
+  color: #ffa502; /* Amber */
+}
+.rotated {
+  transform: rotate(-90deg); /* Slightly rotate for better aesthetics */
 }
 
-.rotated {
+.large.rotated {
+  transform: rotate(-90deg) scale(1.05);
+}
+
+.medium.rotated {
   transform: rotate(90deg);
+}
+
+.small.rotated {
+  transform: rotate(-90deg);
+}
+
+.large:hover {
+  color: #d9534f; /* Darker Coral */
+}
+
+.medium:hover {
+  color: #357edd; /* Darker Blue */
+}
+
+.small:hover {
+  color: #ff922b; /* Darker Amber */
 }
