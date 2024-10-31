@@ -3,23 +3,27 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px; /* Increased gap for more modern spacing */
   max-width: 100%; /* Match the parent container width */
   max-height: 100%; /* Prevent overflow */
   padding: 20px;
   overflow: hidden; /* Hide overflow for better fitting */
+  background: #f9f9f9; /* Light background for contrast */
+  border-radius: 10px; /* Rounded corners for modern look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .word {
   font-family: "Roboto", sans-serif;
   color: #3a3a3a;
   display: inline-block;
-  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s; /* Added text-shadow transition */
   cursor: pointer;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   padding: 5px;
   box-sizing: border-box;
-  line-height: 1.2; /* Adjust line height for spacing */
+  line-height: 1.4; /* Adjust line height for better spacing */
+  border-radius: 5px; /* Slightly round word backgrounds */
 }
 
 .word:hover {
@@ -35,29 +39,30 @@
 }
 
 .medium {
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Increased medium size for visibility */
   font-weight: 500;
   color: #4d96ff; /* Light Blue */
 }
 
 .small {
-  font-size: 0.875rem;
+  font-size: 1rem; /* Increased small size for readability */
   color: #ffa502; /* Amber */
 }
+
 .rotated {
-  transform: rotate(-90deg); /* Slightly rotate for better aesthetics */
+  transform: rotate(-15deg); /* Slightly rotate for better aesthetics */
 }
 
 .large.rotated {
-  transform: rotate(-90deg) scale(1.05);
+  transform: rotate(-15deg) scale(1.05);
 }
 
 .medium.rotated {
-  transform: rotate(90deg);
+  transform: rotate(15deg);
 }
 
 .small.rotated {
-  transform: rotate(-90deg);
+  transform: rotate(-15deg);
 }
 
 .large:hover {
@@ -70,4 +75,29 @@
 
 .small:hover {
   color: #ff922b; /* Darker Amber */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .word {
+    font-size: 1rem; /* Responsive font size */
+  }
+
+  .large {
+    font-size: 1.5rem; /* Adjusted large size */
+  }
+
+  .medium {
+    font-size: 1.25rem; /* Adjusted medium size */
+  }
+
+  .small {
+    font-size: 0.875rem; /* Adjusted small size */
+  }
+}
+
+@media (max-width: 480px) {
+  .word {
+    font-size: 0.9rem; /* Further reduce for small screens */
+  }
 }

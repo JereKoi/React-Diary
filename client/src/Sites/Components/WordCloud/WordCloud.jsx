@@ -55,37 +55,31 @@ const WordCloud = () => {
       const words = container.querySelectorAll(".word");
 
       words.forEach(word => {
-        let fontSize = parseFloat(window.getComputedStyle(word).fontSize);
+        const containerWidth = container.clientWidth;
+        const wordWidth = word.offsetWidth;
 
-        // Reduce font size until the word fits within the container
-        while (isOverflowing(word, container) && fontSize > 8) {
-          fontSize -= 0.5;
-          word.style.fontSize = `${fontSize}px`;
+        // If word is larger than container, scale it down to fit
+        if (wordWidth > containerWidth) {
+          const scaleFactor = containerWidth / wordWidth;
+          word.style.transform = `scale(${scaleFactor})`;
+        } else {
+          word.style.transform = "scale(1)"; // Reset scale if no overflow
         }
       });
     }
 
-    function isOverflowing(element, container) {
-      const elementRect = element.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-      return (
-        elementRect.right > containerRect.right ||
-        elementRect.bottom > containerRect.bottom
-      );
-    }
-
-    // Run adjustWordSizes on mount and window resize
+    // Run adjustWordSizes on mount and on resize
     adjustWordSizes();
     window.addEventListener("resize", adjustWordSizes);
 
-    // Clean up event listener on component unmount
+    // Cleanup event listener on unmount
     return () => window.removeEventListener("resize", adjustWordSizes);
   }, []);
 
   return (
-    <div className="word-cloud">
+    <div className="word-cloud" aria-label="Word Cloud">
       {words.map((word, index) => (
-        <span key={index} className={`word ${word.style}`}>
+        <span key={index} className={`word ${word.style}`} aria-label={word.text}>
           {word.text}
         </span>
       ))}
