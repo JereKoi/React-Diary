@@ -16,12 +16,36 @@
   src: local("Poppins"), url("/src/fonts/Poppins-Bold.ttf") format("truetype");
 }
 
+body, html {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  font-family: 'Arial', sans-serif; /* Set font family */
+  font-size: 16px; /* Set base font size */
+  background: var(--primary-bg); /* Set background using CSS variable */
+  color: #fff; /* Set text color to white */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100vh; /* Ensure body covers at least full viewport height */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
 
+/* CSS Variables */
+:root {
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 30px;
+  --primary-bg: linear-gradient(135deg, #1c3a94, #1b0045);
+  --button-bg: #61dafb;
+  --button-hover-bg: #59c7e6;
+}
 
 .wrapper {
   position: relative;
   width: 400px;
   height: 480px;
+  flex: 1;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -30,6 +54,29 @@
   display: flex;
   overflow: hidden;
   transition: height 0.2s ease;
+}
+
+.login-screen-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.abstract-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .forgot {
