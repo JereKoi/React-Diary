@@ -115,6 +115,16 @@ useEffect(() => {
             Contact
           </button>
           <button
+            className="login-btn"
+            type="button"
+            onClick={() => {
+              navigate("/login");
+              setIsMobile(false);
+            }}
+          >
+            Login
+          </button>
+          <button
             className="mobile-menu-icon"
             type="button"
             onClick={() => {

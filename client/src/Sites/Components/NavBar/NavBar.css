@@ -85,6 +85,20 @@ button.contact-btn {
     font-family: 'Arial', sans-serif;
 }
 
+.login-btn {
+    background: none;
+    color: #7c3030;
+    border: none;
+    padding: 10px 20px;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, padding 0.3s;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
 /* Mobile menu icon */
 .mobile-menu-icon {
     display: none; /* Initially hidden */
