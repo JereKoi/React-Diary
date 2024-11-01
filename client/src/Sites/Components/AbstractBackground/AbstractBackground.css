@@ -8,20 +8,6 @@
   animation: animateBackground 15s ease infinite;
 }
 
-.abstract-background::before {
-  width: 500px;
-  height: 500px;
-  top: 15%;
-  left: 10%;
-}
-
-.abstract-background::after {
-  width: 400px;
-  height: 400px;
-  bottom: 20%;
-  right: 15%;
-}
-
 @keyframes animateBackground {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
