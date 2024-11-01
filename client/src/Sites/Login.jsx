@@ -73,7 +73,7 @@ const Login = () => {
       );
 
       if (response.status === 200) {
-        navigate("/DashboardPage"); // Navigate to a protected route
+        navigate("/Dashboard"); // Navigate to a protected route
       } else {
         setLoginError(response.data.message);
       }
@@ -101,7 +101,7 @@ const Login = () => {
       );
 
       if (response.data.status === "SUCCESS") {
-        navigate("/LoginScreen");
+        navigate("/Login");
       } else {
         setRegisterError(response.data.message);
       }
@@ -114,153 +114,156 @@ const Login = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="login-screen-container">
+      <div className="abstract-background">
         <AbstractBackground />
-        <Navbar />
-        <div className={`wrapper ${isActive ? "active" : ""}`}>
-          <div className="form-box login">
-            <h2>Login</h2>
-            {loginError && <div className="error-message">{loginError}</div>}
-            <form onSubmit={loginUser}>
-              <div className="input-box">
-                <span className="icon">
-                  <i className="bx bxs-envelope"></i>
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={loginFormData.email}
-                  onChange={handleLoginChange}
-                  required
-                  aria-label="Email"
-                />
-              </div>
-              <div className="input-box">
-                <span className="icon">
-                  <i className="bx bxs-lock-alt"></i>
-                </span>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={loginFormData.password}
-                  onChange={handleLoginChange}
-                  required
-                  aria-label="Password"
-                />
-              </div>
-              <div className="remember-forgot">
-                <label>
-                  <input type="checkbox" />
-                  Remember me
-                </label>
-                <div className="forgot">
-                  <button
-                    className="forgot-link"
-                    type="button"
-                    onClick={() => navigate("/ResetPasswordSendEmail")}
-                  >
-                    Forgot password?
-                  </button>
+        <div className="login-screen-container">
+          <Navbar />
+          <div className={`wrapper ${isActive ? "active" : ""}`}>
+            <div className="form-box login">
+              <h2>Login</h2>
+              {loginError && <div className="error-message">{loginError}</div>}
+              <form onSubmit={loginUser}>
+                <div className="input-box">
+                  <span className="icon">
+                    <i className="bx bxs-envelope"></i>
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={loginFormData.email}
+                    onChange={handleLoginChange}
+                    required
+                    aria-label="Email"
+                  />
                 </div>
-              </div>
-              <button
-                type="submit"
-                className="login-btn"
-                disabled={loadingLogin}
-              >
-                {loadingLogin ? "Logging in..." : "Login"}
-              </button>
-              <div className="login-register">
-                <p>
-                  Don't have an account?{" "}
-                  <button
-                    type="button"
-                    onClick={() => setIsActive(!isActive)}
-                    className="register-link"
-                  >
-                    Register
-                  </button>
-                </p>
-              </div>
-            </form>
+                <div className="input-box">
+                  <span className="icon">
+                    <i className="bx bxs-lock-alt"></i>
+                  </span>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={loginFormData.password}
+                    onChange={handleLoginChange}
+                    required
+                    aria-label="Password"
+                  />
+                </div>
+                <div className="remember-forgot">
+                  <label>
+                    <input type="checkbox" />
+                    Remember me
+                  </label>
+                  <div className="forgot">
+                    <button
+                      className="forgot-link"
+                      type="button"
+                      onClick={() => navigate("/ResetPasswordSendEmail")}
+                    >
+                      Forgot password?
+                    </button>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="login-btn"
+                  disabled={loadingLogin}
+                >
+                  {loadingLogin ? "Logging in..." : "Login"}
+                </button>
+                <div className="login-register">
+                  <p>
+                    Don't have an account?{" "}
+                    <button
+                      type="button"
+                      onClick={() => setIsActive(!isActive)}
+                      className="register-link"
+                    >
+                      Register
+                    </button>
+                  </p>
+                </div>
+              </form>
+            </div>
+
+            <div className="form-box register">
+              <h2>Registration</h2>
+              {registerError && (
+                <div className="error-message">{registerError}</div>
+              )}
+              <form onSubmit={registerUser}>
+                <div className="input-box">
+                  <span className="icon">
+                    <i className="bx bxs-user"></i>
+                  </span>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    value={registerFormData.username}
+                    onChange={handleRegisterChange}
+                    required
+                    aria-label="Username"
+                  />
+                </div>
+                <div className="input-box">
+                  <span className="icon">
+                    <i className="bx bxs-envelope"></i>
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={registerFormData.email}
+                    onChange={handleRegisterChange}
+                    required
+                    aria-label="Email"
+                  />
+                </div>
+                <div className="input-box">
+                  <span className="icon">
+                    <i className="bx bxs-lock-alt"></i>
+                  </span>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={registerFormData.password}
+                    onChange={handleRegisterChange}
+                    required
+                    aria-label="Password"
+                  />
+                </div>
+                <div className="remember-forgot">
+                  <label>
+                    <input type="checkbox" />I agree to the terms & conditions
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  className="register-btn"
+                  disabled={loadingRegister}
+                >
+                  {loadingRegister ? "Registering..." : "Register"}
+                </button>
+                <div className="login-register">
+                  <p>
+                    Already have an account?{" "}
+                    <button
+                      type="button"
+                      onClick={() => setIsActive(!isActive)}
+                      className="login-link"
+                    >
+                      Login
+                    </button>
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
 
-          <div className="form-box register">
-            <h2>Registration</h2>
-            {registerError && (
-              <div className="error-message">{registerError}</div>
-            )}
-            <form onSubmit={registerUser}>
-              <div className="input-box">
-                <span className="icon">
-                  <i className="bx bxs-user"></i>
-                </span>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  value={registerFormData.username}
-                  onChange={handleRegisterChange}
-                  required
-                  aria-label="Username"
-                />
-              </div>
-              <div className="input-box">
-                <span className="icon">
-                  <i className="bx bxs-envelope"></i>
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={registerFormData.email}
-                  onChange={handleRegisterChange}
-                  required
-                  aria-label="Email"
-                />
-              </div>
-              <div className="input-box">
-                <span className="icon">
-                  <i className="bx bxs-lock-alt"></i>
-                </span>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={registerFormData.password}
-                  onChange={handleRegisterChange}
-                  required
-                  aria-label="Password"
-                />
-              </div>
-              <div className="remember-forgot">
-                <label>
-                  <input type="checkbox" />I agree to the terms & conditions
-                </label>
-              </div>
-              <button
-                type="submit"
-                className="register-btn"
-                disabled={loadingRegister}
-              >
-                {loadingRegister ? "Registering..." : "Register"}
-              </button>
-              <div className="login-register">
-                <p>
-                  Already have an account?{" "}
-                  <button
-                    type="button"
-                    onClick={() => setIsActive(!isActive)}
-                    className="login-link"
-                  >
-                    Login
-                  </button>
-                </p>
-              </div>
-            </form>
-          </div>
         </div>
         <Footer />
       </div>
