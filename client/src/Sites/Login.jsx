@@ -1,9 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
 import "./Login.css";
+
+const AbstractBackground = lazy(() => 
+  import("./Components/AbstractBackground/AbstractBackground")
+);
 
 const LoginScreen = () => {
   const [isActive, setIsActive] = useState(false);
@@ -109,6 +113,8 @@ const LoginScreen = () => {
   };
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AbstractBackground />
     <div className={`wrapper ${isActive ? "active" : ""}`}>
       <div className="navBar">
         <Navbar />
@@ -253,7 +259,9 @@ const LoginScreen = () => {
       <div className="Footer">
         <Footer />
       </div>
+
     </div>
+    </Suspense>
   );
 };
 

@@ -4,15 +4,11 @@ import "./About.css";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
 
-const AbstractBackground = lazy(() =>
-  import("./Components/AbstractBackground/AbstractBackground").then(module => {
-    console.log("Imported module:", module); // Log the imported module
-    return module.default; // Ensure we're accessing the default export
-  })
+const AbstractBackground = lazy(() => 
+  import("./Components/AbstractBackground/AbstractBackground")
 );
 
-
-const AboutPage = () => {
+const About = () => {
   const navigate = useNavigate();
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -23,7 +19,7 @@ const AboutPage = () => {
             <Navbar />
           </div>
           <div className="about-header">
-            <h1>About page.</h1>
+            <h1>About Us.</h1>
           </div>
           <Footer />
         </div>
@@ -32,4 +28,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default About;

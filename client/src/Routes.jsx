@@ -12,7 +12,6 @@ const MoreDiaries = lazy(() => import("./Sites/MoreDiaries"));
 const Dashboard = lazy(() => import("./Sites/Dashboard"));
 const TemplateDay = lazy(() => import("./Sites/TemplateDay"));
 const About = lazy(() => import("./Sites/About"));
-const AboutUs = lazy(() => import("./Sites/AboutUs"));
 const Contact = lazy(() => import("./Sites/Contact"));
 const Faq = lazy(() => import("./Sites/Faq"));
 const PrivacyPolicy = lazy(() => import("./Sites/PrivacyPolicy"));
@@ -36,7 +35,6 @@ const diaryRoutes = [
 
 const staticRoutes = [
   { path: "/about", element: <About /> },
-  { path: "/about-us", element: <AboutUs /> },
   { path: "/contact", element: <Contact /> },
   { path: "/faq", element: <Faq /> },
   { path: "/privacy-policy", element: <PrivacyPolicy /> },

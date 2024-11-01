@@ -7,13 +7,9 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
-                <button className="footer-section" onClick={() => navigate("/about-us")}>
+                <button className="footer-section" onClick={() => navigate("/about")}>
                     <h4>About Us</h4>
                     <p>Learn more about our company and team.</p>
-                </button>
-                <button className="footer-section" onClick={() => navigate("/")}>
-                    <h4>Our Services</h4>
-                    <p>Discover the services we offer to help you.</p>
                 </button>
                 <button className="footer-section" onClick={() => navigate("/contact")}>
                     <h4>Get Help</h4>
