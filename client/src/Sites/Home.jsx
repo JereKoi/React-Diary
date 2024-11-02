@@ -53,6 +53,10 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, []);
 
+
+  // Intersection Observer for scroll animations. It adds a slide-in or fade-in class to elements when they come into view.
+  // The observer is set up to trigger when the element is 7.5% visible in the viewport.
+  // The observer is disconnected when the component unmounts.
   useEffect(() => {
     if (!sectionsReady) return;
   

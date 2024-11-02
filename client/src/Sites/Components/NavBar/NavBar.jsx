@@ -115,7 +115,7 @@ useEffect(() => {
             Contact
           </button>
           <button
-            className="login-btn"
+            className="loginNav-btn"
             type="button"
             onClick={() => {
               navigate("/login");

@@ -9,6 +9,7 @@ function App() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
 
+  // Simulate a 2-second delay for loading spinner, for debugging and styling purposes
   useEffect(() => {
     const timeout = setTimeout(() => setIsLoading(false), 2000); // 2-second delay
     return () => clearTimeout(timeout);
