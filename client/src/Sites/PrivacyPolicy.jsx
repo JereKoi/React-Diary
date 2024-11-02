@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
             <Navbar />
           </div>
           <div className="policy-header">
-            <h1>Privacy policy.</h1>
+            <h1>Privacy policy</h1>
             <h1>Privacy Policy for Diary project</h1>
 
             <h3>Last updated: [Date]</h3>
