@@ -14,4 +14,10 @@
   position: relative;
   display: flex;
   justify-content: center;
+  margin-top: auto; /* Automatically push to the bottom */
+  width: 60%; /* Set width */
+  margin: 500px 0; /* Vertical margin */
+  padding: 20px; /* Padding around content */
+  font-size: 20px; /* Font size */
+  background-color: rgba(255, 255, 255, 0.15); /* Light translucent background */
 }

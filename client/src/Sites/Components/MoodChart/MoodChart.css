@@ -1,7 +1,7 @@
 .mood-chart-container {
   margin: 20px auto;
   width: 100%; /* Adjusts the width to be more responsive */
-  max-width: 800px; /* Allows the chart to be bigger on larger screens */
+  max-width: auto; /* Allows the chart to be bigger on larger screens */
   padding: 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
@@ -11,4 +11,19 @@
 
 .mood-chart-container:hover {
   transform: scale(1.02);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  .box-content {
+      width: 90%; /* Full width on smaller screens */
+  }
+
+  .journal-preview {
+      width: 100%; /* Full width on smaller screens */
+  }
+
+  .front-page-icons div {
+    width: 50%; /* Adjust width for smaller screens */
+  }
 }
