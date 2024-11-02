@@ -7,7 +7,7 @@ const AbstractBackground = lazy(() =>
   import("./Components/AbstractBackground/AbstractBackground")
 );
 
-const ContactPage = () => {
+const Contact = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -120,13 +120,11 @@ const ContactPage = () => {
               </button>
             </form>
           </div>
-          <div className="Footer">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </Suspense>
     </div>
   );
 };
 
-export default ContactPage;
+export default Contact;
