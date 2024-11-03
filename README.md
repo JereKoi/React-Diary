@@ -1,5 +1,7 @@
 ### Diary website and app
 
+![Screenshot of Homepage](https://github.com/JereKoi/React-Diary/blob/main/images/homepage_screenshot.png)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
