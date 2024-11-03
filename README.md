@@ -27,7 +27,6 @@ Welcome to Diary, a MERN-based web app designed for personal journaling and diar
 Personalized Journaling: Create and manage daily entries with ease.
 User Authentication: Secure login system for personal diary access (if implemented).
 Responsive Design: Mobile-friendly layout for seamless use on any device.
-Future Plans: Dockerized deployment for easy setup and testing.
 
 ![Screenshot of Diariespage](https://github.com/JereKoi/React-Diary/blob/main/images/diaries_screenshot.png)
 
