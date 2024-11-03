@@ -34,9 +34,9 @@ Welcome to Diary, a MERN-based web app designed for personal journaling and diar
 
 Prerequisites
 
-Node.js (v18.x or higher)
-npm or yarn
-MongoDB instance (local or hosted)
+- Node.js (v18.x or higher)
+- npm or yarn
+- MongoDB instance (local or hosted)
 
 Installation
 
