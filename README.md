@@ -29,6 +29,8 @@ User Authentication: Secure login system for personal diary access (if implement
 Responsive Design: Mobile-friendly layout for seamless use on any device.
 Future Plans: Dockerized deployment for easy setup and testing.
 
+![Screenshot of Diariespage](https://github.com/JereKoi/React-Diary/blob/main/images/diaries_screenshot.png)
+
 ## Getting Started
 
 Prerequisites
