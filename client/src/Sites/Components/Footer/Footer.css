@@ -14,6 +14,8 @@
     padding: 40px 0; /* Vertical padding for spacing */
     width: 100vw; /* Full width of the footer */
     position: relative; /* Positioning context for child elements */
+    background-size: cover; /* Cover background image */
+    overflow: hidden; /* Hide overflowing content */
 }
 
 /* Container for footer content sections */

@@ -1,11 +1,24 @@
 .abstract-background {
   width: 100vw;
-  height: 100%;
   background: linear-gradient(135deg, #c5ce92 10%, #2b5f5c 50%, #7315b9 75%, #ff4e66 100%);
   background-size: 200% 200%;
   overflow: hidden;
   position: relative;
   animation: animateBackground 15s ease infinite;
+}
+
+.abstract-background::before {
+  width: 500px;
+  height: 500px;
+  top: 15%;
+  left: 10%;
+}
+
+.abstract-background::after {
+  width: 400px;
+  height: 400px;
+  bottom: 20%;
+  right: 15%;
 }
 
 @keyframes animateBackground {

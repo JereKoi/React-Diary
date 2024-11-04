@@ -25,9 +25,6 @@ const AbstractBackground = () => {
 
   return (
     <div className="abstract-background">
-      <div className="bubble"></div>
-      <div className="bubble"></div>
-      <div className="bubble"></div>
     </div>
   );
 };
