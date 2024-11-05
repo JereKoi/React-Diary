@@ -10,7 +10,7 @@ const AbstractBackground = lazy(() =>
   import("./Components/AbstractBackground/AbstractBackground")
 );
 
-const DiaryEntriesPage = () => {
+const DiaryEntries = () => {
   const [newTitle, setNewTitle] = useState("");
   const [showEntries, setShowEntries] = useState(true);
   const navigate = useNavigate();
@@ -126,17 +126,15 @@ const DiaryEntriesPage = () => {
           <div className="navBar">
             <Navbar />
           </div>
-          <div className="folders-container">
-            <div className="new-entry-form">
-              <input
-                className="new-diary-title-input"
-                type="text"
-                placeholder="Enter new diary entry title"
-                value={newTitle}
-                onChange={handleTitleChange}
-              />
-              <button onClick={handleCreateEntry}>Create a new diary</button>
-            </div>
+          <div className="new-entry-form">
+            <input
+              className="new-diary-title-input"
+              type="text"
+              placeholder="Enter new diary entry title"
+              value={newTitle}
+              onChange={handleTitleChange}
+            />
+            <button onClick={handleCreateEntry}>Create a new diary</button>
           </div>
           <h2 className="user-diaries-heading">
             What you have been writing to most recently.
@@ -163,7 +161,7 @@ const DiaryEntriesPage = () => {
           <h2 className="user-diaries-heading">Your Diaries</h2>
           <button
             className="see-all-button"
-            onClick={() => navigate("/MoreDiariesPage")}
+            onClick={() => navigate("/MoreDiaries")}
           >
             See All
           </button>
@@ -203,4 +201,4 @@ const DiaryEntriesPage = () => {
   );
 };
 
-export default DiaryEntriesPage;
+export default DiaryEntries;
