@@ -20,16 +20,19 @@ const Contact = () => {
 
   useEffect(() => {
     const messageInput = messageInputRef.current;
-    const handleInput = () => {
-      messageInput.style.height = "auto";
-      messageInput.style.height = `${messageInput.scrollHeight}px`;
-    };
 
-    messageInput.addEventListener("input", handleInput);
+    if (messageInput) {
+      const handleInput = () => {
+        messageInput.style.height = "auto";
+        messageInput.style.height = `${messageInput.scrollHeight}px`;
+      };
 
-    return () => {
-      messageInput.removeEventListener("input", handleInput);
-    };
+      messageInput.addEventListener("input", handleInput);
+
+      return () => {
+        messageInput.removeEventListener("input", handleInput);
+      };
+    }
   }, []);
 
   const handleChange = (e) => {
@@ -47,14 +50,14 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <AbstractBackground />
-        <div className="abstract-background">
+    <Suspense fallback={<div>Loading...</div>}>
+      <AbstractBackground />
+      <div className="abstract-background">
+        <div className="contactPage">
           <div className="navBar">
             <Navbar />
           </div>
-          <div className="contactFormContainer">
+          <div className="contactContainer">
             <div className="contactFormHeader">
               <h3>Contact Us</h3>
             </div>
@@ -120,10 +123,10 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <Footer />
         </div>
-      </Suspense>
-    </div>
+        <Footer />
+      </div>
+    </Suspense>
   );
 };
 

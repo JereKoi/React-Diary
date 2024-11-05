@@ -122,17 +122,21 @@ const DiaryEntriesPage = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <AbstractBackground />
       <div className="abstract-background">
-        <div className="folders-container">
-          <Navbar />
-          <div className="new-entry-form">
-            <input
-              className="new-diary-title-input"
-              type="text"
-              placeholder="Enter new diary entry title"
-              value={newTitle}
-              onChange={handleTitleChange}
-            />
-            <button onClick={handleCreateEntry}>Create a new diary</button>
+        <div className="diaryPage">
+          <div className="navBar">
+            <Navbar />
+          </div>
+          <div className="folders-container">
+            <div className="new-entry-form">
+              <input
+                className="new-diary-title-input"
+                type="text"
+                placeholder="Enter new diary entry title"
+                value={newTitle}
+                onChange={handleTitleChange}
+              />
+              <button onClick={handleCreateEntry}>Create a new diary</button>
+            </div>
           </div>
           <h2 className="user-diaries-heading">
             What you have been writing to most recently.
@@ -192,8 +196,8 @@ const DiaryEntriesPage = () => {
               </div>
             </>
           )}
-          <Footer />
         </div>
+        <Footer />
       </div>
     </Suspense>
   );

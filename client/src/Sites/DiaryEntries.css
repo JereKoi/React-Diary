@@ -1,3 +1,14 @@
+.diaryPage {
+  display: flex; /* Use flexbox for layout */
+  z-index: 1; /* Ensure it is above other elements */
+  flex-direction: column; /* Stack child elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  min-height: 100vh; /* Ensure it covers full viewport height */
+  width: 100%; /* Full width */
+}
+
+
 .folder {
   width: 300px;
   height: 200px;
