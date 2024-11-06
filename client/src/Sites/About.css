@@ -1,3 +1,19 @@
+/* Global Styles */
+body, html {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  font-family: 'Arial', sans-serif; /* Set font family */
+  font-size: 16px; /* Set base font size */
+  background: var(--primary-bg); /* Set background using CSS variable */
+  color: #fff; /* Set text color to white */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100vh; /* Ensure body covers at least full viewport height */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
 .about-container {
   display: flex;
   flex-direction: column;
@@ -12,6 +28,13 @@
 .about-header {
   width: 100%;
   position: relative;
-  display: flex;
+  display: grid;
   justify-content: center;
+  margin-top: auto; /* Automatically push to the bottom */
+  width: 60%; /* Set width */
+  margin: 200px 0; /* Vertical margin */
+  padding: 20px; /* Padding around content */
+  font-size: 20px; /* Font size */
+  color: white; /* Text color */
+  background-color: rgba(255, 255, 255, 0.15); /* Light translucent background */
 }
