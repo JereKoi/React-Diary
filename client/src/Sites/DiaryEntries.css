@@ -87,8 +87,6 @@ body, html {
   justify-content: center;
 }
 
-
-
 .folders-horizontal {
   display: flex;
   flex-direction: row;
@@ -271,16 +269,6 @@ body, html {
   border: 1px solid #ccc;
   font-size: 16px;
   margin-right: 10px;
-  width: auto;
-  height: auto;
-}
-
-.search-button {
-  background-color: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
   width: auto;
   height: auto;
 }

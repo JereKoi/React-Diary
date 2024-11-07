@@ -10,6 +10,45 @@
   width: 100%; /* Full width */
 }
 
+.most-recent-table {
+  width: 950px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+  margin-top: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
+  background-position: center;
+  display: flex;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
+}
+
+.work {
+  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.travel {
+  background-image: url("../../Pictures/TravelDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.food {
+  background-image: url("../../Pictures/FoodDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .text-editor-container,
 .most-recent-table,
 .diary-buttons-container,
@@ -23,10 +62,11 @@
   border-radius: 10px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   margin-top: 100px;
+  color: white;
 }
 
 .text-editor-container {
-  margin-bottom: 50px;
+  margin-bottom: 500px;
 }
 
 .most-recent-written-header {
