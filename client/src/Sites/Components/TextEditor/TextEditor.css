@@ -1,56 +1,22 @@
-.diary-text-editor .ql-toolbar .ql-formats button,
-.diary-text-editor .ql-toolbar .ql-formats button:hover,
-.diary-text-editor .ql-toolbar .ql-formats button:focus,
-.diary-text-editor .ql-toolbar .ql-formats button.ql-active {
-  color: black !important;
-  border-color: black !important;
+.diary-text-editor .ql-container {
+  background-color: white; /* Sets the background color of the editor */
+  border: 1px solid #ccc; /* Optional: border to distinguish editor area */
+  border-radius: 5px; /* Optional: rounded corners */
 }
 
-.diary-text-editor .ql-toolbar .ql-picker,
-.diary-text-editor .ql-toolbar .ql-picker-options {
-  color: black !important;
-  border-color: black !important;
+.diary-text-editor .ql-editor {
+  background-color: white; /* Ensures the editable area is also white */
+  color: rgb(255, 255, 255); /* Sets text color to black for contrast */
+  min-height: 200px; /* Optional: ensures a minimum height */
 }
 
-/* Other styles scoped under .diary-text-editor */
-.diary-text-editor .ql-toolbar .ql-bold,
-.diary-text-editor .ql-toolbar .ql-italic,
-.diary-text-editor .ql-underline,
-.diary-text-editor .ql-strike,
-.diary-text-editor .ql-blockquote,
-.diary-text-editor .ql-code-block,
-.diary-text-editor .ql-header,
-.diary-text-editor .ql-list,
-.diary-text-editor .ql-indent,
-.diary-text-editor .ql-link,
-.diary-text-editor .ql-image,
-.diary-text-editor .ql-video,
-.diary-text-editor .ql-color,
-.diary-text-editor .ql-background,
-.diary-text-editor .ql-clean {
-  color: black !important;
-  border-color: black !important;
+.diary-text-editor .ql-toolbar {
+  background-color: #f0f0f0; /* Optional: toolbar background to contrast with editor */
+  border-radius: 5px 5px 0 0; /* Optional: rounded corners */
 }
 
-.diary-text-editor .ql-toolbar .ql-picker-label:hover,
-.diary-text-editor .ql-toolbar .ql-picker-label.ql-active {
-  color: black !important;
-  border-color: black !important;
-}
-
-.diary-text-editor .ql-toolbar .ql-picker-options .ql-picker-item:hover,
-.diary-text-editor .ql-toolbar .ql-picker-options .ql-picker-item.ql-selected {
-  background-color: black !important;
-  color: white !important;
-}
-
-button.SaveText {
-  font-size: 20px;
-  transition: transform 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
-
-button.SaveText:hover {
-  transform: scale(1.2);
-  color: #4169e1; /* Royal Blue color */
+.save-status {
+  color: white;
+  font-size: 1.3em;
+  margin-top: 20px;
 }

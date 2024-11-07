@@ -14,7 +14,7 @@
 .most-recent-table,
 .diary-buttons-container,
 .date-picker-container {
-  width: 100%;
+  width: 60%;
   max-width: 100%;
   margin: 20px 0;
   background-color: rgba(255, 255, 255, 0.1);
@@ -33,7 +33,8 @@
   text-align: center;
   margin: 200px auto 20px;
   font-size: 1.75rem;
-  font-family: "Poppins", sans-serif;;
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 .most-recent-table-heading p {
