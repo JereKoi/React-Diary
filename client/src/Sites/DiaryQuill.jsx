@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import DatePicker from "react-datepicker";
+import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
 import TextEditor from "./Components/TextEditor/TextEditor";
@@ -9,10 +10,11 @@ const AbstractBackground = lazy(() =>
   import("./Components/AbstractBackground/AbstractBackground")
 );
 
-const DiaryQuillPage = () => {
+const DiaryQuill = () => {
   const [mostRecentDiary, setMostRecentDiary] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   const userDiaries = useMemo(
     () => [
@@ -59,16 +61,21 @@ const DiaryQuillPage = () => {
               </div>
             )}
           </div>
-          <div className="diary-buttons-container">
-            {userDiaries.map((diary) => (
-              <button
-                key={diary.id}
-                onClick={() => handleDiaryClick(diary)}
-                className="diary-button"
-              >
-                {diary.name}
-              </button>
-            ))}
+          <h2 className="user-diaries-heading">Your Diaries</h2>
+          <button
+            className="see-all-button"
+            onClick={() => navigate("/MoreDiaries")}
+          >
+            See All
+          </button>
+          <div className="user-diaries">
+            <div className="user-diary-list">
+              {userDiaries.map((diary) => (
+                <div key={diary.id} className={`user-diary ${diary.type}`}>
+                  <p>{diary.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="date-picker-container">
             <label htmlFor="diary-date-picker">
@@ -94,4 +101,4 @@ const DiaryQuillPage = () => {
   );
 };
 
-export default DiaryQuillPage;
+export default DiaryQuill;

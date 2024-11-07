@@ -1,5 +1,21 @@
 @import "~react-datepicker/dist/react-datepicker.css";
 
+/* Global Styles */
+body, html {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  font-family: 'Arial', sans-serif; /* Set font family */
+  font-size: 16px; /* Set base font size */
+  background: var(--primary-bg); /* Set background using CSS variable */
+  color: #fff; /* Set text color to white */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100vh; /* Ensure body covers at least full viewport height */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
 .quillPage {
   display: flex; /* Use flexbox for layout */
   z-index: 1; /* Ensure it is above other elements */
@@ -8,45 +24,6 @@
   align-items: center; /* Center elements horizontally */
   min-height: 100vh; /* Ensure it covers full viewport height */
   width: 100%; /* Full width */
-}
-
-.most-recent-table {
-  width: 950px;
-  height: 200px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  overflow: hidden;
-  transition: height 0.2s ease;
-  margin: 10px;
-  margin-top: 30px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
-  background-position: center;
-  display: flex;
-  transition: 0.2s, background-color 0.2s, padding 0.3s;
-}
-
-.work {
-  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.travel {
-  background-image: url("../../Pictures/TravelDiaryBackground.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.food {
-  background-image: url("../../Pictures/FoodDiaryBackground.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 .text-editor-container,
@@ -83,27 +60,18 @@
   color: #fff;
 }
 
-.diary-buttons-container {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
+.most-recent-table:hover {
+  transform: scale(1.1);
 }
 
-.diary-button {
-  background-color: #61dafb;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.diary-button:hover {
-  background-color: #59c7e6;
-  transform: translateY(-2px);
+.most-recent-table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .date-picker-container label {
@@ -118,4 +86,152 @@
   border-radius: 5px;
   border: none;
   font-size: 1rem;
+}
+
+.folder {
+  width: 300px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+}
+
+.most-recent-table {
+  width: 950px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+  margin-top: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
+  background-position: center;
+  display: flex;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
+}
+
+.most-recent-table:hover {
+  transform: scale(1.1);
+}
+
+.most-recent-table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.most-recent-table-heading {
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.previous-entries-text {
+  display: flex;
+  justify-content: center;
+}
+
+.folders-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: center;
+  padding: 20px;
+}
+
+.user-diaries-heading {
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+.user-diaries {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0;
+  margin-top: 20px;
+}
+
+.user-diary-list {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.user-diary {
+  width: 300px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s, background-color 0.2s, padding 0.3s;
+}
+
+.user-diary:hover {
+  transform: scale(1.1);
+}
+
+.user-diary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.user-diary p {
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.work {
+  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.travel {
+  background-image: url("../../Pictures/TravelDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.food {
+  background-image: url("../../Pictures/FoodDiaryBackground.jpg");
+  background-size: cover;
+  background-position: center;
 }
