@@ -50,15 +50,19 @@ const WordCloud = memo(() => {
   ];
 
   return (
-    <div className="word-cloud" aria-label="Word Cloud">
+    <div className="word-cloud" role="img" aria-label="Word Cloud">
       {words.map((word, index) => (
-        <span key={index} className={`word ${word.style}`} aria-label={word.text}>
+        <span
+          key={word.text}
+          className={`word ${word.style}`}
+          aria-label={word.text}
+          style={{ animationDelay: `${Math.random() * 0.5}s` }}
+        >
           {word.text}
         </span>
       ))}
     </div>
   );
 });
-
 
 export default memo(WordCloud);
