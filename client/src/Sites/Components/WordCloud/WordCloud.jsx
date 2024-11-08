@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
+import React, { memo } from "react";
 import "./WordCloud.css";
 
-const WordCloud = () => {
+const WordCloud = memo(() => {
   const words = [
     { text: "Gratitude", style: "large" },
-    { text: "Reflection", style: "medium rotated" },
-    { text: "Joy", style: "large rotated" },
+    { text: "Reflection", style: "medium" },
+    { text: "Joy", style: "large" },
     { text: "Challenge", style: "medium" },
-    { text: "Mindfulness", style: "large rotated" },
+    { text: "Mindfulness", style: "large" },
     { text: "Growth", style: "medium" },
     { text: "Peace", style: "small" },
-    { text: "Hope", style: "large rotated" },
-    { text: "Inspiration", style: "medium rotated" },
+    { text: "Hope", style: "large" },
+    { text: "Inspiration", style: "medium" },
     { text: "Calm", style: "medium" },
     { text: "Resilience", style: "small" },
     { text: "Motivation", style: "large" },
     { text: "Acceptance", style: "medium" },
-    { text: "Clarity", style: "medium rotated" },
+    { text: "Clarity", style: "medium" },
     { text: "Strength", style: "small" },
     { text: "Courage", style: "small" },
     { text: "Wellness", style: "medium" },
@@ -24,8 +24,8 @@ const WordCloud = () => {
     { text: "Healing", style: "small" },
     { text: "Adventure", style: "small" },
     { text: "Self-care", style: "large" },
-    { text: "Mindset", style: "medium rotated" },
-    { text: "Focus", style: "medium rotated" },
+    { text: "Mindset", style: "medium" },
+    { text: "Focus", style: "medium" },
     { text: "Discovery", style: "medium" },
     { text: "Compassion", style: "small" },
     { text: "Energy", style: "large" },
@@ -49,33 +49,6 @@ const WordCloud = () => {
     { text: "Connection", style: "medium" },
   ];
 
-  useEffect(() => {
-    function adjustWordSizes() {
-      const container = document.querySelector(".word-cloud");
-      const words = container.querySelectorAll(".word");
-
-      words.forEach(word => {
-        const containerWidth = container.clientWidth;
-        const wordWidth = word.offsetWidth;
-
-        // If word is larger than container, scale it down to fit
-        if (wordWidth > containerWidth) {
-          const scaleFactor = containerWidth / wordWidth;
-          word.style.transform = `scale(${scaleFactor})`;
-        } else {
-          word.style.transform = "scale(1)"; // Reset scale if no overflow
-        }
-      });
-    }
-
-    // Run adjustWordSizes on mount and on resize
-    adjustWordSizes();
-    window.addEventListener("resize", adjustWordSizes);
-
-    // Cleanup event listener on unmount
-    return () => window.removeEventListener("resize", adjustWordSizes);
-  }, []);
-
   return (
     <div className="word-cloud" aria-label="Word Cloud">
       {words.map((word, index) => (
@@ -85,6 +58,7 @@ const WordCloud = () => {
       ))}
     </div>
   );
-};
+});
 
-export default WordCloud;
+
+export default memo(WordCloud);

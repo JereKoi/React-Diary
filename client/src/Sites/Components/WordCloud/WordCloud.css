@@ -3,101 +3,70 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 15px; /* Increased gap for more modern spacing */
-  max-width: 100%; /* Match the parent container width */
-  max-height: 100%; /* Prevent overflow */
+  gap: 20px;
   padding: 20px;
-  overflow: hidden; /* Hide overflow for better fitting */
-  background: #f9f9f9; /* Light background for contrast */
-  border-radius: 10px; /* Rounded corners for modern look */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  background: #f3f4f6;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .word {
   font-family: "Roboto", sans-serif;
-  color: #3a3a3a;
-  display: inline-block;
-  transition: color 0.3s, transform 0.3s, text-shadow 0.3s; /* Added text-shadow transition */
+  color: #2c3e50;
   cursor: pointer;
+  transition: color 0.2s, transform 0.3s;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   padding: 5px;
   box-sizing: border-box;
-  line-height: 1.4; /* Adjust line height for better spacing */
-  border-radius: 5px; /* Slightly round word backgrounds */
+  border-radius: 5px;
+  line-height: 1.2;
 }
 
 .word:hover {
-  transform: scale(1.1);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.15);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Adjusted font sizes for better fitting within the container */
 .large {
-  font-size: 2rem; /* Slightly reduced size */
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-weight: bold;
-  color: #ff6b6b; /* Coral */
+  color: #e74c3c;
 }
 
 .medium {
-  font-size: 1.5rem; /* Increased medium size for visibility */
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
   font-weight: 500;
-  color: #4d96ff; /* Light Blue */
+  color: #3498db;
 }
 
 .small {
-  font-size: 1rem; /* Increased small size for readability */
-  color: #ffa502; /* Amber */
-}
-
-.rotated {
-  transform: rotate(-15deg); /* Slightly rotate for better aesthetics */
-}
-
-.large.rotated {
-  transform: rotate(-15deg) scale(1.05);
-}
-
-.medium.rotated {
-  transform: rotate(15deg);
-}
-
-.small.rotated {
-  transform: rotate(-15deg);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: #f39c12;
 }
 
 .large:hover {
-  color: #d9534f; /* Darker Coral */
+  color: #c0392b;
 }
 
 .medium:hover {
-  color: #357edd; /* Darker Blue */
+  color: #2980b9;
 }
 
 .small:hover {
-  color: #ff922b; /* Darker Amber */
+  color: #e67e22;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .word {
-    font-size: 1rem; /* Responsive font size */
-  }
-
-  .large {
-    font-size: 1.5rem; /* Adjusted large size */
-  }
-
-  .medium {
-    font-size: 1.25rem; /* Adjusted medium size */
-  }
-
-  .small {
-    font-size: 0.875rem; /* Adjusted small size */
+    font-size: clamp(0.9rem, 1.5vw, 1.5rem);
   }
 }
 
 @media (max-width: 480px) {
   .word {
-    font-size: 0.9rem; /* Further reduce for small screens */
+    font-size: clamp(0.8rem, 1vw, 1.25rem);
   }
 }
