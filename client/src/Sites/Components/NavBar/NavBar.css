@@ -51,7 +51,7 @@
     display: none; /* Initially hidden */
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 80px;
     left: 0;
     right: 0;
     background-color: #333;
@@ -103,7 +103,7 @@ button.contact-btn {
 /* Mobile menu icon */
 .mobile-menu-icon {
     display: none; /* Initially hidden */
-    font-size: 1.4rem;
+    font-size: 3rem;
     color: white;
     background: none;
     border: none;
@@ -124,6 +124,16 @@ button.contact-btn {
     .nav-buttons-mobile {
         display: flex; /* Display mobile menu when icon is clicked */
     }
+
+        /* Increase font size for mobile menu buttons */
+        .nav-buttons-mobile button.home-btn,
+        .nav-buttons-mobile button.write-btn,
+        .nav-buttons-mobile button.entries-btn,
+        .nav-buttons-mobile button.about-btn,
+        .nav-buttons-mobile button.contact-btn,
+        .nav-buttons-mobile button.loginNav-btn {
+            font-size: 2rem;
+        }
 }
 
 @media (min-width: 769px) {
@@ -138,4 +148,6 @@ button.contact-btn {
     .nav-buttons-mobile {
         display: none; /* Hide mobile menu when screen is larger */
     }
+
+
 }
