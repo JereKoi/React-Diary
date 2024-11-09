@@ -40,7 +40,7 @@
     padding: 20px; /* Padding inside the section */
     border-radius: 10px; /* Rounded corners */
     color: white; /* Text color */
-    font-size: 18px; /* Font size */
+    font-size: 1.2rem; /* Font size */
     text-align: center; /* Center-align text */
     font-family: 'Roboto', Arial, sans-serif; /* Font family */
     transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth transitions for hover effects */
@@ -55,7 +55,7 @@
 
 /* Styles for paragraph text within sections */
 .footer-section p {
-    font-size: 14px; /* Smaller font size for paragraphs */
+    font-size: 0.8rem; /* Smaller font size for paragraphs */
     margin: 0; /* Remove default margin */
 }
 
@@ -78,7 +78,7 @@
     background-color: transparent; /* Transparent background */
     padding: 0; /* No padding */
     margin-top: 20px; /* Space above the last section */
-    font-size: 14px; /* Smaller font size */
+    font-size: 0.9rem; /* Smaller font size */
     text-align: center; /* Center-align text */
     cursor: default; /* Default cursor style */
 }
@@ -101,7 +101,7 @@
 @media (max-width: 768px) {
     .footer-section {
         padding: 15px; /* Reduced padding for smaller screens */
-        font-size: 16px; /* Adjusted font size */
+        font-size: 1rem; /* Adjusted font size */
     }
 
     .footer-content {
@@ -119,6 +119,6 @@
     .footer-section {
         width: 100%; /* Full width for sections */
         padding: 15px; /* Reduced padding */
-        font-size: 14px; /* Smaller font size */
+        font-size: 0.9rem; /* Smaller font size */
     }
 }

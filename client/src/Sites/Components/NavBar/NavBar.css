@@ -81,7 +81,7 @@ button.contact-btn {
     text-decoration: none;
     transition: background-color 0.2s, padding 0.3s;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Arial', sans-serif;
 }
 
@@ -96,14 +96,14 @@ button.contact-btn {
     text-decoration: none;
     transition: background-color 0.2s, padding 0.3s;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Arial', sans-serif;
 }
 
 /* Mobile menu icon */
 .mobile-menu-icon {
     display: none; /* Initially hidden */
-    font-size: 28px;
+    font-size: 1.4rem;
     color: white;
     background: none;
     border: none;

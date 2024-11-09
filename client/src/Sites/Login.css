@@ -21,7 +21,7 @@ body, html {
   padding: 0; /* Remove default padding */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
   font-family: 'Arial', sans-serif; /* Set font family */
-  font-size: 16px; /* Set base font size */
+  font-size: 1rem; /* Set base font size */
   background: var(--primary-bg); /* Set background using CSS variable */
   color: #fff; /* Set text color to white */
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -113,7 +113,7 @@ body, html {
 }
 
 .form-box h2 {
-  font-size: 2em;
+  font-size: 2rem;
   color: rgb(255, 255, 255);
   text-align: center;
 }
@@ -132,7 +132,7 @@ body, html {
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  font-size: 1em;
+  font-size: 1rem;
   color: rgb(255, 255, 255);
   font-weight: 500;
   pointer-events: none;
@@ -158,7 +158,7 @@ body, html {
   position: absolute;
   right: 8px;
   transform: translateY(12px);
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: rgb(255, 255, 255);
 }
 
@@ -177,13 +177,13 @@ body, html {
 }
 
 .wrapper .login-register {
-  font-size: 14.5px;
+  font-size: 1.1rem;
   text-align: center;
   margin: 20px 0 15px;
 }
 
 .login-register {
-  font-size: 0.9em;
+  font-size: 0.9rem;
   color: rgb(255, 255, 255);
   text-align: center;
   font-weight: 500;
@@ -198,7 +198,7 @@ body, html {
   outline: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1rem;
   color: #000000;
   font-weight: 500;
 }
@@ -232,7 +232,7 @@ button.login-btn {
   outline: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1rem;
   color: #000000;
   font-weight: 500;
 }

@@ -4,7 +4,7 @@ body, html {
   padding: 0; /* Remove default padding */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
   font-family: 'Arial', sans-serif; /* Set font family */
-  font-size: 16px; /* Set base font size */
+  font-size: 1rem; /* Set base font size */
   background: var(--primary-bg); /* Set background using CSS variable */
   color: #fff; /* Set text color to white */
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -34,7 +34,7 @@ body, html {
   width: 60%; /* Set width */
   margin: 200px 0; /* Vertical margin */
   padding: 20px; /* Padding around content */
-  font-size: 20px; /* Font size */
+  font-size: 1.2rem; /* Font size */
   color: white; /* Text color */
   background-color: rgba(255, 255, 255, 0.15); /* Light translucent background */
 }

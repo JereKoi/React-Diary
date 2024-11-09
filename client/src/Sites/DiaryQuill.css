@@ -6,7 +6,7 @@ body, html {
   padding: 0; /* Remove default padding */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
   font-family: 'Arial', sans-serif; /* Set font family */
-  font-size: 16px; /* Set base font size */
+  font-size: 1rem; /* Set base font size */
   background: var(--primary-bg); /* Set background using CSS variable */
   color: #fff; /* Set text color to white */
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -49,14 +49,14 @@ body, html {
 .most-recent-written-header {
   text-align: center;
   margin: 200px auto 20px;
-  font-size: 1.75rem;
+  font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
   color: white;
 }
 
 .most-recent-table-heading p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: #fff;
 }
 
@@ -77,7 +77,7 @@ body, html {
 .date-picker-container label {
   display: block;
   margin-bottom: 10px;
-  font-size: 1.125rem;
+  font-size: 1.2rem;
 }
 
 .date-picker {
@@ -161,7 +161,7 @@ body, html {
 
 .user-diaries-heading {
   margin-top: 40px;
-  font-size: 30px;
+  font-size: 1.3rem;
 }
 
 .user-diaries {
