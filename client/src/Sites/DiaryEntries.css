@@ -305,10 +305,16 @@ body, html {
     padding: 1vh; /* Add padding to prevent content from touching edges */
   }
 
-  .new-entry-form input[type="text"],
   .new-entry-form button {
     width: 100%; /* Make input and button take full width */
     margin: 1vh 0; /* Add margin for better spacing */
+    height: 7vh;
+  }
+
+  .new-entry-form input[type="text"] {
+    width: 100%; /* Make input and button take full width */
+    margin: 1vh 0; /* Add margin for better spacing */
+    margin-top: 20%
   }
 
   .most-recent-table {
