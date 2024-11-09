@@ -30,7 +30,7 @@ body, html {
   height: auto;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 2vh;
+  border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   overflow: hidden;
@@ -77,8 +77,8 @@ body, html {
   color: white;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  border-radius: 10px;
+  padding: 1vh;
+  border-radius: 1vh;
   z-index: 1;
 }
 
@@ -93,30 +93,30 @@ body, html {
   flex-wrap: nowrap;
   overflow-x: auto;
   justify-content: center;
-  padding: 20px;
+  padding: 2vh;
 }
 
 .new-entry-form {
-  margin-top: 40px;
+  margin-top: 4vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .new-entry-form input[type="text"] {
-  width: 300px;
+  width: 30vh;
   padding: 10px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 0.2vh solid #ccc;
+  border-radius: 0.5vh;
   margin-bottom: 10px;
   position: relative;
   width: 100%;
-  height: 3vh;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  height: 30px;
+  border: 20px solid rgba(255, 255, 255, 0.5);
   border-radius: 40px;
-  margin: 10px 0;
-  margin-top: 5vh;
+  margin: 1vh 0;
+  margin-top: 100px;
 }
 
 .new-entry-form button {
@@ -125,7 +125,7 @@ body, html {
   background: black;
   border: none;
   outline: none;
-  border-radius: 6px;
+  border-radius: 0.6vh;
   cursor: pointer;
   font-size: 1rem;
   color: #fff;
@@ -138,7 +138,7 @@ body, html {
   cursor: pointer;
   font-size: 1.3rem;
   color: #007bff;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .user-diaries-heading {
@@ -150,7 +150,7 @@ body, html {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 20px 0;
+  margin: 10px 0;
   margin-top: 20px;
 }
 
@@ -161,7 +161,7 @@ body, html {
 }
 
 .user-diary {
-  width: 300px;
+  width: 30vh;
   height: 15vh;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -170,7 +170,7 @@ body, html {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   overflow: hidden;
   transition: height 0.2s ease;
-  margin: 10px;
+  margin: 1vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,8 +195,8 @@ body, html {
   color: white;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  border-radius: 10px;
+  padding: 0.8vh;
+  border-radius: 0.8vh;
   z-index: 1;
 }
 
@@ -228,7 +228,7 @@ body, html {
 }
 
 .most-recent-table {
-  margin-bottom: 100px;
+  margin-bottom: 10vh;
 }
 
 .date-picker-container {
@@ -238,7 +238,7 @@ body, html {
 }
 
 .date-picker-container label {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .react-datepicker-wrapper .react-datepicker__input-container {
@@ -247,35 +247,35 @@ body, html {
 
 .react-datepicker__input-container input {
   width: 50%;
-  padding: 8px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
 .search-form {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 10px 0;
   align-items: center;
 }
 
 .search-input {
   width: 50%;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 20px;
+  border: 0.1vh solid #ccc;
   font-size: 1rem;
   margin-right: 10px;
   width: auto;
-  height: auto;
+  height: 20px;
 }
 
 .new-entry-form button,
 .search-button {
-  padding: 10px 20px;
+  padding: 1vh 2vh;
   background-color: black;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -284,12 +284,12 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.8vh;
+  margin-bottom: 40px;
 }
 
 .search-form input {
   flex: 1;
-  margin-right: 0.8vh;
+  margin-right: 10px;
 }
 
 /* Ensure responsiveness */
@@ -301,13 +301,13 @@ body, html {
   .diaryPage {
     flex-direction: column; /* Stack elements vertically */
     align-items: stretch; /* Stretch the content across the screen */
-    padding: 10px; /* Add padding to prevent content from touching edges */
+    padding: 1vh; /* Add padding to prevent content from touching edges */
   }
 
   .new-entry-form input[type="text"],
   .new-entry-form button {
     width: 100%; /* Make input and button take full width */
-    margin: 10px 0; /* Add margin for better spacing */
+    margin: 1vh 0; /* Add margin for better spacing */
   }
 
   .most-recent-table {
@@ -330,11 +330,11 @@ body, html {
 
   .folder, .user-diary {
     width: 100%; /* Make these take full width */
-    margin: 10px 0; /* Adjust margin for better spacing */
+    margin: 1vh 0; /* Adjust margin for better spacing */
   }
 
   .toggle-entries-button {
-    font-size: 16px; /* Reduce button font size for mobile */
+    font-size: 1.3vh; /* Reduce button font size for mobile */
   }
 
   .search-input {
