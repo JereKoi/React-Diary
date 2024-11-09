@@ -26,21 +26,21 @@ body, html {
 
 
 .folder {
-  width: 300px;
-  height: 200px;
+  width: 30vh;
+  height: auto;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  border-radius: 2vh;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   overflow: hidden;
   transition: height 0.2s ease;
-  margin: 10px;
+  margin: 1vh;
 }
 
 .most-recent-table {
-  width: 950px;
-  height: 200px;
+  width: 60vh;
+  height: 15vh;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -48,8 +48,8 @@ body, html {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   overflow: hidden;
   transition: height 0.2s ease;
-  margin: 10px;
-  margin-top: 30px;
+  margin: 10vh;
+  margin-top: 3vh;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -112,16 +112,16 @@ body, html {
   margin-bottom: 10px;
   position: relative;
   width: 100%;
-  height: 50px;
+  height: 3vh;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   margin: 10px 0;
-  margin-top: 30px;
+  margin-top: 5vh;
 }
 
 .new-entry-form button {
   width: 100%;
-  height: 45px;
+  height: 3.5vh;
   background: black;
   border: none;
   outline: none;
@@ -162,7 +162,7 @@ body, html {
 
 .user-diary {
   width: 300px;
-  height: 200px;
+  height: 15vh;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -241,11 +241,7 @@ body, html {
   margin-bottom: 5px;
 }
 
-.react-datepicker-wrapper {
-  width: 50%;
-}
-
-.react-datepicker__input-container {
+.react-datepicker-wrapper .react-datepicker__input-container {
   width: 50%;
 }
 
@@ -288,10 +284,60 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.8vh;
 }
 
 .search-form input {
   flex: 1;
-  margin-right: 10px;
+  margin-right: 0.8vh;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  body, html {
+    font-size: 1vh; /* Reduce font size for smaller screens */
+  }
+
+  .diaryPage {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch; /* Stretch the content across the screen */
+    padding: 10px; /* Add padding to prevent content from touching edges */
+  }
+
+  .new-entry-form input[type="text"],
+  .new-entry-form button {
+    width: 100%; /* Make input and button take full width */
+    margin: 10px 0; /* Add margin for better spacing */
+  }
+
+  .most-recent-table {
+    width: 100%; /* Make the table responsive */
+    height: auto; /* Adjust height for better fitting */
+  }
+
+  .folders-horizontal {
+    flex-direction: column; /* Stack folders vertically */
+    padding: 0; /* Remove padding for small screens */
+  }
+
+  .user-diaries {
+    flex-direction: column; /* Stack the diaries vertically */
+  }
+
+  .user-diary-list {
+    flex-direction: column; /* Stack the diary list vertically */
+  }
+
+  .folder, .user-diary {
+    width: 100%; /* Make these take full width */
+    margin: 10px 0; /* Adjust margin for better spacing */
+  }
+
+  .toggle-entries-button {
+    font-size: 16px; /* Reduce button font size for mobile */
+  }
+
+  .search-input {
+    width: 100%; /* Make search input responsive */
+  }
 }

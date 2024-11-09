@@ -10,14 +10,14 @@
 
 .contactContainer {
   position: relative;
-  width: 100vw;
+  width: 100vh;
   margin: 0 auto;
-  max-width: 300px;
-  min-width: 400px;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  max-width: 30vh;
+  min-width: 33vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
   height: auto;
-  min-height: 400px;
+  min-height: 20vh;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 6vh;
 }
 
 .name {
@@ -75,7 +75,7 @@
   margin-bottom: 10px;
   position: relative;
   width: 100%;
-  height: 50px;
+  height: 4vh;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   margin: 30px 0;
@@ -88,7 +88,7 @@
   overflow: hidden;
   padding: 10px;
   box-sizing: border-box;
-  min-height: 100px;
+  min-height: 9vh;
 }
 
 .messageInput::-webkit-scrollbar {
@@ -117,8 +117,8 @@
 }
 
 .submit-btn {
-  width: 150%;
-  height: 45px;
+  width: 100%;
+  height: 4vh;
   justify-content: center;
   align-items: ce;
   background: black;
