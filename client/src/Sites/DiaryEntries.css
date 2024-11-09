@@ -1,9 +1,10 @@
 /* Global Styles */
-body, html {
+body,
+html {
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
-  font-family: 'Arial', sans-serif; /* Set font family */
+  font-family: "Arial", sans-serif; /* Set font family */
   font-size: 1rem; /* Set base font size */
   background: var(--primary-bg); /* Set background using CSS variable */
   color: #fff; /* Set text color to white */
@@ -23,7 +24,6 @@ body, html {
   min-height: 100vh; /* Ensure it covers full viewport height */
   width: 100%; /* Full width */
 }
-
 
 .folder {
   width: 30vh;
@@ -144,6 +144,7 @@ body, html {
 .user-diaries-heading {
   margin-top: 40px;
   font-size: 1.7rem;
+  text-align: center;
 }
 
 .user-diaries {
@@ -262,27 +263,32 @@ body, html {
 .search-input {
   width: 50%;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 30px;
   border: 0.1vh solid #ccc;
   font-size: 1rem;
   margin-right: 10px;
   width: auto;
   height: 20px;
+  margin-bottom: 20px;
 }
 
 .new-entry-form button,
 .search-button {
-  padding: 1vh 2vh;
-  background-color: black;
-  color: white;
+  width: 100%;
+  height: 3.5vh;
+  background: black;
   border: none;
-  border-radius: 10px;
+  outline: none;
+  border-radius: 0.6vh;
   cursor: pointer;
   font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
 }
 
 .search-form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
@@ -295,7 +301,8 @@ body, html {
 
 /* Ensure responsiveness */
 @media (max-width: 768px) {
-  body, html {
+  body,
+  html {
     font-size: 1vh; /* Reduce font size for smaller screens */
   }
 
@@ -314,7 +321,7 @@ body, html {
   .new-entry-form input[type="text"] {
     width: 100%; /* Make input and button take full width */
     margin: 1vh 0; /* Add margin for better spacing */
-    margin-top: 20%
+    margin-top: 20%;
   }
 
   .most-recent-table {
@@ -334,7 +341,8 @@ body, html {
     flex-direction: column; /* Stack the diary list vertically */
   }
 
-  .folder, .user-diary {
+  .folder,
+  .user-diary {
     width: 100%; /* Make these take full width */
     margin: 1vh 0; /* Adjust margin for better spacing */
   }
@@ -345,5 +353,35 @@ body, html {
 
   .search-input {
     width: 100%; /* Make search input responsive */
+  }
+
+  .toggle-entries-button {
+    font-size: 2rem;
+    margin-left: 0px;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 0.1vh solid #ccc;
+    font-size: 1rem;
+    margin-right: 10px;
+    width: auto;
+    height: 20px;
+  }
+
+  .search-button {
+    padding: 1vh 2vh;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
   }
 }
