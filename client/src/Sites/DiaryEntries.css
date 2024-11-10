@@ -316,16 +316,19 @@ html {
     width: 100%; /* Make input and button take full width */
     margin: 1vh 0; /* Add margin for better spacing */
     height: 7vh;
+    font-size: 2rem;
   }
 
   .new-entry-form input[type="text"] {
     width: 100%; /* Make input and button take full width */
     margin: 1vh 0; /* Add margin for better spacing */
     margin-top: 20%;
+    font-size: 2rem;
   }
 
   .most-recent-table {
     width: 100%; /* Make the table responsive */
+    font-size: 2rem;
   }
 
   .folders-horizontal {
@@ -367,21 +370,24 @@ html {
   .search-input {
     width: 100%;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     border: 0.1vh solid #ccc;
     font-size: 1rem;
     margin-right: 10px;
     width: auto;
     height: 20px;
+    font-size: 2rem;
   }
 
   .search-button {
-    padding: 1vh 2vh;
     background-color: black;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 1rem;
+    width: 100%; /* Make input and button take full width */
+    margin: 1vh 0; /* Add margin for better spacing */
+    height: 7vh;
+    font-size: 2rem;
   }
 }

@@ -23,7 +23,7 @@
     display: flex; /* Use flexbox for layout */
     flex-wrap: wrap; /* Allow content to wrap to the next line if necessary */
     justify-content: space-around; /* Space out sections evenly */
-    max-width: 1200px; /* Maximum width for the footer content */
+    max-width: 90vh; /* Maximum width for the footer content */
     margin: auto; /* Center the content horizontally */
     gap: 40px; /* Space between sections */
 }
@@ -101,7 +101,7 @@
 @media (max-width: 768px) {
     .footer-section {
         padding: 15px; /* Reduced padding for smaller screens */
-        font-size: 1rem; /* Adjusted font size */
+        font-size: 2rem; /* Adjusted font size */
     }
 
     .footer-content {
@@ -119,6 +119,10 @@
     .footer-section {
         width: 100%; /* Full width for sections */
         padding: 15px; /* Reduced padding */
-        font-size: 0.9rem; /* Smaller font size */
+        font-size: 2rem; /* Smaller font size */
+    }
+
+    .footer-last {
+        font-size: 2rem;
     }
 }
