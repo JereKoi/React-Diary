@@ -158,13 +158,15 @@ const DiaryEntries = () => {
               Search
             </button>
           </form>
-          <h2 className="user-diaries-heading">Your Diaries</h2>
-          <button
-            className="see-all-button"
-            onClick={() => navigate("/MoreDiaries")}
-          >
-            See All
-          </button>
+          <div className="your-diaries-container">
+            <h2 className="user-diaries-heading">Your Diaries</h2>
+            <button
+              className="see-all-button"
+              onClick={() => navigate("/MoreDiaries")}
+            >
+              See All
+            </button>
+          </div>
           <div className="user-diaries">
             <div className="user-diary-list">
               {userDiaries.map((diary) => (

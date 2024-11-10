@@ -273,7 +273,7 @@ html {
 }
 
 .new-entry-form button,
-.search-button {
+.search-button, .see-all-button {
   width: 100%;
   height: 3.5vh;
   background: black;
@@ -297,6 +297,14 @@ html {
 .search-form input {
   flex: 1;
   margin-right: 10px;
+}
+
+.your-diaries-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 /* Ensure responsiveness */

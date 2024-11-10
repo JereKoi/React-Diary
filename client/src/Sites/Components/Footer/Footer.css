@@ -99,13 +99,24 @@
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-    .footer-section {
-        padding: 15px; /* Reduced padding for smaller screens */
-        font-size: 2rem; /* Adjusted font size */
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically on very small screens */
+        align-items: center; /* Center items */
+        gap: 15px; /* Space between stacked sections */
     }
 
-    .footer-content {
-        gap: 20px; /* Reduced gap between sections */
+    .footer-section {
+        width: 100%; /* Full width for sections */
+        padding: 15px; /* Reduced padding */
+        font-size: 2rem; /* Smaller font size */
+    }
+
+    .footer-section p {
+        font-size: 2rem;
+    }
+
+    .footer-last {
+        font-size: 2rem;
     }
 }
 
@@ -120,6 +131,10 @@
         width: 100%; /* Full width for sections */
         padding: 15px; /* Reduced padding */
         font-size: 2rem; /* Smaller font size */
+    }
+
+    .footer-section p {
+        font-size: 2rem;
     }
 
     .footer-last {
