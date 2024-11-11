@@ -136,7 +136,7 @@ const DiaryEntries = () => {
             />
             <button onClick={handleCreateEntry}>Create a new diary</button>
           </div>
-          <h2 className="user-diaries-heading">
+          <h2 className="what-you-header">
             What you have been writing to most recently.
           </h2>
           {mostRecentDiary && (

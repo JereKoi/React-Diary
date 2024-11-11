@@ -81,6 +81,12 @@ html {
   z-index: 1;
 }
 
+.what-you-header {
+  margin-top: 40px;
+  font-size: 2rem;
+  text-align: center;
+}
+
 .previous-entries-text {
   display: flex;
   justify-content: center;
@@ -139,12 +145,6 @@ html {
   font-size: 1.3rem;
   color: #007bff;
   margin-left: 20px;
-}
-
-.user-diaries-heading {
-  margin-top: 40px;
-  font-size: 1.7rem;
-  text-align: center;
 }
 
 .user-diaries {
@@ -273,7 +273,8 @@ html {
 }
 
 .new-entry-form button,
-.search-button, .see-all-button {
+.search-button,
+.see-all-button {
   width: 100%;
   height: 3.5vh;
   background: black;
@@ -305,6 +306,12 @@ html {
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
+}
+
+.user-diaries-heading {
+  margin-top: 40px;
+  font-size: 2rem;
+  text-align: center;
 }
 
 /* Ensure responsiveness */
@@ -359,7 +366,8 @@ html {
   }
 
   .toggle-entries-button {
-    font-size: 1.3vh; /* Reduce button font size for mobile */
+    font-size: 5vh; /* Reduce button font size for mobile */
+    margin-left: 0px;
   }
 
   .search-input {
@@ -367,7 +375,7 @@ html {
   }
 
   .toggle-entries-button {
-    font-size: 2rem;
+    font-size: 5rem;
     margin-left: 0px;
   }
 
@@ -397,5 +405,30 @@ html {
     margin: 1vh 0; /* Add margin for better spacing */
     height: 7vh;
     font-size: 2rem;
+  }
+
+  .user-diaries-heading {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 10vh;
+  }
+
+  .previous-entries-text {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 10vh;
+  }
+
+  .see-all-button {
+    width: 100%;
+    height: 7vh;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 1vh;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
   }
 }
