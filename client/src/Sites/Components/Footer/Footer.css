@@ -40,7 +40,7 @@
     padding: 20px; /* Padding inside the section */
     border-radius: 10px; /* Rounded corners */
     color: white; /* Text color */
-    font-size: 1.2rem; /* Font size */
+    font-size: 1.5vh; /* Font size */
     text-align: center; /* Center-align text */
     font-family: 'Roboto', Arial, sans-serif; /* Font family */
     transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth transitions for hover effects */
@@ -55,7 +55,7 @@
 
 /* Styles for paragraph text within sections */
 .footer-section p {
-    font-size: 0.8rem; /* Smaller font size for paragraphs */
+    font-size: 1.2vh; /* Smaller font size for paragraphs */
     margin: 0; /* Remove default margin */
 }
 
@@ -78,7 +78,7 @@
     background-color: transparent; /* Transparent background */
     padding: 0; /* No padding */
     margin-top: 20px; /* Space above the last section */
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 1.3vh; /* Smaller font size */
     text-align: center; /* Center-align text */
     cursor: default; /* Default cursor style */
 }

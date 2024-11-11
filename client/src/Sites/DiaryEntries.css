@@ -113,13 +113,13 @@ html {
 .new-entry-form input[type="text"] {
   width: 30vh;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 1vh;
   border: 0.2vh solid #ccc;
   border-radius: 0.5vh;
   margin-bottom: 10px;
   position: relative;
   width: 100%;
-  height: 30px;
+  height: 2vh;
   border: 20px solid rgba(255, 255, 255, 0.5);
   border-radius: 40px;
   margin: 1vh 0;
@@ -266,16 +266,16 @@ html {
 }
 
 .new-entry-form button,
-.search-button,
-.see-all-button {
-  width: 100%;
+.search-button, .see-all-button
+ {
+  width: 18.5vh;
   height: 3.5vh;
   background: black;
   border: none;
   outline: none;
   border-radius: 0.6vh;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1vh;
   color: #fff;
   font-weight: 500;
 }
@@ -290,7 +290,7 @@ html {
 
 .user-diaries-heading {
   margin-top: 40px;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
 }
 
