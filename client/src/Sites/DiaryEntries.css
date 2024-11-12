@@ -5,7 +5,7 @@ html {
   padding: 0; /* Remove default padding */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
   font-family: "Arial", sans-serif; /* Set font family */
-  font-size: 1rem; /* Set base font size */
+  font-size: 1vh; /* Set base font size */
   background: var(--primary-bg); /* Set background using CSS variable */
   color: #fff; /* Set text color to white */
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -30,7 +30,7 @@ html {
   height: auto;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  border-radius: 2vh;
   font-size: 1vh;
   padding: 100px;
   backdrop-filter: blur(20px);
@@ -45,7 +45,7 @@ html {
   height: 15vh;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  border-radius: 2vh;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   overflow: hidden;
@@ -56,6 +56,8 @@ html {
   align-items: center;
   background-image: url("../../Pictures/WorkDiaryBackground.jpg");
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
@@ -79,13 +81,14 @@ html {
   color: white;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.7);
-  padding: 1vh;
-  border-radius: 1vh;
+  padding: 0.8vh;
+  border-radius: 0.8vh;
+  font-size: 1vh;
   z-index: 1;
 }
 
 .what-you-header {
-  margin-top: 40px;
+  margin-top: 4vh;
   font-size: 2vh;
   text-align: center;
 }
@@ -103,7 +106,7 @@ html {
   overflow-x: auto;
   justify-content: center;
   padding: 2vh;
-  margin-bottom: 300px;
+  margin-bottom: 10vh;
 }
 
 .new-entry-form {
@@ -115,18 +118,14 @@ html {
 
 .new-entry-form input[type="text"] {
   width: 30vh;
-  padding: 10px;
+  padding: 1vh;
   font-size: 1vh;
-  border: 0.2vh solid #ccc;
-  border-radius: 0.5vh;
-  margin-bottom: 10px;
+  border-radius: 2vh;
   position: relative;
-  width: 100%;
   height: 2vh;
   border: 20px solid rgba(255, 255, 255, 0.5);
-  border-radius: 40px;
   margin: 1vh 0;
-  margin-top: 100px;
+  margin-top: 5vh;
 }
 
 .new-entry-form button {
@@ -146,17 +145,17 @@ html {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.3vh;
+  font-size: 2vh;
   color: #007bff;
-  margin-left: 20px;
+  margin-left: 1vh;
 }
 
 .user-diaries {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
 }
 
 .user-diary-list {
@@ -170,7 +169,7 @@ html {
   height: 15vh;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  border-radius: 2vh;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   overflow: hidden;
@@ -232,13 +231,13 @@ html {
 }
 
 .date-picker-container {
-  margin: 20px 0;
+  margin: 2vh 0;
   display: flex;
   flex-direction: column;
 }
 
 .date-picker-container label {
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
 }
 
 .react-datepicker-wrapper .react-datepicker__input-container {
@@ -247,7 +246,7 @@ html {
 
 .react-datepicker__input-container input {
   width: 50%;
-  padding: 10px;
+  padding: 1vh;
   box-sizing: border-box;
 }
 
@@ -258,15 +257,14 @@ html {
 }
 
 .search-input {
-  width: 100%;
-  padding: 20px;
-  border-radius: 30px;
-  border: 0.1vh solid #ccc;
+  width: 30vh;
+  padding: 1vh;
   font-size: 1vh;
-  width: auto;
-  height: 20px;
-  margin-bottom: 20px;
-  flex: 1;
+  border-radius: 2vh;
+  position: relative;
+  height: 2vh;
+  border: 20px solid rgba(255, 255, 255, 0.5);
+  margin: 1vh 0;
 }
 
 .new-entry-form button,
