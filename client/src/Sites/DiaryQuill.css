@@ -1,5 +1,8 @@
 @import "~react-datepicker/dist/react-datepicker.css";
 
+/* TODO: This file has many similar naming conventions as DiaryEntries
+   causing clashing and overwriting. Fix this issue */
+
 /* Global Styles */
 body, html {
   margin: 0; /* Remove default margin */
