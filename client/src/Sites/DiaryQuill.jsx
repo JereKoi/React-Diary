@@ -54,9 +54,9 @@ const DiaryQuill = () => {
             <Navbar />
           </div>
           <h2 className="most-recent-written-header">Your Most Recent Diary</h2>
-          <div className="most-recent-table">
+          <div className="most-recent-quill-table">
             {mostRecentDiary && (
-              <div className="most-recent-table-heading">
+              <div className="most-recent-quill-table-heading">
                 <p>{mostRecentDiary.name}</p>
               </div>
             )}
