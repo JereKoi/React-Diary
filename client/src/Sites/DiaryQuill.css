@@ -29,10 +29,9 @@ body, html {
   width: 100%; /* Full width */
 }
 
-.text-editor-container,
-.most-recent-table,
-.diary-buttons-container,
-.date-picker-container {
+.text-editor-container-quill,
+.diary-buttons-container-quill,
+.date-picker-container-quill {
   width: 60%;
   max-width: 100%;
   margin: 2vh 0;
@@ -45,11 +44,11 @@ body, html {
   color: white;
 }
 
-.text-editor-container {
+.text-editor-container-quill {
   margin-bottom: 50vh;
 }
 
-.most-recent-written-header {
+.most-recent-written-header-quill {
   text-align: center;
   margin: 20vh auto 2vh;
   font-size: 1.2vh;
@@ -57,33 +56,19 @@ body, html {
   color: white;
 }
 
-.most-recent-table-heading p {
+.most-recent-table-heading-quill p {
   margin: 0;
   font-size: 1.3vh;
   color: #fff;
 }
 
-.most-recent-table:hover {
-  transform: scale(1.1);
-}
-
-.most-recent-table::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.date-picker-container label {
+.date-picker-container-quill label {
   display: block;
   margin-bottom: 1vh;
   font-size: 1.2vh;
 }
 
-.date-picker {
+.date-picker-quill {
   width: 100%;
   padding: 1vh;
   border-radius: 5px;
@@ -91,20 +76,7 @@ body, html {
   font-size: 1vh;
 }
 
-.folder {
-  width: 30vh;
-  height: 20vh;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 2vh;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  overflow: hidden;
-  transition: height 0.2s ease;
-  margin: 1vh;
-}
-
-.most-recent-quill-table {
+.most-recent-table-quill {
   width: 60vh;
   height: 15vh;
   background: transparent;
@@ -126,11 +98,11 @@ body, html {
   transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
-.most-recent-table:hover {
+.most-recent-table-quill:hover {
   transform: scale(1.1);
 }
 
-.most-recent-table::before {
+.most-recent-table-quill::before {
   content: "";
   position: absolute;
   top: 0;
@@ -140,7 +112,7 @@ body, html {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.most-recent-quill-table-heading {
+.most-recent-table-heading-quill {
   color: white;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.7);
@@ -149,42 +121,25 @@ body, html {
   z-index: 1;
 }
 
-.previous-entries-text {
+.previous-entries-text-quill {
   display: flex;
   justify-content: center;
 }
 
-.folders-horizontal {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  justify-content: center;
-  padding: 2vh;
-}
-
-.user-diaries-heading {
+.user-diary-heading-quill {
   margin-top: 4vh;
   font-size: 1.3vh;
 }
 
-.user-diaries {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 2vh 0;
-  margin-top: 2vh;
-}
-
-.user-diary-list {
+.user-diary-list-quill {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
 }
 
-.user-diary {
+.user-diary-quill {
   width: 30vh;
-  height: 20vh;
+  height: 15vh;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 2vh;
@@ -199,11 +154,11 @@ body, html {
   transition: 0.2s, background-color 0.2s, padding 0.3s;
 }
 
-.user-diary:hover {
+.user-diary-quill:hover {
   transform: scale(1.1);
 }
 
-.user-diary::before {
+.user-diary-quill::before {
   content: "";
   position: absolute;
   top: 0;
@@ -213,13 +168,27 @@ body, html {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.user-diary p {
+.user-diary-quill p {
   color: white;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.7);
-  padding: 1vh;
-  border-radius: 10px;
+  padding: 0.8vh;
+  border-radius: 0.8vh;
+  font-size: 1vh;
   z-index: 1;
+}
+
+.see-all-button-quill{
+width: 18.5vh;
+height: 3.5vh;
+background: black;
+border: none;
+outline: none;
+border-radius: 0.6vh;
+cursor: pointer;
+font-size: 1vh;
+color: #fff;
+font-weight: 500;
 }
 
 .work {

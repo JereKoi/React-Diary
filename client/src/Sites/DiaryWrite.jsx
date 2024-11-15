@@ -2,7 +2,7 @@ import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBarLoggedIn";
 import "./DiaryWrite.css";
 
-const DiaryEntriesPage = () => {
+const DiaryWrite = () => {
   return (
     <div>
       <div className="navBar">
@@ -16,4 +16,4 @@ const DiaryEntriesPage = () => {
   );
 };
 
-export default DiaryEntriesPage;
+export default DiaryWrite;

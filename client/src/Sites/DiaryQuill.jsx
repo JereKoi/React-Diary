@@ -53,44 +53,44 @@ const DiaryQuill = () => {
           <div className="navBar">
             <Navbar />
           </div>
-          <h2 className="most-recent-written-header">Your Most Recent Diary</h2>
-          <div className="most-recent-quill-table">
+          <h2 className="most-recent-written-header-quill">Your Most Recent Diary</h2>
+          <div className="most-recent-table-quill">
             {mostRecentDiary && (
-              <div className="most-recent-quill-table-heading">
+              <div className="most-recent-table-heading-quill">
                 <p>{mostRecentDiary.name}</p>
               </div>
             )}
           </div>
-          <h2 className="user-diaries-heading">Your Diaries</h2>
+          <h2 className="user-diary-heading-quill">Your Diaries</h2>
           <button
-            className="see-all-button"
+            className="see-all-button-quill"
             onClick={() => navigate("/MoreDiaries")}
           >
             See All
           </button>
-          <div className="user-diaries">
-            <div className="user-diary-list">
+          <div className="user-diary-quill">
+            <div className="user-diary-list-quill">
               {userDiaries.map((diary) => (
-                <div key={diary.id} className={`user-diary ${diary.type}`}>
+                <div key={diary.id} className={`user-diary-quill ${diary.type}`}>
                   <p>{diary.name}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="date-picker-container">
-            <label htmlFor="diary-date-picker">
+          <div className="date-picker-container-quill">
+            <label htmlFor="diary-date-picker-quill">
               Select Date for Your Entry:
             </label>
             <DatePicker
-              id="diary-date-picker"
+              id="diary-date-picker-quill"
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
               dateFormat="MMMM d, yyyy"
               maxDate={new Date()}
-              className="date-picker"
+              className="date-picker-quill"
             />
           </div>
-          <div className="text-editor-container">
+          <div className="text-editor-container-quill">
             <TextEditor selectedDate={selectedDate} />
           </div>
 
