@@ -7,7 +7,8 @@
 .diary-text-editor .ql-editor {
   background-color: white; /* Ensures the editable area is also white */
   color: rgb(255, 255, 255); /* Sets text color to black for contrast */
-  min-height: 200px; /* Optional: ensures a minimum height */
+  min-height: 20vh; /* Optional: ensures a minimum height */
+  font-size: 1vh;
 }
 
 .diary-text-editor .ql-toolbar {
@@ -17,6 +18,6 @@
 
 .save-status {
   color: white;
-  font-size: 1.3rem;
-  margin-top: 20px;
+  font-size: 1.3vh;
+  margin-top: 2vh;
 }
