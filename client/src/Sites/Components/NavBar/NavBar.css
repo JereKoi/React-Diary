@@ -75,7 +75,7 @@ button.contact-btn {
     background: none;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 1vh 2vh;
     font: inherit;
     cursor: pointer;
     text-decoration: none;
@@ -90,7 +90,7 @@ button.contact-btn {
     color: #ffffff;
     background-color: #61dafb;
     border: none;
-    padding: 10px 20px;
+    padding: 1vh 2vh;
     font: inherit;
     cursor: pointer;
     text-decoration: none;
@@ -132,7 +132,7 @@ button.contact-btn {
         .nav-buttons-mobile button.about-btn,
         .nav-buttons-mobile button.contact-btn,
         .nav-buttons-mobile button.loginNav-btn {
-            font-size: 2rem;
+            font-size: 1vh;
         }
 }
 
