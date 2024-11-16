@@ -1,36 +1,22 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Folder from "./Components/Folder";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
+import UserDiariesDisplay from "./Components/UserDiariesDisplay/UserDiariesDisplay";
 import "./DiaryEntries.css";
 const AbstractBackground = lazy(() =>
   import("./Components/AbstractBackground/AbstractBackground")
 );
 
 const DiaryEntries = () => {
+  const [mostRecentDiary, setMostRecentDiary] = useState(null);
   const [newTitle, setNewTitle] = useState("");
   const [showEntries, setShowEntries] = useState(true);
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
-  const [mostRecentDiary, setMostRecentDiary] = useState(null);
-
-  const userDiaries = useMemo(
-    () => [
-      { id: 1, name: "Work Diary", type: "work" },
-      { id: 2, name: "Travel Diary", type: "travel" },
-      { id: 3, name: "Food Diary", type: "food" },
-    ],
-    []
-  );
-
-  useEffect(() => {
-    if (userDiaries && userDiaries.length > 0) {
-      setMostRecentDiary(userDiaries[0]);
-    }
-  }, [userDiaries]);
 
   const folders = [
     {
@@ -89,6 +75,14 @@ const DiaryEntries = () => {
     },
   ];
 
+  /*
+  useEffect(() => {
+    if (userDiaries && userDiaries.length > 0) {
+      setMostRecentDiary(userDiaries[0]);
+    }
+  }, [userDiaries]);
+  */
+
   const handleCardClick = (date) => {
     console.log(`Card clicked for date: ${date}`);
     // Handle the navigation or any action here
@@ -117,6 +111,15 @@ const DiaryEntries = () => {
     console.log("Searching for:", searchTerm);
     navigate(`/search/${searchTerm}`);
   };
+
+  useEffect(() => {
+    if (folders.length > 0) {
+      const mostRecent = folders
+        .flatMap((folder) => folder.entries)
+        .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+      setMostRecentDiary(mostRecent);
+    }
+  }, []);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -167,38 +170,30 @@ const DiaryEntries = () => {
               See All
             </button>
           </div>
-          <div className="user-diaries">
-            <div className="user-diary-list">
-              {userDiaries.map((diary) => (
-                <div key={diary.id} className={`user-diary ${diary.type}`}>
-                  <p>{diary.name}</p>
-                </div>
+          <UserDiariesDisplay />
+        </div>
+        <div className="previous-entries-text">
+          <h1>Your previous entries</h1>
+          <button className="toggle-entries-button" onClick={toggleEntries}>
+            <FontAwesomeIcon icon={showEntries ? faEyeSlash : faEye} />
+          </button>
+        </div>
+        {showEntries && (
+          <>
+            <div className="folders-horizontal">
+              {folders.map((folder) => (
+                <Folder
+                  key={folder.id}
+                  name={folder.name}
+                  entries={folder.entries}
+                  onCardClick={handleCardClick}
+                />
               ))}
             </div>
-          </div>
-          <div className="previous-entries-text">
-            <h1>Your previous entries</h1>
-            <button className="toggle-entries-button" onClick={toggleEntries}>
-              <FontAwesomeIcon icon={showEntries ? faEyeSlash : faEye} />
-            </button>
-          </div>
-          {showEntries && (
-            <>
-              <div className="folders-horizontal">
-                {folders.map((folder) => (
-                  <Folder
-                    key={folder.id}
-                    name={folder.name}
-                    entries={folder.entries}
-                    onCardClick={handleCardClick}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </div>
-        <Footer />
+          </>
+        )}
       </div>
+      <Footer />
     </Suspense>
   );
 };

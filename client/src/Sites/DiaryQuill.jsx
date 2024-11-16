@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
 import TextEditor from "./Components/TextEditor/TextEditor";
+import UserDiariesDisplay from "./Components/UserDiariesDisplay/UserDiariesDisplay";
 import "./DiaryQuill.css";
 
 const AbstractBackground = lazy(() =>
@@ -68,15 +69,7 @@ const DiaryQuill = () => {
           >
             See All
           </button>
-          <div className="user-diary">
-            <div className="user-diary-list">
-              {userDiaries.map((diary) => (
-                <div key={diary.id} className={`user-diary ${diary.type}`}>
-                  <p>{diary.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <UserDiariesDisplay/>
           <div className="date-picker-container">
             <label htmlFor="diary-date-picker">
               Select Date for Your Entry:
