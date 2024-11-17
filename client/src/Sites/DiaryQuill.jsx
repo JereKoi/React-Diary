@@ -78,7 +78,7 @@ const DiaryQuill = () => {
               id="diary-date-picker"
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
-              dateFormat="d, MMMM yyyy"
+              dateFormat="d, MMMM, yyyy"
               maxDate={new Date()}
               className="date-picker-quill"
             />

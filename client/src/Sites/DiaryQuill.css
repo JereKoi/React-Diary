@@ -44,7 +44,10 @@ body, html {
 }
 
 .date-picker-container-quill {
-  width: 11%;
+  z-index: 1;
+  text-align: center;
+  justify-content: center;
+  width: 60%;
   max-width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -63,7 +66,7 @@ body, html {
 .most-recent-written-header-quill, .user-diary-heading-quill {
   text-align: center;
   margin: 20vh auto 2vh;
-  font-size: 1.2vh;
+  font-size: 2vh;
   font-family: "Poppins", sans-serif;
   color: white;
 }
@@ -77,17 +80,18 @@ body, html {
 
 .date-picker-container-quill label {
   display: block;
+  text-align: center;
   margin-bottom: 1vh;
   width: 100%;
-  font-size: 1.2vh;
+  font-size: 2vh;
 }
 
 .date-picker-quill {
   width: 100%;
-  padding: 1.3vh;
+  padding: 1vh;
   border-radius: 5px;
   border: none;
-  font-size: 1vh;
+  font-size: 2vh;
 }
 
 .most-recent-table-quill {
