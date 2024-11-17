@@ -54,23 +54,23 @@ const DiaryQuill = () => {
           <div className="navBar">
             <Navbar />
           </div>
-          <h2 className="most-recent-written-header">Your Most Recent Diary</h2>
-          <div className="most-recent-table">
+          <h2 className="most-recent-written-header-quill">Your Most Recent Diary</h2>
+          <div className="most-recent-table-quill">
             {mostRecentDiary && (
-              <div className="most-recent-table-heading">
+              <div className="most-recent-table-heading-quill">
                 <p>{mostRecentDiary.name}</p>
               </div>
             )}
           </div>
-          <h2 className="user-diary-heading">Your Diaries</h2>
+          <h2 className="user-diary-heading-quill">Your Diaries</h2>
           <button
-            className="see-all-button"
+            className="see-all-button-quill"
             onClick={() => navigate("/MoreDiaries")}
           >
             See All
           </button>
           <UserDiariesDisplay/>
-          <div className="date-picker-container">
+          <div className="date-picker-container-quill">
             <label htmlFor="diary-date-picker">
               Select Date for Your Entry:
             </label>
@@ -78,15 +78,14 @@ const DiaryQuill = () => {
               id="diary-date-picker"
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
-              dateFormat="MMMM d, yyyy"
+              dateFormat="d, MMMM yyyy"
               maxDate={new Date()}
-              className="date-picker"
+              className="date-picker-quill"
             />
           </div>
-          <div className="text-editor-container">
+          <div className="text-editor-container-quill">
             <TextEditor selectedDate={selectedDate} />
           </div>
-
         </div>
         <Footer />
       </div>

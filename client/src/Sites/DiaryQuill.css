@@ -30,11 +30,22 @@ body, html {
 }
 
 .text-editor-container-quill,
-.diary-buttons-container-quill,
-.date-picker-container-quill {
+.diary-buttons-container-quill {
   width: 60%;
   max-width: 100%;
   margin: 2vh 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2vh;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10vh;
+  color: white;
+}
+
+.date-picker-container-quill {
+  width: 11%;
+  max-width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: 2vh;
@@ -49,7 +60,7 @@ body, html {
   font-size: 1.5vh;
 }
 
-.most-recent-written-header-quill {
+.most-recent-written-header-quill, .user-diary-heading-quill {
   text-align: center;
   margin: 20vh auto 2vh;
   font-size: 1.2vh;
@@ -60,18 +71,20 @@ body, html {
 .most-recent-table-heading-quill p {
   margin: 0;
   font-size: 1.3vh;
+  width: 100%;
   color: #fff;
 }
 
 .date-picker-container-quill label {
   display: block;
   margin-bottom: 1vh;
+  width: 100%;
   font-size: 1.2vh;
 }
 
 .date-picker-quill {
   width: 100%;
-  padding: 1vh;
+  padding: 1.3vh;
   border-radius: 5px;
   border: none;
   font-size: 1vh;
@@ -138,22 +151,4 @@ cursor: pointer;
 font-size: 1vh;
 color: #fff;
 font-weight: 500;
-}
-
-.work {
-  background-image: url("../../Pictures/WorkDiaryBackground.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.travel {
-  background-image: url("../../Pictures/TravelDiaryBackground.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.food {
-  background-image: url("../../Pictures/FoodDiaryBackground.jpg");
-  background-size: cover;
-  background-position: center;
 }
