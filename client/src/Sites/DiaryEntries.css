@@ -93,22 +93,6 @@ html {
   text-align: center;
 }
 
-.previous-entries-text {
-  display: flex;
-  justify-content: center;
-  font-size: 1vh;
-}
-
-.folders-horizontal {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  justify-content: center;
-  padding: 2vh;
-  margin-bottom: 10vh;
-}
-
 .new-entry-form {
   margin-top: 4vh;
   display: flex;

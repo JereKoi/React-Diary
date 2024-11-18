@@ -1,8 +1,5 @@
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Folder from "./Components/Folder";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
 import UserDiariesDisplay from "./Components/UserDiariesDisplay/UserDiariesDisplay";
@@ -172,26 +169,7 @@ const DiaryEntries = () => {
           </div>
           <UserDiariesDisplay />
         </div>
-        <div className="previous-entries-text">
-          <h1>Your previous entries</h1>
-          <button className="toggle-entries-button" onClick={toggleEntries}>
-            <FontAwesomeIcon icon={showEntries ? faEyeSlash : faEye} />
-          </button>
-        </div>
-        {showEntries && (
-          <>
-            <div className="folders-horizontal">
-              {folders.map((folder) => (
-                <Folder
-                  key={folder.id}
-                  name={folder.name}
-                  entries={folder.entries}
-                  onCardClick={handleCardClick}
-                />
-              ))}
-            </div>
-          </>
-        )}
+        
       </div>
       <Footer />
     </Suspense>
