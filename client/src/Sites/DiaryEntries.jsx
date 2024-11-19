@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
+import PreviousEntriesDisplay from "./Components/PrevousEntriesDisplay/PreviousEntriesDisplay";
 import UserDiariesDisplay from "./Components/UserDiariesDisplay/UserDiariesDisplay";
 import "./DiaryEntries.css";
 const AbstractBackground = lazy(() =>
@@ -169,7 +170,7 @@ const DiaryEntries = () => {
           </div>
           <UserDiariesDisplay />
         </div>
-        
+        <PreviousEntriesDisplay />
       </div>
       <Footer />
     </Suspense>
