@@ -125,15 +125,6 @@ html {
   font-weight: 500;
 }
 
-.toggle-entries-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 2vh;
-  color: #007bff;
-  margin-left: 1vh;
-}
-
 .most-recent-written-header,
 .most-recent-table-written-heading {
   text-align: center;

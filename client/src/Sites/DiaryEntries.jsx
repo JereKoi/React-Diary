@@ -1,8 +1,8 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/NavBar/NavBar";
-import PreviousEntriesDisplay from "./Components/PrevousEntriesDisplay/PreviousEntriesDisplay";
+import PreviousEntriesDisplay from "./Components/PreviousEntriesDisplay/PreviousEntriesDisplay";
 import UserDiariesDisplay from "./Components/UserDiariesDisplay/UserDiariesDisplay";
 import "./DiaryEntries.css";
 const AbstractBackground = lazy(() =>
@@ -10,68 +10,13 @@ const AbstractBackground = lazy(() =>
 );
 
 const DiaryEntries = () => {
-  const [mostRecentDiary, setMostRecentDiary] = useState(null);
+
   const [newTitle, setNewTitle] = useState("");
-  const [showEntries, setShowEntries] = useState(true);
+  const [mostRecentDiary, setMostRecentDiary] = useState(null);
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
 
-  const folders = [
-    {
-      id: 1,
-      name: "Personal 1",
-      entries: [
-        {
-          id: 2,
-          date: "2024-06-30",
-          title: "Personal Diary Entry 1",
-          content: "Visited the gym today.",
-        },
-        {
-          id: 3,
-          date: "2024-06-29",
-          title: "Personal Diary Entry 2",
-          content: "Watched a movie.",
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: "Personal 2",
-      entries: [
-        {
-          id: 4,
-          date: "2024-06-30",
-          title: "Personal Diary Entry 1",
-          content: "Visited the gym today.",
-        },
-        {
-          id: 5,
-          date: "2024-06-29",
-          title: "Personal Diary Entry 2",
-          content: "Watched a movie.",
-        },
-      ],
-    },
-    {
-      id: 3,
-      name: "Personal 3",
-      entries: [
-        {
-          id: 6,
-          date: "2024-06-30",
-          title: "Personal Diary Entry 1",
-          content: "Visited the gym today.",
-        },
-        {
-          id: 7,
-          date: "2024-06-29",
-          title: "Personal Diary Entry 2",
-          content: "Watched a movie.",
-        },
-      ],
-    },
-  ];
+
 
   /*
   useEffect(() => {
@@ -80,11 +25,6 @@ const DiaryEntries = () => {
     }
   }, [userDiaries]);
   */
-
-  const handleCardClick = (date) => {
-    console.log(`Card clicked for date: ${date}`);
-    // Handle the navigation or any action here
-  };
 
   const handleTitleChange = (e) => {
     setNewTitle(e.target.value);
@@ -96,9 +36,6 @@ const DiaryEntries = () => {
     setNewTitle("");
   };
 
-  const toggleEntries = () => {
-    setShowEntries(!showEntries);
-  };
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
@@ -109,15 +46,6 @@ const DiaryEntries = () => {
     console.log("Searching for:", searchTerm);
     navigate(`/search/${searchTerm}`);
   };
-
-  useEffect(() => {
-    if (folders.length > 0) {
-      const mostRecent = folders
-        .flatMap((folder) => folder.entries)
-        .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-      setMostRecentDiary(mostRecent);
-    }
-  }, []);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

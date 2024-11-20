@@ -13,3 +13,12 @@
     padding: 2vh;
     margin-bottom: 10vh;
   }
+
+  .toggle-entries-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2vh;
+    color: #007bff;
+    margin-left: 1vh;
+  }

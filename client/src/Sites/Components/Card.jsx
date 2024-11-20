@@ -1,6 +1,7 @@
 import React from "react";
 
 const Card = ({ date, entries, onClick }) => {
+
   return (
     <div className="card" onClick={onClick}>
       <h3>{date}</h3>
