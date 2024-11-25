@@ -370,6 +370,12 @@ small {
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
 
+  .box-content, .feature-description, .mood-chart-title, .your-mood-trends-title,
+  .milestones-title, .milestones-description, .word-cloud-title, .word-cloud-description,
+  .home-page-end-button {
+    font-size: 2vh;
+  }
+
   .cta-button, .secondary-button {
     font-size: 2.3vh; /* Button text size */
   }

@@ -260,7 +260,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="word-cloud-section">
-              <h2>Most Used Words</h2>
+              <h2 className="word-cloud-title">Most Used Words</h2>
               <p className="word-cloud-description">
                 Your most frequently used words provide a unique window into
                 your thoughts, themes, and experiences over time. This word
