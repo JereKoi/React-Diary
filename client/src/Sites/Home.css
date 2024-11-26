@@ -372,7 +372,7 @@ small {
 
   .box-content, .feature-description, .mood-chart-title, .your-mood-trends-title,
   .milestones-title, .milestones-description, .word-cloud-title, .word-cloud-description,
-  .home-page-end-button {
+  .home-page-end-button, .badges-container {
     font-size: 2vh;
   }
 
