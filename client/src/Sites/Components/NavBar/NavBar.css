@@ -132,7 +132,7 @@ button.contact-btn {
         .nav-buttons-mobile button.about-btn,
         .nav-buttons-mobile button.contact-btn,
         .nav-buttons-mobile button.loginNav-btn {
-            font-size: 1vh;
+            font-size: 2.5vh;
         }
 }
 
@@ -143,11 +143,10 @@ button.contact-btn {
 
     .nav-buttons {
         display: flex; /* Show nav buttons again */
+        
     }
 
     .nav-buttons-mobile {
         display: none; /* Hide mobile menu when screen is larger */
     }
-
-
 }

@@ -26,16 +26,25 @@ body, html {
   }
   
   .faq-header {
-    width: 100%;
+    width: auto;
     position: relative;
     display: grid;
     justify-content: center;
     margin-top: auto; /* Automatically push to the bottom */
-    width: 60%; /* Set width */
     margin: 200px 0; /* Vertical margin */
     padding: 20px; /* Padding around content */
-    font-size: 1.3rem; /* Font size */
+    font-size: 1.3vh; /* Font size */
     color: white; /* Text color */
     background-color: rgba(255, 255, 255, 0.15); /* Light translucent background */
   }
   
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  .faq-header {
+    font-size: 3vh;
+  }
+
+  .faq-container {
+    font-size: 3vh;
+  }
+}
