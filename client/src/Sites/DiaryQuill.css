@@ -156,3 +156,12 @@ font-size: 1vh;
 color: #fff;
 font-weight: 500;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+
+  .most-recent-table-quill {
+    width: 100%; /* Make the table responsive */
+    font-size: 2rem;
+  }
+}

@@ -383,11 +383,11 @@ small {
   .journal-preview {
     padding: 2vh; /* Padding around content */
     border-radius: 2vh; /* Rounded corners */
-    font-size: 2vh; /* Font size */
+    font-size: 2.5vh; /* Font size */
   }
 
   .scroll-section {
-    font-size: 2.2vh; /* Font size */
+    font-size: 2.5vh; /* Font size */
     border-radius: 1vh; /* Rounded corners */
   }
 

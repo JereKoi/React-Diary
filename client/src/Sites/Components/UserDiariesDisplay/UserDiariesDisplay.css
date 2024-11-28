@@ -66,3 +66,17 @@
     background-size: cover;
     background-position: center;
   }
+
+  /* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+
+  .user-diaries {
+    flex-direction: column; /* Stack the diaries vertically */
+  }
+
+  .user-diary {
+    width: 100%; /* Make these take full width */
+    margin: 1vh 0; /* Adjust margin for better spacing */
+  }
+
+}

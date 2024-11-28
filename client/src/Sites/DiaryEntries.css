@@ -240,16 +240,11 @@ html {
     padding: 0; /* Remove padding for small screens */
   }
 
-  .user-diaries {
-    flex-direction: column; /* Stack the diaries vertically */
-  }
-
   .user-diary-list {
     flex-direction: column; /* Stack the diary list vertically */
   }
 
-  .folder,
-  .user-diary {
+  .folder {
     width: 100%; /* Make these take full width */
     margin: 1vh 0; /* Adjust margin for better spacing */
   }
