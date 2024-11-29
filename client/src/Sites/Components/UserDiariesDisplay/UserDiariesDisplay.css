@@ -71,7 +71,7 @@
 @media (max-width: 600px) {
 
   .user-diaries {
-    flex-direction: column; /* Stack the diaries vertically */
+    flex-direction:column; /* Stack the diaries vertically */
   }
 
   .user-diary {

@@ -54,7 +54,9 @@ const DiaryQuill = () => {
           <div className="navBar">
             <Navbar />
           </div>
-          <h2 className="most-recent-written-header-quill">Your Most Recent Diary</h2>
+          <h2 className="most-recent-written-header-quill">
+            Your Most Recent Diary
+          </h2>
           <div className="most-recent-table-quill">
             {mostRecentDiary && (
               <div className="most-recent-table-heading-quill">
@@ -62,14 +64,16 @@ const DiaryQuill = () => {
               </div>
             )}
           </div>
-          <h2 className="user-diary-heading-quill">Your Diaries</h2>
-          <button
-            className="see-all-button-quill"
-            onClick={() => navigate("/MoreDiaries")}
-          >
-            See All
-          </button>
-          <UserDiariesDisplay/>
+          <div className="your-diaries-container-quill">
+            <h2 className="user-diary-heading-quill">Your Diaries</h2>
+            <button
+              className="see-all-button-quill"
+              onClick={() => navigate("/MoreDiaries")}
+            >
+              See All
+            </button>
+            <UserDiariesDisplay />
+          </div>
           <div className="date-picker-container-quill">
             <label htmlFor="diary-date-picker">
               Select Date for Your Entry:

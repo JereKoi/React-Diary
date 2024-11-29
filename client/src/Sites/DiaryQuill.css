@@ -157,6 +157,14 @@ color: #fff;
 font-weight: 500;
 }
 
+.your-diaries-container-quill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
 
@@ -164,4 +172,6 @@ font-weight: 500;
     width: 100%; /* Make the table responsive */
     font-size: 2rem;
   }
+
+
 }
