@@ -174,4 +174,49 @@ font-weight: 500;
   }
 
 
+
+  body,
+  html {
+    font-size: 1vh; /* Reduce font size for smaller screens */
+  }
+
+
+  .most-recent-table {
+    width: 100%; /* Make the table responsive */
+    font-size: 2rem;
+  }
+
+  .folders-horizontal {
+    flex-direction: column; /* Stack folders vertically */
+    padding: 0; /* Remove padding for small screens */
+  }
+
+  .user-diary-list {
+    flex-direction: column; /* Stack the diary list vertically */
+  }
+
+  .user-diaries-heading-quill {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 10vh;
+  }
+
+  .previous-entries-text-quill {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 10vh;
+  }
+
+  .see-all-button-quill {
+    width: 100%;
+    height: 7vh;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 1vh;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
+  }
 }
