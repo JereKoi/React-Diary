@@ -22,3 +22,12 @@
     color: #007bff;
     margin-left: 1vh;
   }
+
+  /* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+
+  .folders-horizontal {
+    flex-direction: column; /* Stack folders vertically */
+    padding: 0; /* Remove padding for small screens */
+  }
+}

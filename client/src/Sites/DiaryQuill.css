@@ -168,27 +168,20 @@ font-weight: 500;
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
 
-  .most-recent-table-quill {
-    width: 100%; /* Make the table responsive */
-    font-size: 2rem;
-  }
-
-
-
   body,
   html {
     font-size: 1vh; /* Reduce font size for smaller screens */
   }
 
-
-  .most-recent-table {
-    width: 100%; /* Make the table responsive */
-    font-size: 2rem;
+  .quillPage {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch; /* Stretch the content across the screen */
+    padding: 1vh; /* Add padding to prevent content from touching edges */
   }
 
-  .folders-horizontal {
-    flex-direction: column; /* Stack folders vertically */
-    padding: 0; /* Remove padding for small screens */
+  .most-recent-table-quill {
+    width: 100%; /* Make the table responsive */
+    font-size: 2rem;
   }
 
   .user-diary-list {

@@ -72,8 +72,9 @@ const DiaryQuill = () => {
             >
               See All
             </button>
-            <UserDiariesDisplay />
+            
           </div>
+          <UserDiariesDisplay />
           <div className="date-picker-container-quill">
             <label htmlFor="diary-date-picker">
               Select Date for Your Entry:
