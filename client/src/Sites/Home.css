@@ -415,4 +415,8 @@ small {
     font-size: 2vh;
     margin: 2vh 0;
   }
+
+  .mood-chart-wrapper {
+    width: 100%;
+  }
 }

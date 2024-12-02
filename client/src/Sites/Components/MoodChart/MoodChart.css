@@ -1,11 +1,11 @@
 .mood-chart-container {
-  margin: 20px auto;
+  margin: 2vh auto;
   width: 100%; /* Adjusts the width to be more responsive */
   max-width: auto; /* Allows the chart to be bigger on larger screens */
-  padding: 20px;
+  padding: 2vh;
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1vh;
+  box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease-in-out;
 }
 
@@ -15,15 +15,7 @@
 
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
-  .box-content {
-      width: 90%; /* Full width on smaller screens */
-  }
-
-  .journal-preview {
-      width: 100%; /* Full width on smaller screens */
-  }
-
-  .front-page-icons div {
-    width: 50%; /* Adjust width for smaller screens */
+  .mood-chart-container{
+    width: auto;
   }
 }
