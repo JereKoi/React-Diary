@@ -196,7 +196,7 @@ const HomePage = () => {
               </p>
             </div>
 
-            <div className="Analyze-icon mood-chart-wrapper">
+            <div className="Analyze-icon">
               <i className="bx bx-bar-chart-alt-2"></i>
               <h3 className="mood-chart-title">Weekly Mood Tracker</h3>
               <h4 className="mood-chart-title">

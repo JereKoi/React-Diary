@@ -15,7 +15,7 @@
 
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
-  .mood-chart-container{
-    width: auto;
+  .mood-chart-container {
+    width: 100vh;
   }
 }

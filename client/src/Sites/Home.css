@@ -370,6 +370,18 @@ small {
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
 
+  body,
+  html {
+    font-size: 1vh; /* Reduce font size for smaller screens */
+  }
+
+  /* Home Container */
+.home-container {
+  flex-direction: column; /* Stack elements vertically */
+  align-items: stretch; /* Stretch the content across the screen */
+  padding: 1vh; /* Add padding to prevent content from touching edges */
+}
+
   .box-content, .feature-description, .mood-chart-title, .your-mood-trends-title,
   .milestones-title, .milestones-description, .word-cloud-title, .word-cloud-description,
   .home-page-end-button, .badges-container {
@@ -400,7 +412,7 @@ small {
   }
 
   .box-content {
-      width: 90%; /* Full width on smaller screens */
+      width: 100%; /* Full width on smaller screens */
   }
 
   .journal-preview {
