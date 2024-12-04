@@ -1,0 +1,6 @@
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .badges-container {
+        flex-direction: column;
+    }
+}

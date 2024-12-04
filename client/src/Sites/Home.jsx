@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MilesStonesHome from "./Components/MilesStonesHome/MileStonesHome";
 import "./Home.css";
 
 const AbstractBackground = lazy(() =>
@@ -16,11 +17,6 @@ const WordCloud = lazy(() => import("./Components/WordCloud/WordCloud"));
 const HomePage = () => {
   const navigate = useNavigate();
   const [sectionsReady, setSectionsReady] = useState(false);
-
-  //Achievement badges click logic
-  const showDetails = (message) => {
-    console.log(message); // Replace this with any other logic you need.
-  };
 
   const featureCards = [
     {
@@ -53,23 +49,22 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-
   // Intersection Observer for scroll animations. It adds a slide-in or fade-in class to elements when they come into view.
   // The observer is set up to trigger when the element is 7.5% visible in the viewport.
   // The observer is disconnected when the component unmounts.
   useEffect(() => {
     if (!sectionsReady) return;
-  
+
     const scrollSections = document.querySelectorAll(".scroll-section");
     const frontPageIcons = document.querySelectorAll(".front-page-icons div");
     const endButton = document.querySelector(".home-page-end-button");
     const boxContents = document.querySelectorAll(".box-content");
-  
+
     console.log("Scroll sections found:", scrollSections.length);
     console.log("Front page icons found:", frontPageIcons.length);
     console.log("End button found:", endButton ? "yes" : "no");
     console.log("Box contents found:", boxContents.length);
-  
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -97,16 +92,15 @@ const HomePage = () => {
         rootMargin: "0px",
       }
     );
-  
+
     // Observe elements
     scrollSections.forEach((section) => observer.observe(section));
     frontPageIcons.forEach((icon) => observer.observe(icon));
     if (endButton) observer.observe(endButton);
     boxContents.forEach((box) => observer.observe(box));
-  
+
     return () => observer.disconnect();
   }, [sectionsReady]);
-  
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -231,33 +225,7 @@ const HomePage = () => {
                 time.
               </p>
 
-              <div className="badges-container">
-                <div
-                  className="badge unlocked"
-                  onClick={() => showDetails("30 Days of Journaling")}
-                >
-                  <span className="badge-icon">🏆</span>
-                  <p>30 Days of Journaling</p>
-                </div>
-                <div
-                  className="badge unlocked"
-                  onClick={() => showDetails("Most Active Day: Sundays")}
-                >
-                  <span className="badge-icon">📅</span>
-                  <p>Most Active Day: Sundays</p>
-                </div>
-                <div
-                  className="badge unlocked"
-                  onClick={() => showDetails("7 Entries with Positive Mood")}
-                >
-                  <span className="badge-icon">✨</span>
-                  <p>7 Entries with Positive Mood</p>
-                </div>
-                <div className="badge locked">
-                  <span className="badge-icon">🔒</span>
-                  <p>Locked Badge</p>
-                </div>
-              </div>
+              <MilesStonesHome />
             </div>
             <div className="word-cloud-section">
               <h2 className="word-cloud-title">Most Used Words</h2>
