@@ -1,3 +1,5 @@
+import "./MilesStonesHome.css"; // Import your CSS file
+
 const MilesStonesHome = () => {
   //Achievement badges click logic
   const showDetails = (message) => {
@@ -7,21 +9,21 @@ const MilesStonesHome = () => {
   return (
     <div className="badges-container">
       <div
-        className="badge unlocked"
+        className="badge-unlocked"
         onClick={() => showDetails("30 Days of Journaling")}
       >
         <span className="badge-icon">🏆</span>
         <p>30 Days of Journaling</p>
       </div>
       <div
-        className="badge unlocked"
+        className="badge-unlocked"
         onClick={() => showDetails("Most Active Day: Sundays")}
       >
         <span className="badge-icon">📅</span>
         <p>Most Active Day: Sundays</p>
       </div>
       <div
-        className="badge unlocked"
+        className="badge-unlocked"
         onClick={() => showDetails("7 Entries with Positive Mood")}
       >
         <span className="badge-icon">✨</span>
