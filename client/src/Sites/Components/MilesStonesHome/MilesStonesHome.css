@@ -2,6 +2,7 @@
     display: flex;
     overflow-x: auto;
     padding: 1vh;
+    font-size: 2vh;
   }
   
   .badge {
@@ -26,8 +27,17 @@
   }
   
   .badge-locked {
+    min-width: 15vh;
+    height: 15vh;
     background-color: #ccc; /* Gray for locked badges */
-    color: #666;
+    border-radius: 50%;
+    margin-right: 7vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
     cursor: not-allowed;
     position: relative;
     transition: transform 0.3s ease;
@@ -35,13 +45,9 @@
 
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
-    .badges-container {
+    .badges-container, .badge-locked {
         display: column;
         overflow-x: auto;
         padding: 1vh;
-      }
-
-      .badge {
-        
       }
 }

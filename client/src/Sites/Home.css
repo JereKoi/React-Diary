@@ -248,26 +248,15 @@ body, html {
   max-width: 120vh; /* Ensure it doesn’t get too large on bigger screens */
 }
 
-.mood-chart-container {
-  margin: 0 auto; /* Centers the chart within its parent */
-  width: 100%; /* Ensures it takes up full width of the parent */
-  max-width: none; /* Prevents it from being constrained */
-  padding: 2vh;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 4vh 8vh rgba(0, 0, 0, 0.1);
-  transition: transform 0.5s ease-in-out;
-}
-
-.mood-description {
-  font-size: 1vh;
+.mood-description, .milestones-description {
+  font-size: 1.5vh;
   color: #ffffff;
   margin: 1vh 0;
   line-height: 1.6;
 }
 
 .milestones-title{
-  font-size: 1vh;
+  font-size: 2vh;
   color: #ffffff;
   margin: 1vh 0;
   line-height: 1.6;
@@ -348,12 +337,6 @@ small {
   padding: 1vh; /* Add padding to prevent content from touching edges */
 }
 
-  .box-content, .feature-description, .mood-chart-title, .your-mood-trends-title,
-  .milestones-title, .milestones-description, .word-cloud-title, .word-cloud-description,
-  .home-page-end-button, .badges-container {
-    font-size: 2vh;
-  }
-
   .cta-button, .secondary-button {
     font-size: 2.3vh; /* Button text size */
   }
@@ -397,4 +380,6 @@ small {
   .mood-chart-wrapper {
     width: 100%;
   }
+
+
 }

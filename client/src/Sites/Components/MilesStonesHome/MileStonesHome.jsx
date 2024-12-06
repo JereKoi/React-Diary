@@ -29,7 +29,7 @@ const MilesStonesHome = () => {
         <span className="badge-icon">✨</span>
         <p>7 Entries with Positive Mood</p>
       </div>
-      <div className="badge locked">
+      <div className="badge-locked">
         <span className="badge-icon">🔒</span>
         <p>Locked Badge</p>
       </div>
