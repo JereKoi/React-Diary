@@ -12,7 +12,7 @@
     color: #fff; /* White text color */
     text-align: center; /* Center-align text within the footer */
     padding: 40px 0; /* Vertical padding for spacing */
-    width: 100vw; /* Full width of the footer */
+    width: 100%; /* Full width of the footer */
     position: relative; /* Positioning context for child elements */
     background-size: cover; /* Cover background image */
     overflow: hidden; /* Hide overflowing content */
@@ -77,7 +77,7 @@
     flex-basis: 100%; /* Full width for the last section */
     background-color: transparent; /* Transparent background */
     padding: 0; /* No padding */
-    margin-top: 20px; /* Space above the last section */
+    margin-top: 2vh; /* Space above the last section */
     font-size: 1.3vh; /* Smaller font size */
     text-align: center; /* Center-align text */
     cursor: default; /* Default cursor style */
@@ -102,42 +102,50 @@
     .footer-content {
         flex-direction: column; /* Stack sections vertically on very small screens */
         align-items: center; /* Center items */
-        gap: 15px; /* Space between stacked sections */
+        gap: 1.5vh; /* Space between stacked sections */
     }
 
     .footer-section {
         width: 100%; /* Full width for sections */
-        padding: 15px; /* Reduced padding */
-        font-size: 2rem; /* Smaller font size */
+        padding: 1.5vh; /* Reduced padding */
+        font-size: 2vh; /* Smaller font size */
     }
 
     .footer-section p {
-        font-size: 2rem;
+        font-size: 2vh;
     }
 
     .footer-last {
-        font-size: 2rem;
+        font-size: 2vh;
+        margin-bottom: 3vh;
     }
+    
 }
 
 @media (max-width: 600px) {
+
+    .footer {
+        width: 100%;
+    }
+
     .footer-content {
         flex-direction: column; /* Stack sections vertically on very small screens */
         align-items: center; /* Center items */
-        gap: 15px; /* Space between stacked sections */
+        gap: 1.5vh; /* Space between stacked sections */
     }
 
     .footer-section {
         width: 100%; /* Full width for sections */
-        padding: 15px; /* Reduced padding */
-        font-size: 2rem; /* Smaller font size */
+        padding: 1.5vh; /* Reduced padding */
+        font-size: 2vh; /* Smaller font size */
     }
 
     .footer-section p {
-        font-size: 2rem;
+        font-size: 2vh;
     }
 
     .footer-last {
-        font-size: 2rem;
+        font-size: 2vh;
+        margin-bottom: 3vh;
     }
 }

@@ -334,7 +334,6 @@ small {
 .home-container {
   flex-direction: column; /* Stack elements vertically */
   align-items: stretch; /* Stretch the content across the screen */
-  padding: 1vh; /* Add padding to prevent content from touching edges */
 }
 
   .cta-button, .secondary-button {
