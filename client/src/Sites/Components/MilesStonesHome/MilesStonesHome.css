@@ -45,9 +45,9 @@
 
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
-    .badges-container, .badge-locked {
-        display: column;
-        overflow-x: auto;
+      .badges-container {
+        display: grid;
         padding: 1vh;
+        font-size: 2vh;
       }
 }
