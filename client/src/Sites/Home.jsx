@@ -178,8 +178,8 @@ const HomePage = () => {
           <div className="front-page-icons">
             <div className="daily-reminder-icon">
               <i className="bx bx-time"></i>
-              <h3 className="mood-chart-title">Daily reminders</h3>
-              <p className="feature-description">
+              <h3 className="daily-title">Daily reminders</h3>
+              <p className="daily-description">
                 Never forget to write in your journal! Set daily reminders to
                 keep your journaling habit on track and make reflection a
                 consistent part of your life. Customize your reminders to fit
@@ -192,7 +192,7 @@ const HomePage = () => {
 
             <div className="Analyze-icon">
               <i className="bx bx-bar-chart-alt-2"></i>
-              <h3 className="mood-chart-title">Weekly Mood Tracker</h3>
+              <h3 className="mood-chart-header">Weekly Mood Tracker</h3>
               <h4 className="mood-chart-title">
                 Analyze and Track Your Progress and Writing Style
               </h4>
@@ -240,12 +240,6 @@ const HomePage = () => {
               </p>
               <WordCloud />
             </div>
-          </div>
-          <div>
-            <section
-              id="mood-tracker"
-              style={{ padding: "50px 0", backgroundColor: "#f9f9f9" }}
-            ></section>
           </div>
           <div className="home-end-section">
             <button

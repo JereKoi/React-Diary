@@ -372,14 +372,15 @@ small {
     width: 100%; /* Adjust width for smaller screens */
   }
 
-  .mood-description {
+  .daily-title, .your-mood-trends-title, .mood-chart-header, .milestones-title, .word-cloud-title {
+    font-size: 3vh;
+  }
+
+  .daily-description, .mood-description, .milestones-description, .word-cloud-description {
     font-size: 2vh;
-    margin: 2vh 0;
   }
 
   .mood-chart-wrapper {
     width: 100%;
   }
-
-
 }
