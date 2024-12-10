@@ -322,6 +322,12 @@ small {
   transition: opacity 1.5s ease-in;
 }
 
+.home-page-end-section {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
 
@@ -381,5 +387,15 @@ small {
 
   .mood-chart-wrapper {
     width: 100%;
+  }
+
+  .home-page-end-button {
+    
+  }
+
+  .home-page-end-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
