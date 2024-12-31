@@ -24,10 +24,12 @@
     "express-validator": "^7.2.0",
     "framer-motion": "^11.0.24",
     "helmet": "^7.1.0",
+    "jest": "^27.5.1",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
+    "mockingoose": "^2.16.2",
     "mongoose": "^8.3.2",
     "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0",
@@ -44,6 +46,7 @@
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5",
     "sort-by": "^1.2.0",
+    "supertest": "^7.0.0",
     "uuid": "^9.0.1",
     "web-vitals": "^2.1.4",
     "winston": "^3.14.2"
@@ -51,8 +54,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test-react": "react-scripts test",
+    "eject": "react-scripts eject",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": [
