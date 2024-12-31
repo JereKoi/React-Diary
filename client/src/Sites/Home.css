@@ -286,6 +286,14 @@ small {
   margin-bottom: 1vh;
 }
 
+.home-end-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
 /* Home Page End Button */
 .home-page-end-button {
   
