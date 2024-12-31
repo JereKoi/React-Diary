@@ -108,7 +108,6 @@ const HomePage = () => {
       <div className="abstract-background">
         <div className="home-container">
           <Navbar />
-
           <div className="box-container">
             <div className="box-content">
               <h1>Modern Journaling Experience</h1>

@@ -288,15 +288,14 @@ small {
 
 /* Home Page End Button */
 .home-page-end-button {
+  
   background-color: var(--button-bg); /* Set button background color */
   color: #fff; /* Text color */
   padding: 2vh 4vh; /* Increased padding for larger size */
   font-size: 1.5vh; /* Larger font size for better visibility */
-  border: none; /* Remove default border */
-  border-radius: 20vh; /* Rounded corners for a friendly look */
-  box-shadow: 0 8vh 16vh rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
+  border-radius: 10vh; /* Rounded corners for a friendly look */
+  box-shadow: 0 2vh 1vh rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
   cursor: pointer; /* Pointer cursor on hover */
-  margin-top: 2vh; /* Space above the button */
   position: relative; /* Positioning for pseudo-element */
   overflow: hidden; /* Hide overflow for animations */
   margin-top: 50vh;
@@ -305,7 +304,7 @@ small {
   align-items: center; /* Center items vertically */
   justify-content: center; /* Center content horizontally */
   gap: 1vh; /* Space between text and icon */
-
+  
   /* Fade-in effect */
   opacity: 0; /* Start invisible */
   transition: opacity 1.5s ease-in, transform 0.2s ease, box-shadow 0.2s ease;
@@ -320,12 +319,6 @@ small {
 .home-page-end-button.fade-in {
   opacity: 1;
   transition: opacity 1.5s ease-in;
-}
-
-.home-page-end-section {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 /* Media Queries for Responsive Design */
@@ -365,16 +358,8 @@ small {
     font-size: 2.3vh;
   }
 
-  .box-content {
+  .box-content, .journal-preview, .front-page-icons div, .mood-chart-wrapper,  .home-page-end-section {
       width: 100%; /* Full width on smaller screens */
-  }
-
-  .journal-preview {
-      width: 100%; /* Full width on smaller screens */
-  }
-
-  .front-page-icons div {
-    width: 100%; /* Adjust width for smaller screens */
   }
 
   .daily-title, .your-mood-trends-title, .mood-chart-header, .milestones-title, .word-cloud-title {
@@ -385,17 +370,21 @@ small {
     font-size: 2vh;
   }
 
-  .mood-chart-wrapper {
-    width: 100%;
-  }
+/* Home Page End Button */
+.home-page-end-button {
+  font-size: 3vh; /* Larger font size for better visibility */
+  padding: 2vh 4vh; /* Increased padding for larger size */
+  margin-top: 10vh; /* Margin above */
+  margin-bottom: 10vh; /* Margin below */
+  font-display: center;
+  justify-content: center;
+  align-items: center;
+}
 
-  .home-page-end-button {
-    
-  }
-
-  .home-page-end-section {
+  .home-end-section {
+    font-display: center;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    margin: 10vh;
   }
 }
