@@ -43,6 +43,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(helmet());
+app.use("/login", require("./UserLogin"));
 
 // Rate limiting
 const limiter = rateLimit({
@@ -105,7 +106,8 @@ const UserSchema = new Schema({
   password: { type: String, required: true },
 });
 
-const User = mongoose.model("User", UserSchema);
+// Avoid overwriting the model if it already exists
+const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 // Define Mongoose schema and model for Text
 const TextSchema = new Schema({
@@ -221,3 +223,5 @@ app.use((err, req, res, next) => {
 server.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+module.exports = app;

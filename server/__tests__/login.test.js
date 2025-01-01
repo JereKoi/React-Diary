@@ -6,6 +6,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mockingoose = require('mockingoose');
 
+const express = require("express");
+
+module.exports = app;
+
 describe("POST /login", () => {
   // Reset all mockingoose configurations before each test
   beforeEach(() => {
@@ -37,7 +41,7 @@ describe("POST /login", () => {
   // Test case: Incorrect password provided
   it("should return 400 if password is incorrect", async () => {
     const user = {
-      _id: mongoose.Types.ObjectId(), // Mock a user ID
+      _id: new mongoose.Types.ObjectId(), // Mock a user ID
       email: "test@example.com",
       password: await bcrypt.hash("correctpassword", 10), // Hash the correct password
     };
@@ -55,7 +59,7 @@ describe("POST /login", () => {
   // Test case: Successful login with correct email and password
   it("should return 200 and set a cookie if login is successful", async () => {
     const user = {
-      _id: mongoose.Types.ObjectId(), // Mock a user ID
+      _id: new mongoose.Types.ObjectId(), // Mock a user ID
       email: "test@example.com",
       password: await bcrypt.hash("correctpassword", 10), // Hash the correct password
     };
@@ -64,6 +68,7 @@ describe("POST /login", () => {
 
     const jwtSpy = jest.spyOn(jwt, "sign").mockReturnValue("mockToken"); // Mock the JWT sign function
 
+    // Test login
     const res = await request(app)
       .post("/login")
       .send({ email: "test@example.com", password: "correctpassword" }); // Provide correct credentials

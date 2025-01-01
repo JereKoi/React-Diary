@@ -1,7 +1,7 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const User = require('./models/User');
+const express = require("express");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const User = require("./models/User");
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
@@ -22,11 +22,25 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
-    res.status(200).json({ message: "Login successful" });
+    // Mock token for development/testing
+    const token =
+      process.env.NODE_ENV === "production"
+        ? jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+            expiresIn: "1h",
+          })
+        : "mockToken";
+
+    // Add cookie and send response
+    res
+      .cookie("token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+      })
+      .status(200)
+      .send("Logged in.");
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
