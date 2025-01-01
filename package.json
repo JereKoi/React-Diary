@@ -82,9 +82,16 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "typescript-eslint": "^7.7.0"
   },
-  "jest": {
+"jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+    },
     "roots": [
       "<rootDir>/server"
     ],

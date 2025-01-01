@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import { useNavigate } from "react-router-dom";
 import "./About.css";
 import Footer from "./Components/Footer/Footer";

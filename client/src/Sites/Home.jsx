@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MilesStonesHome from "./Components/MilesStonesHome/MileStonesHome";
 import "./Home.css";

@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import React from "react";
 
 // Lazy load components to improve performance
 const Home = lazy(() => import("./Sites/Home"));
