@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const { body, validationResult } = require("express-validator");
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
+require('dotenv').config({ path: './.env' });
 const http = require("http");
 const socketIo = require("socket.io");
 const bcrypt = require("bcrypt");
@@ -12,6 +13,8 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const Joi = require("joi");
 const winston = require("winston");
+require('dotenv').config();
+
 
 // Load environment variables
 dotenv.config();
