@@ -5,10 +5,11 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mockingoose = require('mockingoose');
+const server = require('../server');
 
 const express = require("express");
 
-module.exports = app;
+console.log(typeof app);
 
 describe("POST /login", () => {
   // Reset all mockingoose configurations before each test
@@ -97,3 +98,5 @@ describe("POST /login", () => {
     expect(res.body.message).toBe("Server error"); // Check the error message
   });
 });
+
+module.exports = app;
