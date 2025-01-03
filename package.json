@@ -102,6 +102,7 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/dist/"
-    ]
+    ],
+    "setupFiles": ["<rootDir>/server/jest.setup.js"]
   }
 }

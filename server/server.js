@@ -26,6 +26,9 @@ const envSchema = Joi.object({
   JWT_SECRET: Joi.string().required(),
 }).unknown().required();
 
+console.log("MONGODB_URI:", process.env.MONGODB_URI); // Temporary debug log
+
+
 const { error } = envSchema.validate(process.env);
 if (error) {
   throw new Error(`Config validation error: ${error.message}`);
