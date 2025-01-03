@@ -1,3 +1,5 @@
+// How to run: open console on server folder and type run npm test
+
 const request = require('supertest');
 const mongoose = require('mongoose');
 const app = require('../server');
